@@ -272,7 +272,7 @@
  * \f]
  * and
  * \f[
- * b = \begin{bmatrix}0.1\\0.2\end{bmatrix}.
+ * b = \begin{bmatrix}1\\1\end{bmatrix}.
  * \f]
  * And \f$H\f$, \f$Q\f$ and \f$q\f$ will be as in the <a href="#ineq-qp">previous example</a> where we 
  * had only inequality constraints.
@@ -281,22 +281,71 @@
  * use the function QuadOverAffine.
  *
  * \code{.cpp}
- *  const size_t p = 2;
- *  double data_A[] = {
- *     1, 0,
- *     1, 0,
- *     0, 1,
- *     0, 1 };
- *  double data_b[] = {
- *     0.1,
- *     0.2  };
+ *   const size_t n = 4;
+ *   double data_Q[] = {
+ *       3,  1,  1,  0,
+ *       1,  3,  0, -1,
+ *       1,  0,  3,  0,
+ *       0, -1,  0,  5
+ *   };
+ *   double data_q[] = {1, 2, 3, 4};
+ *   Matrix Q(n, n, data_Q);
+ *   Matrix q(n, 1, data_q);
  *
- *  Matrix A(p, n, data_A);
- *  Matrix b(p, 1, data_b);
+ *   const size_t p = 2;
+ *   double data_A[] = {
+ *      1, 0,
+ *      1, 0,
+ *      0, 1,
+ *      0, 1
+ *   };
+ *   double data_b[] = {
+ *       1,
+ *       1
+ *   };
  *
- *  // Define f and f*
- *  QuadOverAffine f(Q, q, A, b);
- *  ConjugateFunction f_conj(f);
+ *   Matrix A(p, n, data_A);
+ *   Matrix b(p, 1, data_b);
+ *
+ *
+ *   // Define f and f*
+ *   QuadOverAffine f(Q, q, A, b);
+ *   ConjugateFunction f_conj(f);
+ *
+ *   // Define g and g*
+ *   double lb = -1;
+ *   double ub = +1;
+ *   IndBox g(lb, ub);
+ *   ConjugateFunction g_conj(g);
+ *   double data_H[] = {1, 1, 1, 1};
+ *   Matrix H(1, n, data_H);
+ *   H.transpose();
+ *   H *= -1.0;
+ *   MatrixOperator Op_Htr_minus(H);
+ *
+ *   FBProblem prob(f_conj, Op_Htr_minus, g_conj);
+ *   Matrix y0(1, 1);
+ *   FBStoppingRelative stop(1e-3);
+ *   FBSplitting fbs(prob, y0, 0.1, stop, 1000);
+ *   fbs.run();
+ *
+ *   Matrix ystar = fbs.getSolution();
+ *   Matrix H_ystar = H*ystar;
+ *   double f_conj_star;
+ *   Matrix xstar(n, 1);
+ *   f_conj.call(H_ystar, f_conj_star, xstar);
+ *
+ *   std::cout << fbs.getIt();
+ *   std::cout << xstar;
  * \endcode
  *
+ * The dual optimizer was found to be \f$y^\star=360.4\f$ in \f$75\f$ iterations
+ * of FBSplittingFast.
+ *
+ * The primal optimizer, \f$x^\star = \nabla f^\star(-H^\top y^\star)\f$ was found 
+ * to be
+ *
+ * \f[
+ *  x^\star = \begin{bmatrix}0.5\\0.5\\0.625\\0.375\end{bmatrix}
+ * \f]
  */
