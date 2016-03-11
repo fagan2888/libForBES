@@ -41,16 +41,18 @@
  * protected. Instances of this class can be created using any of its subclasses
  * a list of which can be found \ref Functions "here".
  * 
+ * ForBES functions are all assumed to follow be \f$f:X \to \mathbb{R}\cup \{+\infty\}\f$,
+ * where \f$X\f$ is a vector space, typically either \f$\mathbb{R}^n\f$ or
+ * \f$\mathbb{R}^{n\times m}\f$.
+ * 
  * In general, a %Function in libforbes is a tuple
  * \f$(f(\cdot),\nabla f, f^*(\cdot), \nabla f^*(\cdot), \mathrm{prox}_{\gamma f}(\cdot), f(\mathrm{prox}_{\gamma f}(\cdot)))\f$
  * where some of these components are available and implemented.
  * 
- * Certain functions also define their gradient \f$\nabla^2 f(x)\f$ and/or the gradient
- * of their conjugate \f$\nabla f^*(x)\f$.
+ * Certain functions furhter allow Hessian-vector products, i.e., computation of
+ * terms of the form \f$\langle \nabla^2 f(x), z\rangle\f$ and/or with the gradient
+ * of their conjugate \f$\langle \nabla^2 f(x), z\rangle\f$.
  * 
- * ForBES functions are all assumed to follow the template \f$f:X \to \mathbb{R}\cup \{+\infty\}\f$,
- * where \f$X\f$ is a vector space, typically either \f$\mathbb{R}^n\f$ or
- * \f$\mathbb{R}^{n\times m}\f$.
  * 
  * Input and output arguments to %Function calls are instances of Matrix.
  * 
@@ -143,6 +145,19 @@ public:
      * \f$\langle \nabla^2 f(x), z\rangle,\f$
      * between a vector \f$z\f$ and the Hessian of \f$f\f$ computed at a point 
      * \f$x\f$.
+     * 
+     * If this method is not implemented in the derived class of Function, then 
+     * an approximation is return based on the finite difference scheme
+     * 
+     * \f[
+     *  \langle \nabla^2 f(x), z\rangle \simeq \frac{1}{\epsilon}[\nabla f(x+\epsilon z) - \nabla f(x)],
+     * \f]
+     * 
+     * where $\epsilon=10^{-8}\f$ (a small tolerance).
+     * 
+     * If the gradient of \f$f\f$ is not available, or it fails to be computed,
+     * then, an appropriate status code will be returned.
+     * 
      * 
      * @param x point where the Hessian \f$\nabla^2 f(x)\f$ is computed
      * @param z vector with which the product is computed

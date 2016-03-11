@@ -447,27 +447,46 @@ void TestQuadratic::testHessianSparse() {
     delete quad;
 }
 
-// void TestQuadratic::testHessianQisEye() {
-    
-    
-//     const size_t n = 10;
-//     Matrix Id = MatrixFactory::MakeIdentity(n, 1.0);
-//     Matrix x = MatrixFactory::MakeRandomMatrix(n, 1, 1.0, 2.0);
-//     Matrix grad;
-//     Matrix hess;
+void TestQuadratic::testApproximateHessian() {
 
-//     Function * quad = new Quadratic();
-//     double f;
-//     _ASSERT(ForBESUtils::is_status_ok(quad -> call(x, f, grad, hess)));
-    
-//     _ASSERT_EQ(Matrix::MATRIX_DIAGONAL, hess.getType());
-//     _ASSERT_EQ(Id, hess);
-    
-    
-//     _ASSERT(ForBESUtils::is_status_ok(quad -> call(x, f, grad, hess)));
-//     _ASSERT_EQ(Matrix::MATRIX_DIAGONAL, hess.getType());
-//     _ASSERT_EQ(Id, hess);
+    const size_t n = 4;
+    const double * Qdata;
+    Matrix grad_x;
+    double f;
+    Qdata = MAT1;
 
-//     delete quad;
-// }
+    double qdata[4] = {2.0, 3.0, 4.0, 5.0};
+    double xdata[4] = {-1.0, 1.0, 1.0, 1.0};
+
+    Matrix Q = Matrix(n, n, Qdata);
+    Matrix q = Matrix(n, 1, qdata);
+    
+
+    Quadratic quadratic(Q, q);
+
+    Matrix x = Matrix(n, 1, xdata);
+    Matrix z = MatrixFactory::MakeRandomMatrix(n,1,0.0,2.0);
+    const double epsilon = 1e-8;
+    const double one_over_epsilon = 1e8;
+    
+    /* t = t + εz */
+    Matrix t(x);
+    Matrix::add(t, epsilon, z, 1.0);
+    
+    
+    Matrix Hz(n,1);
+    quadratic.call(t, f, Hz);       /* Hz = nabla f(t)              */
+    quadratic.call(x, f, grad_x);   /* grad_x = nabla f(x)          */
+    Hz -= grad_x;                   /* Hz = nabla f(t) - nabla f(x) */
+    Hz *= one_over_epsilon;
+    
+    Matrix Hz_copy = Hz;
+    
+    quadratic.hessianProduct(x,z,Hz);
+
+    for (size_t i = 0; i < n; i++) {
+        _ASSERT_NUM_EQ(Hz_copy[i], Hz[i], 1e-6);
+    }
+}
+
 
