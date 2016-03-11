@@ -1,0 +1,359 @@
+/* Quadratic programs - documentation with examples */
+
+/*! \page doc-QP QP Problems
+ *  \brief %Quadratic programming with examples
+ *
+ * Here we will present various formulations of QP problems:
+ * * <a href="#box-qp">Problems with box constraints</a>
+ * * <a href="#ineq-qp">with general inequality constraints</a>
+ * * <a href="#ineq-eq-qp">with both inequality and equality constraints</a>
+ * * <a href="#qc-qp">quadratically constrained problems</a>
+ *
+ *
+ *
+ *
+ *
+ * <div class="sec" id="box-qp">Box-constrained QP</div>
+ * Let us here see how to formulate and solve a QP using libforbes. 
+ *
+ * First, define the cost function as 
+ * \f[
+ *  f(x) = \frac{1}{2}x^{\top}Qx + q^{\top}x.
+ * \f]
+ *
+ * Take for instance \f$Q\in\mathbb{R}^{4\times 4}\f$ and \f$q\in\mathbb{R}^{4}\f$
+ * to be
+ *
+ * \f[
+ *  Q = \begin{bmatrix}
+ *  7& 2& -2& -1\\2& 3& 0& -1\\-2& 0& 3& -1\\-1& -1& -1& 1
+ *  \end{bmatrix},
+ * \f]
+ * and
+ * \f[
+ *  q = \begin{bmatrix}
+ *  1&2&3&4
+ *  \end{bmatrix}^{\top}.
+ * \f]
+ *
+ * We may define function \f$f\f$ as follows
+ * \code{.cpp}
+ * const size_t n = 4;
+ * double data_Q[] = {
+ *  7,  2, -2, -1,
+ *  2,  3,  0, -1,
+ * -2,  0,  3, -1,
+ * -1, -1, -1,  1 };
+ * double data_q[] = {1, 2, 3, 4};
+ *
+ * Matrix Q(n, n, data_Q);
+ * Matrix q(n, 1, data_q);
+ *
+ * Function * f = new Quadratic(Q, q);
+ * \endcode
+ *
+ * Let us define the constraints using an indicator function as follows
+ * \f[
+ *  g(z) = \delta(z\mid C), \text{ where } C=\{z: -1\leq z\leq 1\}.
+ * \f]
+ *
+ *
+ * We can now simply define function \f$g\f$ as follows
+ * \code{.cpp}
+ * double lb = -1;
+ * double ub = +1;
+ * Function * g = new IndBox(lb, ub);
+ * \endcode
+ *
+ * Let us now define and solve the problem:
+ * \f[
+ *  \mathrm{minimize}\ f(x) + g(x).
+ * \f]
+ *
+ * Here is an example:
+ *
+ * \code{.cpp}
+ * // Define the forward-backward problem specifications
+ * FBProblem prob(*f, *g);
+ *
+ * // Introduce a stopping criterion:
+ * const double rel_tolerance = 1e-3;
+ * FBStoppingRelative sc(rel_tolerance);
+ *
+ * // Choose an initial guess
+ * Matrix x0(n, 1);
+ *
+ * // Construct an instance of a FB solver
+ * double gamma = 0.1;
+ * const int maxit = 100;
+ * FBSplitting * solver = new FBSplitting(prob, x0, gamma, sc, maxit);
+ *
+ * // Run the solver and get the minimizer
+ * int solver_status = solver->run();
+ * Matrix xstar = solver->getSolution();
+ * \endcode
+ *
+ * We chose \f$\gamma=0.1\f$ because \f$1/\|Q\|_2 \simeq 0.1163 > \gamma\f$.
+ * 
+ * In the end, do not forget to \c delete the various objects that were
+ * constructed.
+ * 
+ * \code{.cpp}
+ *  delete solver;
+ *  delete f;
+ *  delete g;
+ * \endcode
+ *
+ * The algorithm terminates in \c 15 iterations (this is returned by
+ * <code>solver->getIt()</code>) and the optimizer is
+ *
+ * \f[
+ * x^\star = \begin{bmatrix}-0.3529&-0.7647&-1&1\end{bmatrix}^{\top}
+ * \f]
+ *
+ * and the optimal value is \f$f(x^\star)+g(x^\star)=-7.853\f$.
+ *
+ * The Fast FBS method can be also used as follows
+ *
+ * \code
+ * FBSplittingFast * solver = new FBSplittingFast(prob, x0, gamma, sc, maxit);
+ * \endcode
+ *
+ * which converges within the required accuracy (specified by the termination
+ * criterion) in \c 11 iterations.
+ *
+ * 
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ * <div class="sec" id="ineq-qp">Inequality constrained QP</div>
+ * 
+ * Let us now solve step-by-step an inequality constrained problem which has the following form
+ *
+ * \f[
+ * \mathrm{minimize}\ \frac{1}{2}x^{\top}Qx  + q^{\top} x + \delta(Hx\mid C),
+ * \f]
+ * 
+ * where \f$Q\f$ is a symmetric positive definite matrix,  \f$H:\mathbb{R}^n\to\mathbb{R}^s\f$
+ * is a linear operator and \f$C\f$ is a set which is easy to project on; here, let us take
+ *
+ * \f[
+ *  C = \{z \in \mathbb{R}^s: -1 \leq z \leq 1\}.
+ * \f]
+ *
+ * We will use the following values of <code>Q</code> and <code>q</code>:
+ *
+* \f[
+ *  Q = \begin{bmatrix}
+ *  3& 1& 1& 0\\1& 3& 0& -1\\1& 0& 3& 1\\0& -1& -1& 5
+ *  \end{bmatrix},
+ * \f]
+ * and
+ * \f[
+ *  q = \begin{bmatrix}
+ *  1&2&3&4
+ *  \end{bmatrix}^{\top}.
+ * \f]
+ *
+ * \code{.cpp}
+ *  const size_t n = 4;
+ *  double data_Q[] = {
+ *    3,     1,     1,    0,
+ *    1,     3,     0,   -1,
+ *    1,     0,     3,    1,
+ *    0,    -1,     1,    5};
+ *  double data_q[] = {1, 2, 3, 4};
+ *  Matrix Q(n, n, data_Q);
+ *  Matrix q(n, 1, data_q);
+ * \endcode
+ *
+ * Using the splitting \f$f(x) = \frac{1}{2}x^{\top}Qx + q^{\top}x\f$, \f$g(z) = \delta(z\mid C)\f$
+ * and \f$z=Hx\f$, we need to formulate and solve the dual optimization problem which is simply
+ *
+ * \f[
+ *  \mathrm{minimize}\ f^*(-H^* y) + g^*(y),
+ * \f]
+ *
+ * for the dual variable \f$y\in\mathbb{R}^s\f$.
+ *
+ * We may now define functions \f$f\f$, \f$f^*\f$, \f$g\f$ and \f$g^*\f$ and the
+ * linear operator \f$H:\mathbb{R}^4\to\mathbb{R}\f$
+ *
+ * \f[
+ *  H = \begin{bmatrix}
+ *  1&1&1&1
+ *  \end{bmatrix}.
+ * \f]
+ *
+ * \code{.cpp}
+ *  // Define f and f*
+ *  Quadratic f(Q, q);
+ *  ConjugateFunction f_conj(f);
+ *
+ *  // Define g and g*
+ *  double lb = -1;
+ *  double ub = +1;
+ *  IndBox g(lb,ub);
+ *  ConjugateFunction g_conj(g);
+ *
+ *  double data_H[] = {1, 1, 1, 1};
+ *  Matrix H(1, n, data_H);    
+ *  H.transpose(); H *= -1.0;
+ *  MatrixOperator Op_Htr_minus(H);
+ * \endcode
+ *
+ * We may now define and solve the FB problem as follows
+ *
+ * \code{.cpp}
+ *  FBProblem prob(f_conj, Op_Htr_minus, g_conj);
+ *
+ *  Matrix y0(1, 1);
+ *  FBStoppingRelative stop(1e-5);
+ *  FBSplittingFast fbs(prob, y0, 0.2, stop); 
+ *  fbs.run();
+ * \endcode
+ *
+ * and we obtain the dual and primal optimal solutions
+ *
+ * \code{.cpp}
+ *  Matrix ystar = fbs.getSolution();
+ *  Matrix H_ystar = H*ystar;
+ *  double f_conj_star;
+ *  Matrix xstar(n, 1);
+ *  f_conj.call(H_ystar, f_conj_star, xstar);
+ * \endcode
+ *
+ * The algorithm converges in \f$34\f$ iterations and yields the optimizer
+ *
+ * \f[
+ *  x^\star = \begin{bmatrix}0.5&-0.5&-0.5&-0.5\end{bmatrix}^{\top}.
+ * \f]
+ *
+ *
+ *
+ * 
+ *
+ * 
+ *
+ *
+ * <div class="sec" id="ineq-eq-qp">Inequality and Equality Constrained QP</div>
+ *
+ * Let us study the case where where we have both equality and inequality
+ * constraints. The problem can then be written as
+ *
+ * \f[
+ *  \mathrm{minimize}\ \frac{1}{2}x^{\top}Qx + q^{\top}x + \delta(x\mid E) + \delta(Hx \mid C),
+ * \f]
+ *
+ * where \f$E\f$ is an affine space given by \f$E = \{x: Ax = b\}\f$ and \f$C\f$
+ * is a box.
+ *
+ * We may then define
+ *
+ * \f[
+ *  f(x) = \frac{1}{2}x^{\top}Qx + q^{\top}x + \delta(x\mid E),
+ * \f]
+ *
+ * which is a \link QuadOverAffine quadratic function over an affine space\endlink and 
+ * 
+ * \f[
+ *  g(z) = \delta(z\mid C),
+ * \f]
+ * 
+ * where \f$z=Hx\f$.
+ *
+ * In this example we define
+ * \f[
+ * A = \begin{bmatrix}1&1&0&0\\0&0&1&1\end{bmatrix},
+ * \f]
+ * and
+ * \f[
+ * b = \begin{bmatrix}1\\1\end{bmatrix}.
+ * \f]
+ * And \f$H\f$, \f$Q\f$ and \f$q\f$ will be as in the <a href="#ineq-qp">previous example</a> where we 
+ * had only inequality constraints.
+ *
+ * The only difference from the previous example is that here we need to 
+ * use the function QuadOverAffine.
+ *
+ * \code{.cpp}
+ *   const size_t n = 4;
+ *   double data_Q[] = {
+ *       3,  1,  1,  0,
+ *       1,  3,  0, -1,
+ *       1,  0,  3,  0,
+ *       0, -1,  0,  5
+ *   };
+ *   double data_q[] = {1, 2, 3, 4};
+ *   Matrix Q(n, n, data_Q);
+ *   Matrix q(n, 1, data_q);
+ *
+ *   const size_t p = 2;
+ *   double data_A[] = {
+ *      1, 0,
+ *      1, 0,
+ *      0, 1,
+ *      0, 1
+ *   };
+ *   double data_b[] = {
+ *       1,
+ *       1
+ *   };
+ *
+ *   Matrix A(p, n, data_A);
+ *   Matrix b(p, 1, data_b);
+ *
+ *
+ *   // Define f and f*
+ *   QuadOverAffine f(Q, q, A, b);
+ *   ConjugateFunction f_conj(f);
+ *
+ *   // Define g and g*
+ *   double lb = -1;
+ *   double ub = +1;
+ *   IndBox g(lb, ub);
+ *   ConjugateFunction g_conj(g);
+ *   double data_H[] = {1, 1, 1, 1};
+ *   Matrix H(1, n, data_H);
+ *   H.transpose();
+ *   H *= -1.0;
+ *   MatrixOperator Op_Htr_minus(H);
+ *
+ *   FBProblem prob(f_conj, Op_Htr_minus, g_conj);
+ *   Matrix y0(1, 1);
+ *   FBStoppingRelative stop(1e-3);
+ *   FBSplitting fbs(prob, y0, 0.1, stop, 1000);
+ *   fbs.run();
+ *
+ *   Matrix ystar = fbs.getSolution();
+ *   Matrix H_ystar = H*ystar;
+ *   double f_conj_star;
+ *   Matrix xstar(n, 1);
+ *   f_conj.call(H_ystar, f_conj_star, xstar);
+ *
+ *   std::cout << fbs.getIt();
+ *   std::cout << xstar;
+ * \endcode
+ *
+ * The dual optimizer was found to be \f$y^\star=360.4\f$ in \f$75\f$ iterations
+ * of FBSplittingFast.
+ *
+ * The primal optimizer, \f$x^\star = \nabla f^\star(-H^\top y^\star)\f$ was found 
+ * to be
+ *
+ * \f[
+ *  x^\star = \begin{bmatrix}0.5\\0.5\\0.625\\0.375\end{bmatrix}
+ * \f]
+ *
+ *
+ * 
+ *
+ *
+ *
+ * <div class="sec" id="qc-qp">Quadratically constrained QP</div>
+ * 
+ */

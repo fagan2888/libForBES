@@ -1,0 +1,31 @@
+/* GROUPS */
+
+/** \defgroup Functions Functions
+ *
+ * \brief ForBES functions
+ * 
+ */
+
+/** \defgroup LinOp Linear Operators
+ *
+ * \brief Linear operators
+ */
+
+/** \defgroup Matrix-group Matrix
+ *
+ * \brief Matrices and utilities
+ * 
+ */
+
+/** \defgroup FBSolver-group Solver
+ *
+ * \brief Forward-backward solver classes
+ * 
+ */
+
+/** \defgroup LinSysSolver-group Linear systems solvers
+ *
+ * \brief Solvers for linear systems
+ *
+ */
+
