@@ -688,7 +688,7 @@ Matrix & Matrix::operator=(const Matrix & right) {
         } else {
             if (m_dataLength > right.m_dataLength) {
                 /* If already more memory is allocated in this object */
-                m_data = (double *) realloc(m_data, right.m_dataLength * sizeof (double));
+                m_data = static_cast<double *> ( realloc(m_data, right.m_dataLength * sizeof (double)) );
             } else {
                 /* If allocation is not adequate */
                 m_data = new double[right.m_dataLength];
