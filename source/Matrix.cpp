@@ -652,7 +652,10 @@ Matrix & Matrix::operator=(const Matrix & right) {
     if (this == &right) {// Same object?
         return *this; // Yes, so skip assignment, and just return *this.
     }
-    /* make sure shallow copies remain shallow */
+
+    /*
+     * Copy basic properties
+     */
     m_delete_data = (right.m_type != Matrix::MATRIX_SPARSE);
     m_ncols = right.m_ncols;
     m_nrows = right.m_nrows;
@@ -660,22 +663,41 @@ Matrix & Matrix::operator=(const Matrix & right) {
     m_triplet = NULL;
     m_sparse = NULL;
     m_dense = NULL;
-
+    m_transpose = right.m_transpose;
+    m_sparseStorageType = right.m_sparseStorageType;
+    m_dataLength = right.m_dataLength;
+    
+    /*
+     * Shallow copies remain shallow - this assignment operator respects shallowness.
+     */
+    if (!right.m_delete_data && right.m_type != Matrix::MATRIX_SPARSE) {
+        m_delete_data = right.m_delete_data;
+        m_data = right.m_data;        
+        return *this;
+    }
 
     /* 
      * copy m_data only if 
      * (i)  the matrix is not sparse
      * (ii) the matrix is not shallow
      */
-    m_dataLength = right.m_dataLength;
-    m_data = NULL;
-    if (right.m_type != MATRIX_SPARSE) {
-        m_data = new double[m_dataLength];
+    if (right.m_type != MATRIX_SPARSE && right.m_delete_data) {
+        /* If no data has been allocated, allocate using `new` */
+        if (m_data == NULL || m_dataLength == 0) {
+            m_data = new double[right.m_dataLength];
+        } else {
+            if (m_dataLength > right.m_dataLength) {
+                /* If already more memory is allocated in this object */
+                m_data = (double *) realloc(m_data, right.m_dataLength * sizeof (double));
+            } else {
+                /* If allocation is not adequate */
+                m_data = new double[right.m_dataLength];
+            }
+        }
         m_delete_data = true;
-    }
-    m_transpose = right.m_transpose;
-    m_sparseStorageType = right.m_sparseStorageType;
+    }        
 
+    // <editor-fold defaultstate="collapsed" desc="Sparse Matrices Only">
     if (m_type == MATRIX_SPARSE) {
         if (right.m_triplet != NULL) {
             m_triplet = cholmod_copy_triplet(right.m_triplet, Matrix::cholmod_handle());
@@ -686,14 +708,14 @@ Matrix & Matrix::operator=(const Matrix & right) {
         if (right.m_dense != NULL) {
             m_dense = cholmod_copy_dense(right.m_dense, Matrix::cholmod_handle());
         }
-    }
+    }// </editor-fold>
+
     if (Matrix::MATRIX_SPARSE != right.getType() && right.m_data != NULL) {
 #ifdef USE_LIBS
         cblas_dcopy(m_dataLength, right.m_data, 1, m_data, 1);
 #else
-        for (int i = 0; i < m_dataLength; i++) {
+        for (int i = 0; i < m_dataLength; i++)
             m_data[i] = right[i];
-        }
 #endif
     }
     return *this;
