@@ -28,6 +28,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">LibForBES
    &#160;<span id="projectnumber">0.1</span>
@@ -200,8 +201,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a42ce920a1bbf67675d4e7717f7afed35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f117287672b1edcedf1cab6edaea2b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_matrix.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a6f117287672b1edcedf1cab6edaea2b5">operator*</a> (<a class="el" href="class_matrix.html">Matrix</a> &amp;right)</td></tr>
 <tr class="separator:a6f117287672b1edcedf1cab6edaea2b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a601298445557d348dd5dad37cc925a41"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_matrix.html">Matrix</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a601298445557d348dd5dad37cc925a41">operator=</a> (const double &amp;v)</td></tr>
-<tr class="separator:a601298445557d348dd5dad37cc925a41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a127463de2d624abeaf5924c0f2fe798d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_matrix.html">Matrix</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a127463de2d624abeaf5924c0f2fe798d">operator=</a> (const <a class="el" href="class_matrix.html">Matrix</a> &amp;right)</td></tr>
 <tr class="separator:a127463de2d624abeaf5924c0f2fe798d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6910c400bcff2148875ce8132baf70e9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a6910c400bcff2148875ce8132baf70e9">operator==</a> (const <a class="el" href="class_matrix.html">Matrix</a> &amp;right) const </td></tr>
@@ -515,7 +514,7 @@ A factor for this class, namely <a class="el" href="class_matrix_factory.html" t
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Copy-constructor. This constructor will hard-copy the contents and state of the given matrix. </p>
+<p>Copy-constructor. This constructor will hard-copy the contents and state of the given matrix.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">orig</td><td></td></tr>
@@ -616,7 +615,7 @@ A factor for this class, namely <a class="el" href="class_matrix_factory.html" t
   </table>
   </dd>
 </dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000008">Todo:</a></b></dt><dd>Handle the case where \(\alpha = \gamma = 0.0\).</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000007">Todo:</a></b></dt><dd>Handle the case where \(\alpha = \gamma = 0.0\).</dd></dl>
 <dl class="bug"><dt><b><a class="el" href="bug.html#_bug000001">Bug:</a></b></dt><dd>SPARSE + LOWER_TRI is too slow! </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="shallow_example_8cpp-example.html#a3">shallow_example.cpp</a>.</dd>
 </dl>
@@ -978,7 +977,7 @@ A factor for this class, namely <a class="el" href="class_matrix_factory.html" t
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A status code. The method will return a <a class="el" href="class_for_b_e_s_utils.html#a3778b88ef7ec8a5024eec49a0d7a656d">success code</a> if the operation has succeeded and there was no need to perform any memory allocation operations.</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000009">Todo:</a></b></dt><dd>Handle the case where \(\alpha = \gamma = 0.0\). Especially the case \(\alpha=0.0\) should be trivially handled by <code>*=</code>. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000008">Todo:</a></b></dt><dd>Handle the case where \(\alpha = \gamma = 0.0\). Especially the case \(\alpha=0.0\) should be trivially handled by <code>*=</code>. </dd></dl>
 
 </div>
 </div>
@@ -1220,30 +1219,6 @@ A factor for this class, namely <a class="el" href="class_matrix_factory.html" t
 
 </div>
 </div>
-<a class="anchor" id="a601298445557d348dd5dad37cc925a41"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_matrix.html">Matrix</a>&amp; Matrix::operator= </td>
-          <td>(</td>
-          <td class="paramtype">const double &amp;&#160;</td>
-          <td class="paramname"><em>v</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Assignment operator. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">v</td><td>is the right-hand operand. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A copy of the current object. </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="a127463de2d624abeaf5924c0f2fe798d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1257,8 +1232,24 @@ A factor for this class, namely <a class="el" href="class_matrix_factory.html" t
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Assignment operator. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Assignment operator. This operator copies the values of a given <a class="el" href="class_matrix.html" title="A generic matrix API. ">Matrix</a> object <code>right</code> into the current modifiable instance. It allocates or reallocates memory (only) if necessary.</p>
+<p>Take for example the following snippet:</p>
+<div class="fragment"><div class="line"><a class="code" href="class_matrix.html">Matrix</a> A(5,6);                      <span class="comment">// Allocate a 5-by-6 dense matrix</span></div>
+<div class="line"><a class="code" href="class_matrix.html">Matrix</a> B = <a class="code" href="class_matrix_factory.html">MatrixFactory</a>(5,6,0,1);  <span class="comment">// Create random dense 5-by-6 matrix </span></div>
+<div class="line">A = B;                              <span class="comment">// No memory will be reallocated</span></div>
+</div><!-- fragment --><p>This assignment operator respects the shallowness of vectors. Take a look at the following code:</p>
+<div class="fragment"><div class="line"><a class="code" href="class_matrix.html">Matrix</a> x = <a class="code" href="class_matrix_factory.html">MatrixFactory</a>(10,1,0,1);      <span class="comment">// Create random vector of dimension 10</span></div>
+<div class="line"><a class="code" href="class_matrix.html">Matrix</a> shallow = ShallowVector(x, 2, 3); <span class="comment">// Create shallow sub-vector of x</span></div>
+<div class="line">                                         <span class="comment">// this does not allocate memory (no data are stored)</span></div>
+<div class="line"><a class="code" href="class_matrix.html">Matrix</a> y = shallow;                      <span class="comment">// y is again a shallow copy of x</span></div>
+</div><!-- fragment --><p>The above example of use is what is needed most of the time. If, however, you need to get a hard copy out of any (shallow or not) matrix, use the copy constructor. Here is an example:</p>
+<div class="fragment"><div class="line"><a class="code" href="class_matrix.html">Matrix</a> F = <a class="code" href="class_matrix_factory.html">MatrixFactory</a>(10,30,0,1);     </div>
+<div class="line"><a class="code" href="class_matrix.html">Matrix</a> F_shallow = ShallowVector(x, 2, 3); </div>
+<div class="line">               </div>
+<div class="line">                          </div>
+<div class="line"><a class="code" href="class_matrix.html">Matrix</a> F_shallow_copy(F_shallow);  <span class="comment">// hard copy of F_shallow</span></div>
+<div class="line"><a class="code" href="class_matrix.html">Matrix</a> F_copy(F);                  <span class="comment">// hard copy of F</span></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">right</td><td>is the right-hand operand. </td></tr>
   </table>
@@ -1385,7 +1376,7 @@ A factor for this class, namely <a class="el" href="class_matrix_factory.html" t
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Scalar 0.5*x'*Q*x as <code>double</code> as a double.</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000007">Todo:</a></b></dt><dd>Implement quadFromSparse in case the matrix is sparse, but there are no triplets available.</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000006">Todo:</a></b></dt><dd>Implement quadFromSparse in case the matrix is sparse, but there are no triplets available.</dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">std::invalid_argument</td><td>if the provided argument <code>x</code> is not a column-vector, or the current matrix object does not correspond to a square matrix, or <code>x</code> is of incompatible dimensions. </td></tr>
@@ -1706,7 +1697,7 @@ A factor for this class, namely <a class="el" href="class_matrix_factory.html" t
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 8 2016 00:06:54 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 11 2016 18:27:19 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

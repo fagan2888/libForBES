@@ -28,6 +28,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">LibForBES
    &#160;<span id="projectnumber">0.1</span>
@@ -252,30 +253,75 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </p>
 <p> and </p>
 <p class="formulaDsp">
-\[ b = \begin{bmatrix}0.1\\0.2\end{bmatrix}. \]
+\[ b = \begin{bmatrix}1\\1\end{bmatrix}. \]
 </p>
 <p> And \(H\), \(Q\) and \(q\) will be as in the <a href="#ineq-qp">previous example</a> where we had only inequality constraints.</p>
 <p>The only difference from the previous example is that here we need to use the function <a class="el" href="class_quad_over_affine.html" title="Function F(x) = 0.5*x&#39;*Q*x + q&#39;*x + delta(x|Z) ">QuadOverAffine</a>.</p>
-<div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keywordtype">size_t</span> p = 2;</div>
+<div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keywordtype">size_t</span> n = 4;</div>
+<div class="line"><span class="keywordtype">double</span> data_Q[] = {</div>
+<div class="line">    3,  1,  1,  0,</div>
+<div class="line">    1,  3,  0, -1,</div>
+<div class="line">    1,  0,  3,  0,</div>
+<div class="line">    0, -1,  0,  5</div>
+<div class="line">};</div>
+<div class="line"><span class="keywordtype">double</span> data_q[] = {1, 2, 3, 4};</div>
+<div class="line"><a class="code" href="class_matrix.html">Matrix</a> Q(n, n, data_Q);</div>
+<div class="line"><a class="code" href="class_matrix.html">Matrix</a> q(n, 1, data_q);</div>
+<div class="line"></div>
+<div class="line"><span class="keyword">const</span> <span class="keywordtype">size_t</span> p = 2;</div>
 <div class="line"><span class="keywordtype">double</span> data_A[] = {</div>
 <div class="line">   1, 0,</div>
 <div class="line">   1, 0,</div>
 <div class="line">   0, 1,</div>
-<div class="line">   0, 1 };</div>
+<div class="line">   0, 1</div>
+<div class="line">};</div>
 <div class="line"><span class="keywordtype">double</span> data_b[] = {</div>
-<div class="line">   0.1,</div>
-<div class="line">   0.2  };</div>
+<div class="line">    1,</div>
+<div class="line">    1</div>
+<div class="line">};</div>
 <div class="line"></div>
 <div class="line"><a class="code" href="class_matrix.html">Matrix</a> A(p, n, data_A);</div>
 <div class="line"><a class="code" href="class_matrix.html">Matrix</a> b(p, 1, data_b);</div>
 <div class="line"></div>
+<div class="line"></div>
 <div class="line"><span class="comment">// Define f and f*</span></div>
 <div class="line"><a class="code" href="class_quad_over_affine.html">QuadOverAffine</a> f(Q, q, A, b);</div>
 <div class="line"><a class="code" href="class_conjugate_function.html">ConjugateFunction</a> f_conj(f);</div>
-</div><!-- fragment --> </div></div><!-- contents -->
+<div class="line"></div>
+<div class="line"><span class="comment">// Define g and g*</span></div>
+<div class="line"><span class="keywordtype">double</span> lb = -1;</div>
+<div class="line"><span class="keywordtype">double</span> ub = +1;</div>
+<div class="line"><a class="code" href="class_ind_box.html">IndBox</a> g(lb, ub);</div>
+<div class="line"><a class="code" href="class_conjugate_function.html">ConjugateFunction</a> g_conj(g);</div>
+<div class="line"><span class="keywordtype">double</span> data_H[] = {1, 1, 1, 1};</div>
+<div class="line"><a class="code" href="class_matrix.html">Matrix</a> H(1, n, data_H);</div>
+<div class="line">H.transpose();</div>
+<div class="line">H *= -1.0;</div>
+<div class="line"><a class="code" href="class_matrix_operator.html">MatrixOperator</a> Op_Htr_minus(H);</div>
+<div class="line"></div>
+<div class="line"><a class="code" href="class_f_b_problem.html">FBProblem</a> prob(f_conj, Op_Htr_minus, g_conj);</div>
+<div class="line"><a class="code" href="class_matrix.html">Matrix</a> y0(1, 1);</div>
+<div class="line"><a class="code" href="class_f_b_stopping_relative.html">FBStoppingRelative</a> stop(1e-3);</div>
+<div class="line"><a class="code" href="class_f_b_splitting.html">FBSplitting</a> fbs(prob, y0, 0.1, stop, 1000);</div>
+<div class="line">fbs.run();</div>
+<div class="line"></div>
+<div class="line"><a class="code" href="class_matrix.html">Matrix</a> ystar = fbs.getSolution();</div>
+<div class="line"><a class="code" href="class_matrix.html">Matrix</a> H_ystar = H*ystar;</div>
+<div class="line"><span class="keywordtype">double</span> f_conj_star;</div>
+<div class="line"><a class="code" href="class_matrix.html">Matrix</a> xstar(n, 1);</div>
+<div class="line">f_conj.call(H_ystar, f_conj_star, xstar);</div>
+<div class="line"></div>
+<div class="line">std::cout &lt;&lt; fbs.getIt();</div>
+<div class="line">std::cout &lt;&lt; xstar;</div>
+</div><!-- fragment --><p>The dual optimizer was found to be \(y^\star=360.4\) in \(75\) iterations of <a class="el" href="class_f_b_splitting_fast.html" title="Fast forward-backward splitting algorithm. ">FBSplittingFast</a>.</p>
+<p>The primal optimizer, \(x^\star = \nabla f^\star(-H^\top y^\star)\) was found to be</p>
+<p class="formulaDsp">
+\[ x^\star = \begin{bmatrix}0.5\\0.5\\0.625\\0.375\end{bmatrix} \]
+</p>
+<div class="sec" id="qc-qp">Quadratically constrained QP</div> </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 8 2016 00:06:53 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 11 2016 18:27:19 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

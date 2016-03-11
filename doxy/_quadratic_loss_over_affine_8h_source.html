@@ -28,6 +28,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">LibForBES
    &#160;<span id="projectnumber">0.1</span>
@@ -132,16 +133,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="class_quadratic_loss_over_affine.html">  103</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_quadratic_loss_over_affine.html">QuadraticLossOverAffine</a> : <span class="keyword">public</span> <a class="code" href="class_function.html">Function</a> {</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keyword">using</span> <a class="code" href="class_function.html#a880fe818690c6453d3a03a72b5dd7efb">Function::callConj</a>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keyword">using</span> Function::callConj;</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    </div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <a class="code" href="class_quadratic_loss_over_affine.html#aebf5dc10bd09ae641a645e2108bc578c">QuadraticLossOverAffine</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; A, <a class="code" href="class_matrix.html">Matrix</a>&amp; b, <a class="code" href="class_matrix.html">Matrix</a>&amp; w, <a class="code" href="class_matrix.html">Matrix</a>&amp; p);</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        </div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_quadratic_loss_over_affine.html#a8e3cffb2320dc720287cca5f362c82fe">~QuadraticLossOverAffine</a>();</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    </div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_quadratic_loss_over_affine.html#a3213e4acceb865dd1a398dbb1df0a4a0">callConj</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; y, <span class="keywordtype">double</span>&amp; f_star, <a class="code" href="class_matrix.html">Matrix</a>&amp; grad);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> callConj(<a class="code" href="class_matrix.html">Matrix</a>&amp; y, <span class="keywordtype">double</span>&amp; f_star, <a class="code" href="class_matrix.html">Matrix</a>&amp; grad);</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    </div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_quadratic_loss_over_affine.html#a3213e4acceb865dd1a398dbb1df0a4a0">callConj</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; y, <span class="keywordtype">double</span>&amp; f_star);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> callConj(<a class="code" href="class_matrix.html">Matrix</a>&amp; y, <span class="keywordtype">double</span>&amp; f_star);</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_function_ontological_class.html">FunctionOntologicalClass</a> <a class="code" href="class_quadratic_loss_over_affine.html#abebda225f94bd870bf05c153fd8c5ecc">category</a>();</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
@@ -163,17 +164,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="class_quadratic_loss_over_affine_html_aebf5dc10bd09ae641a645e2108bc578c"><div class="ttname"><a href="class_quadratic_loss_over_affine.html#aebf5dc10bd09ae641a645e2108bc578c">QuadraticLossOverAffine::QuadraticLossOverAffine</a></div><div class="ttdeci">QuadraticLossOverAffine(Matrix &amp;A, Matrix &amp;b, Matrix &amp;w, Matrix &amp;p)</div><div class="ttdef"><b>Definition:</b> QuadraticLossOverAffine.cpp:24</div></div>
 <div class="ttc" id="class_quadratic_loss_over_affine_html_abebda225f94bd870bf05c153fd8c5ecc"><div class="ttname"><a href="class_quadratic_loss_over_affine.html#abebda225f94bd870bf05c153fd8c5ecc">QuadraticLossOverAffine::category</a></div><div class="ttdeci">virtual FunctionOntologicalClass category()</div><div class="ttdef"><b>Definition:</b> QuadraticLossOverAffine.cpp:94</div></div>
 <div class="ttc" id="class_matrix_html"><div class="ttname"><a href="class_matrix.html">Matrix</a></div><div class="ttdoc">A generic matrix API. </div><div class="ttdef"><b>Definition:</b> Matrix.h:67</div></div>
-<div class="ttc" id="class_quadratic_loss_over_affine_html_a3213e4acceb865dd1a398dbb1df0a4a0"><div class="ttname"><a href="class_quadratic_loss_over_affine.html#a3213e4acceb865dd1a398dbb1df0a4a0">QuadraticLossOverAffine::callConj</a></div><div class="ttdeci">virtual int callConj(Matrix &amp;y, double &amp;f_star, Matrix &amp;grad)</div><div class="ttdef"><b>Definition:</b> QuadraticLossOverAffine.cpp:66</div></div>
 <div class="ttc" id="class_function_ontological_class_html"><div class="ttname"><a href="class_function_ontological_class.html">FunctionOntologicalClass</a></div><div class="ttdoc">Ontological class referring to a ForBES function. </div><div class="ttdef"><b>Definition:</b> FunctionOntologicalClass.h:35</div></div>
-<div class="ttc" id="class_function_html"><div class="ttname"><a href="class_function.html">Function</a></div><div class="ttdoc">A ForBES function. </div><div class="ttdef"><b>Definition:</b> Function.h:68</div></div>
+<div class="ttc" id="class_function_html"><div class="ttname"><a href="class_function.html">Function</a></div><div class="ttdoc">A ForBES function. </div><div class="ttdef"><b>Definition:</b> Function.h:70</div></div>
 <div class="ttc" id="class_quadratic_loss_over_affine_html_a8e3cffb2320dc720287cca5f362c82fe"><div class="ttname"><a href="class_quadratic_loss_over_affine.html#a8e3cffb2320dc720287cca5f362c82fe">QuadraticLossOverAffine::~QuadraticLossOverAffine</a></div><div class="ttdeci">virtual ~QuadraticLossOverAffine()</div><div class="ttdef"><b>Definition:</b> QuadraticLossOverAffine.cpp:55</div></div>
 <div class="ttc" id="class_quadratic_loss_over_affine_html"><div class="ttname"><a href="class_quadratic_loss_over_affine.html">QuadraticLossOverAffine</a></div><div class="ttdoc">Quadratic loss over an affine subspace </div><div class="ttdef"><b>Definition:</b> QuadraticLossOverAffine.h:103</div></div>
-<div class="ttc" id="class_function_html_a880fe818690c6453d3a03a72b5dd7efb"><div class="ttname"><a href="class_function.html#a880fe818690c6453d3a03a72b5dd7efb">Function::callConj</a></div><div class="ttdeci">virtual int callConj(Matrix &amp;x, double &amp;f_star)</div><div class="ttdef"><b>Definition:</b> Function.cpp:44</div></div>
 <div class="ttc" id="class_factored_solver_html"><div class="ttname"><a href="class_factored_solver.html">FactoredSolver</a></div><div class="ttdoc">An abstract factorization-based solver for linear systems. </div><div class="ttdef"><b>Definition:</b> FactoredSolver.h:48</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 8 2016 00:06:53 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 11 2016 18:27:18 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

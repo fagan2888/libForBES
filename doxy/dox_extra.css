@@ -26,6 +26,13 @@ div.image img[src="applications.png"]
     width: 80%;    
 }
 
+img[src="logo.png"]
+{
+    width: 40%;
+    position: relative;
+    float: left;
+    margin: 2px 0px 4px 25px;
+}
 div.line {
     font-size: 18px;
 }

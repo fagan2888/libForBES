@@ -28,6 +28,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">LibForBES
    &#160;<span id="projectnumber">0.1</span>
@@ -108,21 +109,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="dynheader">
 Inheritance diagram for Norm:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_norm__inherit__graph.svg" width="284" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_norm__inherit__graph.svg" width="284" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for Norm:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_norm__coll__graph.svg" width="83" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_norm__coll__graph.svg" width="83" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae2a7ec58d93d943310043cd507062e83"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_norm.html#ae2a7ec58d93d943310043cd507062e83">dualNorm</a> (<a class="el" href="class_matrix.html">Matrix</a> &amp;x, double &amp;norm)</td></tr>
 <tr class="separator:ae2a7ec58d93d943310043cd507062e83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a629dee634428b8cded556d24175dd84d"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_norm.html#a629dee634428b8cded556d24175dd84d">callConj</a> (<a class="el" href="class_matrix.html">Matrix</a> &amp;x, double &amp;f_star)</td></tr>
+<tr class="memitem:a629dee634428b8cded556d24175dd84d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a629dee634428b8cded556d24175dd84d"></a>
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>callConj</b> (<a class="el" href="class_matrix.html">Matrix</a> &amp;x, double &amp;f_star)</td></tr>
 <tr class="separator:a629dee634428b8cded556d24175dd84d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55ea65cfe65435796c63312053e6a69e"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_function_ontological_class.html">FunctionOntologicalClass</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_norm.html#a55ea65cfe65435796c63312053e6a69e">category</a> ()</td></tr>
 <tr class="separator:a55ea65cfe65435796c63312053e6a69e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -135,24 +135,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab749ead2d6688a35e628dc7f38229b1e inherit pub_methods_class_function"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3b5f0e36c66604b14a324616e0bb58b inherit pub_methods_class_function"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_function.html#ad3b5f0e36c66604b14a324616e0bb58b">call</a> (<a class="el" href="class_matrix.html">Matrix</a> &amp;x, double &amp;f, <a class="el" href="class_matrix.html">Matrix</a> &amp;grad)</td></tr>
 <tr class="separator:ad3b5f0e36c66604b14a324616e0bb58b inherit pub_methods_class_function"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3db78a30a24bb027444fffe52c4fa797 inherit pub_methods_class_function"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_function.html#a3db78a30a24bb027444fffe52c4fa797">hessianProduct</a> (<a class="el" href="class_matrix.html">Matrix</a> &amp;x, <a class="el" href="class_matrix.html">Matrix</a> &amp;z, <a class="el" href="class_matrix.html">Matrix</a> &amp;Hz)</td></tr>
-<tr class="separator:a3db78a30a24bb027444fffe52c4fa797 inherit pub_methods_class_function"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f5065a00f21681a6bf617bbaf3b1181 inherit pub_methods_class_function"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_function.html#a1f5065a00f21681a6bf617bbaf3b1181">callProx</a> (<a class="el" href="class_matrix.html">Matrix</a> &amp;x, double gamma, <a class="el" href="class_matrix.html">Matrix</a> &amp;prox)</td></tr>
-<tr class="separator:a1f5065a00f21681a6bf617bbaf3b1181 inherit pub_methods_class_function"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9eb09e200fdeaa4a4e2135e4094c1973 inherit pub_methods_class_function"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_function.html#a9eb09e200fdeaa4a4e2135e4094c1973">callProx</a> (<a class="el" href="class_matrix.html">Matrix</a> &amp;x, double gamma, <a class="el" href="class_matrix.html">Matrix</a> &amp;prox, double &amp;f_at_prox)</td></tr>
-<tr class="separator:a9eb09e200fdeaa4a4e2135e4094c1973 inherit pub_methods_class_function"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae973f75fbad73c328f4d098ed5bc21aa inherit pub_methods_class_function"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_function.html#ae973f75fbad73c328f4d098ed5bc21aa">callConj</a> (<a class="el" href="class_matrix.html">Matrix</a> &amp;x, double &amp;f_star, <a class="el" href="class_matrix.html">Matrix</a> &amp;grad)</td></tr>
-<tr class="separator:ae973f75fbad73c328f4d098ed5bc21aa inherit pub_methods_class_function"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e032fef8a3585d1e31a2c7cf2fcf848 inherit pub_methods_class_function"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_function.html#a7e032fef8a3585d1e31a2c7cf2fcf848">hessianProductConj</a> (<a class="el" href="class_matrix.html">Matrix</a> &amp;x, <a class="el" href="class_matrix.html">Matrix</a> &amp;z, <a class="el" href="class_matrix.html">Matrix</a> &amp;Hz)</td></tr>
-<tr class="separator:a7e032fef8a3585d1e31a2c7cf2fcf848 inherit pub_methods_class_function"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21b671255d72ec0c58542957726a6b63 inherit pub_methods_class_function"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_function.html">Function</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_function.html#a21b671255d72ec0c58542957726a6b63">operator=</a> (const <a class="el" href="class_function.html">Function</a> &amp;right)</td></tr>
-<tr class="separator:a21b671255d72ec0c58542957726a6b63 inherit pub_methods_class_function"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_methods_class_function"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_function')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_function.html">Function</a></td></tr>
-<tr class="memitem:ae206568fd4fd4c885e3ccff76345c4e6 inherit pro_methods_class_function"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_function.html#ae206568fd4fd4c885e3ccff76345c4e6">Function</a> ()</td></tr>
-<tr class="separator:ae206568fd4fd4c885e3ccff76345c4e6 inherit pro_methods_class_function"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract norm class. </p>
@@ -185,58 +167,6 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a629dee634428b8cded556d24175dd84d"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Norm::callConj </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_matrix.html">Matrix</a> &amp;&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double &amp;&#160;</td>
-          <td class="paramname"><em>f_star</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Computes the conjugate of this function at a point <code>x</code>.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">x</td><td>The vector x where \(f^*(x)\) should be computed. </td></tr>
-    <tr><td class="paramname">f_star</td><td>the computed value \(f^*(x)\) </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>status code which is equal to <code>STATUS_OK=0</code> if the computation has succeeded without any problems, <code>STATUS_UNDEFINED_FUNCTION=2</code> if this function is not defined by the derived class and <code>STATUS_NUMERICAL_PROBLEMS=1</code> if some numerical problems prevented the computation of a reliable result. Custom implementations are allowed to return other non-zero error/warning status codes.</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000006">Todo:</a></b></dt><dd>Implement a dummy callConj which used its counterpart <a class="el" href="class_function.html#ae973f75fbad73c328f4d098ed5bc21aa">callConj(3)</a> to compute f_star and discard grad.</dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">std::invalid_argument</td><td>an <code>invalid_argument</code> exception is thrown in case the input Matrix <code>x</code> is of incompatible dimensions. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Reimplemented from <a class="el" href="class_function.html#a880fe818690c6453d3a03a72b5dd7efb">Function</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="a55ea65cfe65435796c63312053e6a69e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -326,7 +256,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 8 2016 00:06:54 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 11 2016 18:27:19 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

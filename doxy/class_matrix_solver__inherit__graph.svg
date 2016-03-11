@@ -11,8 +11,8 @@
 <polygon fill="white" stroke="none" points="-4,4 -4,-192 348,-192 348,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node"><title>Node1</title>
-<polygon fill="#bfbfbf" stroke="black" points="191.5,-112.5 191.5,-131.5 262.5,-131.5 262.5,-112.5 191.5,-112.5"/>
-<text text-anchor="middle" x="227" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">MatrixSolver</text>
+<polygon fill="#bfbfbf" stroke="black" points="142.5,-112.5 142.5,-131.5 213.5,-131.5 213.5,-112.5 142.5,-112.5"/>
+<text text-anchor="middle" x="178" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">MatrixSolver</text>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
@@ -24,34 +24,21 @@
 </g>
 <!-- Node1&#45;&gt;Node3 -->
 <g id="edge2" class="edge"><title>Node1&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M211.966,-104.431C203.378,-94.9673 192.957,-83.4827 185.941,-75.7511"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="209.597,-107.029 218.909,-112.083 214.781,-102.325 209.597,-107.029"/>
-</g>
-<!-- Node7 -->
-<g id="node7" class="node"><title>Node7</title>
-<g id="a_node7"><a xlink:href="class_least_squares.html" target="_top" xlink:title="LeastSquares">
-<polygon fill="white" stroke="black" points="237.5,-56.5 237.5,-75.5 314.5,-75.5 314.5,-56.5 237.5,-56.5"/>
-<text text-anchor="middle" x="276" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">LeastSquares</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node7 -->
-<g id="edge6" class="edge"><title>Node1&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M242.034,-104.431C250.622,-94.9673 261.043,-83.4827 268.059,-75.7511"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="239.219,-102.325 235.091,-112.083 244.403,-107.029 239.219,-102.325"/>
+<path fill="none" stroke="midnightblue" d="M178,-101.805C178,-92.9102 178,-82.7798 178,-75.7511"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="174.5,-102.083 178,-112.083 181.5,-102.083 174.5,-102.083"/>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
 <g id="a_node2"><a xlink:href="class_lin_sys_solver.html" target="_top" xlink:title="An abstract solver for linear systems. ">
-<polygon fill="white" stroke="black" points="190,-168.5 190,-187.5 264,-187.5 264,-168.5 190,-168.5"/>
-<text text-anchor="middle" x="227" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">LinSysSolver</text>
+<polygon fill="white" stroke="black" points="141,-168.5 141,-187.5 215,-187.5 215,-168.5 141,-168.5"/>
+<text text-anchor="middle" x="178" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">LinSysSolver</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node1 -->
 <g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
-<path fill="none" stroke="midnightblue" d="M227,-157.805C227,-148.91 227,-138.78 227,-131.751"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="223.5,-158.083 227,-168.083 230.5,-158.083 223.5,-158.083"/>
+<path fill="none" stroke="midnightblue" d="M178,-157.805C178,-148.91 178,-138.78 178,-131.751"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="174.5,-158.083 178,-168.083 181.5,-158.083 174.5,-158.083"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>

@@ -28,6 +28,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">LibForBES
    &#160;<span id="projectnumber">0.1</span>
@@ -133,9 +134,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    </div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_ind_prob_simplex.html#ab81003f5466780281375ed3c5c0aea3e">call</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span>&amp; f);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_ind_prob_simplex.html#ad03f7369c1a7b6623990115345363c9e">callProx</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span> gamma, <a class="code" href="class_matrix.html">Matrix</a>&amp; prox);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> callProx(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span> gamma, <a class="code" href="class_matrix.html">Matrix</a>&amp; prox);</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_ind_prob_simplex.html#ad03f7369c1a7b6623990115345363c9e">callProx</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span> gamma, <a class="code" href="class_matrix.html">Matrix</a>&amp; prox, <span class="keywordtype">double</span>&amp; f_at_prox);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> callProx(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span> gamma, <a class="code" href="class_matrix.html">Matrix</a>&amp; prox, <span class="keywordtype">double</span>&amp; f_at_prox);</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_function_ontological_class.html">FunctionOntologicalClass</a> <a class="code" href="class_ind_prob_simplex.html#ad5884b70baac3b3242b0c68af883a3b4">category</a>();</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
@@ -150,17 +151,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="class_ind_prob_simplex_html_a54e27d49604e4fac4d9c999ab7226ff5"><div class="ttname"><a href="class_ind_prob_simplex.html#a54e27d49604e4fac4d9c999ab7226ff5">IndProbSimplex::~IndProbSimplex</a></div><div class="ttdeci">virtual ~IndProbSimplex()</div><div class="ttdef"><b>Definition:</b> IndProbSimplex.cpp:31</div></div>
 <div class="ttc" id="class_ind_prob_simplex_html_ad5884b70baac3b3242b0c68af883a3b4"><div class="ttname"><a href="class_ind_prob_simplex.html#ad5884b70baac3b3242b0c68af883a3b4">IndProbSimplex::category</a></div><div class="ttdeci">virtual FunctionOntologicalClass category()</div><div class="ttdef"><b>Definition:</b> IndProbSimplex.cpp:80</div></div>
 <div class="ttc" id="class_ind_prob_simplex_html_a040db3a2c5208be88d8738953908e452"><div class="ttname"><a href="class_ind_prob_simplex.html#a040db3a2c5208be88d8738953908e452">IndProbSimplex::IndProbSimplex</a></div><div class="ttdeci">IndProbSimplex()</div><div class="ttdef"><b>Definition:</b> IndProbSimplex.cpp:27</div></div>
-<div class="ttc" id="class_ind_prob_simplex_html_ad03f7369c1a7b6623990115345363c9e"><div class="ttname"><a href="class_ind_prob_simplex.html#ad03f7369c1a7b6623990115345363c9e">IndProbSimplex::callProx</a></div><div class="ttdeci">virtual int callProx(Matrix &amp;x, double gamma, Matrix &amp;prox)</div><div class="ttdef"><b>Definition:</b> IndProbSimplex.cpp:34</div></div>
 <div class="ttc" id="class_ind_prob_simplex_html"><div class="ttname"><a href="class_ind_prob_simplex.html">IndProbSimplex</a></div><div class="ttdoc">Indicator of the probability simplex </div><div class="ttdef"><b>Definition:</b> IndProbSimplex.h:65</div></div>
 <div class="ttc" id="class_matrix_html"><div class="ttname"><a href="class_matrix.html">Matrix</a></div><div class="ttdoc">A generic matrix API. </div><div class="ttdef"><b>Definition:</b> Matrix.h:67</div></div>
 <div class="ttc" id="class_function_ontological_class_html"><div class="ttname"><a href="class_function_ontological_class.html">FunctionOntologicalClass</a></div><div class="ttdoc">Ontological class referring to a ForBES function. </div><div class="ttdef"><b>Definition:</b> FunctionOntologicalClass.h:35</div></div>
-<div class="ttc" id="class_function_html_ab749ead2d6688a35e628dc7f38229b1e"><div class="ttname"><a href="class_function.html#ab749ead2d6688a35e628dc7f38229b1e">Function::call</a></div><div class="ttdeci">virtual int call(Matrix &amp;x, double &amp;f)</div><div class="ttdef"><b>Definition:</b> Function.cpp:30</div></div>
-<div class="ttc" id="class_function_html"><div class="ttname"><a href="class_function.html">Function</a></div><div class="ttdoc">A ForBES function. </div><div class="ttdef"><b>Definition:</b> Function.h:68</div></div>
+<div class="ttc" id="class_function_html_ab749ead2d6688a35e628dc7f38229b1e"><div class="ttname"><a href="class_function.html#ab749ead2d6688a35e628dc7f38229b1e">Function::call</a></div><div class="ttdeci">virtual int call(Matrix &amp;x, double &amp;f)</div><div class="ttdef"><b>Definition:</b> Function.cpp:31</div></div>
+<div class="ttc" id="class_function_html"><div class="ttname"><a href="class_function.html">Function</a></div><div class="ttdoc">A ForBES function. </div><div class="ttdef"><b>Definition:</b> Function.h:70</div></div>
 <div class="ttc" id="class_ind_prob_simplex_html_ab81003f5466780281375ed3c5c0aea3e"><div class="ttname"><a href="class_ind_prob_simplex.html#ab81003f5466780281375ed3c5c0aea3e">IndProbSimplex::call</a></div><div class="ttdeci">virtual int call(Matrix &amp;x, double &amp;f)</div><div class="ttdef"><b>Definition:</b> IndProbSimplex.cpp:75</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 8 2016 00:06:53 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 11 2016 18:27:18 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

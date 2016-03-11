@@ -1,7 +1,6 @@
 <map id="MatrixSolver" name="MatrixSolver">
 <area shape="rect" id="node3" href="$class_factored_solver.html" title="An abstract factorization&#45;based solver for linear systems. " alt="" coords="187,155,297,181"/>
-<area shape="rect" id="node7" href="$class_least_squares.html" title="LeastSquares" alt="" coords="322,155,424,181"/>
-<area shape="rect" id="node2" href="$class_lin_sys_solver.html" title="An abstract solver for linear systems. " alt="" coords="259,5,357,32"/>
+<area shape="rect" id="node2" href="$class_lin_sys_solver.html" title="An abstract solver for linear systems. " alt="" coords="193,5,292,32"/>
 <area shape="rect" id="node4" href="$class_cholesky_factorization.html" title="Cholesky factorization and solver. " alt="" coords="5,229,157,256"/>
 <area shape="rect" id="node5" href="$class_l_d_l_factorization.html" title="LDL factorization and solver. " alt="" coords="182,229,303,256"/>
 <area shape="rect" id="node6" href="$class_s___l_d_l_factorization.html" title="LDL factorization of A&#39;A+bI. " alt="" coords="327,229,464,256"/>

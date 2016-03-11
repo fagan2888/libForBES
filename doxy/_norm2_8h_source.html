@@ -28,6 +28,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">LibForBES
    &#160;<span id="projectnumber">0.1</span>
@@ -128,7 +129,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">using</span> <a class="code" href="class_function.html#ab749ead2d6688a35e628dc7f38229b1e">Function::call</a>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">using</span> <a class="code" href="class_norm.html#a629dee634428b8cded556d24175dd84d">Norm::callConj</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">using</span> Norm::callConj;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="class_norm2.html#ad01cacf5422fff30415b742492468dd0">Norm2</a>();</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
@@ -140,9 +141,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_norm2.html#a20d5e7b19edbeb978cd8fd2b51f239f9">call</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span>&amp; f);</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_norm2.html#a9254b5ef60b477d3d2ed69dbd252774c">callProx</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span> gamma, <a class="code" href="class_matrix.html">Matrix</a>&amp; prox);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> callProx(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span> gamma, <a class="code" href="class_matrix.html">Matrix</a>&amp; prox);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_norm2.html#a9254b5ef60b477d3d2ed69dbd252774c">callProx</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span> gamma, <a class="code" href="class_matrix.html">Matrix</a>&amp; prox, <span class="keywordtype">double</span>&amp; f_at_prox);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> callProx(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span> gamma, <a class="code" href="class_matrix.html">Matrix</a>&amp; prox, <span class="keywordtype">double</span>&amp; f_at_prox);</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_function_ontological_class.html">FunctionOntologicalClass</a> <a class="code" href="class_norm2.html#a39c6c98b6277d1d3c3e0abf607186ccd">category</a>();</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
@@ -158,18 +159,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="class_norm2_html_ae70bd1b8ad309078686c4f3aabdfdd61"><div class="ttname"><a href="class_norm2.html#ae70bd1b8ad309078686c4f3aabdfdd61">Norm2::dualNorm</a></div><div class="ttdeci">virtual int dualNorm(Matrix &amp;x, double &amp;norm)</div><div class="ttdef"><b>Definition:</b> Norm2.cpp:55</div></div>
 <div class="ttc" id="class_norm2_html_ad01cacf5422fff30415b742492468dd0"><div class="ttname"><a href="class_norm2.html#ad01cacf5422fff30415b742492468dd0">Norm2::Norm2</a></div><div class="ttdeci">Norm2()</div><div class="ttdef"><b>Definition:</b> Norm2.cpp:26</div></div>
 <div class="ttc" id="class_norm2_html_a39c6c98b6277d1d3c3e0abf607186ccd"><div class="ttname"><a href="class_norm2.html#a39c6c98b6277d1d3c3e0abf607186ccd">Norm2::category</a></div><div class="ttdeci">virtual FunctionOntologicalClass category()</div><div class="ttdef"><b>Definition:</b> Norm2.cpp:100</div></div>
-<div class="ttc" id="class_norm_html_a629dee634428b8cded556d24175dd84d"><div class="ttname"><a href="class_norm.html#a629dee634428b8cded556d24175dd84d">Norm::callConj</a></div><div class="ttdeci">virtual int callConj(Matrix &amp;x, double &amp;f_star)</div><div class="ttdef"><b>Definition:</b> Norm.cpp:16</div></div>
 <div class="ttc" id="class_matrix_html"><div class="ttname"><a href="class_matrix.html">Matrix</a></div><div class="ttdoc">A generic matrix API. </div><div class="ttdef"><b>Definition:</b> Matrix.h:67</div></div>
 <div class="ttc" id="class_norm2_html_a20d5e7b19edbeb978cd8fd2b51f239f9"><div class="ttname"><a href="class_norm2.html#a20d5e7b19edbeb978cd8fd2b51f239f9">Norm2::call</a></div><div class="ttdeci">virtual int call(Matrix &amp;x, double &amp;f)</div><div class="ttdef"><b>Definition:</b> Norm2.cpp:45</div></div>
-<div class="ttc" id="class_norm2_html_a9254b5ef60b477d3d2ed69dbd252774c"><div class="ttname"><a href="class_norm2.html#a9254b5ef60b477d3d2ed69dbd252774c">Norm2::callProx</a></div><div class="ttdeci">virtual int callProx(Matrix &amp;x, double gamma, Matrix &amp;prox)</div><div class="ttdef"><b>Definition:</b> Norm2.cpp:65</div></div>
 <div class="ttc" id="class_function_ontological_class_html"><div class="ttname"><a href="class_function_ontological_class.html">FunctionOntologicalClass</a></div><div class="ttdoc">Ontological class referring to a ForBES function. </div><div class="ttdef"><b>Definition:</b> FunctionOntologicalClass.h:35</div></div>
-<div class="ttc" id="class_function_html_ab749ead2d6688a35e628dc7f38229b1e"><div class="ttname"><a href="class_function.html#ab749ead2d6688a35e628dc7f38229b1e">Function::call</a></div><div class="ttdeci">virtual int call(Matrix &amp;x, double &amp;f)</div><div class="ttdef"><b>Definition:</b> Function.cpp:30</div></div>
+<div class="ttc" id="class_function_html_ab749ead2d6688a35e628dc7f38229b1e"><div class="ttname"><a href="class_function.html#ab749ead2d6688a35e628dc7f38229b1e">Function::call</a></div><div class="ttdeci">virtual int call(Matrix &amp;x, double &amp;f)</div><div class="ttdef"><b>Definition:</b> Function.cpp:31</div></div>
 <div class="ttc" id="class_norm_html"><div class="ttname"><a href="class_norm.html">Norm</a></div><div class="ttdoc">Abstract norm class. </div><div class="ttdef"><b>Definition:</b> Norm.h:35</div></div>
 <div class="ttc" id="class_norm2_html_ac7e20b3dd61cb37517fe6d0c248a9329"><div class="ttname"><a href="class_norm2.html#ac7e20b3dd61cb37517fe6d0c248a9329">Norm2::~Norm2</a></div><div class="ttdeci">virtual ~Norm2()</div><div class="ttdef"><b>Definition:</b> Norm2.cpp:33</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 8 2016 00:06:53 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 11 2016 18:27:18 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

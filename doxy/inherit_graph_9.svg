@@ -69,19 +69,6 @@
 <path fill="none" stroke="midnightblue" d="M191.567,-48C200.326,-48 209.476,-48 218.107,-48"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="191.518,-44.5001 181.518,-48 191.518,-51.5001 191.518,-44.5001"/>
 </g>
-<!-- Node9 -->
-<g id="node9" class="node"><title>Node9</title>
-<g id="a_node9"><a xlink:href="class_least_squares.html" target="_top" xlink:title="LeastSquares">
-<polygon fill="white" stroke="black" points="221.5,-0.5 221.5,-19.5 298.5,-19.5 298.5,-0.5 221.5,-0.5"/>
-<text text-anchor="middle" x="260" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">LeastSquares</text>
-</a>
-</g>
-</g>
-<!-- Node4&#45;&gt;Node9 -->
-<g id="edge8" class="edge"><title>Node4&#45;&gt;Node9</title>
-<path fill="none" stroke="midnightblue" d="M184.803,-35.1741C199.831,-30.0753 216.82,-24.3109 230.747,-19.5859"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="183.608,-31.8835 175.262,-38.411 185.857,-38.5124 183.608,-31.8835"/>
-</g>
 <!-- Node6 -->
 <g id="node6" class="node"><title>Node6</title>
 <g id="a_node6"><a xlink:href="class_cholesky_factorization.html" target="_top" xlink:title="Cholesky factorization and solver. ">

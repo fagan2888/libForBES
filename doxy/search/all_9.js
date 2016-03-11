@@ -11,7 +11,6 @@ var searchData=
   ['last_5ferror',['last_error',['../class_c_g_solver.html#ab49e8d717752ca6f39c645dfdd909988',1,'CGSolver']]],
   ['last_5fnum_5fiter',['last_num_iter',['../class_c_g_solver.html#a16c0e5283e8737b4c70b7a927493b872',1,'CGSolver']]],
   ['ldlfactorization',['LDLFactorization',['../class_l_d_l_factorization.html',1,'LDLFactorization'],['../class_l_d_l_factorization.html#a798058b178222dc1705c508191ca53fb',1,'LDLFactorization::LDLFactorization()']]],
-  ['leastsquares',['LeastSquares',['../class_least_squares.html',1,'']]],
   ['length',['length',['../class_matrix.html#a67ff18ea6f0710847b5828361a155c12',1,'Matrix']]],
   ['lin',['lin',['../class_f_b_problem.html#a4ef6ef5767fe7412bc25edcd0ac6111c',1,'FBProblem']]],
   ['linearoperator',['LinearOperator',['../class_linear_operator.html',1,'']]],

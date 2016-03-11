@@ -28,6 +28,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">LibForBES
    &#160;<span id="projectnumber">0.1</span>
@@ -136,9 +137,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_elastic_net.html#ac94102a8acd5ce104ac66784504d6cd7">call</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span>&amp; f);</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_elastic_net.html#a78d3bf57536b11a2ede51d3c50e79522">callProx</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span> gamma, <a class="code" href="class_matrix.html">Matrix</a>&amp; prox, <span class="keywordtype">double</span>&amp; f_at_prox);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> callProx(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span> gamma, <a class="code" href="class_matrix.html">Matrix</a>&amp; prox, <span class="keywordtype">double</span>&amp; f_at_prox);</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_elastic_net.html#a78d3bf57536b11a2ede51d3c50e79522">callProx</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span> gamma, <a class="code" href="class_matrix.html">Matrix</a>&amp; prox);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> callProx(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span> gamma, <a class="code" href="class_matrix.html">Matrix</a>&amp; prox);</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    </div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_function_ontological_class.html">FunctionOntologicalClass</a> <a class="code" href="class_elastic_net.html#aa18cc251ece9100bdce04242e50a7a59">category</a>();</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
@@ -154,17 +155,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="class_elastic_net_html_ac94102a8acd5ce104ac66784504d6cd7"><div class="ttname"><a href="class_elastic_net.html#ac94102a8acd5ce104ac66784504d6cd7">ElasticNet::call</a></div><div class="ttdeci">virtual int call(Matrix &amp;x, double &amp;f)</div><div class="ttdef"><b>Definition:</b> ElasticNet.cpp:30</div></div>
 <div class="ttc" id="class_elastic_net_html_aa18cc251ece9100bdce04242e50a7a59"><div class="ttname"><a href="class_elastic_net.html#aa18cc251ece9100bdce04242e50a7a59">ElasticNet::category</a></div><div class="ttdeci">virtual FunctionOntologicalClass category()</div><div class="ttdef"><b>Definition:</b> ElasticNet.cpp:81</div></div>
 <div class="ttc" id="class_elastic_net_html"><div class="ttname"><a href="class_elastic_net.html">ElasticNet</a></div><div class="ttdoc">Elastic net regularization function. </div><div class="ttdef"><b>Definition:</b> ElasticNet.h:91</div></div>
-<div class="ttc" id="class_elastic_net_html_a78d3bf57536b11a2ede51d3c50e79522"><div class="ttname"><a href="class_elastic_net.html#a78d3bf57536b11a2ede51d3c50e79522">ElasticNet::callProx</a></div><div class="ttdeci">virtual int callProx(Matrix &amp;x, double gamma, Matrix &amp;prox, double &amp;f_at_prox)</div><div class="ttdef"><b>Definition:</b> ElasticNet.cpp:45</div></div>
 <div class="ttc" id="class_elastic_net_html_ae23d3f237bd1d1ca81d470483409293d"><div class="ttname"><a href="class_elastic_net.html#ae23d3f237bd1d1ca81d470483409293d">ElasticNet::ElasticNet</a></div><div class="ttdeci">ElasticNet(double lambda, double mu)</div><div class="ttdef"><b>Definition:</b> ElasticNet.cpp:24</div></div>
 <div class="ttc" id="class_elastic_net_html_a18a2e75bd7a5277919ab26d8b2b101b8"><div class="ttname"><a href="class_elastic_net.html#a18a2e75bd7a5277919ab26d8b2b101b8">ElasticNet::~ElasticNet</a></div><div class="ttdeci">virtual ~ElasticNet()</div><div class="ttdef"><b>Definition:</b> ElasticNet.cpp:27</div></div>
 <div class="ttc" id="class_matrix_html"><div class="ttname"><a href="class_matrix.html">Matrix</a></div><div class="ttdoc">A generic matrix API. </div><div class="ttdef"><b>Definition:</b> Matrix.h:67</div></div>
 <div class="ttc" id="class_function_ontological_class_html"><div class="ttname"><a href="class_function_ontological_class.html">FunctionOntologicalClass</a></div><div class="ttdoc">Ontological class referring to a ForBES function. </div><div class="ttdef"><b>Definition:</b> FunctionOntologicalClass.h:35</div></div>
-<div class="ttc" id="class_function_html_ab749ead2d6688a35e628dc7f38229b1e"><div class="ttname"><a href="class_function.html#ab749ead2d6688a35e628dc7f38229b1e">Function::call</a></div><div class="ttdeci">virtual int call(Matrix &amp;x, double &amp;f)</div><div class="ttdef"><b>Definition:</b> Function.cpp:30</div></div>
-<div class="ttc" id="class_function_html"><div class="ttname"><a href="class_function.html">Function</a></div><div class="ttdoc">A ForBES function. </div><div class="ttdef"><b>Definition:</b> Function.h:68</div></div>
+<div class="ttc" id="class_function_html_ab749ead2d6688a35e628dc7f38229b1e"><div class="ttname"><a href="class_function.html#ab749ead2d6688a35e628dc7f38229b1e">Function::call</a></div><div class="ttdeci">virtual int call(Matrix &amp;x, double &amp;f)</div><div class="ttdef"><b>Definition:</b> Function.cpp:31</div></div>
+<div class="ttc" id="class_function_html"><div class="ttname"><a href="class_function.html">Function</a></div><div class="ttdoc">A ForBES function. </div><div class="ttdef"><b>Definition:</b> Function.h:70</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 8 2016 00:06:53 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 11 2016 18:27:18 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
