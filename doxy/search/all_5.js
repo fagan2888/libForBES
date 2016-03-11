@@ -13,7 +13,7 @@ var searchData=
   ['fbstopping',['FBStopping',['../class_f_b_stopping.html',1,'FBStopping'],['../class_f_b_stopping.html#a5ce48135e024b486e916da54cd50018a',1,'FBStopping::FBStopping()']]],
   ['fbstoppingrelative',['FBStoppingRelative',['../class_f_b_stopping_relative.html',1,'']]],
   ['forbesutils',['ForBESUtils',['../class_for_b_e_s_utils.html',1,'']]],
-  ['function',['Function',['../class_function.html',1,'Function'],['../class_function_ontology_registry.html#a7bd72f4107665765dd90f66886fd45d1',1,'FunctionOntologyRegistry::function()']]],
+  ['function',['Function',['../class_function.html',1,'Function'],['../class_function.html#ae206568fd4fd4c885e3ccff76345c4e6',1,'Function::Function()'],['../class_function_ontology_registry.html#a7bd72f4107665765dd90f66886fd45d1',1,'FunctionOntologyRegistry::function()']]],
   ['functionontologicalclass',['FunctionOntologicalClass',['../class_function_ontological_class.html',1,'FunctionOntologicalClass'],['../class_function_ontological_class.html#ae1d43eb464dc084783f542a62a745920',1,'FunctionOntologicalClass::FunctionOntologicalClass(std::string name)'],['../class_function_ontological_class.html#a13916d1913d01e9dbf53cdd0b3eb0dba',1,'FunctionOntologicalClass::FunctionOntologicalClass(bool does_define_conjugate, bool does_define_conjugate_grad, bool does_define_f, bool does_define_grad, bool does_define_prox, bool does_define_hessian, bool does_define_hessian_conj, std::string name, const FunctionOntologicalClass &amp;super)']]],
   ['functionontologyregistry',['FunctionOntologyRegistry',['../class_function_ontology_registry.html',1,'']]],
   ['functions',['Functions',['../group___functions.html',1,'']]]

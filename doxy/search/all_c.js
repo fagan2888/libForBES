@@ -12,7 +12,7 @@ var searchData=
   ['operator_2d',['operator-',['../class_matrix.html#a2d6e772e2faa6080fadd50c9a2d2b130',1,'Matrix']]],
   ['operator_2d_3d',['operator-=',['../class_matrix.html#a42ce920a1bbf67675d4e7717f7afed35',1,'Matrix']]],
   ['operator_3c_3c',['operator&lt;&lt;',['../class_matrix.html#ae3f78084a0dd9b26068bf0e2878406ad',1,'Matrix']]],
-  ['operator_3d',['operator=',['../class_matrix.html#a127463de2d624abeaf5924c0f2fe798d',1,'Matrix']]],
+  ['operator_3d',['operator=',['../class_function.html#a21b671255d72ec0c58542957726a6b63',1,'Function::operator=()'],['../class_matrix.html#a127463de2d624abeaf5924c0f2fe798d',1,'Matrix::operator=()']]],
   ['operator_3d_3d',['operator==',['../class_matrix.html#a6910c400bcff2148875ce8132baf70e9',1,'Matrix']]],
   ['operator_5b_5d',['operator[]',['../class_matrix.html#a60596b6608bb8a51a2d79afcaf092849',1,'Matrix']]],
   ['opgradient',['OpGradient',['../class_op_gradient.html',1,'']]],

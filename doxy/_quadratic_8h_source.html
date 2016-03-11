@@ -130,8 +130,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="class_quadratic.html">   92</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_quadratic.html">Quadratic</a> : <span class="keyword">public</span> <a class="code" href="class_function.html">Function</a> {</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">using</span> Function::callConj;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">using</span> Function::callProx;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">using</span> <a class="code" href="class_function.html#a880fe818690c6453d3a03a72b5dd7efb">Function::callConj</a>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">using</span> <a class="code" href="class_function.html#a1f5065a00f21681a6bf617bbaf3b1181">Function::callProx</a>;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <a class="code" href="class_quadratic.html#a8b9ace328947ad3202a1fffe9932b151">Quadratic</a>();</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
@@ -140,7 +140,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <a class="code" href="class_quadratic.html#a8b9ace328947ad3202a1fffe9932b151">Quadratic</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; Q, <a class="code" href="class_matrix.html">Matrix</a>&amp; q); <span class="comment">// both Q and q    </span></div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> callProx(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span> gamma, <a class="code" href="class_matrix.html">Matrix</a>&amp; prox);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_quadratic.html#a7c4df69e8265f4e3ed7d0bae26c64aa0">callProx</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span> gamma, <a class="code" href="class_matrix.html">Matrix</a>&amp; prox);</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_quadratic.html#aa13fc6c074a1b435e196af1e11d51e78">~Quadratic</a>();</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
@@ -156,9 +156,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_quadratic.html#a32b19ebc9aca98bf5c28ba0b49f08997">hessianProduct</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <a class="code" href="class_matrix.html">Matrix</a>&amp; z, <a class="code" href="class_matrix.html">Matrix</a>&amp; Hz);</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> callConj(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span>&amp; f_star);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_quadratic.html#a3241f55b4e62b6db2ea0c2d63e967973">callConj</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span>&amp; f_star);</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> callConj(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span>&amp; f_star, <a class="code" href="class_matrix.html">Matrix</a>&amp; grad);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_quadratic.html#a3241f55b4e62b6db2ea0c2d63e967973">callConj</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span>&amp; f_star, <a class="code" href="class_matrix.html">Matrix</a>&amp; grad);</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="keyword">private</span>:</div>
@@ -177,20 +177,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="preprocessor"></span></div>
 <div class="ttc" id="class_quadratic_html_a8b9ace328947ad3202a1fffe9932b151"><div class="ttname"><a href="class_quadratic.html#a8b9ace328947ad3202a1fffe9932b151">Quadratic::Quadratic</a></div><div class="ttdeci">Quadratic()</div><div class="ttdef"><b>Definition:</b> Quadratic.cpp:27</div></div>
 <div class="ttc" id="class_quadratic_html_a138d8b0e42a27a4ed4b1c1a6796baffc"><div class="ttname"><a href="class_quadratic.html#a138d8b0e42a27a4ed4b1c1a6796baffc">Quadratic::setq</a></div><div class="ttdeci">void setq(Matrix &amp;q)</div><div class="ttdef"><b>Definition:</b> Quadratic.cpp:69</div></div>
+<div class="ttc" id="class_quadratic_html_a7c4df69e8265f4e3ed7d0bae26c64aa0"><div class="ttname"><a href="class_quadratic.html#a7c4df69e8265f4e3ed7d0bae26c64aa0">Quadratic::callProx</a></div><div class="ttdeci">virtual int callProx(Matrix &amp;x, double gamma, Matrix &amp;prox)</div><div class="ttdef"><b>Definition:</b> Quadratic.cpp:159</div></div>
 <div class="ttc" id="class_quadratic_html_a4ae8f189eb3db4409fcdb929403dc8c2"><div class="ttname"><a href="class_quadratic.html#a4ae8f189eb3db4409fcdb929403dc8c2">Quadratic::setQ</a></div><div class="ttdeci">void setQ(Matrix &amp;Q)</div><div class="ttdef"><b>Definition:</b> Quadratic.cpp:63</div></div>
 <div class="ttc" id="class_quadratic_html"><div class="ttname"><a href="class_quadratic.html">Quadratic</a></div><div class="ttdoc">A quadratic function F(x) = 0.5 * x&#39;*Q*x + q&#39;*x </div><div class="ttdef"><b>Definition:</b> Quadratic.h:92</div></div>
+<div class="ttc" id="class_quadratic_html_a3241f55b4e62b6db2ea0c2d63e967973"><div class="ttname"><a href="class_quadratic.html#a3241f55b4e62b6db2ea0c2d63e967973">Quadratic::callConj</a></div><div class="ttdeci">virtual int callConj(Matrix &amp;x, double &amp;f_star)</div><div class="ttdef"><b>Definition:</b> Quadratic.cpp:106</div></div>
 <div class="ttc" id="class_matrix_html"><div class="ttname"><a href="class_matrix.html">Matrix</a></div><div class="ttdoc">A generic matrix API. </div><div class="ttdef"><b>Definition:</b> Matrix.h:67</div></div>
 <div class="ttc" id="class_quadratic_html_aafa52419a085b956a058c543b7fef6d4"><div class="ttname"><a href="class_quadratic.html#aafa52419a085b956a058c543b7fef6d4">Quadratic::call</a></div><div class="ttdeci">virtual int call(Matrix &amp;x, double &amp;f)</div><div class="ttdef"><b>Definition:</b> Quadratic.cpp:74</div></div>
 <div class="ttc" id="class_quadratic_html_a5c2d62899f51d92be0164ce777459daf"><div class="ttname"><a href="class_quadratic.html#a5c2d62899f51d92be0164ce777459daf">Quadratic::category</a></div><div class="ttdeci">virtual FunctionOntologicalClass category()</div><div class="ttdef"><b>Definition:</b> Quadratic.cpp:155</div></div>
+<div class="ttc" id="class_function_html_a1f5065a00f21681a6bf617bbaf3b1181"><div class="ttname"><a href="class_function.html#a1f5065a00f21681a6bf617bbaf3b1181">Function::callProx</a></div><div class="ttdeci">virtual int callProx(Matrix &amp;x, double gamma, Matrix &amp;prox)</div><div class="ttdef"><b>Definition:</b> Function.cpp:91</div></div>
 <div class="ttc" id="class_function_ontological_class_html"><div class="ttname"><a href="class_function_ontological_class.html">FunctionOntologicalClass</a></div><div class="ttdoc">Ontological class referring to a ForBES function. </div><div class="ttdef"><b>Definition:</b> FunctionOntologicalClass.h:35</div></div>
 <div class="ttc" id="class_quadratic_html_aa13fc6c074a1b435e196af1e11d51e78"><div class="ttname"><a href="class_quadratic.html#aa13fc6c074a1b435e196af1e11d51e78">Quadratic::~Quadratic</a></div><div class="ttdeci">virtual ~Quadratic()</div><div class="ttdef"><b>Definition:</b> Quadratic.cpp:54</div></div>
 <div class="ttc" id="class_function_html"><div class="ttname"><a href="class_function.html">Function</a></div><div class="ttdoc">A ForBES function. </div><div class="ttdef"><b>Definition:</b> Function.h:70</div></div>
 <div class="ttc" id="class_quadratic_html_a32b19ebc9aca98bf5c28ba0b49f08997"><div class="ttname"><a href="class_quadratic.html#a32b19ebc9aca98bf5c28ba0b49f08997">Quadratic::hessianProduct</a></div><div class="ttdeci">virtual int hessianProduct(Matrix &amp;x, Matrix &amp;z, Matrix &amp;Hz)</div><div class="ttdef"><b>Definition:</b> Quadratic.cpp:101</div></div>
+<div class="ttc" id="class_function_html_a880fe818690c6453d3a03a72b5dd7efb"><div class="ttname"><a href="class_function.html#a880fe818690c6453d3a03a72b5dd7efb">Function::callConj</a></div><div class="ttdeci">virtual int callConj(Matrix &amp;x, double &amp;f_star)</div><div class="ttdef"><b>Definition:</b> Function.cpp:65</div></div>
 <div class="ttc" id="class_factored_solver_html"><div class="ttname"><a href="class_factored_solver.html">FactoredSolver</a></div><div class="ttdoc">An abstract factorization-based solver for linear systems. </div><div class="ttdef"><b>Definition:</b> FactoredSolver.h:48</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 11 2016 18:27:18 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 11 2016 18:33:34 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

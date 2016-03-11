@@ -96,6 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="class_function-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Function Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span><div class="ingroups"><a class="el" href="group___functions.html">Functions</a></div></div>  </div>
@@ -122,6 +123,25 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab749ead2d6688a35e628dc7f38229b1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3b5f0e36c66604b14a324616e0bb58b"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_function.html#ad3b5f0e36c66604b14a324616e0bb58b">call</a> (<a class="el" href="class_matrix.html">Matrix</a> &amp;x, double &amp;f, <a class="el" href="class_matrix.html">Matrix</a> &amp;grad)</td></tr>
 <tr class="separator:ad3b5f0e36c66604b14a324616e0bb58b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3db78a30a24bb027444fffe52c4fa797"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_function.html#a3db78a30a24bb027444fffe52c4fa797">hessianProduct</a> (<a class="el" href="class_matrix.html">Matrix</a> &amp;x, <a class="el" href="class_matrix.html">Matrix</a> &amp;z, <a class="el" href="class_matrix.html">Matrix</a> &amp;Hz)</td></tr>
+<tr class="separator:a3db78a30a24bb027444fffe52c4fa797"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f5065a00f21681a6bf617bbaf3b1181"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_function.html#a1f5065a00f21681a6bf617bbaf3b1181">callProx</a> (<a class="el" href="class_matrix.html">Matrix</a> &amp;x, double gamma, <a class="el" href="class_matrix.html">Matrix</a> &amp;prox)</td></tr>
+<tr class="separator:a1f5065a00f21681a6bf617bbaf3b1181"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9eb09e200fdeaa4a4e2135e4094c1973"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_function.html#a9eb09e200fdeaa4a4e2135e4094c1973">callProx</a> (<a class="el" href="class_matrix.html">Matrix</a> &amp;x, double gamma, <a class="el" href="class_matrix.html">Matrix</a> &amp;prox, double &amp;f_at_prox)</td></tr>
+<tr class="separator:a9eb09e200fdeaa4a4e2135e4094c1973"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a880fe818690c6453d3a03a72b5dd7efb"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_function.html#a880fe818690c6453d3a03a72b5dd7efb">callConj</a> (<a class="el" href="class_matrix.html">Matrix</a> &amp;x, double &amp;f_star)</td></tr>
+<tr class="separator:a880fe818690c6453d3a03a72b5dd7efb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae973f75fbad73c328f4d098ed5bc21aa"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_function.html#ae973f75fbad73c328f4d098ed5bc21aa">callConj</a> (<a class="el" href="class_matrix.html">Matrix</a> &amp;x, double &amp;f_star, <a class="el" href="class_matrix.html">Matrix</a> &amp;grad)</td></tr>
+<tr class="separator:ae973f75fbad73c328f4d098ed5bc21aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e032fef8a3585d1e31a2c7cf2fcf848"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_function.html#a7e032fef8a3585d1e31a2c7cf2fcf848">hessianProductConj</a> (<a class="el" href="class_matrix.html">Matrix</a> &amp;x, <a class="el" href="class_matrix.html">Matrix</a> &amp;z, <a class="el" href="class_matrix.html">Matrix</a> &amp;Hz)</td></tr>
+<tr class="separator:a7e032fef8a3585d1e31a2c7cf2fcf848"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21b671255d72ec0c58542957726a6b63"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_function.html">Function</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_function.html#a21b671255d72ec0c58542957726a6b63">operator=</a> (const <a class="el" href="class_function.html">Function</a> &amp;right)</td></tr>
+<tr class="separator:a21b671255d72ec0c58542957726a6b63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:ae206568fd4fd4c885e3ccff76345c4e6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_function.html#ae206568fd4fd4c885e3ccff76345c4e6">Function</a> ()</td></tr>
+<tr class="separator:ae206568fd4fd4c885e3ccff76345c4e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A ForBES function. </p>
@@ -165,6 +185,30 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Destructor for this class. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae206568fd4fd4c885e3ccff76345c4e6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Function::Function </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Default constructor </p>
 
 </div>
 </div>
@@ -278,6 +322,238 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a880fe818690c6453d3a03a72b5dd7efb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Function::callConj </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_matrix.html">Matrix</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>f_star</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Computes the conjugate of this function at a point <code>x</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The vector x where \(f^*(x)\) should be computed. </td></tr>
+    <tr><td class="paramname">f_star</td><td>the computed value \(f^*(x)\) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>status code which is equal to <code>STATUS_OK=0</code> if the computation has succeeded without any problems, <code>STATUS_UNDEFINED_FUNCTION=2</code> if this function is not defined by the derived class and <code>STATUS_NUMERICAL_PROBLEMS=1</code> if some numerical problems prevented the computation of a reliable result. Custom implementations are allowed to return other non-zero error/warning status codes.</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000006">Todo:</a></b></dt><dd>Implement a dummy callConj which used its counterpart <a class="el" href="class_function.html#ae973f75fbad73c328f4d098ed5bc21aa">callConj(3)</a> to compute f_star and discard grad.</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>an <code>invalid_argument</code> exception is thrown in case the input Matrix <code>x</code> is of incompatible dimensions. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="class_quadratic.html#a3241f55b4e62b6db2ea0c2d63e967973">Quadratic</a>, <a class="el" href="class_quadratic_loss_over_affine.html#a1a72ac9afbc7d1abcf9d7fc6b79524ec">QuadraticLossOverAffine</a>, <a class="el" href="class_ind_box.html#a9f048b02ea6dff91dc0c070b3ec29b46">IndBox</a>, <a class="el" href="class_ind_pos.html#afd35b68463f4878eadff6e4537bd1cb0">IndPos</a>, <a class="el" href="class_quad_over_affine.html#a9674792c9a5856b0d126bc892c28b511">QuadOverAffine</a>, <a class="el" href="class_conjugate_function.html#ac37a1a5e51755b92f3ee3b423feb24b5">ConjugateFunction</a>, <a class="el" href="class_separable_sum.html#ad9522e70b210e46fe627ebad4b241878">SeparableSum</a>, <a class="el" href="class_quadratic_loss.html#afad8ff70b6598e50f0daf42b1f8ad075">QuadraticLoss</a>, <a class="el" href="class_norm.html#a629dee634428b8cded556d24175dd84d">Norm</a>, and <a class="el" href="class_l_q_cost.html#aec55a46a56c49d19dddbc533c219dd8d">LQCost</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae973f75fbad73c328f4d098ed5bc21aa"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Function::callConj </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_matrix.html">Matrix</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>f_star</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_matrix.html">Matrix</a> &amp;&#160;</td>
+          <td class="paramname"><em>grad</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Computes the conjugate of this function at a point <code>x</code> as well as the corresponding gradient.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The vector x where \(f^*(x)\) should be computed. </td></tr>
+    <tr><td class="paramname">f_star</td><td>the computed value \(f^*(x)\) </td></tr>
+    <tr><td class="paramname">grad</td><td>the gradient of the conjugate function \(\nabla f^*(x)\) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>status code which is equal to <code>STATUS_OK=0</code> if the computation has succeeded without any problems, <code>STATUS_UNDEFINED_FUNCTION=2</code> if this function is not defined by the derived class and <code>STATUS_NUMERICAL_PROBLEMS=1</code> if some numerical problems prevented the computation of a reliable result. Custom implementations are allowed to return other non-zero error/warning status codes.</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>an <code>invalid_argument</code> exception is thrown in case the input Matrix <code>x</code> or <code>grad</code> is of incompatible dimensions. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="class_quadratic.html#a7c04d75bfb4570392f225b5170df8f7a">Quadratic</a>, <a class="el" href="class_quadratic_loss_over_affine.html#a3213e4acceb865dd1a398dbb1df0a4a0">QuadraticLossOverAffine</a>, <a class="el" href="class_quad_over_affine.html#aab8433f292e5c8cc5845607bee6aae09">QuadOverAffine</a>, <a class="el" href="class_quadratic_loss.html#a55a8ec5bc7e7c367d3aa32f973967371">QuadraticLoss</a>, <a class="el" href="class_conjugate_function.html#a1b73e5aea1c4a36f2a614d84127a43e7">ConjugateFunction</a>, and <a class="el" href="class_l_q_cost.html#a652d5f1f1ea25582fd976aebd22f2b8d">LQCost</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1f5065a00f21681a6bf617bbaf3b1181"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Function::callProx </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_matrix.html">Matrix</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>gamma</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_matrix.html">Matrix</a> &amp;&#160;</td>
+          <td class="paramname"><em>prox</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Computes the proximal of this function at a point <code>x</code> with parameter <code>gamma</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The vector x where \(\mathrm{prox}_{\gamma f}(x)\) should be computed. </td></tr>
+    <tr><td class="paramname">gamma</td><td>The parameter \(\gamma\) of \(\mathrm{prox}_{\gamma f}\) </td></tr>
+    <tr><td class="paramname">prox</td><td>The result of this operation </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>status code which is equal to <code>STATUS_OK=0</code> if the computation has succeeded without any problems, <code>STATUS_UNDEFINED_FUNCTION=2</code> if this function is not defined by the derived class and <code>STATUS_NUMERICAL_PROBLEMS=1</code> if some numerical problems prevented the computation of a reliable result. Custom implementations are allowed to return other non-zero error/warning status codes.</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>an <code>invalid_argument</code> exception is thrown in case the function argument <code>x</code> and/or <code>prox</code> are of incompatible dimensions. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="class_conjugate_function.html#adb4ccb957a161ed1f984daae43b03685">ConjugateFunction</a>, <a class="el" href="class_sum_of_norm2.html#aadd7b3fe19e68294d8b5f8d44c8f33b9">SumOfNorm2</a>, <a class="el" href="class_separable_sum.html#a2a9e4f43d3e544648b74e8e7305bd00d">SeparableSum</a>, <a class="el" href="class_ind_pos.html#aa27bc2a7e94e1190a2104ee45ecdc7ef">IndPos</a>, <a class="el" href="class_quadratic.html#a7c4df69e8265f4e3ed7d0bae26c64aa0">Quadratic</a>, <a class="el" href="class_elastic_net.html#a73c244901cbe7604ca7383f2c68a76a8">ElasticNet</a>, <a class="el" href="class_ind_box.html#a8de994b797751331d2889a0c1fc77344">IndBox</a>, <a class="el" href="class_norm1.html#ac79f87545fca97935d56b8387ad6d40c">Norm1</a>, <a class="el" href="class_norm2.html#a9254b5ef60b477d3d2ed69dbd252774c">Norm2</a>, <a class="el" href="class_ind_ball2.html#ab12caa149a7154442b421799cf5cadcb">IndBall2</a>, <a class="el" href="class_hinge_loss.html#a6e8bd506d893ddd19f5d30618933a2d6">HingeLoss</a>, <a class="el" href="class_ind_prob_simplex.html#ad03f7369c1a7b6623990115345363c9e">IndProbSimplex</a>, and <a class="el" href="class_ind_s_o_c.html#a8418db47f6066257f94b909ba4a6aa33">IndSOC</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9eb09e200fdeaa4a4e2135e4094c1973"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Function::callProx </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_matrix.html">Matrix</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>gamma</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_matrix.html">Matrix</a> &amp;&#160;</td>
+          <td class="paramname"><em>prox</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>f_at_prox</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The vector x where \(\mathrm{prox}_{\gamma f}(x)\) should be computed. </td></tr>
+    <tr><td class="paramname">gamma</td><td>The parameter \(\gamma\) of \(\mathrm{prox}_{\gamma f}\) </td></tr>
+    <tr><td class="paramname">prox</td><td>The result of this operation </td></tr>
+    <tr><td class="paramname">f_at_prox</td><td>Value of this function at the proximal operator \(f(\mathrm{prox}_{\gamma f}(x))\)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>status code which is equal to <code>STATUS_OK=0</code> if the computation has succeeded without any problems, <code>STATUS_UNDEFINED_FUNCTION=2</code> if this function is not defined by the derived class and <code>STATUS_NUMERICAL_PROBLEMS=1</code> if some numerical problems prevented the computation of a reliable result. Custom implementations are allowed to return other non-zero error/warning status codes.</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>an <code>invalid_argument</code> exception is thrown in case the function argument <code>x</code> and/or <code>prox</code> are of incompatible dimensions. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="class_conjugate_function.html#a7df5665cedb2f8e424231558cf8be8dc">ConjugateFunction</a>, <a class="el" href="class_sum_of_norm2.html#aa26685432b509834da0385ecae8defaa">SumOfNorm2</a>, <a class="el" href="class_separable_sum.html#a902af804d8870bc48687e9eb90760e9f">SeparableSum</a>, <a class="el" href="class_ind_pos.html#a2d1c5c26330e179858dbe3454be29e06">IndPos</a>, <a class="el" href="class_elastic_net.html#a78d3bf57536b11a2ede51d3c50e79522">ElasticNet</a>, <a class="el" href="class_ind_box.html#a2c58f27b458b1e8f4258890e615cd2c3">IndBox</a>, <a class="el" href="class_norm1.html#a998e8f21d6d4cda43fb9d44d48a6304e">Norm1</a>, <a class="el" href="class_norm2.html#a52bb3acd9a641ebbb5515d8337ed424c">Norm2</a>, <a class="el" href="class_ind_ball2.html#adc200017c8fca99f8bb31b95776de09e">IndBall2</a>, <a class="el" href="class_hinge_loss.html#a569d9a59082e3275c205eba970d06366">HingeLoss</a>, <a class="el" href="class_ind_prob_simplex.html#a923df7c1491934d63c3ee8af8af7ee0f">IndProbSimplex</a>, and <a class="el" href="class_ind_s_o_c.html#a23539f67e81e2ff7f93e8232de3aedcd">IndSOC</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a3a4d0cbc4596280ac32c2593dfd3b9be"></a>
 <div class="memitem">
 <div class="memproto">
@@ -315,6 +591,150 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a3db78a30a24bb027444fffe52c4fa797"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Function::hessianProduct </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_matrix.html">Matrix</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_matrix.html">Matrix</a> &amp;&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_matrix.html">Matrix</a> &amp;&#160;</td>
+          <td class="paramname"><em>Hz</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Method <code>hessianProduct</code> computes the inner product \(\langle \nabla^2 f(x), z\rangle,\) between a vector \(z\) and the Hessian of \(f\) computed at a point \(x\).</p>
+<p>If this method is not implemented in the derived class of <a class="el" href="class_function.html" title="A ForBES function. ">Function</a>, then an approximation is return based on the finite difference scheme</p>
+<p class="formulaDsp">
+\[ \langle \nabla^2 f(x), z\rangle \simeq \frac{1}{\epsilon}[\nabla f(x+\epsilon z) - \nabla f(x)], \]
+</p>
+<p>where \(\epsilon=10^{-8}\) (a small tolerance).</p>
+<p>If the gradient of \(f\) is not available, or it fails to be computed, then, an appropriate status code will be returned.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>point where the Hessian \(\nabla^2 f(x)\) is computed </td></tr>
+    <tr><td class="paramname">z</td><td>vector with which the product is computed </td></tr>
+    <tr><td class="paramname">Hz</td><td>The result</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>status code which is equal to <code>STATUS_OK=0</code> if the computation has succeeded without any problems, <code>STATUS_UNDEFINED_FUNCTION=2</code> if this function is not defined by the derived class and <code>STATUS_NUMERICAL_PROBLEMS=1</code> if some numerical problems prevented the computation of a reliable result. Custom implementations are allowed to return other non-zero error/warning status codes. </dd></dl>
+
+<p>Reimplemented in <a class="el" href="class_quadratic.html#a32b19ebc9aca98bf5c28ba0b49f08997">Quadratic</a>, <a class="el" href="class_quadratic_loss.html#ab3f74435403f845105dd4549a5392632">QuadraticLoss</a>, and <a class="el" href="class_log_logistic_loss.html#a14e14bf7302f090d0107260d361b6e69">LogLogisticLoss</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7e032fef8a3585d1e31a2c7cf2fcf848"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Function::hessianProductConj </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_matrix.html">Matrix</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_matrix.html">Matrix</a> &amp;&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_matrix.html">Matrix</a> &amp;&#160;</td>
+          <td class="paramname"><em>Hz</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Method <code>hessianProduct</code> computes the inner product \(\langle \nabla^2 f^*(x), z\rangle,\) between a vector \(z\) and the Hessian of \(f^*\) computed at a point \(x\).</p>
+<p>If this method is not implemented in the derived class of <a class="el" href="class_function.html" title="A ForBES function. ">Function</a>, then an approximation is return based on the finite difference scheme</p>
+<p class="formulaDsp">
+\[ \langle \nabla^2 f(x), z\rangle \simeq \frac{1}{\epsilon}[\nabla f^*(x+\epsilon z) - \nabla f^*(x)], \]
+</p>
+<p>where \(\epsilon=10^{-8}\) (a small tolerance).</p>
+<p>If the gradient of \(f^*\) is not available, or it fails to be computed, then, an appropriate status code will be returned.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>point where the conjugate Hessian \(\nabla^2 f^*(x)\) is computed </td></tr>
+    <tr><td class="paramname">z</td><td>vector with which the product is computed </td></tr>
+    <tr><td class="paramname">Hz</td><td>The result</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>status code which is equal to <code>STATUS_OK=0</code> if the computation has succeeded without any problems, <code>STATUS_UNDEFINED_FUNCTION=2</code> if this function is not defined by the derived class and <code>STATUS_NUMERICAL_PROBLEMS=1</code> if some numerical problems prevented the computation of a reliable result. Custom implementations are allowed to return other non-zero error/warning status codes. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a21b671255d72ec0c58542957726a6b63"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_function.html">Function</a> &amp; Function::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_function.html">Function</a> &amp;&#160;</td>
+          <td class="paramname"><em>right</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Assignment operator throws a logic_error whenever it is invoked. The assignment operator is not supported and is not allowed on such objects.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">right</td><td>right-hand side </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Does not return anything </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">logic_error</td><td>when it is invoked </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>source/<a class="el" href="_function_8h_source.html">Function.h</a></li>
 <li>source/Function.cpp</li>
@@ -322,7 +742,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 11 2016 18:27:19 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 11 2016 18:33:34 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

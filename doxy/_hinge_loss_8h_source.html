@@ -138,9 +138,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_hinge_loss.html#ab58c260c1b2bc831016358fb84701aef">call</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span>&amp; f);</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> callProx(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span> gamma, <a class="code" href="class_matrix.html">Matrix</a>&amp; prox);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_hinge_loss.html#a6e8bd506d893ddd19f5d30618933a2d6">callProx</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span> gamma, <a class="code" href="class_matrix.html">Matrix</a>&amp; prox);</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> callProx(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span> gamma, <a class="code" href="class_matrix.html">Matrix</a>&amp; prox, <span class="keywordtype">double</span>&amp; f_at_prox);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_hinge_loss.html#a6e8bd506d893ddd19f5d30618933a2d6">callProx</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span> gamma, <a class="code" href="class_matrix.html">Matrix</a>&amp; prox, <span class="keywordtype">double</span>&amp; f_at_prox);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_function_ontological_class.html">FunctionOntologicalClass</a> <a class="code" href="class_hinge_loss.html#a8ff682c31816c21ccf989ffaa38eeb2f">category</a>();</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
@@ -156,6 +156,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor"></span></div>
 <div class="ttc" id="class_hinge_loss_html_a8ff682c31816c21ccf989ffaa38eeb2f"><div class="ttname"><a href="class_hinge_loss.html#a8ff682c31816c21ccf989ffaa38eeb2f">HingeLoss::category</a></div><div class="ttdeci">virtual FunctionOntologicalClass category()</div><div class="ttdef"><b>Definition:</b> HingeLoss.cpp:99</div></div>
 <div class="ttc" id="class_hinge_loss_html"><div class="ttname"><a href="class_hinge_loss.html">HingeLoss</a></div><div class="ttdoc">Hinge loss function </div><div class="ttdef"><b>Definition:</b> HingeLoss.h:58</div></div>
+<div class="ttc" id="class_hinge_loss_html_a6e8bd506d893ddd19f5d30618933a2d6"><div class="ttname"><a href="class_hinge_loss.html#a6e8bd506d893ddd19f5d30618933a2d6">HingeLoss::callProx</a></div><div class="ttdeci">virtual int callProx(Matrix &amp;x, double gamma, Matrix &amp;prox)</div><div class="ttdef"><b>Definition:</b> HingeLoss.cpp:52</div></div>
 <div class="ttc" id="class_hinge_loss_html_a1104207f4b65cd87d5ac8627cece95f3"><div class="ttname"><a href="class_hinge_loss.html#a1104207f4b65cd87d5ac8627cece95f3">HingeLoss::~HingeLoss</a></div><div class="ttdeci">virtual ~HingeLoss()</div><div class="ttdef"><b>Definition:</b> HingeLoss.cpp:34</div></div>
 <div class="ttc" id="class_hinge_loss_html_abea406fb4803804b91883d87c52e08ac"><div class="ttname"><a href="class_hinge_loss.html#abea406fb4803804b91883d87c52e08ac">HingeLoss::HingeLoss</a></div><div class="ttdeci">HingeLoss(Matrix &amp;b, double mu)</div><div class="ttdef"><b>Definition:</b> HingeLoss.cpp:23</div></div>
 <div class="ttc" id="class_hinge_loss_html_ab58c260c1b2bc831016358fb84701aef"><div class="ttname"><a href="class_hinge_loss.html#ab58c260c1b2bc831016358fb84701aef">HingeLoss::call</a></div><div class="ttdeci">virtual int call(Matrix &amp;x, double &amp;f)</div><div class="ttdef"><b>Definition:</b> HingeLoss.cpp:37</div></div>
@@ -166,7 +167,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 11 2016 18:27:18 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 11 2016 18:33:34 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
