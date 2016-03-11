@@ -187,6 +187,7 @@ public:
     /**
      * Copy-constructor. This constructor will hard-copy the contents and state of
      * the given matrix.
+     * 
      * @param orig
      */
     Matrix(const Matrix& orig);
@@ -507,16 +508,45 @@ public:
     friend Matrix& operator*=(Matrix& obj, double alpha);
 
     friend Matrix operator*(double alpha, Matrix& obj);
+    
 
     /**
-     * Assignment operator.
-     * @param v is the right-hand operand.
-     * @return A copy of the current object.
-     */
-    Matrix& operator=(const double& v);
-
-    /**
-     * Assignment operator.
+     * Assignment operator. This operator copies the values of a given Matrix 
+     * object <code>right</code> into the current modifiable instance. It allocates
+     * or reallocates memory (only) if necessary.
+     * 
+     * Take for example the following snippet:
+     * 
+     * \code{.cpp}
+     * Matrix A(5,6);                      // Allocate a 5-by-6 dense matrix
+     * Matrix B = MatrixFactory(5,6,0,1);  // Create random dense 5-by-6 matrix 
+     * A = B;                              // No memory will be reallocated
+     * \endcode
+     * 
+     * This assignment operator respects the shallowness of vectors. 
+     * Take a look at the following code:
+     * 
+     * \code{.cpp}
+     * Matrix x = MatrixFactory(10,1,0,1);      // Create random vector of dimension 10
+     * Matrix shallow = ShallowVector(x, 2, 3); // Create shallow sub-vector of x
+     *                                          // this does not allocate memory (no data are stored)
+     * Matrix y = shallow;                      // y is again a shallow copy of x
+     * \endcode
+     * 
+     * The above example of use is what is needed most of the time. If, however, 
+     * you need to get a hard copy out of any (shallow or not) matrix, use the 
+     * copy constructor. Here is an example:
+     * 
+     * \code{.cpp}
+     * Matrix F = MatrixFactory(10,30,0,1);     
+     * Matrix F_shallow = ShallowVector(x, 2, 3); 
+     *                
+     *                           
+     * Matrix F_shallow_copy(F_shallow);  // hard copy of F_shallow
+     * Matrix F_copy(F);                  // hard copy of F
+     * \endcode
+     * 
+     * 
      * @param right is the right-hand operand.
      * @return A copy of the current object.
      */

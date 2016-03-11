@@ -27,6 +27,7 @@ Function::~Function() {
 }
 
 //LCOV_EXCL_START
+
 int Function::call(Matrix& x, double& f) {
     return ForBESUtils::STATUS_UNDEFINED_FUNCTION;
 }
@@ -36,9 +37,29 @@ int Function::call(Matrix& x, double& f, Matrix& grad) {
     return ForBESUtils::STATUS_UNDEFINED_FUNCTION;
 }
 
-
 int Function::hessianProduct(Matrix& x, Matrix& z, Matrix& Hz) {
-    return ForBESUtils::STATUS_UNDEFINED_FUNCTION;
+    const double epsilon = 1e-8;
+    const double one_over_epsilon = 1e8;
+
+    /* t = t + epsilon * z */
+    Matrix t(x);
+    Matrix::add(t, epsilon, z, 1.0);
+
+
+    Matrix grad_x(x.getNrows(), x.getNcols());
+    ;
+    double f;
+    /* Hz = nabla f(t) */
+    int status = call(t, f, Hz); 
+    
+    /* grad_x = nabla f(x) */
+    status = std::max(status, callConj(x, f, grad_x)); 
+    
+    /* Hz = nabla f(t) - nabla f(x) */
+    Hz -= grad_x; 
+    Hz *= one_over_epsilon;
+    
+    return status;
 }
 
 int Function::callConj(Matrix& x, double& f_star) {
@@ -49,9 +70,22 @@ int Function::callConj(Matrix& x, double& f_star, Matrix& grad) {
     return ForBESUtils::STATUS_UNDEFINED_FUNCTION;
 }
 
-
 int Function::hessianProductConj(Matrix& x, Matrix& z, Matrix& Hz) {
-    return ForBESUtils::STATUS_UNDEFINED_FUNCTION;
+    const double epsilon = 1e-8;
+    const double one_over_epsilon = 1e8;
+
+    /* t = t + epsilon * z */
+    Matrix t(x);
+    Matrix::add(t, epsilon, z, 1.0);
+
+
+    Matrix grad_x(x.getNrows(), x.getNcols());
+    double f;
+    int status = callConj(t, f, Hz);
+    status = std::max(status, callConj(x, f, grad_x));
+    Hz -= grad_x;
+    Hz *= one_over_epsilon;
+    return status;
 }
 
 int Function::callProx(Matrix& x, double gamma, Matrix& prox) {
@@ -59,6 +93,7 @@ int Function::callProx(Matrix& x, double gamma, Matrix& prox) {
 }
 
 //LCOV_EXCL_START
+
 int Function::callProx(Matrix& x, double gamma, Matrix& prox, double& f_at_prox) {
     return ForBESUtils::STATUS_UNDEFINED_FUNCTION;
 }
