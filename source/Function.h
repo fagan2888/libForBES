@@ -153,7 +153,7 @@ public:
      *  \langle \nabla^2 f(x), z\rangle \simeq \frac{1}{\epsilon}[\nabla f(x+\epsilon z) - \nabla f(x)],
      * \f]
      * 
-     * where $\epsilon=10^{-8}\f$ (a small tolerance).
+     * where \f$\epsilon=10^{-8}\f$ (a small tolerance).
      * 
      * If the gradient of \f$f\f$ is not available, or it fails to be computed,
      * then, an appropriate status code will be returned.
@@ -176,7 +176,7 @@ public:
 
     /**
      * Computes the proximal of this function at a point <code>x</code> with 
-     * parameter <code>gamma</code>.
+     * parameter <code>gamma</code>.     
      * 
      * @param x The vector x where \f$\mathrm{prox}_{\gamma f}(x)\f$ should be computed.
      * @param gamma The parameter \f$\gamma\f$ of \f$\mathrm{prox}_{\gamma f}\f$
@@ -265,6 +265,18 @@ public:
      * \f$\langle \nabla^2 f^*(x), z\rangle,\f$
      * between a vector \f$z\f$ and the Hessian of \f$f^*\f$ computed at a point 
      * \f$x\f$.
+     * 
+     * If this method is not implemented in the derived class of Function, then 
+     * an approximation is return based on the finite difference scheme
+     * 
+     * \f[
+     *  \langle \nabla^2 f(x), z\rangle \simeq \frac{1}{\epsilon}[\nabla f^*(x+\epsilon z) - \nabla f^*(x)],
+     * \f]
+     * 
+     * where \f$\epsilon=10^{-8}\f$ (a small tolerance).
+     * 
+     * If the gradient of \f$f^*\f$ is not available, or it fails to be computed,
+     * then, an appropriate status code will be returned.
      * 
      * @param x point where the conjugate Hessian \f$\nabla^2 f^*(x)\f$ is computed
      * @param z vector with which the product is computed
