@@ -24,6 +24,7 @@
 // #include <iostream>
 #include <cmath>
 #include <limits>
+#include <complex>
 
 void FBCache::reset(int status) {
     if (status < m_status) m_status = status;
@@ -148,6 +149,12 @@ int FBCache::update_forward_step(double gamma) {
     }
 
     if (m_status >= FBCache::STATUS_FORWARD) {
+        if (m_gamma == gamma) {
+            return ForBESUtils::STATUS_OK;
+        }
+        // why do we need to reconstruct y from gradf?
+        // isn't it cached? is it because gamma may have changed?
+        // can we check and, if gamma is the same, then return STATUS_OK and exit?
         *m_y = *m_x;
         Matrix::add(*m_y, -gamma, *m_gradfx, 1.0);
         m_gamma = gamma;
@@ -217,19 +224,14 @@ int FBCache::update_forward_backward_step(double gamma) {
         }
     }
     /*
-     * Shouldn't we check whether g() is not NULL
+     * Shouldn't we check whether g() is not NULL?
      */
     status = m_prob.g()->callProx(*m_y, gamma, *m_z, m_gz);
     if (!ForBESUtils::is_status_ok(status)) {
         return status;
     }
     *m_FPRx = (*m_x - *m_z);
-    m_sqnormFPRx = 0.0;
-    for (int i = 0; i < m_FPRx->length(); i++) {
-        double c = (*m_FPRx)[i];
-        m_sqnormFPRx += c*c;
-    }
-
+    m_sqnormFPRx = std::pow(m_FPRx->norm_fro_sq(), 2);
     m_gamma = gamma;
     m_status = FBCache::STATUS_FORWARDBACKWARD;
 
