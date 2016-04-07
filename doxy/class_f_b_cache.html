@@ -197,7 +197,6 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>everything Initialize an <a class="el" href="class_f_b_cache.html" title="Low-level forward-backward operations management class. ">FBCache</a> object</p>
-<p>Once constructed, the internal status of the <code><a class="el" href="class_f_b_cache.html" title="Low-level forward-backward operations management class. ">FBCache</a></code> object is set to STATUS_NONE.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">p</td><td>reference to <a class="el" href="class_f_b_problem.html" title="Low level FB problem description. ">FBProblem</a> </td></tr>
@@ -247,7 +246,8 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Gets the value of \(f\) at \(x\)</p>
-<dl class="section return"><dt>Returns</dt><dd>\(f(x)\) </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>\(f(x)\)</dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_f_b_cache.html#afdb8033fe7998cd66b5c029dc6dd4af0">update_eval_f</a> </dd></dl>
 
 </div>
 </div>
@@ -271,7 +271,8 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>value of the FBE at x with parameter gamma </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>value of the FBE at x with parameter gamma</dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_f_b_cache.html#aeb23aa59aab3921b31e452fb9e406cf6">update_eval_FBE</a> </dd></dl>
 
 </div>
 </div>
@@ -295,7 +296,8 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>a pointer to <a class="el" href="class_matrix.html" title="A generic matrix API. ">Matrix</a> containing the forward-backward step </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>a pointer to <a class="el" href="class_matrix.html" title="A generic matrix API. ">Matrix</a> containing the forward-backward step</dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_f_b_cache.html#acdc058acb0232b82082a886432d1e7bf">update_forward_backward_step</a> </dd></dl>
 
 </div>
 </div>
@@ -319,7 +321,8 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>a pointer to <a class="el" href="class_matrix.html" title="A generic matrix API. ">Matrix</a> containing the forward step </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>a pointer to <a class="el" href="class_matrix.html" title="A generic matrix API. ">Matrix</a> containing the forward step</dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_f_b_cache.html#a619455e76309c135ad7d22cd1606f1d7">update_forward_step</a> </dd></dl>
 
 </div>
 </div>
@@ -336,7 +339,8 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Gets the fixed-point residual at \(x\) with parameter \(\gamma\)</p>
-<dl class="section return"><dt>Returns</dt><dd>a pointer to <a class="el" href="class_matrix.html" title="A generic matrix API. ">Matrix</a> containing the fixed-point residual </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>a pointer to <a class="el" href="class_matrix.html" title="A generic matrix API. ">Matrix</a> containing the fixed-point residual</dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_f_b_cache.html#acdc058acb0232b82082a886432d1e7bf">update_forward_backward_step</a> </dd></dl>
 
 </div>
 </div>
@@ -360,7 +364,8 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>pointer to <a class="el" href="class_matrix.html" title="A generic matrix API. ">Matrix</a> containing the gradient of the FBE </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>pointer to <a class="el" href="class_matrix.html" title="A generic matrix API. ">Matrix</a> containing the gradient of the FBE</dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_f_b_cache.html#ae5862c60c6a668fe90c91b20081a0186">update_grad_FBE</a> </dd></dl>
 
 </div>
 </div>
@@ -381,7 +386,8 @@ Protected Member Functions</h2></td></tr>
 \[ R_{\gamma}(x) = x - \mathrm{prox}_{\gamma g}(x - \gamma \nabla f(x)), \]
 </p>
 <p> where \(f\) is assume to to differentiable and \(g\) is such that it is possible to compute its proximal.</p>
-<dl class="section return"><dt>Returns</dt><dd>Euclidean norm of the fixed-point residual, that is \(R_{\gamma}(x)\) </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Euclidean norm of the fixed-point residual, that is \(R_{\gamma}(x)\)</dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_f_b_cache.html#acdc058acb0232b82082a886432d1e7bf">update_forward_backward_step</a> </dd></dl>
 
 </div>
 </div>
@@ -423,7 +429,7 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Used to set the internal status of the object at a specific value. For example, if the point at which to evaluate operations is changed (using set_point) then the status is reset to <code>STATUS_NONE</code>; if <code>gamma</code> instead is changed, the status is reset to <code>STATUS_EVALF</code>. In fact, the value of f is independent of gamma, and is not to be recomputed.</p>
+<p>Used to set the internal status of the object at a specific value. For example, if the point at which to evaluate operations is changed (using set_point) then the status is reset to <code></code>  <a class="el" href="class_f_b_cache.html#a0d67e145ba6b0222ea15a315ba3371b3">STATUS_NONE</a>; if <code>gamma</code> instead is changed, the status is reset to <code></code>  <a class="el" href="class_f_b_cache.html#a648787c2da4c8cf9645417bb9423def5">STATUS_EVALF</a>. In fact, the value of f is independent of gamma, and is not to be recomputed.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">status</td><td>a status code (see static private const members) </td></tr>
@@ -445,7 +451,7 @@ Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Erases the internal status of the cache, i.e., sets its status to STATUS_NONE. This means that any getter will require to recompute all steps. </p>
+<p>Erases the internal status of the cache, i.e., sets its status to <a class="el" href="class_f_b_cache.html#a0d67e145ba6b0222ea15a315ba3371b3">STATUS_NONE</a>. This means that any getter will require to recompute all steps. </p>
 
 </div>
 </div>
@@ -462,7 +468,8 @@ Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Sets the point at which the <a class="el" href="class_f_b_cache.html" title="Low-level forward-backward operations management class. ">FBCache</a> object refers</p>
+<p>Sets the point to which the <a class="el" href="class_f_b_cache.html" title="Low-level forward-backward operations management class. ">FBCache</a> object refers.</p>
+<p>Once a new point is provided to the cache, its internal status is set to <a class="el" href="class_f_b_cache.html#a0d67e145ba6b0222ea15a315ba3371b3">STATUS_NONE</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>new point at which to evaluate the steps </td></tr>
@@ -493,15 +500,12 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Evaluates \(f(x)\) and updates the internal status of <a class="el" href="class_f_b_cache.html" title="Low-level forward-backward operations management class. ">FBCache</a>.</p>
-<p>In particular, this method performs the following</p>
-<ul>
-<li>Computes \(f_1(L_1 x +d_1) \)</li>
-<li>Computes \(f_2(L_2 x +d_2) \)</li>
-<li>Computes \(\langle l, x\rangle \)</li>
-<li>Computes \(f(x) = f_1(L_1 x +d_1) + f_2(L_2 x +d_2) + \langle l, x\rangle\)</li>
-<li>Sets the internal status of this cache to <a class="el" href="class_f_b_cache.html#a648787c2da4c8cf9645417bb9423def5">FBCache::STATUS_EVALF</a>.</li>
-</ul>
-<dl class="section return"><dt>Returns</dt><dd>status code (see <a class="el" href="class_for_b_e_s_utils.html" title="ForBES utilities such as status codes. ">ForBESUtils</a>). </dd></dl>
+<p><a class="el" href="class_function.html" title="A ForBES function. ">Function</a> \(f\) is evaluated as </p>
+<p class="formulaDsp">
+\[ f(x) = f_1(L_1x + d_1) + f_2(L_2 x + d_2) + \langle l, x \rangle. \]
+</p>
+<p>If the value of \(f\) has already been computed at this particular point \(x\), the the method returns STATUS_OK without re-computing this value as it has been cached.</p>
+<dl class="section return"><dt>Returns</dt><dd>status code (see <a class="el" href="class_for_b_e_s_utils.html" title="ForBES utilities such as status codes. ">ForBESUtils</a>); returns a <a class="el" href="class_for_b_e_s_utils.html#a3778b88ef7ec8a5024eec49a0d7a656d">STATUS_OK</a> if the computation was successful and sets the internal status of the cache to <a class="el" href="class_f_b_cache.html#a648787c2da4c8cf9645417bb9423def5">STATUS_EVALF</a>. </dd></dl>
 
 </div>
 </div>
@@ -718,7 +722,7 @@ Protected Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Apr 7 2016 14:22:32 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 7 2016 19:43:34 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
