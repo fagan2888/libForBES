@@ -531,6 +531,15 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Evaluates the FBE at x with parameter gamma, and updates the internal status.</p>
+<p>The FBE is computed as </p>
+<p class="formulaDsp">
+\[ \varphi_\gamma(x) = f(x) + g(\mathrm{prox}_{\gamma g}(x-\gamma \nabla f(x))) - \nabla f(x)^{\top}R_{\gamma}(x) + \frac{1}{2\gamma}\|R_\gamma(x)\|^2, \]
+</p>
+<p> where </p>
+<p class="formulaDsp">
+\[ R_\gamma(x) = x - \mathrm{prox}_{\gamma g}(x-\gamma \nabla f(x)), \]
+</p>
+<p> is the fixed-point residual (FPR).</p>
 <dl class="section return"><dt>Returns</dt><dd>Status code, see <a class="el" href="class_for_b_e_s_utils.html" title="ForBES utilities such as status codes. ">ForBESUtils</a>. </dd></dl>
 
 </div>
@@ -557,6 +566,11 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Evaluates the forward-backward (or proximal-gradient) step at x with parameter gamma, and updates the internal status.</p>
+<p>This method updates and caches the fixed point residual </p>
+<p class="formulaDsp">
+\[ R_\gamma(x) = x - \mathrm{prox}_{\gamma g}(x-\gamma \nabla f(x)), \]
+</p>
+<p> and it also computes and stores its squared norm \(\|R_\gamma(x)\|^2\).</p>
 <dl class="section return"><dt>Returns</dt><dd>Status code, see <a class="el" href="class_for_b_e_s_utils.html" title="ForBES utilities such as status codes. ">ForBESUtils</a>. </dd></dl>
 
 </div>
@@ -583,6 +597,10 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Evaluates the forward (gradient) step at x with parameter gamma, and updates the internal status.</p>
+<p>The forward step is defined as </p>
+<p class="formulaDsp">
+\[ y = x - \gamma \nabla f(x). \]
+</p>
 <dl class="section return"><dt>Returns</dt><dd>Status code, see <a class="el" href="class_for_b_e_s_utils.html" title="ForBES utilities such as status codes. ">ForBESUtils</a>. </dd></dl>
 
 </div>
@@ -722,7 +740,7 @@ Protected Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Apr 7 2016 19:43:34 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 7 2016 21:01:29 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
