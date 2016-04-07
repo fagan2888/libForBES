@@ -50,27 +50,40 @@ private:
        
     /* Internal storage for computing proximal-gradient steps */
     Matrix * m_y; /**< x-gamma nabla f(x) */
-    Matrix * m_z; /**< prox_{gamma g} (y) */
-    Matrix * m_FPRx; /**< x-z */
+    Matrix * m_z; /**< prox_{gamma g} (y) =  prox_{gamma g} ( x - gamma * nabla f(x))  */
+    Matrix * m_FPRx; /**< x-z (fixed point residual) */
     Matrix * m_res1x;  /**< L1*x + d1 */
     Matrix * m_gradf1x; /**< nabla f_1 (res1x)*/
-    Matrix * m_res2x;
-    Matrix * m_gradf2x;
+    Matrix * m_res2x; /**< L2*x + d2 */
+    Matrix * m_gradf2x; /**< nabla f_1 (res1x) */
     Matrix * m_gradfx; /**< f(x) = f1(L1*x+d1) + f2(L2*x+d2); gradfx = nabla f(x) */
     Matrix * m_gradFBEx; /** gradient of the FB envelope */    
     double m_f1x; /**< f1(res1x) */
-    double m_f2x;
+    double m_f2x; /**< f2(res2x) */
     double m_linx; /**< l'*x */
     double m_fx; /**< f(x) */
     double m_gz; 
-    double m_gamma;
+    double m_gamma; /**< parameter gamma */
     double m_FBEx; /**< FBE(x) */
     double m_sqnormFPRx; /**< ||x-z||^2 */
 
+protected:
     /**
      * Evaluates \f$f(x)\f$ and updates the internal status of FBCache.
+     * 
+     * Function \f$f\f$ is evaluated as
+     * \f[
+     *   f(x) = f_1(L_1x + d_1) + f_2(L_2 x + d_2) + \langle l, x \rangle.
+     * \f]
+     * 
+     * If the value of \f$f\f$ has already been computed at this particular point 
+     * \f$x\f$, the the method returns STATUS_OK without re-computing this value
+     * as it has been cached.
      *
-     * @return status code (see ForBESUtils).
+     * @return status code (see ForBESUtils); returns a \link ForBESUtils::STATUS_OK STATUS_OK\endlink 
+     * if the computation
+     * was successful and sets the internal status of the cache to 
+     * \link FBCache::STATUS_EVALF STATUS_EVALF\endlink.
      */
     int update_eval_f();
 
@@ -109,8 +122,10 @@ private:
     /**
      * Used to set the internal status of the object at a specific value.
      * For example, if the point at which to evaluate operations is changed
-     * (using set_point) then the status is reset to \c STATUS_NONE; if \c gamma
-     * instead is changed, the status is reset to \c STATUS_EVALF. In fact, the
+     * (using set_point) then the status is reset to 
+     * \c \link #STATUS_NONE\endlink; if \c gamma
+     * instead is changed, the status is reset to 
+     * \c \link #STATUS_EVALF\endlink. In fact, the
      * value of f is independent of gamma, and is not to be recomputed.
      * 
      * @param status a status code (see static private const members)
@@ -174,7 +189,10 @@ public:
     virtual ~FBCache();
 
     /**
-     * Sets the point at which the FBCache object refers
+     * Sets the point to which the FBCache object refers.
+     * 
+     * Once a new point is provided to the cache, its internal status is set to
+     * \link FBCache::STATUS_NONE STATUS_NONE\endlink.
      *
      * @param x new point at which to evaluate the steps
      */
@@ -192,6 +210,8 @@ public:
      *
      * @param gamma stepsize parameter
      * @return a pointer to Matrix containing the forward step
+     * 
+     * \sa update_forward_step
      */
     Matrix * get_forward_step(double gamma);
 
@@ -201,6 +221,8 @@ public:
      *
      * @param gamma step-size parameter
      * @return a pointer to Matrix containing the forward-backward step
+     * 
+     * \sa update_forward_backward_step
      */
     Matrix * get_forward_backward_step(double gamma);
 
@@ -208,6 +230,8 @@ public:
      * Gets the fixed-point residual at \f$x\f$ with parameter \f$\gamma\f$
      *
      * @return a pointer to Matrix containing the fixed-point residual
+     * 
+     * \sa update_forward_backward_step
      */
     Matrix * get_fpr();
 
@@ -220,6 +244,8 @@ public:
      * is possible to compute its proximal.
      *
      * @return Euclidean norm of the fixed-point residual, that is \f$R_{\gamma}(x)\f$
+     * 
+     * \sa update_forward_backward_step
      */
     double get_norm_fpr();
 
@@ -227,6 +253,8 @@ public:
      * Gets the value of \f$f\f$ at \f$x\f$
      *
      * @return \f$f(x)\f$
+     * 
+     * \sa update_eval_f
      */
     double get_eval_f();
 
@@ -236,6 +264,8 @@ public:
      *
      * @param gamma stepsize parameter
      * @return value of the FBE at x with parameter gamma
+     * 
+     * \sa update_eval_FBE
      */
     double get_eval_FBE(double gamma);
 
@@ -244,12 +274,14 @@ public:
      *
      * @param gamma stepsize parameter
      * @return pointer to Matrix containing the gradient of the FBE
+     * 
+     * \sa update_grad_FBE
      */
     Matrix * get_grad_FBE(double gamma);
 
     /**
      * Erases the internal status of the cache, i.e., sets its status to
-     * STATUS_NONE. This means that any getter will require to recompute all 
+     * \link FBCache::STATUS_NONE STATUS_NONE\endlink. This means that any getter will require to recompute all 
      * steps.
      */
     void reset();

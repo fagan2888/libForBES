@@ -24,7 +24,10 @@
  * function over X.
  * 
  * 
+ * \sa FBCache
+ * 
  * \example qp_box.cpp
+ *  
  */
 class FBProblem {
 private:
