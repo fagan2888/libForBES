@@ -97,6 +97,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="class_f_b_cache-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">FBCache Class Reference<div class="ingroups"><a class="el" href="group___f_b_solver-group.html">Solver</a></div></div>  </div>
@@ -145,6 +146,21 @@ Static Public Attributes</h2></td></tr>
 <tr class="separator:ad88c012431d3153f467285374b9be49d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae41ced0b5e19e5f3cfdb382d75703aec"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_b_cache.html#ae41ced0b5e19e5f3cfdb382d75703aec">STATUS_FORWARDBACKWARD</a> = 3</td></tr>
 <tr class="separator:ae41ced0b5e19e5f3cfdb382d75703aec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:afdb8033fe7998cd66b5c029dc6dd4af0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_b_cache.html#afdb8033fe7998cd66b5c029dc6dd4af0">update_eval_f</a> ()</td></tr>
+<tr class="separator:afdb8033fe7998cd66b5c029dc6dd4af0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a619455e76309c135ad7d22cd1606f1d7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_b_cache.html#a619455e76309c135ad7d22cd1606f1d7">update_forward_step</a> (double gamma)</td></tr>
+<tr class="separator:a619455e76309c135ad7d22cd1606f1d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdc058acb0232b82082a886432d1e7bf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_b_cache.html#acdc058acb0232b82082a886432d1e7bf">update_forward_backward_step</a> (double gamma)</td></tr>
+<tr class="separator:acdc058acb0232b82082a886432d1e7bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb23aa59aab3921b31e452fb9e406cf6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_b_cache.html#aeb23aa59aab3921b31e452fb9e406cf6">update_eval_FBE</a> (double gamma)</td></tr>
+<tr class="separator:aeb23aa59aab3921b31e452fb9e406cf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5862c60c6a668fe90c91b20081a0186"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_b_cache.html#ae5862c60c6a668fe90c91b20081a0186">update_grad_FBE</a> (double gamma)</td></tr>
+<tr class="separator:ae5862c60c6a668fe90c91b20081a0186"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e0d363d14c4dac6f641aa30cc50bee5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_b_cache.html#a8e0d363d14c4dac6f641aa30cc50bee5">reset</a> (int status)</td></tr>
+<tr class="separator:a8e0d363d14c4dac6f641aa30cc50bee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Low-level forward-backward operations management class. </p>
@@ -181,6 +197,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>everything Initialize an <a class="el" href="class_f_b_cache.html" title="Low-level forward-backward operations management class. ">FBCache</a> object</p>
+<p>Once constructed, the internal status of the <code><a class="el" href="class_f_b_cache.html" title="Low-level forward-backward operations management class. ">FBCache</a></code> object is set to STATUS_NONE.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">p</td><td>reference to <a class="el" href="class_f_b_problem.html" title="Low level FB problem description. ">FBProblem</a> </td></tr>
@@ -385,6 +402,37 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a8e0d363d14c4dac6f641aa30cc50bee5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FBCache::reset </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>status</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Used to set the internal status of the object at a specific value. For example, if the point at which to evaluate operations is changed (using set_point) then the status is reset to <code>STATUS_NONE</code>; if <code>gamma</code> instead is changed, the status is reset to <code>STATUS_EVALF</code>. In fact, the value of f is independent of gamma, and is not to be recomputed.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">status</td><td>a status code (see static private const members) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a19625dcc982647ad0540a1bbc676cca6"></a>
 <div class="memitem">
 <div class="memproto">
@@ -421,6 +469,143 @@ Static Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="afdb8033fe7998cd66b5c029dc6dd4af0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int FBCache::update_eval_f </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Evaluates \(f(x)\) and updates the internal status of <a class="el" href="class_f_b_cache.html" title="Low-level forward-backward operations management class. ">FBCache</a>.</p>
+<p>In particular, this method performs the following</p>
+<ul>
+<li>Computes \(f_1(L_1 x +d_1) \)</li>
+<li>Computes \(f_2(L_2 x +d_2) \)</li>
+<li>Computes \(\langle l, x\rangle \)</li>
+<li>Computes \(f(x) = f_1(L_1 x +d_1) + f_2(L_2 x +d_2) + \langle l, x\rangle\)</li>
+<li>Sets the internal status of this cache to <a class="el" href="class_f_b_cache.html#a648787c2da4c8cf9645417bb9423def5">FBCache::STATUS_EVALF</a>.</li>
+</ul>
+<dl class="section return"><dt>Returns</dt><dd>status code (see <a class="el" href="class_for_b_e_s_utils.html" title="ForBES utilities such as status codes. ">ForBESUtils</a>). </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aeb23aa59aab3921b31e452fb9e406cf6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int FBCache::update_eval_FBE </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>gamma</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Evaluates the FBE at x with parameter gamma, and updates the internal status.</p>
+<dl class="section return"><dt>Returns</dt><dd>Status code, see <a class="el" href="class_for_b_e_s_utils.html" title="ForBES utilities such as status codes. ">ForBESUtils</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acdc058acb0232b82082a886432d1e7bf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int FBCache::update_forward_backward_step </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>gamma</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Evaluates the forward-backward (or proximal-gradient) step at x with parameter gamma, and updates the internal status.</p>
+<dl class="section return"><dt>Returns</dt><dd>Status code, see <a class="el" href="class_for_b_e_s_utils.html" title="ForBES utilities such as status codes. ">ForBESUtils</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a619455e76309c135ad7d22cd1606f1d7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int FBCache::update_forward_step </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>gamma</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Evaluates the forward (gradient) step at x with parameter gamma, and updates the internal status.</p>
+<dl class="section return"><dt>Returns</dt><dd>Status code, see <a class="el" href="class_for_b_e_s_utils.html" title="ForBES utilities such as status codes. ">ForBESUtils</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae5862c60c6a668fe90c91b20081a0186"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int FBCache::update_grad_FBE </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>gamma</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Evaluates the gradient of the FBE at x with parameter gamma, and updates the internal status.</p>
+<dl class="section return"><dt>Returns</dt><dd>Status code, see <a class="el" href="class_for_b_e_s_utils.html" title="ForBES utilities such as status codes. ">ForBESUtils</a>. </dd></dl>
 
 </div>
 </div>
@@ -533,7 +718,7 @@ Static Public Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 11 2016 18:33:34 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 7 2016 14:22:32 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
