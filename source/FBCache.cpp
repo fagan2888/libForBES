@@ -26,6 +26,10 @@
 #include <limits>
 #include <complex>
 
+inline bool is_close(const double a, const double b){   
+    return abs(a-b) <= std::max(1e-6 * std::max(std::abs(a), std::abs(b)), 1e-14);    
+}
+
 void FBCache::reset(int status) {
     if (status < m_status) m_status = status;
     m_flag_evalFBE = 0;
@@ -144,17 +148,15 @@ int FBCache::update_eval_f() {
 }
 
 int FBCache::update_forward_step(double gamma) {
-    if (gamma != m_gamma) {
+    bool is_gamma_the_same = is_close(gamma, m_gamma);
+    if (!is_gamma_the_same) {
         reset(FBCache::STATUS_EVALF);
     }
 
     if (m_status >= FBCache::STATUS_FORWARD) {
-        if (m_gamma == gamma) {
+        if (is_gamma_the_same) {
             return ForBESUtils::STATUS_OK;
         }
-        // why do we need to reconstruct y from gradf?
-        // isn't it cached? is it because gamma may have changed?
-        // can we check and, if gamma is the same, then return STATUS_OK and exit?
         *m_y = *m_x;
         Matrix::add(*m_y, -gamma, *m_gradfx, 1.0);
         m_gamma = gamma;
@@ -211,7 +213,7 @@ int FBCache::update_forward_step(double gamma) {
 
 int FBCache::update_forward_backward_step(double gamma) {
     int status;
-    if (gamma != m_gamma) {
+    if (!is_close(gamma, m_gamma)) {
         reset(FBCache::STATUS_EVALF);
     }
     if (m_status >= FBCache::STATUS_FORWARDBACKWARD) {
@@ -239,7 +241,7 @@ int FBCache::update_forward_backward_step(double gamma) {
 }
 
 int FBCache::update_eval_FBE(double gamma) {
-    if (gamma != m_gamma) { /* Use tolerance */
+    if (!is_close(gamma, m_gamma)) {
         reset(FBCache::STATUS_EVALF);
     }
 
@@ -268,7 +270,7 @@ int FBCache::update_eval_FBE(double gamma) {
 }
 
 int FBCache::update_grad_FBE(double gamma) {
-    if (gamma != m_gamma) {
+    if (!is_close(gamma, m_gamma)) {
         reset(FBCache::STATUS_EVALF);
     }
 

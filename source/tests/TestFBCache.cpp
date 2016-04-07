@@ -144,7 +144,7 @@ void TestFBCache::testSparseLeastSquares_small() {
 	double data_A[] = {
   		 4,    -5,     0,    -3,     1,
 		-4,     2,     3,     8,    -1,
-	   -11,    -5,     6,    -6,     4,
+               -11,    -5,     6,    -6,     4,
 		 0,     7,   -10,    -1,    -7,
 		14,     4,     6,    -6,    -3,
 		-2,     5,    -2,     3,   -11,

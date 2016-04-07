@@ -90,6 +90,11 @@ protected:
     /**
      * Evaluates the forward (gradient) step at x with parameter gamma,
      * and updates the internal status.
+     * 
+     * The forward step is defined as
+     * \f[
+     * y = x - \gamma \nabla f(x).
+     * \f]
      *
      * @return Status code, see ForBESUtils.
      */
@@ -98,6 +103,12 @@ protected:
     /**
      * Evaluates the forward-backward (or proximal-gradient) step at x with parameter gamma,
      * and updates the internal status.
+     * 
+     * This method updates and caches the fixed point residual
+     * \f[
+     *   R_\gamma(x) = x - \mathrm{prox}_{\gamma g}(x-\gamma \nabla f(x)),
+     * \f]
+     * and it also computes and stores its squared norm \f$\|R_\gamma(x)\|^2\f$.
      *
      * @return Status code, see ForBESUtils.
      */
@@ -106,7 +117,18 @@ protected:
     /**
      * Evaluates the FBE at x with parameter gamma,
      * and updates the internal status.
-     *
+     * 
+     * The FBE is computed as
+     * \f[
+     *  \varphi_\gamma(x) = f(x) + g(\mathrm{prox}_{\gamma g}(x-\gamma \nabla f(x))) -
+     *                      \nabla f(x)^{\top}R_{\gamma}(x) + \frac{1}{2\gamma}\|R_\gamma(x)\|^2,
+     * \f]
+     * where
+     * \f[
+     *   R_\gamma(x) = x - \mathrm{prox}_{\gamma g}(x-\gamma \nabla f(x)),
+     * \f]
+     * is the fixed-point residual (FPR).
+     * 
      * @return Status code, see ForBESUtils.
      */
     int update_eval_FBE(double gamma);
