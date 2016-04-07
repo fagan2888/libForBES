@@ -665,14 +665,14 @@ Matrix & Matrix::operator=(const Matrix & right) {
     m_dense = NULL;
     m_transpose = right.m_transpose;
     m_sparseStorageType = right.m_sparseStorageType;
-    m_dataLength = right.m_dataLength;
-    
+
     /*
      * Shallow copies remain shallow - this assignment operator respects shallowness.
      */
     if (!right.m_delete_data && right.m_type != Matrix::MATRIX_SPARSE) {
         m_delete_data = right.m_delete_data;
-        m_data = right.m_data;        
+        m_data = right.m_data;
+        m_dataLength = right.m_dataLength;
         return *this;
     }
 
@@ -686,16 +686,17 @@ Matrix & Matrix::operator=(const Matrix & right) {
         if (m_data == NULL || m_dataLength == 0) {
             m_data = new double[right.m_dataLength];
         } else {
-            if (m_dataLength > right.m_dataLength) {
-                /* If already more memory is allocated in this object */
-                m_data = static_cast<double *> ( realloc(m_data, right.m_dataLength * sizeof (double)) );
+            /* If already more memory is allocated in this object */
+            if (m_dataLength == right.m_dataLength) {
+
             } else {
-                /* If allocation is not adequate */
-                m_data = new double[right.m_dataLength];
+                m_data = static_cast<double *> (realloc(m_data, right.m_dataLength * sizeof (double)));
             }
         }
         m_delete_data = true;
-    }        
+    }
+
+    m_dataLength = right.m_dataLength;
 
     // <editor-fold defaultstate="collapsed" desc="Sparse Matrices Only">
     if (m_type == MATRIX_SPARSE) {
