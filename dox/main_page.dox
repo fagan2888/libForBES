@@ -61,7 +61,7 @@
  *
  * \section install_sec Installation
  *
- * You can download libforbes from our <a href="https://github.com/lostella/libForBES">github page</a> 
+ * You can download libforbes from our <a href="https://github.com/kul-forbes/libForBES">github page</a> 
  * and build it on your system.
  * 
  * Installing libforbes is very easy: just run the installation script \c install.sh.

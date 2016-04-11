@@ -40,13 +40,11 @@
 class FBCache {
 private:    
 
-    int m_status;
-    int m_flag_evalFBE;
-    int m_flag_gradFBE;
+    int m_status; /**< Cache status. Indicated what has been cached. */
+    bool m_cached_grad_f2; /**< whether the gradient of f2 is to be computed along with its value. */
 
-    FBProblem & m_prob;
-    Matrix * m_x;
-
+    FBProblem & m_prob; /**< Specifications of the underlying optimization problem. */
+    Matrix * m_x; /** Current point (x). */
        
     /* Internal storage for computing proximal-gradient steps */
     Matrix * m_y; /**< x-gamma nabla f(x) */
@@ -55,14 +53,14 @@ private:
     Matrix * m_res1x;  /**< L1*x + d1 */
     Matrix * m_gradf1x; /**< nabla f_1 (res1x)*/
     Matrix * m_res2x; /**< L2*x + d2 */
-    Matrix * m_gradf2x; /**< nabla f_1 (res1x) */
+    Matrix * m_gradf2x; /**< nabla f_2 (res2x) */
     Matrix * m_gradfx; /**< f(x) = f1(L1*x+d1) + f2(L2*x+d2); gradfx = nabla f(x) */
     Matrix * m_gradFBEx; /** gradient of the FB envelope */    
     double m_f1x; /**< f1(res1x) */
     double m_f2x; /**< f2(res2x) */
     double m_linx; /**< l'*x */
     double m_fx; /**< f(x) */
-    double m_gz; 
+    double m_gz;  /**< g(z) */
     double m_gamma; /**< parameter gamma */
     double m_FBEx; /**< FBE(x) */
     double m_sqnormFPRx; /**< ||x-z||^2 */
@@ -80,12 +78,16 @@ protected:
      * \f$x\f$, the the method returns STATUS_OK without re-computing this value
      * as it has been cached.
      *
-     * @return status code (see ForBESUtils); returns a \link ForBESUtils::STATUS_OK STATUS_OK\endlink 
-     * if the computation
-     * was successful and sets the internal status of the cache to 
+     * @param order_grad_f2 whether the gradient of \f$f_2\f$ should be computed
+     * alongside the value of this function. This may often be computationally more
+     * favourable compared to the separate computation of the value and the gradient.
+     * 
+     * @return status code (see ForBESUtils); returns a 
+     * \link ForBESUtils::STATUS_OK STATUS_OK\endlink 
+     * if the computation was successful and sets the internal status of the cache to 
      * \link FBCache::STATUS_EVALF STATUS_EVALF\endlink.
      */
-    int update_eval_f();
+    int update_eval_f(bool order_grad_f2);
 
     /**
      * Evaluates the forward (gradient) step at x with parameter gamma,
@@ -187,13 +189,29 @@ public:
     static const int STATUS_FORWARD = 2;
     /**
      * 
-     * Everything has been computed and is available, that is, all data which 
-     * correspond to #STATUS_FORWARD (and #STATUS_EVALF) and, additionally,
+     * Everything that corresponds to #STATUS_FORWARD (and #STATUS_EVALF) has been
+     * computed and is cached and available and, additionally,
      * * The proximal \f$z=\mathrm{prox}_{\gamma g}(y)\f$ where \f$y = x - \gamma \nabla f(x)\f$     
-     * * The value \f$g(x)\f$
-     * * The square norm \f$\|x-z\|^2\f$
+     * * The value \f$g(z)\f$
+     * * The square norm of the fixed point residual, that is \f$\|x-z\|^2\f$
      */
     static const int STATUS_FORWARDBACKWARD = 3; /** everything */
+    
+    /**
+     *
+     * The forward backward envelope \f$\varphi_\gamma(x)\f$ has been computed and
+     * it is cached. Additionally, all data which correspond to #STATUS_FORWARDBACKWARD
+     * have been computed and are available.
+     */
+    static const int STATUS_FBE = 4;
+    
+    /**
+     * 
+     * All information which has been computed up to level #STATUS_FBE is available
+     * and, furthermore, the gradient of the FBE, that is \f$\nabla \varphi_\gamma(x)\f$
+     * has also been computed and is cached.
+     */
+    static const int STATUS_GRAD_FBE = 5;
     
     
     /**

@@ -26,21 +26,22 @@
 #include <limits>
 #include <complex>
 
-inline bool is_close(const double a, const double b){   
-    return abs(a-b) <= std::max(1e-6 * std::max(std::abs(a), std::abs(b)), 1e-14);    
+inline bool is_close(const double a, const double b) {
+    return abs(a - b) <= std::max(1e-6 * std::max(std::abs(a), std::abs(b)), 1e-14);
 }
 
 void FBCache::reset(int status) {
     if (status < m_status) m_status = status;
-    m_flag_evalFBE = 0;
-    m_flag_gradFBE = 0;
 }
 
 void FBCache::reset() {
     FBCache::reset(FBCache::STATUS_NONE);
 }
 
-FBCache::FBCache(FBProblem & p, Matrix & x, double gamma) : m_prob(p), m_x(&x), m_gamma(gamma) {
+FBCache::FBCache(FBProblem & p, Matrix & x, double gamma) :
+m_prob(p),
+m_x(&x),
+m_gamma(gamma) {
     reset(FBCache::STATUS_NONE);
 
     // get dimensions of things
@@ -100,10 +101,20 @@ FBCache::FBCache(FBProblem & p, Matrix & x, double gamma) : m_prob(p), m_x(&x), 
     m_linx = 0.0;
     m_fx = 0.0;
     m_gz = 0.0;
+
+    m_cached_grad_f2 = false;
 }
 
-int FBCache::update_eval_f() {
-    if (m_status >= FBCache::STATUS_EVALF) {
+int FBCache::update_eval_f(bool order_grad_f2) {
+
+    if (!m_cached_grad_f2 && order_grad_f2) {
+        // If gradf2x has not been computed previously, but now should be
+        // computed, then set the status to STATUS_NONE, so that all 
+        // computations are performed from the beginning (both f2x and gradf2x).
+        m_status = STATUS_NONE;
+    }
+
+    if (m_status >= STATUS_EVALF) {
         return ForBESUtils::STATUS_OK;
     }
 
@@ -131,7 +142,11 @@ int FBCache::update_eval_f() {
         if (m_prob.d2() != NULL) {
             *m_res2x += *(m_prob.d2());
         }
-        int status = m_prob.f2()->call(*m_res2x, m_f2x);
+        int status =
+                order_grad_f2
+                ? m_prob.f2()->call(*m_res2x, m_f2x, *m_gradf2x)
+                : m_prob.f2()->call(*m_res2x, m_f2x);
+        m_cached_grad_f2 = order_grad_f2;
         if (ForBESUtils::STATUS_OK != status) {
             return status;
         }
@@ -162,9 +177,12 @@ int FBCache::update_forward_step(double gamma) {
         m_gamma = gamma;
         return ForBESUtils::STATUS_OK;
     }
+    
     int status;
-    if (m_status < FBCache::STATUS_EVALF) {
-        status = update_eval_f();
+    
+    if (m_status < STATUS_EVALF) {
+        m_cached_grad_f2 = false;
+        status = update_eval_f(true);
         if (!ForBESUtils::is_status_ok(status)) {
             return status;
         }
@@ -180,9 +198,13 @@ int FBCache::update_forward_step(double gamma) {
     }
 
     if (m_prob.f2() != NULL) {
-        status = m_prob.f2()->call(*m_res2x, m_f2x, *m_gradf2x);
-        if (!ForBESUtils::is_status_ok(status)) {
-            return status;
+        if (!m_cached_grad_f2) {
+            status = m_prob.f2()->call(*m_res2x, m_f2x, *m_gradf2x);
+            if (!ForBESUtils::is_status_ok(status)) {
+                return status;
+            }
+            // now gradf2x has been computed:
+            m_cached_grad_f2 = true;
         }
         if (m_prob.L2() != NULL) {
             Matrix d_gradfx = m_prob.L2()->callAdjoint(*m_gradf2x);
@@ -245,7 +267,7 @@ int FBCache::update_eval_FBE(double gamma) {
         reset(FBCache::STATUS_EVALF);
     }
 
-    if (m_flag_evalFBE == 1) {
+    if (m_status >= FBCache::STATUS_FBE) {
         return ForBESUtils::STATUS_OK;
     }
 
@@ -264,7 +286,7 @@ int FBCache::update_eval_FBE(double gamma) {
 
     m_FBEx = m_fx + m_gz - innprod + 0.5 / m_gamma*m_sqnormFPRx;
     m_gamma = gamma;
-    m_flag_evalFBE = 1;
+    m_status = STATUS_FBE;
 
     return ForBESUtils::STATUS_OK;
 }
@@ -274,11 +296,11 @@ int FBCache::update_grad_FBE(double gamma) {
         reset(FBCache::STATUS_EVALF);
     }
 
-    if (m_flag_gradFBE == 1) {
+    if (m_status >= STATUS_GRAD_FBE) {
         return ForBESUtils::STATUS_OK;
     }
 
-    if (m_status < FBCache::STATUS_FORWARDBACKWARD) {
+    if (m_status < STATUS_FORWARDBACKWARD) {
         int status = update_forward_backward_step(gamma);
         if (!ForBESUtils::is_status_ok(status)) {
             return status;
@@ -322,7 +344,7 @@ int FBCache::update_grad_FBE(double gamma) {
     }
 
     m_gamma = gamma;
-    m_flag_gradFBE = 1;
+    m_status = STATUS_GRAD_FBE;
 
     return ForBESUtils::STATUS_OK;
 }
@@ -347,7 +369,7 @@ Matrix * FBCache::get_grad_FBE(double gamma) {
 }
 
 double FBCache::get_eval_f() {
-    update_eval_f();
+    update_eval_f(false);
     return m_fx;
 }
 
