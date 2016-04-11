@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['elasticnet',['ElasticNet',['../class_elastic_net.html',1,'']]]
+  ['distancetoball2',['DistanceToBall2',['../class_distance_to_ball2.html',1,'']]],
+  ['distancetobox',['DistanceToBox',['../class_distance_to_box.html',1,'']]]
 ];

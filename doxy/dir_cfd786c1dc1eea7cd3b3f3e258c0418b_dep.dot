@@ -1,0 +1,9 @@
+digraph "libs/SuiteSparse/MATLAB_Tools/sparseinv" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_0e1e4a5b9440aa22d8a417c9c4950190 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="MATLAB_Tools" fontname="Helvetica", fontsize="10", URL="dir_0e1e4a5b9440aa22d8a417c9c4950190.html"]
+  dir_cfd786c1dc1eea7cd3b3f3e258c0418b [shape=box, label="sparseinv", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_cfd786c1dc1eea7cd3b3f3e258c0418b.html"];
+  }
+}

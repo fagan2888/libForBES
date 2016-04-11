@@ -1,0 +1,25 @@
+digraph "libs/SuiteSparse/CHOLMOD" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_bb3805179b22f9bf6cb2257a07012dea {
+    graph [ bgcolor="#ddddee", pencolor="black", label="SuiteSparse" fontname="Helvetica", fontsize="10", URL="dir_bb3805179b22f9bf6cb2257a07012dea.html"]
+  subgraph clusterdir_1715615f3f6e7394862de293d3809de9 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_1715615f3f6e7394862de293d3809de9.html"];
+    dir_1715615f3f6e7394862de293d3809de9 [shape=plaintext label="CHOLMOD"];
+    dir_a5b1d88261545a6920a7601f6d9dc7ab [shape=box label="Check" color="black" fillcolor="white" style="filled" URL="dir_a5b1d88261545a6920a7601f6d9dc7ab.html"];
+    dir_5feecabe6cdd2f18146e59cf2e962dba [shape=box label="Cholesky" color="black" fillcolor="white" style="filled" URL="dir_5feecabe6cdd2f18146e59cf2e962dba.html"];
+    dir_4541c25c54e6b15851b323789c28ea2e [shape=box label="Core" color="black" fillcolor="white" style="filled" URL="dir_4541c25c54e6b15851b323789c28ea2e.html"];
+    dir_2e269d847b9f827a687d503dd791884e [shape=box label="Demo" color="black" fillcolor="white" style="filled" URL="dir_2e269d847b9f827a687d503dd791884e.html"];
+    dir_3c53793ffda9b4dfbbff38a067871e51 [shape=box label="GPU" color="black" fillcolor="white" style="filled" URL="dir_3c53793ffda9b4dfbbff38a067871e51.html"];
+    dir_5f3abb04566fd12c94a7f90ce7770cb6 [shape=box label="Include" color="black" fillcolor="white" style="filled" URL="dir_5f3abb04566fd12c94a7f90ce7770cb6.html"];
+    dir_15c1f16aa93dadb33dd276351645b560 [shape=box label="MATLAB" color="red" fillcolor="white" style="filled" URL="dir_15c1f16aa93dadb33dd276351645b560.html"];
+    dir_87b353f03eac00e4901af311e6d31c1c [shape=box label="MatrixOps" color="black" fillcolor="white" style="filled" URL="dir_87b353f03eac00e4901af311e6d31c1c.html"];
+    dir_99cc9db584d29fb913b5010238a3f62e [shape=box label="Modify" color="black" fillcolor="white" style="filled" URL="dir_99cc9db584d29fb913b5010238a3f62e.html"];
+    dir_5f62b328e894bb1b1b1806a3b97c3820 [shape=box label="Partition" color="black" fillcolor="white" style="filled" URL="dir_5f62b328e894bb1b1b1806a3b97c3820.html"];
+    dir_8e8df788ba1fb1cbe46692de7397ddaa [shape=box label="Supernodal" color="black" fillcolor="white" style="filled" URL="dir_8e8df788ba1fb1cbe46692de7397ddaa.html"];
+    dir_a4ce7b0e68c3f943eb2928120146f6e3 [shape=box label="Tcov" color="black" fillcolor="white" style="filled" URL="dir_a4ce7b0e68c3f943eb2928120146f6e3.html"];
+    dir_5660b9ec90f6abde6276f20276ebf0d0 [shape=box label="Valgrind" color="black" fillcolor="white" style="filled" URL="dir_5660b9ec90f6abde6276f20276ebf0d0.html"];
+  }
+  }
+}

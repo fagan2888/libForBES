@@ -1,13 +1,15 @@
 var searchData=
 [
-  ['makeidentity',['MakeIdentity',['../class_matrix_factory.html#a0d117cb97f8ba22a3ee31137c0fdcdb0',1,'MatrixFactory']]],
-  ['makerandommatrix',['MakeRandomMatrix',['../class_matrix_factory.html#a428c5bf7e3aadbbfebac2f6b699a3649',1,'MatrixFactory::MakeRandomMatrix(size_t nrows, size_t ncols, float offset, float scale, Matrix::MatrixType type)'],['../class_matrix_factory.html#a7a5fc2da03ca5eb4b6b786e57b7d81ab',1,'MatrixFactory::MakeRandomMatrix(size_t nrows, size_t ncols, float offset, float scale)']]],
-  ['makerandomsparse',['MakeRandomSparse',['../class_matrix_factory.html#a12ba18289529967a41c8cb5fc21acee0',1,'MatrixFactory']]],
-  ['makesparse',['MakeSparse',['../class_matrix_factory.html#aa2e56e4b0ce04f6003b29a84b976eabc',1,'MatrixFactory']]],
-  ['makesparsesymmetric',['MakeSparseSymmetric',['../class_matrix_factory.html#a7e6caa651f1dd5983822cd962af28781',1,'MatrixFactory']]],
-  ['matrix',['Matrix',['../class_matrix.html#a2dba13c45127354c9f75ef576f49269b',1,'Matrix::Matrix()'],['../class_matrix.html#abcd0fb761caa04694f223f8528ad6e02',1,'Matrix::Matrix(size_t nr, size_t nc)'],['../class_matrix.html#a7d5af01ca18c563132a939ab07fed179',1,'Matrix::Matrix(size_t nr, size_t nc, MatrixType matrixType)'],['../class_matrix.html#ade7027cec8e97984a31995367f0ccc48',1,'Matrix::Matrix(size_t nr, size_t nc, const double *data)'],['../class_matrix.html#a86efe4a80e926f4a237861239d641dca',1,'Matrix::Matrix(size_t nr, size_t nc, const double *data, MatrixType matrixType)'],['../class_matrix.html#a806b603175d91477ca28ccf83ef589ea',1,'Matrix::Matrix(const Matrix &amp;orig)']]],
-  ['matrixoperator',['MatrixOperator',['../class_matrix_operator.html#a4a916b3168dd2a2959221d6545928a64',1,'MatrixOperator']]],
-  ['matrixsolver',['MatrixSolver',['../class_matrix_solver.html#a919ab90c1bae3454861e000bd57e822a',1,'MatrixSolver']]],
-  ['mult',['mult',['../class_matrix.html#a967b3c0361c14f7539de4712226dac76',1,'Matrix']]],
-  ['multiplysubmatrix',['multiplySubmatrix',['../class_matrix.html#a32b765e9e9d2c46bc2f6af1674d7080a',1,'Matrix']]]
+  ['l1',['L1',['../class_f_b_problem.html#a219bc23b3ae00401da7afb7584e21cc5',1,'FBProblem']]],
+  ['l2',['L2',['../class_f_b_problem.html#a16f281cc99f372b8272e0f951c84df39',1,'FBProblem']]],
+  ['last_5ferror',['last_error',['../class_c_g_solver.html#ab49e8d717752ca6f39c645dfdd909988',1,'CGSolver']]],
+  ['last_5fnum_5fiter',['last_num_iter',['../class_c_g_solver.html#a16c0e5283e8737b4c70b7a927493b872',1,'CGSolver']]],
+  ['ldlfactorization',['LDLFactorization',['../class_l_d_l_factorization.html#a798058b178222dc1705c508191ca53fb',1,'LDLFactorization']]],
+  ['length',['length',['../class_matrix.html#a67ff18ea6f0710847b5828361a155c12',1,'Matrix']]],
+  ['lin',['lin',['../class_f_b_problem.html#a4ef6ef5767fe7412bc25edcd0ac6111c',1,'FBProblem']]],
+  ['linopsolver',['LinOpSolver',['../class_lin_op_solver.html#a7b857b03f11b41bd9a596c241addaa09',1,'LinOpSolver']]],
+  ['loglogisticloss',['LogLogisticLoss',['../class_log_logistic_loss.html#a68c978ad2d2bbccc3226889990c31541',1,'LogLogisticLoss::LogLogisticLoss()'],['../class_log_logistic_loss.html#a4036fa0c043bc01a9daf97c8af1e4fa1',1,'LogLogisticLoss::LogLogisticLoss(double mu)']]],
+  ['loss',['loss',['../class_function_ontology_registry.html#a4cf75601679947f8fef43a85cbd518c4',1,'FunctionOntologyRegistry']]],
+  ['lsame',['lsame',['../group__aux_o_t_h_e_rauxiliary.html#gada799b40a93f1fd2c6d1a86a95f21631',1,'lsame.f']]],
+  ['lsamen',['lsamen',['../group__aux_o_t_h_e_rauxiliary.html#ga0b496168bf04278e5e57050403c150aa',1,'lsamen.f']]]
 ];

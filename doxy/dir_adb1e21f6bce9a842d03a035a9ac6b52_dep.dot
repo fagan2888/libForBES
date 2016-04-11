@@ -1,0 +1,9 @@
+digraph "libs/SuiteSparse/CXSparse_newfiles/Tcov" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_d7c04fa715a2e1447df40bc9cc9441e9 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="CXSparse_newfiles" fontname="Helvetica", fontsize="10", URL="dir_d7c04fa715a2e1447df40bc9cc9441e9.html"]
+  dir_adb1e21f6bce9a842d03a035a9ac6b52 [shape=box, label="Tcov", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_adb1e21f6bce9a842d03a035a9ac6b52.html"];
+  }
+}

@@ -1,0 +1,9 @@
+digraph "libs/SuiteSparse/SuiteSparse_config/xerbla" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_9e03afe33296f70fc457943b97b0c871 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="SuiteSparse_config" fontname="Helvetica", fontsize="10", URL="dir_9e03afe33296f70fc457943b97b0c871.html"]
+  dir_f3ab81383dead5257e84bfb5a554cf82 [shape=box, label="xerbla", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_f3ab81383dead5257e84bfb5a554cf82.html"];
+  }
+}

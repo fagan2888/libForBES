@@ -1,6 +1,9 @@
 var searchData=
 [
-  ['readsparse',['ReadSparse',['../class_matrix_factory.html#ade59fcea945199cd4e096b07159c1159',1,'MatrixFactory']]],
-  ['reset',['reset',['../class_f_b_cache.html#a8e0d363d14c4dac6f641aa30cc50bee5',1,'FBCache::reset(int status)'],['../class_f_b_cache.html#a19625dcc982647ad0540a1bbc676cca6',1,'FBCache::reset()']]],
-  ['reshape',['reshape',['../class_matrix.html#a78c9e38b32c51598d4535823c6d596f7',1,'Matrix']]]
+  ['path_5fstruct',['Path_struct',['../struct_path__struct.html',1,'']]],
+  ['plusop',['plusop',['../class_matrix.html#a60b85bd659def86b7d7c30c89e284d4f',1,'Matrix::plusop()'],['../class_matrix.html#aacb3bce122bc4f834c1732eb3abdc397',1,'Matrix::plusop(Matrix *mat) const ']]],
+  ['positive_20definite_20matrix',['Positive Definite Matrix',['../group___p_o.html',1,'']]],
+  ['problem_5fstruct',['problem_struct',['../structproblem__struct.html',1,'']]],
+  ['properties',['Properties',['../class_properties.html',1,'']]],
+  ['positive_20definite_20tridiagonal_20matrix',['Positive Definite tridiagonal Matrix',['../group___p_t.html',1,'']]]
 ];

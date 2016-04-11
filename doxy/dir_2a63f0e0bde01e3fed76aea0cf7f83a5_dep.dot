@@ -1,0 +1,9 @@
+digraph "libs/SuiteSparse/CAMD/MATLAB" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_0d2f14468283fe2e16dc4d572860ced4 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="CAMD" fontname="Helvetica", fontsize="10", URL="dir_0d2f14468283fe2e16dc4d572860ced4.html"]
+  dir_2a63f0e0bde01e3fed76aea0cf7f83a5 [shape=box, label="MATLAB", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_2a63f0e0bde01e3fed76aea0cf7f83a5.html"];
+  }
+}

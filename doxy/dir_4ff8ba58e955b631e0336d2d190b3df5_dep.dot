@@ -1,0 +1,9 @@
+digraph "libs/SuiteSparse/MATLAB_Tools/MESHND" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_0e1e4a5b9440aa22d8a417c9c4950190 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="MATLAB_Tools" fontname="Helvetica", fontsize="10", URL="dir_0e1e4a5b9440aa22d8a417c9c4950190.html"]
+  dir_4ff8ba58e955b631e0336d2d190b3df5 [shape=box, label="MESHND", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_4ff8ba58e955b631e0336d2d190b3df5.html"];
+  }
+}

@@ -1,0 +1,15 @@
+digraph "libs/lapack-3.6.0/TESTING" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_a32803a16a32b93014bb8ac0a66b497d {
+    graph [ bgcolor="#ddddee", pencolor="black", label="lapack-3.6.0" fontname="Helvetica", fontsize="10", URL="dir_a32803a16a32b93014bb8ac0a66b497d.html"]
+  subgraph clusterdir_f108907345ebaf3e552340ee850d5196 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_f108907345ebaf3e552340ee850d5196.html"];
+    dir_f108907345ebaf3e552340ee850d5196 [shape=plaintext label="TESTING"];
+    dir_f4b34a126ee0c58623a505d1c0f7881f [shape=box label="EIG" color="black" fillcolor="white" style="filled" URL="dir_f4b34a126ee0c58623a505d1c0f7881f.html"];
+    dir_ee29ad9703b9ef9f8573d9efeb0902ce [shape=box label="LIN" color="black" fillcolor="white" style="filled" URL="dir_ee29ad9703b9ef9f8573d9efeb0902ce.html"];
+    dir_167e75301f0a50af20c84dfaf471fd68 [shape=box label="MATGEN" color="black" fillcolor="white" style="filled" URL="dir_167e75301f0a50af20c84dfaf471fd68.html"];
+  }
+  }
+}

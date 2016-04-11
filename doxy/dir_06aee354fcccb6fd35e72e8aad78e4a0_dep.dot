@@ -1,0 +1,9 @@
+digraph "libs/SuiteSparse/MATLAB_Tools/shellgui" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_0e1e4a5b9440aa22d8a417c9c4950190 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="MATLAB_Tools" fontname="Helvetica", fontsize="10", URL="dir_0e1e4a5b9440aa22d8a417c9c4950190.html"]
+  dir_06aee354fcccb6fd35e72e8aad78e4a0 [shape=box, label="shellgui", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_06aee354fcccb6fd35e72e8aad78e4a0.html"];
+  }
+}

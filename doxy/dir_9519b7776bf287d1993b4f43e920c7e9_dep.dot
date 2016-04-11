@@ -1,0 +1,14 @@
+digraph "libs/lapack-3.6.0/SRC" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_a32803a16a32b93014bb8ac0a66b497d {
+    graph [ bgcolor="#ddddee", pencolor="black", label="lapack-3.6.0" fontname="Helvetica", fontsize="10", URL="dir_a32803a16a32b93014bb8ac0a66b497d.html"]
+  subgraph clusterdir_9519b7776bf287d1993b4f43e920c7e9 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_9519b7776bf287d1993b4f43e920c7e9.html"];
+    dir_9519b7776bf287d1993b4f43e920c7e9 [shape=plaintext label="SRC"];
+    dir_8bbbf894ee71d83d683dfd83f0001910 [shape=box label="DEPRECATED" color="black" fillcolor="white" style="filled" URL="dir_8bbbf894ee71d83d683dfd83f0001910.html"];
+    dir_526c48523a22a8b4fbfa7daee8ab8466 [shape=box label="VARIANTS" color="red" fillcolor="white" style="filled" URL="dir_526c48523a22a8b4fbfa7daee8ab8466.html"];
+  }
+  }
+}

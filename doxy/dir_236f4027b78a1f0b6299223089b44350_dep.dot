@@ -1,0 +1,9 @@
+digraph "libs/SuiteSparse/GPUQREngine/Source/BucketList" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_10d1ccddce65e6f466239bbb3756e0c8 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Source" fontname="Helvetica", fontsize="10", URL="dir_10d1ccddce65e6f466239bbb3756e0c8.html"]
+  dir_236f4027b78a1f0b6299223089b44350 [shape=box, label="BucketList", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_236f4027b78a1f0b6299223089b44350.html"];
+  }
+}

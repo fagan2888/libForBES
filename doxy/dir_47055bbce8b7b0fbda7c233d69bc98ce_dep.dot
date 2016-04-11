@@ -1,0 +1,9 @@
+digraph "libs/SuiteSparse/UFget" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_bb3805179b22f9bf6cb2257a07012dea {
+    graph [ bgcolor="#ddddee", pencolor="black", label="SuiteSparse" fontname="Helvetica", fontsize="10", URL="dir_bb3805179b22f9bf6cb2257a07012dea.html"]
+  dir_47055bbce8b7b0fbda7c233d69bc98ce [shape=box, label="UFget", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_47055bbce8b7b0fbda7c233d69bc98ce.html"];
+  }
+}

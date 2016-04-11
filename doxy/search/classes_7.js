@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['matrix',['Matrix',['../class_matrix.html',1,'']]],
-  ['matrixfactory',['MatrixFactory',['../class_matrix_factory.html',1,'']]],
-  ['matrixoperator',['MatrixOperator',['../class_matrix_operator.html',1,'']]],
-  ['matrixsolver',['MatrixSolver',['../class_matrix_solver.html',1,'']]],
-  ['matrixwriter',['MatrixWriter',['../class_matrix_writer.html',1,'']]]
+  ['klu_5fcommon_5fstruct',['klu_common_struct',['../structklu__common__struct.html',1,'']]],
+  ['klu_5fl_5fcommon_5fstruct',['klu_l_common_struct',['../structklu__l__common__struct.html',1,'']]],
+  ['klu_5fl_5fnumeric',['klu_l_numeric',['../structklu__l__numeric.html',1,'']]],
+  ['klu_5fl_5fsymbolic',['klu_l_symbolic',['../structklu__l__symbolic.html',1,'']]],
+  ['klu_5fnumeric',['klu_numeric',['../structklu__numeric.html',1,'']]],
+  ['klu_5fsymbolic',['klu_symbolic',['../structklu__symbolic.html',1,'']]]
 ];

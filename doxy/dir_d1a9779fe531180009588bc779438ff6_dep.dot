@@ -1,0 +1,9 @@
+digraph "libs/SuiteSparse/GPUQREngine/Source/TaskDescriptor" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_10d1ccddce65e6f466239bbb3756e0c8 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Source" fontname="Helvetica", fontsize="10", URL="dir_10d1ccddce65e6f466239bbb3756e0c8.html"]
+  dir_d1a9779fe531180009588bc779438ff6 [shape=box, label="TaskDescriptor", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_d1a9779fe531180009588bc779438ff6.html"];
+  }
+}

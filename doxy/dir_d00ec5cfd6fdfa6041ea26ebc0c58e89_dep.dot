@@ -1,0 +1,13 @@
+digraph "libs/SuiteSparse/GPUQREngine/Include" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_d27d2ee587f9bc588e0aca8b67015012 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="GPUQREngine" fontname="Helvetica", fontsize="10", URL="dir_d27d2ee587f9bc588e0aca8b67015012.html"]
+  subgraph clusterdir_d00ec5cfd6fdfa6041ea26ebc0c58e89 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_d00ec5cfd6fdfa6041ea26ebc0c58e89.html"];
+    dir_d00ec5cfd6fdfa6041ea26ebc0c58e89 [shape=plaintext label="Include"];
+    dir_bd18d750d599f89b79950dd622612a0f [shape=box label="Kernel" color="red" fillcolor="white" style="filled" URL="dir_bd18d750d599f89b79950dd622612a0f.html"];
+  }
+  }
+}

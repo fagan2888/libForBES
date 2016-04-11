@@ -1,7 +1,24 @@
 var searchData=
 [
-  ['hessianproduct',['hessianProduct',['../class_function.html#a3db78a30a24bb027444fffe52c4fa797',1,'Function::hessianProduct()'],['../class_log_logistic_loss.html#a14e14bf7302f090d0107260d361b6e69',1,'LogLogisticLoss::hessianProduct()'],['../class_quadratic.html#a32b19ebc9aca98bf5c28ba0b49f08997',1,'Quadratic::hessianProduct()'],['../class_quadratic_loss.html#ab3f74435403f845105dd4549a5392632',1,'QuadraticLoss::hessianProduct()']]],
-  ['hessianproductconj',['hessianProductConj',['../class_function.html#a7e032fef8a3585d1e31a2c7cf2fcf848',1,'Function']]],
-  ['hingeloss',['HingeLoss',['../class_hinge_loss.html#abea406fb4803804b91883d87c52e08ac',1,'HingeLoss::HingeLoss(Matrix &amp;b, double mu)'],['../class_hinge_loss.html#a7b3dd83565adbf662d182fcaebabb071',1,'HingeLoss::HingeLoss(Matrix &amp;b)']]],
-  ['huberloss',['HuberLoss',['../class_huber_loss.html#aad905c1f8cbc672a07aac6a2aa2041e9',1,'HuberLoss']]]
+  ['g',['g',['../class_f_b_problem.html#a3ea145d916a855a319d52b42f87683e1',1,'FBProblem']]],
+  ['get',['get',['../class_matrix.html#ade6530fe4f127ba13a7030b5e48e2859',1,'Matrix::get(const size_t i, const size_t j) const '],['../class_matrix.html#ad13362789c86b598e86a817ec469fac8',1,'Matrix::get(const size_t i) const ']]],
+  ['get_5feval_5ff',['get_eval_f',['../class_f_b_cache.html#a2253007a954120a848fd32b4cfaac8a9',1,'FBCache']]],
+  ['get_5feval_5ffbe',['get_eval_FBE',['../class_f_b_cache.html#aac11960fb56fbe6953ab929f3ddb0f5d',1,'FBCache']]],
+  ['get_5fforward_5fbackward_5fstep',['get_forward_backward_step',['../class_f_b_cache.html#a72021d377ba72a6e8244a5335b41a828',1,'FBCache']]],
+  ['get_5fforward_5fstep',['get_forward_step',['../class_f_b_cache.html#a3a17518af4f69d3081449a21ffee5adf',1,'FBCache']]],
+  ['get_5ffpr',['get_fpr',['../class_f_b_cache.html#a3cca3a59e8caacd90bee8fc138cb2874',1,'FBCache']]],
+  ['get_5fgrad_5ffbe',['get_grad_FBE',['../class_f_b_cache.html#ad856f5a13591d28dd4730a15d1b389d6',1,'FBCache']]],
+  ['get_5fnorm_5ffpr',['get_norm_fpr',['../class_f_b_cache.html#afbdab3f7a8279f6ccb93ee53a9961b28',1,'FBCache']]],
+  ['get_5fpoint',['get_point',['../class_f_b_cache.html#a687b045cff0feca570a62ede44365c27',1,'FBCache']]],
+  ['get_5fproperty',['get_property',['../class_properties.html#a532d2e17fc55796a5486f7e588b8e1ee',1,'Properties']]],
+  ['get_5ftyped_5fproperty',['get_typed_property',['../class_properties.html#a3489dd76ca541167771d32bcd6c620d0',1,'Properties']]],
+  ['getdata',['getData',['../class_matrix.html#a563d2eea637fa4cec85649bfdb83e649',1,'Matrix']]],
+  ['getmatrix',['getMatrix',['../class_matrix_operator.html#ad6db324de4ac65d1d5b7e63762a16f39',1,'MatrixOperator']]],
+  ['getname',['getName',['../class_function_ontological_class.html#a6d3fba031f4a69f9a2ec39d40adca71b',1,'FunctionOntologicalClass']]],
+  ['getncols',['getNcols',['../class_matrix.html#ae9b720197e7a5fe44f83d942604c0ed9',1,'Matrix']]],
+  ['getnrows',['getNrows',['../class_matrix.html#ae1329328637e15c238ff88d8bd002a90',1,'Matrix']]],
+  ['getsolution',['getSolution',['../class_f_b_splitting.html#a2e997e2cad3958538a86329d7bbc09a6',1,'FBSplitting']]],
+  ['getsuperclasses',['getSuperclasses',['../class_function_ontological_class.html#ab648e15b8c272b5f78a2cfc06668ff08',1,'FunctionOntologicalClass']]],
+  ['gettype',['getType',['../class_matrix.html#a4354c8f295ce0d7bc1593c47a6b0e458',1,'Matrix']]],
+  ['gettypestring',['getTypeString',['../class_matrix.html#a9aad4156bde7ca184d008f84650287c8',1,'Matrix']]]
 ];

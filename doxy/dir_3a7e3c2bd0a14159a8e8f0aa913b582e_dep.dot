@@ -1,0 +1,13 @@
+digraph "libs/SuiteSparse/MATLAB_Tools/SSMULT" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_0e1e4a5b9440aa22d8a417c9c4950190 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="MATLAB_Tools" fontname="Helvetica", fontsize="10", URL="dir_0e1e4a5b9440aa22d8a417c9c4950190.html"]
+  subgraph clusterdir_3a7e3c2bd0a14159a8e8f0aa913b582e {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_3a7e3c2bd0a14159a8e8f0aa913b582e.html"];
+    dir_3a7e3c2bd0a14159a8e8f0aa913b582e [shape=plaintext label="SSMULT"];
+    dir_477c98ea07bc1091c4f07c31f3d8d897 [shape=box label="Results" color="black" fillcolor="white" style="filled" URL="dir_477c98ea07bc1091c4f07c31f3d8d897.html"];
+  }
+  }
+}

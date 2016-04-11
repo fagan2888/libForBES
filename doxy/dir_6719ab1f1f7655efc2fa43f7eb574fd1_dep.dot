@@ -1,0 +1,11 @@
+digraph "libs" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_6719ab1f1f7655efc2fa43f7eb574fd1 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_6719ab1f1f7655efc2fa43f7eb574fd1.html"];
+    dir_6719ab1f1f7655efc2fa43f7eb574fd1 [shape=plaintext label="libs"];
+    dir_a32803a16a32b93014bb8ac0a66b497d [shape=box label="lapack-3.6.0" color="red" fillcolor="white" style="filled" URL="dir_a32803a16a32b93014bb8ac0a66b497d.html"];
+    dir_bb3805179b22f9bf6cb2257a07012dea [shape=box label="SuiteSparse" color="red" fillcolor="white" style="filled" URL="dir_bb3805179b22f9bf6cb2257a07012dea.html"];
+  }
+}

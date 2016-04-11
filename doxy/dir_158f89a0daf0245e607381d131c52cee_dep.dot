@@ -1,0 +1,9 @@
+digraph "libs/SuiteSparse/SPQR/Source" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_efe2ac6361686a257678b46eee7692bd {
+    graph [ bgcolor="#ddddee", pencolor="black", label="SPQR" fontname="Helvetica", fontsize="10", URL="dir_efe2ac6361686a257678b46eee7692bd.html"]
+  dir_158f89a0daf0245e607381d131c52cee [shape=box, label="Source", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_158f89a0daf0245e607381d131c52cee.html"];
+  }
+}

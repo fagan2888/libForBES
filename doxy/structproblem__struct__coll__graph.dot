@@ -1,0 +1,17 @@
+digraph "problem_struct"
+{
+ // INTERACTIVE_SVG=YES
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="problem_struct",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" A\nC" ,fontname="Helvetica"];
+  Node2 [label="cs_ci_sparse",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structcs__ci__sparse.html"];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" A\nC" ,fontname="Helvetica"];
+  Node3 [label="cs_di_sparse",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structcs__di__sparse.html"];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" A\nC" ,fontname="Helvetica"];
+  Node4 [label="cs_sparse",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structcs__sparse.html"];
+  Node5 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" A\nC" ,fontname="Helvetica"];
+  Node5 [label="cs_dl_sparse",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structcs__dl__sparse.html"];
+  Node6 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" A\nC" ,fontname="Helvetica"];
+  Node6 [label="cs_cl_sparse",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structcs__cl__sparse.html"];
+}

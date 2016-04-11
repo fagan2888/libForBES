@@ -1,6 +1,10 @@
 var searchData=
 [
-  ['norm',['Norm',['../class_norm.html',1,'']]],
-  ['norm1',['Norm1',['../class_norm1.html',1,'']]],
-  ['norm2',['Norm2',['../class_norm2.html',1,'']]]
+  ['ldlfactorization',['LDLFactorization',['../class_l_d_l_factorization.html',1,'']]],
+  ['linearoperator',['LinearOperator',['../class_linear_operator.html',1,'']]],
+  ['linopsolver',['LinOpSolver',['../class_lin_op_solver.html',1,'']]],
+  ['linsyssolver',['LinSysSolver',['../class_lin_sys_solver.html',1,'']]],
+  ['llbundle',['LLBundle',['../class_l_l_bundle.html',1,'']]],
+  ['loglogisticloss',['LogLogisticLoss',['../class_log_logistic_loss.html',1,'']]],
+  ['lqcost',['LQCost',['../class_l_q_cost.html',1,'']]]
 ];

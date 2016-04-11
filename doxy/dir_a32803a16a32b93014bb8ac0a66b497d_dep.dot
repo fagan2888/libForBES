@@ -1,0 +1,18 @@
+digraph "libs/lapack-3.6.0" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_6719ab1f1f7655efc2fa43f7eb574fd1 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="libs" fontname="Helvetica", fontsize="10", URL="dir_6719ab1f1f7655efc2fa43f7eb574fd1.html"]
+  subgraph clusterdir_a32803a16a32b93014bb8ac0a66b497d {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_a32803a16a32b93014bb8ac0a66b497d.html"];
+    dir_a32803a16a32b93014bb8ac0a66b497d [shape=plaintext label="lapack-3.6.0"];
+    dir_1766f0118d90bd41d6770309cf44e4d5 [shape=box label="BLAS" color="red" fillcolor="white" style="filled" URL="dir_1766f0118d90bd41d6770309cf44e4d5.html"];
+    dir_88e4ec7444d906034d2c2a43f6505658 [shape=box label="CBLAS" color="red" fillcolor="white" style="filled" URL="dir_88e4ec7444d906034d2c2a43f6505658.html"];
+    dir_acaee7069dc9c4302d66224c9463d54a [shape=box label="INSTALL" color="black" fillcolor="white" style="filled" URL="dir_acaee7069dc9c4302d66224c9463d54a.html"];
+    dir_9b0c331437bdced0af6516abb62b0331 [shape=box label="LAPACKE" color="red" fillcolor="white" style="filled" URL="dir_9b0c331437bdced0af6516abb62b0331.html"];
+    dir_9519b7776bf287d1993b4f43e920c7e9 [shape=box label="SRC" color="red" fillcolor="white" style="filled" URL="dir_9519b7776bf287d1993b4f43e920c7e9.html"];
+    dir_f108907345ebaf3e552340ee850d5196 [shape=box label="TESTING" color="red" fillcolor="white" style="filled" URL="dir_f108907345ebaf3e552340ee850d5196.html"];
+  }
+  }
+}

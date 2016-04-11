@@ -1,0 +1,19 @@
+digraph "General Matrices"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir=LR;
+  Node2 [label="Linear Solve",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__solve_g_e.html"];
+  Node6 [label="Auxiliary routines",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__auxiliary_g_e.html"];
+  Node0 [label="General Matrices",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 [label="LAPACK",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__lapack.html"];
+  Node3 [label="Eigenvalue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__eigen_g_e.html"];
+  Node4 [label="Singular Value",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__sing_g_e.html"];
+  Node5 [label="Computational routines",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__computational_g_e.html"];
+  Node1->Node0 [shape=plaintext, color="midnightblue", dir="back", style="solid"];
+  Node0->Node2 [shape=plaintext, color="midnightblue", dir="back", style="solid"];
+  Node0->Node3 [shape=plaintext, color="midnightblue", dir="back", style="solid"];
+  Node0->Node4 [shape=plaintext, color="midnightblue", dir="back", style="solid"];
+  Node0->Node5 [shape=plaintext, color="midnightblue", dir="back", style="solid"];
+  Node0->Node6 [shape=plaintext, color="midnightblue", dir="back", style="solid"];
+}

@@ -1,0 +1,9 @@
+digraph "libs/SuiteSparse/BTF/MATLAB" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_c9b26402059c5e982d23cbe1f4cb82a8 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="BTF" fontname="Helvetica", fontsize="10", URL="dir_c9b26402059c5e982d23cbe1f4cb82a8.html"]
+  dir_3177f1bfe85dff8a65e72eb1336b8710 [shape=box, label="MATLAB", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_3177f1bfe85dff8a65e72eb1336b8710.html"];
+  }
+}

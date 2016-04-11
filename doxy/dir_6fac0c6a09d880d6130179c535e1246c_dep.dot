@@ -1,0 +1,9 @@
+digraph "libs/lapack-3.6.0/CBLAS/src" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_88e4ec7444d906034d2c2a43f6505658 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="CBLAS" fontname="Helvetica", fontsize="10", URL="dir_88e4ec7444d906034d2c2a43f6505658.html"]
+  dir_6fac0c6a09d880d6130179c535e1246c [shape=box, label="src", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_6fac0c6a09d880d6130179c535e1246c.html"];
+  }
+}

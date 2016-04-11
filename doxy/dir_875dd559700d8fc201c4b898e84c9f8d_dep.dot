@@ -1,0 +1,9 @@
+digraph "libs/SuiteSparse/MATLAB_Tools/spok/private" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_b780083899021673515b250102c64b49 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="spok" fontname="Helvetica", fontsize="10", URL="dir_b780083899021673515b250102c64b49.html"]
+  dir_875dd559700d8fc201c4b898e84c9f8d [shape=box, label="private", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_875dd559700d8fc201c4b898e84c9f8d.html"];
+  }
+}

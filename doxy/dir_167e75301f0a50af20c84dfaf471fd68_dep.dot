@@ -1,0 +1,9 @@
+digraph "libs/lapack-3.6.0/TESTING/MATGEN" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_f108907345ebaf3e552340ee850d5196 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="TESTING" fontname="Helvetica", fontsize="10", URL="dir_f108907345ebaf3e552340ee850d5196.html"]
+  dir_167e75301f0a50af20c84dfaf471fd68 [shape=box, label="MATGEN", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_167e75301f0a50af20c84dfaf471fd68.html"];
+  }
+}

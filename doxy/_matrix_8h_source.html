@@ -28,7 +28,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">LibForBES
    &#160;<span id="projectnumber">0.1</span>
@@ -133,7 +132,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">/* STATIC */</span></div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">static</span> cholmod_common* <a class="code" href="class_matrix.html#a15c97d92d3cda9517cde2d9edbd06fac">cholmod_handle</a>();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">static</span> <a class="code" href="structcholmod__common__struct.html">cholmod_common</a>* <a class="code" href="class_matrix.html#a15c97d92d3cda9517cde2d9edbd06fac">cholmod_handle</a>();</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_matrix.html#ad018d4ba7a14f4b068e892c3477629b6">destroy_handle</a>();</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
@@ -301,11 +300,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;    <span class="keywordtype">double</span> *m_data; </div>
 <div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;    <span class="keywordtype">bool</span> m_delete_data; </div>
 <div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;    <span class="comment">/* CSparse members */</span></div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;    cholmod_triplet *m_triplet; </div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;    cholmod_sparse *m_sparse; </div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;    cholmod_dense *m_dense; </div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;    <a class="code" href="structcholmod__triplet__struct.html">cholmod_triplet</a> *m_triplet; </div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;    <a class="code" href="structcholmod__sparse__struct.html">cholmod_sparse</a> *m_sparse; </div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;    <a class="code" href="structcholmod__dense__struct.html">cholmod_dense</a> *m_dense; </div>
 <div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;    <span class="comment">/* SINGLETON CHOLMOD HANDLE */</span></div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;    <span class="keyword">static</span> cholmod_common *ms_singleton; </div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;    <span class="keyword">static</span> <a class="code" href="structcholmod__common__struct.html">cholmod_common</a> *ms_singleton; </div>
 <div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;    <span class="keywordtype">void</span> _createSparse();</div>
 <div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;</div>
 <div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;</div>
@@ -362,11 +361,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;</div>
 <div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* MATRIX_H */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="class_s___l_d_l_factorization_html"><div class="ttname"><a href="class_s___l_d_l_factorization.html">S_LDLFactorization</a></div><div class="ttdoc">LDL factorization of A&#39;A+bI. </div><div class="ttdef"><b>Definition:</b> S_LDLFactorization.h:83</div></div>
+<div class="ttc" id="structcholmod__common__struct_html"><div class="ttname"><a href="structcholmod__common__struct.html">cholmod_common_struct</a></div><div class="ttdef"><b>Definition:</b> cholmod_core.h:415</div></div>
 <div class="ttc" id="class_matrix_html_a2d6e772e2faa6080fadd50c9a2d2b130"><div class="ttname"><a href="class_matrix.html#a2d6e772e2faa6080fadd50c9a2d2b130">Matrix::operator-</a></div><div class="ttdeci">Matrix operator-(Matrix &amp;right) const </div><div class="ttdef"><b>Definition:</b> Matrix.cpp:599</div></div>
 <div class="ttc" id="class_matrix_html_a5269c84de25f7f2ac7d05efcffde1046a1dda72be4635b65b8d689ec7583239a1"><div class="ttname"><a href="class_matrix.html#a5269c84de25f7f2ac7d05efcffde1046a1dda72be4635b65b8d689ec7583239a1">Matrix::MATRIX_SYMMETRIC</a></div><div class="ttdef"><b>Definition:</b> Matrix.h:104</div></div>
 <div class="ttc" id="class_matrix_html_a2dba13c45127354c9f75ef576f49269b"><div class="ttname"><a href="class_matrix.html#a2dba13c45127354c9f75ef576f49269b">Matrix::Matrix</a></div><div class="ttdeci">Matrix()</div><div class="ttdef"><b>Definition:</b> Matrix.cpp:60</div></div>
 <div class="ttc" id="class_matrix_html_a8b21e3beb1071bd78b920c5b53b3e044"><div class="ttname"><a href="class_matrix.html#a8b21e3beb1071bd78b920c5b53b3e044">Matrix::set</a></div><div class="ttdeci">void set(size_t i, size_t j, double val)</div><div class="ttdef"><b>Definition:</b> Matrix.cpp:271</div></div>
 <div class="ttc" id="class_matrix_html_a1630a647355c737bcf17e416e6a72018"><div class="ttname"><a href="class_matrix.html#a1630a647355c737bcf17e416e6a72018">Matrix::SparseMatrixType</a></div><div class="ttdeci">SparseMatrixType</div><div class="ttdef"><b>Definition:</b> Matrix.h:110</div></div>
+<div class="ttc" id="structcholmod__triplet__struct_html"><div class="ttname"><a href="structcholmod__triplet__struct.html">cholmod_triplet_struct</a></div><div class="ttdef"><b>Definition:</b> cholmod_core.h:2089</div></div>
 <div class="ttc" id="class_matrix_html_a78c9e38b32c51598d4535823c6d596f7"><div class="ttname"><a href="class_matrix.html#a78c9e38b32c51598d4535823c6d596f7">Matrix::reshape</a></div><div class="ttdeci">int reshape(size_t nrows, size_t ncols)</div><div class="ttdef"><b>Definition:</b> Matrix.cpp:206</div></div>
 <div class="ttc" id="class_matrix_html_a5269c84de25f7f2ac7d05efcffde1046ae552eea881669aea988964df27df10fe"><div class="ttname"><a href="class_matrix.html#a5269c84de25f7f2ac7d05efcffde1046ae552eea881669aea988964df27df10fe">Matrix::MATRIX_LOWERTR</a></div><div class="ttdef"><b>Definition:</b> Matrix.h:103</div></div>
 <div class="ttc" id="class_matrix_html_ae9b720197e7a5fe44f83d942604c0ed9"><div class="ttname"><a href="class_matrix.html#ae9b720197e7a5fe44f83d942604c0ed9">Matrix::getNcols</a></div><div class="ttdeci">size_t getNcols() const </div><div class="ttdef"><b>Definition:</b> Matrix.cpp:159</div></div>
@@ -385,7 +386,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="class_matrix_html_ad018d4ba7a14f4b068e892c3477629b6"><div class="ttname"><a href="class_matrix.html#ad018d4ba7a14f4b068e892c3477629b6">Matrix::destroy_handle</a></div><div class="ttdeci">static int destroy_handle()</div><div class="ttdef"><b>Definition:</b> Matrix.cpp:50</div></div>
 <div class="ttc" id="class_matrix_html_a60b85bd659def86b7d7c30c89e284d4f"><div class="ttname"><a href="class_matrix.html#a60b85bd659def86b7d7c30c89e284d4f">Matrix::plusop</a></div><div class="ttdeci">void plusop()</div><div class="ttdef"><b>Definition:</b> Matrix.cpp:435</div></div>
 <div class="ttc" id="class_matrix_html_ad5c437f59e2afd60da8a880e8417856f"><div class="ttname"><a href="class_matrix.html#ad5c437f59e2afd60da8a880e8417856f">Matrix::operator*=</a></div><div class="ttdeci">friend Matrix &amp; operator*=(Matrix &amp;obj, double alpha)</div><div class="ttdef"><b>Definition:</b> Matrix.cpp:1014</div></div>
+<div class="ttc" id="structcholmod__dense__struct_html"><div class="ttname"><a href="structcholmod__dense__struct.html">cholmod_dense_struct</a></div><div class="ttdef"><b>Definition:</b> cholmod_core.h:1892</div></div>
 <div class="ttc" id="class_matrix_html_ae3f78084a0dd9b26068bf0e2878406ad"><div class="ttname"><a href="class_matrix.html#ae3f78084a0dd9b26068bf0e2878406ad">Matrix::operator&lt;&lt;</a></div><div class="ttdeci">friend std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, const Matrix &amp;obj)</div><div class="ttdef"><b>Definition:</b> Matrix.cpp:496</div></div>
+<div class="ttc" id="structcholmod__sparse__struct_html"><div class="ttname"><a href="structcholmod__sparse__struct.html">cholmod_sparse_struct</a></div><div class="ttdef"><b>Definition:</b> cholmod_core.h:1212</div></div>
 <div class="ttc" id="class_matrix_html_aa0c3fb9c6f0159041a9d3780d0aa7f0c"><div class="ttname"><a href="class_matrix.html#aa0c3fb9c6f0159041a9d3780d0aa7f0c">Matrix::quad</a></div><div class="ttdeci">double quad(Matrix &amp;x) const </div><div class="ttdef"><b>Definition:</b> Matrix.cpp:366</div></div>
 <div class="ttc" id="class_matrix_html_a563d2eea637fa4cec85649bfdb83e649"><div class="ttname"><a href="class_matrix.html#a563d2eea637fa4cec85649bfdb83e649">Matrix::getData</a></div><div class="ttdeci">double * getData()</div><div class="ttdef"><b>Definition:</b> Matrix.cpp:167</div></div>
 <div class="ttc" id="class_matrix_writer_html"><div class="ttname"><a href="class_matrix_writer.html">MatrixWriter</a></div><div class="ttdef"><b>Definition:</b> MatrixWriter.h:43</div></div>
@@ -415,7 +418,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Apr 7 2016 21:01:29 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Apr 11 2016 21:50:10 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

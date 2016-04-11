@@ -1,0 +1,13 @@
+digraph "libs/SuiteSparse/CSparse/MATLAB/Demo" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_0af89d6a261bb35f2e56c386bffaef14 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="MATLAB" fontname="Helvetica", fontsize="10", URL="dir_0af89d6a261bb35f2e56c386bffaef14.html"]
+  subgraph clusterdir_debf1d97a733b37aaa6260259e21a174 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_debf1d97a733b37aaa6260259e21a174.html"];
+    dir_debf1d97a733b37aaa6260259e21a174 [shape=plaintext label="Demo"];
+    dir_491baf9aa68f713bba2ac728f6638d17 [shape=box label="private" color="black" fillcolor="white" style="filled" URL="dir_491baf9aa68f713bba2ac728f6638d17.html"];
+  }
+  }
+}
