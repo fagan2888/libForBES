@@ -1,9 +1,0 @@
-digraph "libs/SuiteSparse/CAMD/Source" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_0d2f14468283fe2e16dc4d572860ced4 {
-    graph [ bgcolor="#ddddee", pencolor="black", label="CAMD" fontname="Helvetica", fontsize="10", URL="dir_0d2f14468283fe2e16dc4d572860ced4.html"]
-  dir_9933fc07f71950e0b169a763605767dd [shape=box, label="Source", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_9933fc07f71950e0b169a763605767dd.html"];
-  }
-}

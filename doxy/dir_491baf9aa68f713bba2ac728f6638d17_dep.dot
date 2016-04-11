@@ -1,9 +1,0 @@
-digraph "libs/SuiteSparse/CSparse/MATLAB/Demo/private" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_debf1d97a733b37aaa6260259e21a174 {
-    graph [ bgcolor="#ddddee", pencolor="black", label="Demo" fontname="Helvetica", fontsize="10", URL="dir_debf1d97a733b37aaa6260259e21a174.html"]
-  dir_491baf9aa68f713bba2ac728f6638d17 [shape=box, label="private", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_491baf9aa68f713bba2ac728f6638d17.html"];
-  }
-}

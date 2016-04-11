@@ -1,9 +1,0 @@
-digraph "libs/SuiteSparse/MATLAB_Tools/find_components" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_0e1e4a5b9440aa22d8a417c9c4950190 {
-    graph [ bgcolor="#ddddee", pencolor="black", label="MATLAB_Tools" fontname="Helvetica", fontsize="10", URL="dir_0e1e4a5b9440aa22d8a417c9c4950190.html"]
-  dir_02924baea440a7a406f40fdfd99a32f6 [shape=box, label="find_components", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_02924baea440a7a406f40fdfd99a32f6.html"];
-  }
-}

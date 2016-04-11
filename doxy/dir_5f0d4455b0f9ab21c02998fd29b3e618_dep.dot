@@ -1,9 +1,0 @@
-digraph "libs/SuiteSparse/CXSparse/Demo" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_0e12e647490e8d189a9c8b720f02e403 {
-    graph [ bgcolor="#ddddee", pencolor="black", label="CXSparse" fontname="Helvetica", fontsize="10", URL="dir_0e12e647490e8d189a9c8b720f02e403.html"]
-  dir_5f0d4455b0f9ab21c02998fd29b3e618 [shape=box, label="Demo", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_5f0d4455b0f9ab21c02998fd29b3e618.html"];
-  }
-}

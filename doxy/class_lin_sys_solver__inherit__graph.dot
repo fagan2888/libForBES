@@ -1,0 +1,21 @@
+digraph "LinSysSolver"
+{
+ // INTERACTIVE_SVG=YES
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="LinSysSolver",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="LinOpSolver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_lin_op_solver.html",tooltip="An abstract solver for linear operator equations. "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="CGSolver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_c_g_solver.html",tooltip="Conjugate gradient solver. "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="MatrixSolver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_matrix_solver.html",tooltip="Abstraction layer for linear systems. "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="FactoredSolver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_factored_solver.html",tooltip="An abstract factorization-based solver for linear systems. "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="CholeskyFactorization",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_cholesky_factorization.html",tooltip="Cholesky factorization and solver. "];
+  Node5 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="LDLFactorization",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_l_d_l_factorization.html",tooltip="LDL factorization and solver. "];
+  Node5 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="S_LDLFactorization",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s___l_d_l_factorization.html",tooltip="LDL factorization of A&#39;A+bI. "];
+}

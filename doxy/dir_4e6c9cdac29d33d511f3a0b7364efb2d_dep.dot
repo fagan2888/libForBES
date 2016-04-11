@@ -1,9 +1,0 @@
-digraph "libs/lapack-3.6.0/SRC/VARIANTS/cholesky/RL" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_65b214814f162d0bf134f206f251ae30 {
-    graph [ bgcolor="#ddddee", pencolor="black", label="cholesky" fontname="Helvetica", fontsize="10", URL="dir_65b214814f162d0bf134f206f251ae30.html"]
-  dir_4e6c9cdac29d33d511f3a0b7364efb2d [shape=box, label="RL", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_4e6c9cdac29d33d511f3a0b7364efb2d.html"];
-  }
-}

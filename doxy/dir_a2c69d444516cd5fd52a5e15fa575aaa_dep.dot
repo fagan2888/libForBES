@@ -1,9 +1,0 @@
-digraph "libs/SuiteSparse/UMFPACK/Source" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_48adbbb77cd47947e6f70368d656f2e1 {
-    graph [ bgcolor="#ddddee", pencolor="black", label="UMFPACK" fontname="Helvetica", fontsize="10", URL="dir_48adbbb77cd47947e6f70368d656f2e1.html"]
-  dir_a2c69d444516cd5fd52a5e15fa575aaa [shape=box, label="Source", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_a2c69d444516cd5fd52a5e15fa575aaa.html"];
-  }
-}

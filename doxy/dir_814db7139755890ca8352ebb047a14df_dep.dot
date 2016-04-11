@@ -1,9 +1,0 @@
-digraph "libs/SuiteSparse/GPUQREngine/Include/Kernel/Apply" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_bd18d750d599f89b79950dd622612a0f {
-    graph [ bgcolor="#ddddee", pencolor="black", label="Kernel" fontname="Helvetica", fontsize="10", URL="dir_bd18d750d599f89b79950dd622612a0f.html"]
-  dir_814db7139755890ca8352ebb047a14df [shape=box, label="Apply", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_814db7139755890ca8352ebb047a14df.html"];
-  }
-}

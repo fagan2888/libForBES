@@ -1,9 +1,0 @@
-digraph "libs/SuiteSparse/MATLAB_Tools/Factorize/private" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_c8c34b253560c3665ae616c32621bb7f {
-    graph [ bgcolor="#ddddee", pencolor="black", label="Factorize" fontname="Helvetica", fontsize="10", URL="dir_c8c34b253560c3665ae616c32621bb7f.html"]
-  dir_6c7aac5bd9f23a21a7eab01039c02c4a [shape=box, label="private", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_6c7aac5bd9f23a21a7eab01039c02c4a.html"];
-  }
-}

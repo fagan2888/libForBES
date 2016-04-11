@@ -1,9 +1,0 @@
-digraph "libs/SuiteSparse/CHOLMOD/MatrixOps" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_1715615f3f6e7394862de293d3809de9 {
-    graph [ bgcolor="#ddddee", pencolor="black", label="CHOLMOD" fontname="Helvetica", fontsize="10", URL="dir_1715615f3f6e7394862de293d3809de9.html"]
-  dir_87b353f03eac00e4901af311e6d31c1c [shape=box, label="MatrixOps", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_87b353f03eac00e4901af311e6d31c1c.html"];
-  }
-}

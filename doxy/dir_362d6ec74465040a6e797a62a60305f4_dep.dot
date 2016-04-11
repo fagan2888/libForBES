@@ -1,9 +1,0 @@
-digraph "libs/SuiteSparse/CSparse/Tcov" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_0f336e6ede37c704aa6a878bd9e9be5e {
-    graph [ bgcolor="#ddddee", pencolor="black", label="CSparse" fontname="Helvetica", fontsize="10", URL="dir_0f336e6ede37c704aa6a878bd9e9be5e.html"]
-  dir_362d6ec74465040a6e797a62a60305f4 [shape=box, label="Tcov", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_362d6ec74465040a6e797a62a60305f4.html"];
-  }
-}

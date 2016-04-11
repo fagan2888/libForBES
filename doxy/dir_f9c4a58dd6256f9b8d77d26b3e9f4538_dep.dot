@@ -1,9 +1,0 @@
-digraph "libs/SuiteSparse/SPQR/MATLAB" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_efe2ac6361686a257678b46eee7692bd {
-    graph [ bgcolor="#ddddee", pencolor="black", label="SPQR" fontname="Helvetica", fontsize="10", URL="dir_efe2ac6361686a257678b46eee7692bd.html"]
-  dir_f9c4a58dd6256f9b8d77d26b3e9f4538 [shape=box, label="MATLAB", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_f9c4a58dd6256f9b8d77d26b3e9f4538.html"];
-  }
-}

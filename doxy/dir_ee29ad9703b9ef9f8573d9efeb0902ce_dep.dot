@@ -1,9 +1,0 @@
-digraph "libs/lapack-3.6.0/TESTING/LIN" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_f108907345ebaf3e552340ee850d5196 {
-    graph [ bgcolor="#ddddee", pencolor="black", label="TESTING" fontname="Helvetica", fontsize="10", URL="dir_f108907345ebaf3e552340ee850d5196.html"]
-  dir_ee29ad9703b9ef9f8573d9efeb0902ce [shape=box, label="LIN", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_ee29ad9703b9ef9f8573d9efeb0902ce.html"];
-  }
-}

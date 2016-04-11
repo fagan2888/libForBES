@@ -1,9 +1,0 @@
-digraph "libs/SuiteSparse/KLU/User" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_5f5d892bb5db00d33e22891ab42b16a7 {
-    graph [ bgcolor="#ddddee", pencolor="black", label="KLU" fontname="Helvetica", fontsize="10", URL="dir_5f5d892bb5db00d33e22891ab42b16a7.html"]
-  dir_7f6de58e73628fddf8cc11cbb4209bf0 [shape=box, label="User", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_7f6de58e73628fddf8cc11cbb4209bf0.html"];
-  }
-}

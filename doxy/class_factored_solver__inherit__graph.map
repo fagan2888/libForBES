@@ -1,7 +1,0 @@
-<map id="FactoredSolver" name="FactoredSolver">
-<area shape="rect" id="node4" href="$class_cholesky_factorization.html" title="Cholesky factorization and solver. " alt="" coords="5,229,157,256"/>
-<area shape="rect" id="node5" href="$class_l_d_l_factorization.html" title="LDL factorization and solver. " alt="" coords="182,229,303,256"/>
-<area shape="rect" id="node6" href="$class_s___l_d_l_factorization.html" title="LDL factorization of A&#39;A+bI. " alt="" coords="327,229,464,256"/>
-<area shape="rect" id="node2" href="$class_matrix_solver.html" title="Abstraction layer for linear systems. " alt="" coords="195,80,289,107"/>
-<area shape="rect" id="node3" href="$class_lin_sys_solver.html" title="An abstract solver for linear systems. " alt="" coords="193,5,292,32"/>
-</map>

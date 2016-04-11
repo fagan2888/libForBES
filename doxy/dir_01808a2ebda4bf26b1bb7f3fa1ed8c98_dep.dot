@@ -1,9 +1,0 @@
-digraph "libs/lapack-3.6.0/LAPACKE/src" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_9b0c331437bdced0af6516abb62b0331 {
-    graph [ bgcolor="#ddddee", pencolor="black", label="LAPACKE" fontname="Helvetica", fontsize="10", URL="dir_9b0c331437bdced0af6516abb62b0331.html"]
-  dir_01808a2ebda4bf26b1bb7f3fa1ed8c98 [shape=box, label="src", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_01808a2ebda4bf26b1bb7f3fa1ed8c98.html"];
-  }
-}

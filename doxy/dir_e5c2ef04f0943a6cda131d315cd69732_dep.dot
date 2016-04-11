@@ -1,9 +1,0 @@
-digraph "libs/SuiteSparse/CSparse/Include" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_0f336e6ede37c704aa6a878bd9e9be5e {
-    graph [ bgcolor="#ddddee", pencolor="black", label="CSparse" fontname="Helvetica", fontsize="10", URL="dir_0f336e6ede37c704aa6a878bd9e9be5e.html"]
-  dir_e5c2ef04f0943a6cda131d315cd69732 [shape=box, label="Include", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_e5c2ef04f0943a6cda131d315cd69732.html"];
-  }
-}

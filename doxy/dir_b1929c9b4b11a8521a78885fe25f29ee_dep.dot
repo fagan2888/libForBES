@@ -1,9 +1,0 @@
-digraph "libs/lapack-3.6.0/SRC/VARIANTS/lu/LL" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_b65ea48d63a4685dd5902bc466ff06f4 {
-    graph [ bgcolor="#ddddee", pencolor="black", label="lu" fontname="Helvetica", fontsize="10", URL="dir_b65ea48d63a4685dd5902bc466ff06f4.html"]
-  dir_b1929c9b4b11a8521a78885fe25f29ee [shape=box, label="LL", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_b1929c9b4b11a8521a78885fe25f29ee.html"];
-  }
-}

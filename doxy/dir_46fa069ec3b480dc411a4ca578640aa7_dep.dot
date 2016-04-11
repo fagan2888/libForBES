@@ -1,9 +1,0 @@
-digraph "libs/SuiteSparse/AMD/MATLAB" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_43db01af4e5692b2aa200aa25dfacbca {
-    graph [ bgcolor="#ddddee", pencolor="black", label="AMD" fontname="Helvetica", fontsize="10", URL="dir_43db01af4e5692b2aa200aa25dfacbca.html"]
-  dir_46fa069ec3b480dc411a4ca578640aa7 [shape=box, label="MATLAB", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_46fa069ec3b480dc411a4ca578640aa7.html"];
-  }
-}

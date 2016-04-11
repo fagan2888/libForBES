@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node1 [label="CColamd_Row_struct",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$struct_c_colamd___row__struct.html"];
+  Node1 [label="ForBESUtils",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_for_b_e_s_utils.html",tooltip="ForBES utilities such as status codes. "];
 }

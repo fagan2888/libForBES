@@ -1,9 +1,0 @@
-digraph "libs/SuiteSparse/SuiteSparse_GPURuntime/Source" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_991afbc2219cd78f62f37fccfe6a4643 {
-    graph [ bgcolor="#ddddee", pencolor="black", label="SuiteSparse_GPURuntime" fontname="Helvetica", fontsize="10", URL="dir_991afbc2219cd78f62f37fccfe6a4643.html"]
-  dir_f7c27bdddfb0d77dac39b26fb84e3516 [shape=box, label="Source", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_f7c27bdddfb0d77dac39b26fb84e3516.html"];
-  }
-}

@@ -1,9 +1,0 @@
-digraph "libs/SuiteSparse/COLAMD/MATLAB" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_265ba06133edbcca18c37a2dab9ff575 {
-    graph [ bgcolor="#ddddee", pencolor="black", label="COLAMD" fontname="Helvetica", fontsize="10", URL="dir_265ba06133edbcca18c37a2dab9ff575.html"]
-  dir_11b58810453ae2a5416fe650ff08599e [shape=box, label="MATLAB", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_11b58810453ae2a5416fe650ff08599e.html"];
-  }
-}

@@ -1,9 +1,0 @@
-digraph "libs/SuiteSparse/CXSparse/MATLAB/UFget" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_4b11ada5ffcfa4889b0ee6be3ce51f8a {
-    graph [ bgcolor="#ddddee", pencolor="black", label="MATLAB" fontname="Helvetica", fontsize="10", URL="dir_4b11ada5ffcfa4889b0ee6be3ce51f8a.html"]
-  dir_9dd8130559f94ad7a31716de5fbe2004 [shape=box, label="UFget", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_9dd8130559f94ad7a31716de5fbe2004.html"];
-  }
-}

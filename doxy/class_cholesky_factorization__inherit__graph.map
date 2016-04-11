@@ -1,5 +1,0 @@
-<map id="CholeskyFactorization" name="CholeskyFactorization">
-<area shape="rect" id="node2" href="$class_factored_solver.html" title="An abstract factorization&#45;based solver for linear systems. " alt="" coords="26,155,136,181"/>
-<area shape="rect" id="node3" href="$class_matrix_solver.html" title="Abstraction layer for linear systems. " alt="" coords="34,80,128,107"/>
-<area shape="rect" id="node4" href="$class_lin_sys_solver.html" title="An abstract solver for linear systems. " alt="" coords="32,5,131,32"/>
-</map>

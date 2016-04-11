@@ -1,9 +1,0 @@
-digraph "libs/SuiteSparse/MATLAB_Tools/spqr_rank/private" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_c6115b1cc9f745c60d4f7c6de5993a0e {
-    graph [ bgcolor="#ddddee", pencolor="black", label="spqr_rank" fontname="Helvetica", fontsize="10", URL="dir_c6115b1cc9f745c60d4f7c6de5993a0e.html"]
-  dir_2c24d9e75909b40ab6d068de7382f3d8 [shape=box, label="private", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_2c24d9e75909b40ab6d068de7382f3d8.html"];
-  }
-}

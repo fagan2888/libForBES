@@ -1,9 +1,0 @@
-digraph "libs/SuiteSparse/COLAMD/Source" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_265ba06133edbcca18c37a2dab9ff575 {
-    graph [ bgcolor="#ddddee", pencolor="black", label="COLAMD" fontname="Helvetica", fontsize="10", URL="dir_265ba06133edbcca18c37a2dab9ff575.html"]
-  dir_a730bb9464593f358a2ec999879f94eb [shape=box, label="Source", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_a730bb9464593f358a2ec999879f94eb.html"];
-  }
-}

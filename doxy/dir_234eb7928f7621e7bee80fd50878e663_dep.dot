@@ -1,9 +1,0 @@
-digraph "libs/SuiteSparse/LDL/Include" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_60ced514b82df02e73714f44ea944942 {
-    graph [ bgcolor="#ddddee", pencolor="black", label="LDL" fontname="Helvetica", fontsize="10", URL="dir_60ced514b82df02e73714f44ea944942.html"]
-  dir_234eb7928f7621e7bee80fd50878e663 [shape=box, label="Include", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_234eb7928f7621e7bee80fd50878e663.html"];
-  }
-}

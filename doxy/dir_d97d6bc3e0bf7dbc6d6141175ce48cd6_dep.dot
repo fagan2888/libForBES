@@ -1,9 +1,0 @@
-digraph "libs/SuiteSparse/MATLAB_Tools/GEE/private" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_03ee6ec1abab33cff1859ac911280b95 {
-    graph [ bgcolor="#ddddee", pencolor="black", label="GEE" fontname="Helvetica", fontsize="10", URL="dir_03ee6ec1abab33cff1859ac911280b95.html"]
-  dir_d97d6bc3e0bf7dbc6d6141175ce48cd6 [shape=box, label="private", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_d97d6bc3e0bf7dbc6d6141175ce48cd6.html"];
-  }
-}

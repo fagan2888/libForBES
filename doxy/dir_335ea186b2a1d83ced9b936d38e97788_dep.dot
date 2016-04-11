@@ -1,9 +1,0 @@
-digraph "libs/SuiteSparse/MATLAB_Tools/waitmex" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_0e1e4a5b9440aa22d8a417c9c4950190 {
-    graph [ bgcolor="#ddddee", pencolor="black", label="MATLAB_Tools" fontname="Helvetica", fontsize="10", URL="dir_0e1e4a5b9440aa22d8a417c9c4950190.html"]
-  dir_335ea186b2a1d83ced9b936d38e97788 [shape=box, label="waitmex", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_335ea186b2a1d83ced9b936d38e97788.html"];
-  }
-}

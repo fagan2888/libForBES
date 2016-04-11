@@ -1,9 +1,0 @@
-digraph "libs/SuiteSparse/SPQR/Demo" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_efe2ac6361686a257678b46eee7692bd {
-    graph [ bgcolor="#ddddee", pencolor="black", label="SPQR" fontname="Helvetica", fontsize="10", URL="dir_efe2ac6361686a257678b46eee7692bd.html"]
-  dir_01540d87f5636626692ba1f0163cae3f [shape=box, label="Demo", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_01540d87f5636626692ba1f0163cae3f.html"];
-  }
-}

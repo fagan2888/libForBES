@@ -1,9 +1,0 @@
-digraph "libs/SuiteSparse/RBio/Tcov" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_35c220e147717a868e96ee3f1334ef93 {
-    graph [ bgcolor="#ddddee", pencolor="black", label="RBio" fontname="Helvetica", fontsize="10", URL="dir_35c220e147717a868e96ee3f1334ef93.html"]
-  dir_14d820c3a1f0edb6c2311dbcebcb6151 [shape=box, label="Tcov", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_14d820c3a1f0edb6c2311dbcebcb6151.html"];
-  }
-}

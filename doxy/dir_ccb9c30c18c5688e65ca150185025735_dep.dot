@@ -1,9 +1,0 @@
-digraph "libs/SuiteSparse/AMD/Demo" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_43db01af4e5692b2aa200aa25dfacbca {
-    graph [ bgcolor="#ddddee", pencolor="black", label="AMD" fontname="Helvetica", fontsize="10", URL="dir_43db01af4e5692b2aa200aa25dfacbca.html"]
-  dir_ccb9c30c18c5688e65ca150185025735 [shape=box, label="Demo", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_ccb9c30c18c5688e65ca150185025735.html"];
-  }
-}

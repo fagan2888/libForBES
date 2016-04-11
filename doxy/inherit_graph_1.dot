@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node1 [label="CBLAS_TEST_COMPLEX",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$struct_c_b_l_a_s___t_e_s_t___c_o_m_p_l_e_x.html"];
+  Node1 [label="FBProblem",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_f_b_problem.html",tooltip="Low level FB problem description. "];
 }
