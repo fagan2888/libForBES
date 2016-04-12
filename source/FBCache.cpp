@@ -21,13 +21,30 @@
 #include "FBCache.h"
 #include "LinearOperator.h"
 
-// #include <iostream>
 #include <cmath>
 #include <limits>
 #include <complex>
 
+#define FB_CACHE_RELATIVE_TOL 1e-6
+#define FB_CACHE_ABSOLUTE_TOL 1e-14
+
+/**
+ * Verify whether \c a and \c b are close to one another. Checks whether 
+ * \f[
+ *  |a-b|\leq \max (\epsilon_r \max(a,b), \epsilon_a),
+ * \f]
+ * where \f$\epsilon_r = 10^{-6}\f$ is the relative tolerance and \f$\epsilon_a=10^{-14}\f$
+ * is the absolute tolerance.
+ * 
+ * 
+ * @param a scalar
+ * @param b another scalar
+ * @return \c true iff \c a is approximately equal to \c b.
+ */
 inline bool is_close(const double a, const double b) {
-    return abs(a - b) <= std::max(1e-6 * std::max(std::abs(a), std::abs(b)), 1e-14);
+    return abs(a - b) <= std::max(
+            FB_CACHE_RELATIVE_TOL * std::max(std::abs(a), std::abs(b)), 
+            FB_CACHE_ABSOLUTE_TOL);
 }
 
 void FBCache::reset(int status) {
@@ -35,14 +52,14 @@ void FBCache::reset(int status) {
 }
 
 void FBCache::reset() {
-    FBCache::reset(FBCache::STATUS_NONE);
+    FBCache::reset(STATUS_NONE);
 }
 
 FBCache::FBCache(FBProblem & p, Matrix & x, double gamma) :
 m_prob(p),
 m_x(&x),
 m_gamma(gamma) {
-    reset(FBCache::STATUS_NONE);
+    reset(STATUS_NONE);
 
     // get dimensions of things
     size_t m_x_rows = m_x->getNrows();
@@ -157,7 +174,7 @@ int FBCache::update_eval_f(bool order_grad_f2) {
     }
 
     m_fx = m_f1x + m_f2x + m_linx;
-    m_status = FBCache::STATUS_EVALF;
+    m_status = STATUS_EVALF;
 
     return ForBESUtils::STATUS_OK;
 }
@@ -165,10 +182,10 @@ int FBCache::update_eval_f(bool order_grad_f2) {
 int FBCache::update_forward_step(double gamma) {
     bool is_gamma_the_same = is_close(gamma, m_gamma);
     if (!is_gamma_the_same) {
-        reset(FBCache::STATUS_EVALF);
+        reset(STATUS_EVALF);
     }
 
-    if (m_status >= FBCache::STATUS_FORWARD) {
+    if (m_status >= STATUS_FORWARD) {
         if (is_gamma_the_same) {
             return ForBESUtils::STATUS_OK;
         }
@@ -228,7 +245,7 @@ int FBCache::update_forward_step(double gamma) {
     Matrix::add(*m_y, -gamma, *m_gradfx, 1.0);
 
     m_gamma = gamma;
-    m_status = FBCache::STATUS_FORWARD;
+    m_status = STATUS_FORWARD;
 
     return ForBESUtils::STATUS_OK;
 }
@@ -236,20 +253,18 @@ int FBCache::update_forward_step(double gamma) {
 int FBCache::update_forward_backward_step(double gamma) {
     int status;
     if (!is_close(gamma, m_gamma)) {
-        reset(FBCache::STATUS_EVALF);
+        reset(STATUS_EVALF);
     }
-    if (m_status >= FBCache::STATUS_FORWARDBACKWARD) {
+    if (m_status >= STATUS_FORWARDBACKWARD) {
         return ForBESUtils::STATUS_OK;
     }
-    if (m_status < FBCache::STATUS_FORWARD) {
+    if (m_status < STATUS_FORWARD) {
         status = update_forward_step(gamma);
         if (!ForBESUtils::is_status_ok(status)) {
             return status;
         }
     }
-    /*
-     * Shouldn't we check whether g() is not NULL?
-     */
+    
     status = m_prob.g()->callProx(*m_y, gamma, *m_z, m_gz);
     if (!ForBESUtils::is_status_ok(status)) {
         return status;
@@ -257,31 +272,28 @@ int FBCache::update_forward_backward_step(double gamma) {
     *m_FPRx = (*m_x - *m_z);
     m_sqnormFPRx = std::pow(m_FPRx->norm_fro_sq(), 2);
     m_gamma = gamma;
-    m_status = FBCache::STATUS_FORWARDBACKWARD;
+    m_status = STATUS_FORWARDBACKWARD;
 
     return ForBESUtils::STATUS_OK;
 }
 
 int FBCache::update_eval_FBE(double gamma) {
     if (!is_close(gamma, m_gamma)) {
-        reset(FBCache::STATUS_EVALF);
+        reset(STATUS_EVALF);
     }
 
-    if (m_status >= FBCache::STATUS_FBE) {
+    if (m_status >= STATUS_FBE) {
         return ForBESUtils::STATUS_OK;
     }
 
-    if (m_status < FBCache::STATUS_FORWARDBACKWARD) {
+    if (m_status < STATUS_FORWARDBACKWARD) {
         int status = update_forward_backward_step(gamma);
         if (!ForBESUtils::is_status_ok(status)) {
             return status;
         }
     }
 
-    Matrix innprox_mat(1, 1);
-    m_FPRx -> transpose();
-    Matrix::mult(innprox_mat, 1.0, *m_FPRx, *m_gradfx, 0.0);
-    m_FPRx -> transpose();
+    Matrix innprox_mat = (*m_FPRx) * (*m_gradfx);
     double innprod = innprox_mat[0];
 
     m_FBEx = m_fx + m_gz - innprod + 0.5 / m_gamma*m_sqnormFPRx;
@@ -293,7 +305,7 @@ int FBCache::update_eval_FBE(double gamma) {
 
 int FBCache::update_grad_FBE(double gamma) {
     if (!is_close(gamma, m_gamma)) {
-        reset(FBCache::STATUS_EVALF);
+        reset(STATUS_EVALF);
     }
 
     if (m_status >= STATUS_GRAD_FBE) {
@@ -305,7 +317,7 @@ int FBCache::update_grad_FBE(double gamma) {
         if (!ForBESUtils::is_status_ok(status)) {
             return status;
         }
-    }
+    }   
 
     *m_gradFBEx = *m_FPRx;
 
@@ -331,13 +343,11 @@ int FBCache::update_grad_FBE(double gamma) {
             Matrix v2(m_prob.L2()->dimensionOut());
             m_prob.f2()->hessianProduct(*m_res2x, v1, v2);
             Matrix v3 = m_prob.L2()->callAdjoint(v2);
-            /* TODO: avoid this, make it simpler */
             if (m_prob.f1() != NULL) Matrix::add(*m_gradFBEx, -1.0, v3, 1.0);
             else Matrix::add(*m_gradFBEx, -1.0, v3, 1.0 / gamma);
         } else {
             Matrix v1(m_x->getNrows(), m_x->getNcols());
             m_prob.f2()->hessianProduct(*m_x, *m_FPRx, v1);
-            /* TODO: avoid this, make it simpler */
             if (m_prob.f1() != NULL) Matrix::add(*m_gradFBEx, -1.0, v1, 1.0);
             else Matrix::add(*m_gradFBEx, -1.0, v1, 1.0 / gamma);
         }
@@ -351,7 +361,7 @@ int FBCache::update_grad_FBE(double gamma) {
 
 void FBCache::set_point(Matrix& x) {
     *m_x = x;
-    reset(FBCache::STATUS_NONE);
+    reset(STATUS_NONE);
 }
 
 Matrix * FBCache::get_point() {
