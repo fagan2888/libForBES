@@ -154,20 +154,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_matrix.html">Matrix</a> <a class="code" href="class_matrix_factory.html#ad704220063923f2f5d51ee01c760d255">ShallowVector</a>(<span class="keywordtype">double</span> * data, <span class="keywordtype">size_t</span> size, <span class="keywordtype">size_t</span> offset);</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    </div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_matrix.html">Matrix</a> <a class="code" href="class_matrix_factory.html#ad704220063923f2f5d51ee01c760d255">ShallowVector</a>();</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;};</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* MATRIXFACTORY_H */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    </div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_matrix.html">Matrix</a> <a class="code" href="class_matrix_factory.html#a6a20eb9c1586b6b92c02011a6649045e">ShallowSubVector</a>(<a class="code" href="class_matrix.html">Matrix</a> &amp; A, <span class="keywordtype">size_t</span> j);</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;};</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* MATRIXFACTORY_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="preprocessor"></span></div>
 <div class="ttc" id="class_matrix_html_a1630a647355c737bcf17e416e6a72018"><div class="ttname"><a href="class_matrix.html#a1630a647355c737bcf17e416e6a72018">Matrix::SparseMatrixType</a></div><div class="ttdeci">SparseMatrixType</div><div class="ttdef"><b>Definition:</b> Matrix.h:110</div></div>
 <div class="ttc" id="class_matrix_factory_html_ade59fcea945199cd4e096b07159c1159"><div class="ttname"><a href="class_matrix_factory.html#ade59fcea945199cd4e096b07159c1159">MatrixFactory::ReadSparse</a></div><div class="ttdeci">static Matrix ReadSparse(FILE *fp)</div><div class="ttdef"><b>Definition:</b> MatrixFactory.cpp:111</div></div>
 <div class="ttc" id="class_matrix_factory_html"><div class="ttname"><a href="class_matrix_factory.html">MatrixFactory</a></div><div class="ttdoc">Use this class to create instances of Matrix. </div><div class="ttdef"><b>Definition:</b> MatrixFactory.h:40</div></div>
 <div class="ttc" id="class_matrix_factory_html_a7e6caa651f1dd5983822cd962af28781"><div class="ttname"><a href="class_matrix_factory.html#a7e6caa651f1dd5983822cd962af28781">MatrixFactory::MakeSparseSymmetric</a></div><div class="ttdeci">static Matrix MakeSparseSymmetric(size_t n, size_t max_nnz)</div><div class="ttdef"><b>Definition:</b> MatrixFactory.cpp:107</div></div>
 <div class="ttc" id="class_matrix_factory_html_a428c5bf7e3aadbbfebac2f6b699a3649"><div class="ttname"><a href="class_matrix_factory.html#a428c5bf7e3aadbbfebac2f6b699a3649">MatrixFactory::MakeRandomMatrix</a></div><div class="ttdeci">static Matrix MakeRandomMatrix(size_t nrows, size_t ncols, float offset, float scale, Matrix::MatrixType type)</div><div class="ttdef"><b>Definition:</b> MatrixFactory.cpp:64</div></div>
 <div class="ttc" id="class_matrix_factory_html_a2aeff3272ebf425d983017e506561cc6"><div class="ttname"><a href="class_matrix_factory.html#a2aeff3272ebf425d983017e506561cc6">MatrixFactory::ShallowMatrix</a></div><div class="ttdeci">static Matrix ShallowMatrix(const Matrix &amp;mat)</div><div class="ttdef"><b>Definition:</b> MatrixFactory.cpp:122</div></div>
+<div class="ttc" id="class_matrix_factory_html_a6a20eb9c1586b6b92c02011a6649045e"><div class="ttname"><a href="class_matrix_factory.html#a6a20eb9c1586b6b92c02011a6649045e">MatrixFactory::ShallowSubVector</a></div><div class="ttdeci">static Matrix ShallowSubVector(Matrix &amp;A, size_t j)</div><div class="ttdef"><b>Definition:</b> MatrixFactory.cpp:175</div></div>
 <div class="ttc" id="class_matrix_factory_html_a12ba18289529967a41c8cb5fc21acee0"><div class="ttname"><a href="class_matrix_factory.html#a12ba18289529967a41c8cb5fc21acee0">MatrixFactory::MakeRandomSparse</a></div><div class="ttdeci">static Matrix MakeRandomSparse(size_t nrows, size_t ncols, size_t nnz, float offset, float scale)</div><div class="ttdef"><b>Definition:</b> MatrixFactory.cpp:44</div></div>
 <div class="ttc" id="class_matrix_html"><div class="ttname"><a href="class_matrix.html">Matrix</a></div><div class="ttdoc">A generic matrix API. </div><div class="ttdef"><b>Definition:</b> Matrix.h:67</div></div>
 <div class="ttc" id="class_matrix_factory_html_aa2e56e4b0ce04f6003b29a84b976eabc"><div class="ttname"><a href="class_matrix_factory.html#aa2e56e4b0ce04f6003b29a84b976eabc">MatrixFactory::MakeSparse</a></div><div class="ttdeci">static Matrix MakeSparse(size_t nrows, size_t ncols, size_t max_nnz, Matrix::SparseMatrixType stype)</div><div class="ttdef"><b>Definition:</b> MatrixFactory.cpp:94</div></div>
@@ -177,7 +180,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 11 2016 22:03:44 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Apr 13 2016 20:22:07 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

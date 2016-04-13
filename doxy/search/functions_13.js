@@ -11,6 +11,7 @@ var searchData=
   ['_7eindbox',['~IndBox',['../class_ind_box.html#a63e0b0dfdc1b8acdcc619026455cdcf0',1,'IndBox']]],
   ['_7eindpos',['~IndPos',['../class_ind_pos.html#a000744ac8e2b94633576282315ca79ef',1,'IndPos']]],
   ['_7eindprobsimplex',['~IndProbSimplex',['../class_ind_prob_simplex.html#a54e27d49604e4fac4d9c999ab7226ff5',1,'IndProbSimplex']]],
+  ['_7elbfgsbuffer',['~LBFGSBuffer',['../class_l_b_f_g_s_buffer.html#a2d96c4f63c92c309b2ddb0e36a0bd25d',1,'LBFGSBuffer']]],
   ['_7eldlfactorization',['~LDLFactorization',['../class_l_d_l_factorization.html#a6b62f4f756a63862fa7eb8be251a74a8',1,'LDLFactorization']]],
   ['_7elinearoperator',['~LinearOperator',['../class_linear_operator.html#a79e301691db5a9561fe34bbf89ecda2a',1,'LinearOperator']]],
   ['_7ematrix',['~Matrix',['../class_matrix.html#a9b1c3627f573d78a2f08623fdfef990f',1,'Matrix']]],

@@ -1,3 +1,10 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_matrix.html" title="A generic matrix API. " alt="" coords="5,5,64,32"/>
+<area shape="rect" id="node1" href="$class_lin_sys_solver.html" title="An abstract solver for linear systems. " alt="" coords="5,31,104,57"/>
+<area shape="rect" id="node2" href="$class_lin_op_solver.html" title="An abstract solver for linear operator equations. " alt="" coords="153,5,247,32"/>
+<area shape="rect" id="node4" href="$class_matrix_solver.html" title="Abstraction layer for linear systems. " alt="" coords="153,56,247,83"/>
+<area shape="rect" id="node3" href="$class_c_g_solver.html" title="Conjugate gradient solver. " alt="" coords="313,5,391,32"/>
+<area shape="rect" id="node5" href="$class_factored_solver.html" title="An abstract factorization&#45;based solver for linear systems. " alt="" coords="297,56,407,83"/>
+<area shape="rect" id="node6" href="$class_cholesky_factorization.html" title="Cholesky factorization and solver. " alt="" coords="456,5,608,32"/>
+<area shape="rect" id="node7" href="$class_l_d_l_factorization.html" title="LDL factorization and solver. " alt="" coords="471,56,593,83"/>
+<area shape="rect" id="node8" href="$class_s___l_d_l_factorization.html" title="LDL factorization of A&#39;A+bI. " alt="" coords="463,107,601,133"/>
 </map>

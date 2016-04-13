@@ -4,6 +4,7 @@ var searchData=
   ['l2',['L2',['../class_f_b_problem.html#a16f281cc99f372b8272e0f951c84df39',1,'FBProblem']]],
   ['last_5ferror',['last_error',['../class_c_g_solver.html#ab49e8d717752ca6f39c645dfdd909988',1,'CGSolver']]],
   ['last_5fnum_5fiter',['last_num_iter',['../class_c_g_solver.html#a16c0e5283e8737b4c70b7a927493b872',1,'CGSolver']]],
+  ['lbfgsbuffer',['LBFGSBuffer',['../class_l_b_f_g_s_buffer.html#a5e6a7d2eb0ce5bbdfbbeaef7ab8dab2f',1,'LBFGSBuffer']]],
   ['ldlfactorization',['LDLFactorization',['../class_l_d_l_factorization.html#a798058b178222dc1705c508191ca53fb',1,'LDLFactorization']]],
   ['length',['length',['../class_matrix.html#a67ff18ea6f0710847b5828361a155c12',1,'Matrix']]],
   ['lin',['lin',['../class_f_b_problem.html#a4ef6ef5767fe7412bc25edcd0ac6111c',1,'FBProblem']]],

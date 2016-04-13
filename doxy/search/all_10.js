@@ -14,6 +14,7 @@ var searchData=
   ['setmatrix',['setMatrix',['../class_matrix_operator.html#aff2e79d21bfd25ccf87ae6a09ad2d15c',1,'MatrixOperator']]],
   ['setq',['setQ',['../class_quadratic.html#a4ae8f189eb3db4409fcdb929403dc8c2',1,'Quadratic::setQ(Matrix &amp;Q)'],['../class_quadratic.html#a138d8b0e42a27a4ed4b1c1a6796baffc',1,'Quadratic::setq(Matrix &amp;q)']]],
   ['shallowmatrix',['ShallowMatrix',['../class_matrix_factory.html#a2aeff3272ebf425d983017e506561cc6',1,'MatrixFactory']]],
+  ['shallowsubvector',['ShallowSubVector',['../class_matrix_factory.html#a6a20eb9c1586b6b92c02011a6649045e',1,'MatrixFactory']]],
   ['shallowvector',['ShallowVector',['../class_matrix_factory.html#ae96cab4631f0b5c4e554c144618a4365',1,'MatrixFactory::ShallowVector(const Matrix &amp;vector, size_t size, size_t offset)'],['../class_matrix_factory.html#ac3e823ce29b251cfc3ee5ab692567401',1,'MatrixFactory::ShallowVector(const Matrix &amp;vector, size_t offset)'],['../class_matrix_factory.html#ab075ca35f3033342adcb4442de792a1d',1,'MatrixFactory::ShallowVector(double *data, size_t size, size_t offset)'],['../class_matrix_factory.html#ad704220063923f2f5d51ee01c760d255',1,'MatrixFactory::ShallowVector()']]],
   ['size',['size',['../class_properties.html#a67d0550ac423977aafd0a3e5d040792b',1,'Properties']]],
   ['size_5ft_5ftype',['SIZE_T_TYPE',['../class_properties.html#a5c47c0dcde5867dbe2adb26144105a0a',1,'Properties']]],
