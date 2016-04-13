@@ -41,7 +41,7 @@ Matrix MatrixFactory::MakeIdentity(size_t n, double alpha) {
     return mat;
 }
 
-Matrix MatrixFactory::MakeRandomSparse(size_t nrows, size_t ncols, size_t nnz, float offset, float scale) {        
+Matrix MatrixFactory::MakeRandomSparse(size_t nrows, size_t ncols, size_t nnz, float offset, float scale) {
     Matrix R = MakeSparse(nrows, ncols, nnz, Matrix::SPARSE_UNSYMMETRIC);
     std::set<nice_pair> s;
     nice_pair p;
@@ -94,8 +94,8 @@ Matrix MatrixFactory::MakeRandomMatrix(size_t nrows, size_t ncols, float offset,
 Matrix MatrixFactory::MakeSparse(size_t nrows, size_t ncols, size_t max_nnz, Matrix::SparseMatrixType stype) {
     if (max_nnz > nrows * ncols) {
         std::ostringstream oss;
-        oss << "Matrix " << nrows << "x" << ncols << "(max_size=" << (nrows*ncols) 
-            << " cannot allocate " << max_nnz << "non-zeros";
+        oss << "Matrix " << nrows << "x" << ncols << "(max_size=" << (nrows * ncols)
+                << " cannot allocate " << max_nnz << "non-zeros";
         throw std::invalid_argument(oss.str().c_str());
     }
     Matrix matrix(nrows, ncols, Matrix::MATRIX_SPARSE);
@@ -171,6 +171,13 @@ Matrix MatrixFactory::ShallowVector() {
     Matrix v_shallow = Matrix(true);
     return v_shallow;
 }
+
+Matrix MatrixFactory::ShallowSubVector(Matrix& A, size_t j) {
+    double * data = A.getData();
+    data += A.getNrows() * j;
+    return MatrixFactory::ShallowVector(data, A.getNrows(), 0);
+}
+
 
 
 

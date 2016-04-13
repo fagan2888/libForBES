@@ -36,8 +36,9 @@ ifeq (1, $(DO_PARALLEL))
 	ifeq ($(OS),Darwin) # Assume Mac OS X
 	    NPROCS:=$(shell sysctl -n hw.ncpu)
 	endif
-	NPROCS:=$$(($(NPROCS)-1))
-	MAKEFLAGS += -j $(NPROCS)
+	#NPROCS:=$$(($(NPROCS)-1))
+	#MAKEFLAGS += -j $(NPROCS)
+	MAKEFLAGS += -j 2
 	MAKEFLAGS += --no-print-directory
 endif
 
@@ -140,7 +141,7 @@ lFLAGS = \
 	$(LFLAGS_ADDITIONAL)
 
 ifeq (0, $(DO_PROFILE))
-    lFLAGS += -lgfortran
+    #lFLAGS += -lgfortran
 endif
 
 LFLAGS = \
@@ -220,7 +221,8 @@ SOURCES += FBProblem.cpp \
 	FBSplitting.cpp \
 	FBSplittingFast.cpp \
 	FBStopping.cpp \
-	FBStoppingRelative.cpp
+	FBStoppingRelative.cpp \
+	LBFGSBuffer.cpp
 
 OBJECTS = $(SOURCES:%.cpp=$(OBJ_DIR)/%.o)
 
@@ -266,7 +268,8 @@ TESTS = \
 	TestFBSplittingFast.test \
 	TestLasso.test \
 	TestSumOfNorm2.test \
-	TestProperties.test
+	TestProperties.test \
+	TestLBFGSBuffer.test
 
 TEST_BINS = $(TESTS:%.test=$(BIN_TEST_DIR)/%)
 
@@ -323,6 +326,7 @@ test: build-tests
 	${BIN_TEST_DIR}/TestOpGradient
 	@echo "\n*** ALGORITHMS ***"
 	${BIN_TEST_DIR}/TestFBCache
+	${BIN_TEST_DIR}/TestLBFGSBuffer
 	${BIN_TEST_DIR}/TestFBSplitting
 	${BIN_TEST_DIR}/TestFBSplittingFast
 	${BIN_TEST_DIR}/TestLasso
@@ -340,6 +344,9 @@ $(BIN_TEST_DIR)/%: $(OBJECTS) $(TEST_DIR)/%.cpp $(TEST_DIR)/%Runner.cpp $(TEST_D
 main:
 	$(CXX) $(CFLAGS) $(IFLAGS) source/main.cpp 
 	$(CXX) $(LFLAGS) -L./dist/Debug main.o -lforbes $(lFLAGS) -o main_run
+
+run: main
+	./main_run
 
 $(OBJ_DIR)/%.o: source/%.cpp
 	@echo 

@@ -187,8 +187,8 @@ public:
      * 
      * \post
      * The %Matrix object that is returned by this method "points" (internally) to the
-     * original %Matrix object; therefore, any modification of the new object's internal state
-     * affects directly the state of the original object.
+     * original %Matrix object; therefore, any modification of the new object's 
+     * internal state affects directly the state of the original object.
      * 
      * @param vector any dense vector (either column or row vector)
      * @param offset offset with respect to the original vector
@@ -228,6 +228,18 @@ public:
      * @return empty shallow vector
      */
     static Matrix ShallowVector();
+    
+    /**
+     * Extracts the j-th column vector from an m-by-n matrix (j &lt; n).
+     * The result is a shallow vector.
+     * 
+     * @param A original matrix (by reference)
+     * @param j index of the vector to be extracted
+     * @return Shallow j-th sub-vector
+     * 
+     * \warning Does not work on transposed matrices
+     */
+    static Matrix ShallowSubVector(Matrix & A, size_t j);
 
 
 private:
