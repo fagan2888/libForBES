@@ -1,12 +1,11 @@
 /*
- * File:   TestCGSolver.h
- * Author: chung
+ * File:   TestLBFGSBuffer.h
+ * Author: Pantelis Sopasakis
  *
- * Created on Nov 16, 2015, 6:41:56 PM
  */
 
-#ifndef TESTCGSOLVER_H
-#define	TESTCGSOLVER_H
+#ifndef TESTLBFGSBuffer_H
+#define	TESTLBFGSBuffer_H
 
 #define FORBES_TEST_UTILS
 
@@ -14,25 +13,25 @@
 
 #include <cppunit/extensions/HelperMacros.h>
 
-class TestCGSolver : public CPPUNIT_NS::TestFixture {
-    CPPUNIT_TEST_SUITE(TestCGSolver);
+class TestLBFGSBuffer : public CPPUNIT_NS::TestFixture {
+    CPPUNIT_TEST_SUITE(TestLBFGSBuffer);
 
-    CPPUNIT_TEST(testSolve);
-    CPPUNIT_TEST(testSolve2);
+    CPPUNIT_TEST(testPush1);
+    CPPUNIT_TEST(testPush2);
 
     CPPUNIT_TEST_SUITE_END();
 
 public:
-    TestCGSolver();
-    virtual ~TestCGSolver();
+    TestLBFGSBuffer();
+    virtual ~TestLBFGSBuffer();
     void setUp();
     void tearDown();
 
 private:
-    void testSolve();
-    void testSolve2();
+    void testPush1();
+    void testPush2();
 
 };
 
-#endif	/* TESTCGSOLVER_H */
+#endif	/* TESTLBFGSBuffer_H */
 

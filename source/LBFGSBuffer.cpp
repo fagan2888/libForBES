@@ -28,6 +28,8 @@
 #include <string.h>
 #include <complex>
 
+const long LBFGSBuffer::LBFGS_BUFFER_EOB = -1;
+
 LBFGSBuffer::LBFGSBuffer(size_t n, size_t mem) : m_mem(mem) {
     // initialize the LBFGS buffer
     m_current_mem = 0;
@@ -134,9 +136,7 @@ int LBFGSBuffer::update(Matrix* q, Matrix* r) {
             sq_norm_y_prev += std::pow(y_previous[l], 2);
         }
         Hk0 = (*m_Ys)[idx_prev] / sq_norm_y_prev;
-    }
-    std::cout << "Hk0 = " << Hk0 << std::endl;
-
+    }    
 
     /*
      * 
@@ -151,7 +151,6 @@ int LBFGSBuffer::update(Matrix* q, Matrix* r) {
         double alpha_i = sq[0] / (*m_Ys)[kj];
         m_alphas->set(kj, 0, alpha_i);
         Matrix::add(qq, -alpha_i, yi, 1.0);
-        std::cout << "kj = " << kj << std::endl;
         j++;
     }
 
@@ -167,7 +166,7 @@ int LBFGSBuffer::update(Matrix* q, Matrix* r) {
     j = 0;
     while ((kj = get_k_minus_j(j)) != LBFGSBuffer::LBFGS_BUFFER_EOB) {
         Matrix yi = MatrixFactory::ShallowSubVector(*m_Y, kj); // yi
-        Matrix b = yi*r;
+        Matrix b = yi*(*r);
         double beta = b[0] / (*m_Ys)[kj];
         Matrix s = MatrixFactory::ShallowSubVector(*m_S, kj);
         Matrix::add(*r, (*m_alphas)[kj] - beta, s, 1.0);

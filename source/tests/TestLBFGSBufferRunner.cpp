@@ -1,6 +1,6 @@
 /*
- * File:   TestCGSolverRunner.cpp
- * Author: chung
+ * File:   TestLBFGSBufferRunner.cpp
+ * Author: Pantelis Sopasakis
  *
  * Created on Nov 16, 2015, 6:41:56 PM
  */

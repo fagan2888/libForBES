@@ -37,7 +37,7 @@ public:
      * This constant signals the <em>end of buffer</em> (EOB) while
      * accessing past (buffered) values.
      */
-    static const int LBFGS_BUFFER_EOB = -1;
+    static const long LBFGS_BUFFER_EOB;
 
     /**
      * Constructs a new instance of LBFGSBuffer for vectors of size \c n 
@@ -106,6 +106,10 @@ public:
      *  r_k = H_k q_k,
      * \f]
      * for a given vector \f$q_k\f$.
+     * 
+     * Details about the algorithm can be found in J. Nocedal and S.J. Wright,
+     * <em>Numerical Optimization</em>, Second edition, Springer, 2006 (see Alg.
+     * 7.4).
      * 
      * @param q given vector \f$q_k\f$
      * @param r result
