@@ -1,6 +1,7 @@
 var searchData=
 [
   ['_7ecgsolver',['~CGSolver',['../class_c_g_solver.html#a038a92d649aba56067d8114a9cace72f',1,'CGSolver']]],
+  ['_7econgseparablesum',['~CongSeparableSum',['../class_cong_separable_sum.html#ae7390529c25a8213d1df9a96148776e0',1,'CongSeparableSum']]],
   ['_7edistancetoball2',['~DistanceToBall2',['../class_distance_to_ball2.html#ac52bf1d53c5321e8d68faaacb8963817',1,'DistanceToBall2']]],
   ['_7eelasticnet',['~ElasticNet',['../class_elastic_net.html#a18a2e75bd7a5277919ab26d8b2b101b8',1,'ElasticNet']]],
   ['_7efbcache',['~FBCache',['../class_f_b_cache.html#abe9339ea922371b4dc198208290f87e6',1,'FBCache']]],

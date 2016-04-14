@@ -8,6 +8,7 @@ var searchData=
   ['cgsolver',['CGSolver',['../class_c_g_solver.html',1,'CGSolver'],['../class_c_g_solver.html#ae4c0d795edb095cd58714d6c0a1aac1c',1,'CGSolver::CGSolver(LinearOperator &amp;linop)'],['../class_c_g_solver.html#a788b391478ba764f3c5427af2656d244',1,'CGSolver::CGSolver(LinearOperator &amp;linop, LinearOperator &amp;preconditioner)'],['../class_c_g_solver.html#aab208a51a382f40467748873af8061be',1,'CGSolver::CGSolver(LinearOperator &amp;linop, LinearOperator &amp;preconditioner, double tolerance, size_t max_iterations)']]],
   ['choleskyfactorization',['CholeskyFactorization',['../class_cholesky_factorization.html',1,'CholeskyFactorization'],['../class_cholesky_factorization.html#a7b57d2c2ed95f5b959f96748c02c8c15',1,'CholeskyFactorization::CholeskyFactorization()']]],
   ['cholmod_5fhandle',['cholmod_handle',['../class_matrix.html#a15c97d92d3cda9517cde2d9edbd06fac',1,'Matrix']]],
+  ['congseparablesum',['CongSeparableSum',['../class_cong_separable_sum.html',1,'CongSeparableSum'],['../class_cong_separable_sum.html#a8be5e4bd96eca3647f008d863dfbf519',1,'CongSeparableSum::CongSeparableSum()']]],
   ['conj_5fquadratic',['conj_quadratic',['../class_function_ontology_registry.html#a693813145226c4f216cac9a87ce17607',1,'FunctionOntologyRegistry']]],
   ['conjugatefunction',['ConjugateFunction',['../class_conjugate_function.html',1,'']]],
   ['custom_5ftype',['CUSTOM_TYPE',['../class_properties.html#a352dc8561bf01c2b49f3024abcadf989',1,'Properties']]]

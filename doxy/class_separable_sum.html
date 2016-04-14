@@ -166,8 +166,36 @@ Additional Inherited Members</h2></td></tr>
 <p class="formulaDsp">
 \[ (\mathrm{prox}_{\gamma f}(v))_{\mathcal{I}_j} = \mathrm{prox}_{\gamma f_j}(v_{\mathcal{I}_j}). \]
 </p>
-<p>As a result, it suffices to be able to compute \( \mathrm{prox}_{\gamma f_j}(\cdot)\) to compute the proximal of a separable sum. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<p>As a result, it suffices to be able to compute \( \mathrm{prox}_{\gamma f_j}(\cdot)\) to compute the proximal of a separable sum.</p>
+<p>Here is an example of use of this class where we define a function as the separable sum of an <a class="el" href="class_elastic_net.html">Elastic net</a> and a <a class="el" href="class_hinge_loss.html">Hinge loss</a>:</p>
+<div class="fragment"><div class="line"><span class="keywordtype">size_t</span> num_idx_1 = 3;   <span class="comment">// Function #1 points to 3 indices</span></div>
+<div class="line"><span class="keywordtype">size_t</span> num_idx_2 = 2;   <span class="comment">// Function #2 points to 2 indices</span></div>
+<div class="line"></div>
+<div class="line">std::vector&lt;size_t&gt; idx1(num_idx_1);</div>
+<div class="line">std::vector&lt;size_t&gt; idx2(num_idx_2);</div>
+<div class="line"></div>
+<div class="line">idx1[0] = 0;</div>
+<div class="line">idx1[1] = 3;</div>
+<div class="line">idx1[2] = 4;  <span class="comment">// f1(x_0, x_3, x_4)</span></div>
+<div class="line"></div>
+<div class="line">idx2[0] = 1;</div>
+<div class="line">idx2[1] = 2;  <span class="comment">// f2(x1, x2) </span></div>
+<div class="line"></div>
+<div class="line"><span class="comment">// Define function f1 = ElasticNet([x_0, x_3, x_4])</span></div>
+<div class="line"><a class="code" href="class_function.html">Function</a> * f1 = <span class="keyword">new</span> <a class="code" href="class_elastic_net.html">ElasticNet</a>(2.5, 1.3);</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// Define function f2 = HingeLoss([x1, x2])</span></div>
+<div class="line"><a class="code" href="class_matrix.html">Matrix</a> b(2, 1);</div>
+<div class="line">b[0] = 0.8;</div>
+<div class="line">b[1] = 1.5;</div>
+<div class="line"><a class="code" href="class_function.html">Function</a> * f2 = <span class="keyword">new</span> <a class="code" href="class_hinge_loss.html">HingeLoss</a>(b, 1.4);</div>
+<div class="line"></div>
+<div class="line">std::map&lt;Function*, std::vector&lt;size_t&gt;* &gt; fun_idx_map;</div>
+<div class="line">fun_idx_map[f1] = &amp;idx1;  <span class="comment">// add f1</span></div>
+<div class="line">fun_idx_map[f2] = &amp;idx2;  <span class="comment">// add f2</span></div>
+<div class="line"></div>
+<div class="line"><a class="code" href="class_function.html">Function</a> * sep_sum = <span class="keyword">new</span> <a class="code" href="class_separable_sum.html#a8ac324bc047734b99004dd22abceff9f">SeparableSum</a>(fun_idx_map);</div>
+</div><!-- fragment --> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a8ac324bc047734b99004dd22abceff9f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -535,7 +563,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 13 2016 20:22:07 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 14 2016 16:42:42 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -127,41 +127,41 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;Function.h&quot;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="class_separable_sum.html">   60</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_separable_sum.html">SeparableSum</a> : <span class="keyword">public</span> <a class="code" href="class_function.html">Function</a> {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">public</span>:    </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">using</span> <a class="code" href="class_function.html#ab749ead2d6688a35e628dc7f38229b1e">Function::call</a>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">using</span> <a class="code" href="class_function.html#a880fe818690c6453d3a03a72b5dd7efb">Function::callConj</a>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="class_separable_sum.html">SeparableSum</a>();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_separable_sum.html#a8ac324bc047734b99004dd22abceff9f">SeparableSum</a>(std::map&lt;<a class="code" href="class_function.html">Function</a>*, std::vector&lt;size_t&gt;*&gt; fun_idx_map);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_separable_sum.html#a82bc079eb19a22446f4b1261016b367c">call</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span>&amp; f);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_separable_sum.html#a82bc079eb19a22446f4b1261016b367c">call</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span>&amp; f, <a class="code" href="class_matrix.html">Matrix</a>&amp; grad);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_separable_sum.html#ad9522e70b210e46fe627ebad4b241878">callConj</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span>&amp; f_star);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_separable_sum.html#a2a9e4f43d3e544648b74e8e7305bd00d">callProx</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span> gamma, <a class="code" href="class_matrix.html">Matrix</a>&amp; prox);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_separable_sum.html#a2a9e4f43d3e544648b74e8e7305bd00d">callProx</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span> gamma, <a class="code" href="class_matrix.html">Matrix</a>&amp; prox, <span class="keywordtype">double</span>&amp; f_at_prox);</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;   </div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_function_ontological_class.html">FunctionOntologicalClass</a> <a class="code" href="class_separable_sum.html#afa2e465348ec6af0d88d54fe65bd0618">category</a>();</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    std::map&lt;Function*, std::vector&lt;size_t&gt; * &gt; m_fun_idx_map;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;};</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* SEPARABLESUM_H */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="class_separable_sum.html">   94</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_separable_sum.html">SeparableSum</a> : <span class="keyword">public</span> <a class="code" href="class_function.html">Function</a> {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keyword">public</span>:    </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">using</span> <a class="code" href="class_function.html#ab749ead2d6688a35e628dc7f38229b1e">Function::call</a>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keyword">using</span> <a class="code" href="class_function.html#a880fe818690c6453d3a03a72b5dd7efb">Function::callConj</a>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="class_separable_sum.html">SeparableSum</a>();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_separable_sum.html#a8ac324bc047734b99004dd22abceff9f">SeparableSum</a>(std::map&lt;<a class="code" href="class_function.html">Function</a>*, std::vector&lt;size_t&gt;*&gt; fun_idx_map);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_separable_sum.html#a82bc079eb19a22446f4b1261016b367c">call</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span>&amp; f);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_separable_sum.html#a82bc079eb19a22446f4b1261016b367c">call</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span>&amp; f, <a class="code" href="class_matrix.html">Matrix</a>&amp; grad);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_separable_sum.html#ad9522e70b210e46fe627ebad4b241878">callConj</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span>&amp; f_star);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_separable_sum.html#a2a9e4f43d3e544648b74e8e7305bd00d">callProx</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span> gamma, <a class="code" href="class_matrix.html">Matrix</a>&amp; prox);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_separable_sum.html#a2a9e4f43d3e544648b74e8e7305bd00d">callProx</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span> gamma, <a class="code" href="class_matrix.html">Matrix</a>&amp; prox, <span class="keywordtype">double</span>&amp; f_at_prox);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;   </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_function_ontological_class.html">FunctionOntologicalClass</a> <a class="code" href="class_separable_sum.html#afa2e465348ec6af0d88d54fe65bd0618">category</a>();</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    std::map&lt;Function*, std::vector&lt;size_t&gt; * &gt; m_fun_idx_map;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;};</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* SEPARABLESUM_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="preprocessor"></span></div>
 <div class="ttc" id="class_separable_sum_html_a2a9e4f43d3e544648b74e8e7305bd00d"><div class="ttname"><a href="class_separable_sum.html#a2a9e4f43d3e544648b74e8e7305bd00d">SeparableSum::callProx</a></div><div class="ttdeci">virtual int callProx(Matrix &amp;x, double gamma, Matrix &amp;prox)</div><div class="ttdef"><b>Definition:</b> SeparableSum.cpp:107</div></div>
 <div class="ttc" id="class_separable_sum_html_afa2e465348ec6af0d88d54fe65bd0618"><div class="ttname"><a href="class_separable_sum.html#afa2e465348ec6af0d88d54fe65bd0618">SeparableSum::category</a></div><div class="ttdeci">virtual FunctionOntologicalClass category()</div><div class="ttdef"><b>Definition:</b> SeparableSum.cpp:185</div></div>
 <div class="ttc" id="class_separable_sum_html_a8ac324bc047734b99004dd22abceff9f"><div class="ttname"><a href="class_separable_sum.html#a8ac324bc047734b99004dd22abceff9f">SeparableSum::SeparableSum</a></div><div class="ttdeci">SeparableSum(std::map&lt; Function *, std::vector&lt; size_t &gt; * &gt; fun_idx_map)</div><div class="ttdef"><b>Definition:</b> SeparableSum.cpp:30</div></div>
-<div class="ttc" id="class_separable_sum_html"><div class="ttname"><a href="class_separable_sum.html">SeparableSum</a></div><div class="ttdoc">Separable sum. </div><div class="ttdef"><b>Definition:</b> SeparableSum.h:60</div></div>
+<div class="ttc" id="class_separable_sum_html"><div class="ttname"><a href="class_separable_sum.html">SeparableSum</a></div><div class="ttdoc">Separable sum. </div><div class="ttdef"><b>Definition:</b> SeparableSum.h:94</div></div>
 <div class="ttc" id="class_separable_sum_html_ad9522e70b210e46fe627ebad4b241878"><div class="ttname"><a href="class_separable_sum.html#ad9522e70b210e46fe627ebad4b241878">SeparableSum::callConj</a></div><div class="ttdeci">virtual int callConj(Matrix &amp;x, double &amp;f_star)</div><div class="ttdef"><b>Definition:</b> SeparableSum.cpp:150</div></div>
 <div class="ttc" id="class_separable_sum_html_a82bc079eb19a22446f4b1261016b367c"><div class="ttname"><a href="class_separable_sum.html#a82bc079eb19a22446f4b1261016b367c">SeparableSum::call</a></div><div class="ttdeci">virtual int call(Matrix &amp;x, double &amp;f)</div><div class="ttdef"><b>Definition:</b> SeparableSum.cpp:44</div></div>
 <div class="ttc" id="class_matrix_html"><div class="ttname"><a href="class_matrix.html">Matrix</a></div><div class="ttdoc">A generic matrix API. </div><div class="ttdef"><b>Definition:</b> Matrix.h:67</div></div>
@@ -172,7 +172,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 13 2016 20:22:07 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 14 2016 16:42:42 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

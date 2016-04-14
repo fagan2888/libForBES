@@ -99,9 +99,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="class_l_b_f_g_s_buffer-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">LBFGSBuffer Class Reference</div>  </div>
+<div class="title">LBFGSBuffer Class Reference<div class="ingroups"><a class="el" href="group___f_b_solver-group.html">Solver</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Buffer for the Limited Memory BFGS algorithm.  
+ <a href="class_l_b_f_g_s_buffer.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_l_b_f_g_s_buffer_8h_source.html">LBFGSBuffer.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -123,8 +128,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a103f2077c77677d1107b535c116aab44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa0a86c38a9897dd0130595d814c48a1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_b_f_g_s_buffer.html#afa0a86c38a9897dd0130595d814c48a1">reset</a> ()</td></tr>
 <tr class="separator:afa0a86c38a9897dd0130595d814c48a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16e84498e36bbdee205354f82d3ea957"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_b_f_g_s_buffer.html#a16e84498e36bbdee205354f82d3ea957">update</a> (<a class="el" href="class_matrix.html">Matrix</a> *q, <a class="el" href="class_matrix.html">Matrix</a> *r)</td></tr>
-<tr class="separator:a16e84498e36bbdee205354f82d3ea957"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5119dc59b46b83feaa8d13f125e37d06"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_b_f_g_s_buffer.html#a5119dc59b46b83feaa8d13f125e37d06">update</a> (const <a class="el" href="class_matrix.html">Matrix</a> *q, <a class="el" href="class_matrix.html">Matrix</a> *r, double &amp;gamma0)</td></tr>
+<tr class="separator:a5119dc59b46b83feaa8d13f125e37d06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a392f7e243bbe8bf29216cc5be2988923"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_b_f_g_s_buffer.html#a392f7e243bbe8bf29216cc5be2988923">get_k_minus_j</a> (size_t j)</td></tr>
 <tr class="separator:a392f7e243bbe8bf29216cc5be2988923"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -133,7 +138,11 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:a92a296626907a14e7660e33fd72c6c8d"><td class="memItemLeft" align="right" valign="top">static const long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_b_f_g_s_buffer.html#a92a296626907a14e7660e33fd72c6c8d">LBFGS_BUFFER_EOB</a> = -1</td></tr>
 <tr class="separator:a92a296626907a14e7660e33fd72c6c8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Buffer for the Limited Memory BFGS algorithm. </p>
+<dl class="section version"><dt>Version</dt><dd>version 0.1</dd></dl>
+<p><a class="el" href="class_l_b_f_g_s_buffer.html" title="Buffer for the Limited Memory BFGS algorithm. ">LBFGSBuffer</a> is a finite length buffer for pairs \((s_k, y_k)\) which are necessary for the computation of \(r_k = H_k q_k\) in the LBFGS algorithm. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a5e6a7d2eb0ce5bbdfbbeaef7ab8dab2f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -157,7 +166,7 @@ Static Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Constructs a new instance of <a class="el" href="class_l_b_f_g_s_buffer.html">LBFGSBuffer</a> for vectors of size <code>n</code> and using a memory length <code>mem</code>.</p>
+<p>Constructs a new instance of <a class="el" href="class_l_b_f_g_s_buffer.html" title="Buffer for the Limited Memory BFGS algorithm. ">LBFGSBuffer</a> for vectors of size <code>n</code> and using a memory length <code>mem</code>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">n</td><td>size of x </td></tr>
@@ -333,6 +342,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Provide a new pair \((s,y)\) to the buffer. This method updates the buffers of <code>s</code>, <code>y</code> and of their inner product.</p>
+<dl class="section note"><dt>Note</dt><dd>The buffer stores <em>hard copies</em> of the pairs (s,y) that are provided to it.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">s</td><td></td></tr>
@@ -361,21 +371,27 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a16e84498e36bbdee205354f82d3ea957"></a>
+<a class="anchor" id="a5119dc59b46b83feaa8d13f125e37d06"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">int LBFGSBuffer::update </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_matrix.html">Matrix</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="class_matrix.html">Matrix</a> *&#160;</td>
           <td class="paramname"><em>q</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="class_matrix.html">Matrix</a> *&#160;</td>
-          <td class="paramname"><em>r</em>&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>gamma0</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -388,12 +404,14 @@ Static Public Attributes</h2></td></tr>
 <p class="formulaDsp">
 \[ r_k = H_k q_k, \]
 </p>
-<p> for a given vector \(q_k\).</p>
+<p> for a given vector \(q_k\) without explicitly forming or using \(H_k\).</p>
 <p>Details about the algorithm can be found in J. Nocedal and S.J. Wright, <em>Numerical Optimization</em>, Second edition, Springer, 2006 (see Alg. 7.4).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">q</td><td>given vector \(q_k\) </td></tr>
-    <tr><td class="paramname">r</td><td>result </td></tr>
+    <tr><td class="paramname">q</td><td>(input) given vector \(q_k\)</td></tr>
+    <tr><td class="paramname">r</td><td>(output) result, that is \(r_k = H_k q_k\).</td></tr>
+    <tr><td class="paramname">gamma0</td><td>(input) Initial guess of the Hessian at the first iteration which is given by \(H_0^0 = \gamma_0^0 I\). After the first iteration (when there are at least two elements in the buffer), this input is not used. <br/>
+ (output) at output and for \(k\geq 2\) returns the initial guess of the Hessian \(\gamma_k^0\), i.e., the initial Hessian approximation \(H_k^0=\gamma_k^0 I\).</td></tr>
   </table>
   </dd>
 </dl>
@@ -430,7 +448,7 @@ Static Public Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 13 2016 20:22:07 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 14 2016 16:42:42 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
