@@ -126,18 +126,18 @@ int LBFGSBuffer::update(const Matrix* q, Matrix* r, double& gamma0) {
      *          it is :
      *          Hk0 = ys_prev / (y_prev'*y_prev)
      */
-    size_t idx_prev = get_k_minus_j(1);
-    double gamma_k_0 = gamma0;
-    if (idx_prev != LBFGS_BUFFER_EOB) {
-        // ... if there is a previous y (otherwise Hk0 = 1.0)
-        Matrix y_previous = MatrixFactory::ShallowSubVector(*m_Y, idx_prev);
-        double sq_norm_y_prev = 0.0;
-        for (size_t l = 0; l < n; l++) {
-            sq_norm_y_prev += std::pow(y_previous[l], 2);
-        }
-        gamma_k_0 = (*m_Ys)[idx_prev] / sq_norm_y_prev;
-    }
-    gamma0 = gamma_k_0;
+    // size_t idx_prev = get_k_minus_j(1);
+    // double gamma_k_0 = gamma0;
+    // if (idx_prev != LBFGS_BUFFER_EOB) {
+    //     // ... if there is a previous y (otherwise Hk0 = 1.0)
+    //     Matrix y_previous = MatrixFactory::ShallowSubVector(*m_Y, idx_prev);
+    //     double sq_norm_y_prev = 0.0;
+    //     for (size_t l = 0; l < n; l++) {
+    //         sq_norm_y_prev += std::pow(y_previous[l], 2);
+    //     }
+    //     gamma_k_0 = (*m_Ys)[idx_prev] / sq_norm_y_prev;
+    // }
+    // gamma0 = gamma_k_0;
     /*
      * 
      * STEP 2:  First loop (compute alpha, update qq)
@@ -155,7 +155,7 @@ int LBFGSBuffer::update(const Matrix* q, Matrix* r, double& gamma0) {
     }
 
     /* Update r */
-    *r = gamma_k_0 * qq;
+    *r = gamma0 * qq;
 
     /*
      * STEP 3:      Second loop
