@@ -163,4 +163,15 @@ void TestLBFGSBuffer::testTwoLoopQuadratic() {
         (*grad_old) = (*grad);
         delete x;
     }
+
+    delete buffer;
+    delete Q;
+    delete q;
+    delete f;
+    delete y;
+    delete s;
+    delete x_old;
+    delete grad_old;
+    delete d;
+    delete grad;
 }
