@@ -29,6 +29,16 @@
 #include "Matrix.h"
 #include "MatrixFactory.h"
 
+
+/**
+ * \class LBFGSBuffer
+ * \brief Buffer for the Limited Memory BFGS algorithm
+ * \version version 0.1
+ * \ingroup FBSolver-group
+ * 
+ * LBFGSBuffer is a finite length buffer for pairs \f$(s_k, y_k)\f$ which 
+ * are necessary for the computation of \f$r_k = H_k q_k\f$ in the LBFGS algorithm.
+ */
 class LBFGSBuffer {
 public:
 
