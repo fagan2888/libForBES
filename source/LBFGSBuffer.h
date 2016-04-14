@@ -129,15 +129,17 @@ public:
      * @param r (output) result, that is \f$r_k = H_k q_k\f$.
      * 
      * @param gamma0 (input) Initial guess of the Hessian at the first iteration
-     * which is given by \f$H_0^0 = \gamma_0^0 I\f$. After the first iteration (when
-     * there are at least two elements in the buffer), this input is not used. <br/>
-     * (output) at output and for \f$k\geq 2\f$ returns the initial guess of 
-     * the Hessian \f$\gamma_k^0\f$, i.e., the initial Hessian approximation 
-     * \f$H_k^0=\gamma_k^0 I\f$.
+     * which is given by \f$H_k^0 = \gamma_0^0 I\f$.
      * 
      * @return Returns \link ForBESUtils::STATUS_OK STATUS_OK\endlink on success
      */
     int update(const Matrix * q, Matrix * r, double & gamma0);
+
+    double hessian_estimate();
+    
+    size_t get_current_mem() const {
+        return m_current_mem;
+    }
 
     /**
      * @param j

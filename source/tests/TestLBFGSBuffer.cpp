@@ -106,10 +106,8 @@ void TestLBFGSBuffer::testUpdate() {
     Matrix q = MatrixFactory::MakeRandomMatrix(n, 1, 0.0, 1.0);
     Matrix r;
 
-    const double H0orig = 12.0;
-    double H0 = H0orig;
+    double H0 = 1.0;
     buffer->update(&q, &r, H0);
-    _ASSERT_NUM_EQ(H0orig, H0, 1e-6);
 
     // the value of Hk0 does not depend of the whole history stored in the
     // buffer - it only depends on y_{k-1} and s_{k-}
@@ -125,22 +123,15 @@ void TestLBFGSBuffer::testUpdate() {
             if (j == 0) {
                 Matrix * alpha = buffer -> get_alphas();
                 if (i == 0) {
-                    _ASSERT_NUM_EQ(H0orig, H0, 1e-6);
                     _ASSERT_NUM_EQ(0.0, (*alpha)[1], 1e-9);
                     _ASSERT_NUM_EQ(0.0, (*alpha)[2], 1e-9);
                 } else if (i == 1) {
                     _ASSERT_NUM_EQ(0.0, (*alpha)[2], 1e-9);
                 }
-            } else {
-                _ASSERT(std::fabs(H0 - H0orig) > 0.1);
-            }
+            } 
             _ASSERT(r.norm_fro_sq() > 0.1);
         }
     }
-
-    buffer->update(&q, &r, H0);
-    const double H0_expected = 1.07504783819171;
-    _ASSERT_NUM_EQ(H0_expected, H0, 1e-7);
 
     delete buffer;
 }

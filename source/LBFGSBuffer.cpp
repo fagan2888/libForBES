@@ -116,40 +116,38 @@ int LBFGSBuffer::reset() {
     return ForBESUtils::STATUS_OK;
 }
 
+double LBFGSBuffer::hessian_estimate() {
+    // returns Hk0 = ys_prev / (y_prev'*y_prev)
+    // or 1.0 is no ys_prev is cached
+    size_t idx_current = get_k_minus_j(0);
+    size_t n = m_Y->getNrows();
+    double gamma_k_0 = 1.0;
+    if (m_current_mem > 0) {
+        Matrix curr_y = MatrixFactory::ShallowSubVector(*m_Y, idx_current);
+        double sq_norm_y = 0.0;
+        for (size_t l = 0; l < n; l++) {
+            sq_norm_y += std::pow(curr_y[l], 2);
+        }
+        gamma_k_0 = (*m_Ys)[idx_current] / sq_norm_y;
+    }
+    return gamma_k_0;
+}
+
 int LBFGSBuffer::update(const Matrix* q, Matrix* r, double& gamma0) {
     Matrix qq = *q;
     const size_t n = q->getNrows();
 
     /*
-     * STEP 1:  Compute Hk0 = gamma_k * I (compute gamma_k)
-     * 
-     *          it is :
-     *          Hk0 = ys_prev / (y_prev'*y_prev)
+     * STEP 1:  First loop (compute alpha, update qq)
+     * [TESTED]
      */
-    // size_t idx_prev = get_k_minus_j(1);
-    // double gamma_k_0 = gamma0;
-    // if (idx_prev != LBFGS_BUFFER_EOB) {
-    //     // ... if there is a previous y (otherwise Hk0 = 1.0)
-    //     Matrix y_previous = MatrixFactory::ShallowSubVector(*m_Y, idx_prev);
-    //     double sq_norm_y_prev = 0.0;
-    //     for (size_t l = 0; l < n; l++) {
-    //         sq_norm_y_prev += std::pow(y_previous[l], 2);
-    //     }
-    //     gamma_k_0 = (*m_Ys)[idx_prev] / sq_norm_y_prev;
-    // }
-    // gamma0 = gamma_k_0;
-    /*
-     * 
-     * STEP 2:  First loop (compute alpha, update qq)
-     * 
-     */
-    long kj = 0;
-    size_t j = 0;
-    while ((kj = get_k_minus_j(j)) != LBFGSBuffer::LBFGS_BUFFER_EOB) {
-        Matrix sq = MatrixFactory::ShallowSubVector(*m_S, kj) * qq; // <si, q_i>
-        Matrix yi = MatrixFactory::ShallowSubVector(*m_Y, kj); // yi
-        double alpha_i = sq[0] / (*m_Ys)[kj];
-        (*m_alphas)[kj] = alpha_i;
+    long k_minus_j;
+    long j = 0;
+    while ((k_minus_j = get_k_minus_j(j)) != LBFGSBuffer::LBFGS_BUFFER_EOB) {
+        Matrix sq = MatrixFactory::ShallowSubVector(*m_S, k_minus_j) * qq; // <si, q_i>
+        Matrix yi = MatrixFactory::ShallowSubVector(*m_Y, k_minus_j); // yi
+        double alpha_i = sq[0] / (*m_Ys)[k_minus_j];
+        (*m_alphas)[k_minus_j] = alpha_i;
         Matrix::add(qq, -alpha_i, yi, 1.0);
         j++;
     }
@@ -157,20 +155,27 @@ int LBFGSBuffer::update(const Matrix* q, Matrix* r, double& gamma0) {
     /* Update r */
     *r = gamma0 * qq;
 
+
+
     /*
-     * STEP 3:      Second loop
-     * 
-     *              computes r c
+     * STEP 2:      Second loop
      */
-    kj = 0;
-    j = 0;
-    while ((kj = get_k_minus_j(j)) != LBFGSBuffer::LBFGS_BUFFER_EOB) {
-        Matrix yi = MatrixFactory::ShallowSubVector(*m_Y, kj); // yi
+    j = m_mem;
+
+    // skip empty buffer
+    while (j >= 0 &&
+            (k_minus_j = get_k_minus_j(j)) == LBFGSBuffer::LBFGS_BUFFER_EOB) j--;
+
+
+    // iterate backwards
+    while (j >= 0) {
+        k_minus_j = get_k_minus_j(j);
+        Matrix yi = MatrixFactory::ShallowSubVector(*m_Y, k_minus_j);
         Matrix b = yi * (*r);
-        double beta = b[0] / (*m_Ys)[kj];
-        Matrix s = MatrixFactory::ShallowSubVector(*m_S, kj);
-        Matrix::add(*r, (*m_alphas)[kj] - beta, s, 1.0);
-        j++;
+        double beta = b[0] / (*m_Ys)[k_minus_j];
+        Matrix s = MatrixFactory::ShallowSubVector(*m_S, k_minus_j);
+        Matrix::add(*r, (*m_alphas)[k_minus_j] - beta, s, 1.0);
+        j--;
     }
 
     return ForBESUtils::STATUS_OK;
