@@ -116,7 +116,7 @@ int LBFGSBuffer::reset() {
     return ForBESUtils::STATUS_OK;
 }
 
-int LBFGSBuffer::update(Matrix* q, Matrix* r) {
+int LBFGSBuffer::update(const Matrix* q, Matrix* r, double& gamma0) {
     Matrix qq = *q;
     const size_t n = q->getNrows();
 
@@ -127,7 +127,7 @@ int LBFGSBuffer::update(Matrix* q, Matrix* r) {
      *          Hk0 = ys_prev / (y_prev'*y_prev)
      */
     size_t idx_prev = get_k_minus_j(1);
-    double Hk0 = 1.0;
+    double gamma_k_0 = gamma0;
     if (idx_prev != LBFGS_BUFFER_EOB) {
         // ... if there is a previous y (otherwise Hk0 = 1.0)
         Matrix y_previous = MatrixFactory::ShallowSubVector(*m_Y, idx_prev);
@@ -135,9 +135,9 @@ int LBFGSBuffer::update(Matrix* q, Matrix* r) {
         for (size_t l = 0; l < n; l++) {
             sq_norm_y_prev += std::pow(y_previous[l], 2);
         }
-        Hk0 = (*m_Ys)[idx_prev] / sq_norm_y_prev;
-    }    
-
+        gamma_k_0 = (*m_Ys)[idx_prev] / sq_norm_y_prev;
+    }
+    gamma0 = gamma_k_0;
     /*
      * 
      * STEP 2:  First loop (compute alpha, update qq)
@@ -149,24 +149,24 @@ int LBFGSBuffer::update(Matrix* q, Matrix* r) {
         Matrix sq = MatrixFactory::ShallowSubVector(*m_S, kj) * qq; // <si, q_i>
         Matrix yi = MatrixFactory::ShallowSubVector(*m_Y, kj); // yi
         double alpha_i = sq[0] / (*m_Ys)[kj];
-        m_alphas->set(kj, 0, alpha_i);
+        (*m_alphas)[kj] = alpha_i;
         Matrix::add(qq, -alpha_i, yi, 1.0);
         j++;
     }
 
     /* Update r */
-    *r = Hk0 * qq;
+    *r = gamma_k_0 * qq;
 
     /*
      * STEP 3:      Second loop
      * 
-     *              Compute r
+     *              computes r c
      */
     kj = 0;
     j = 0;
     while ((kj = get_k_minus_j(j)) != LBFGSBuffer::LBFGS_BUFFER_EOB) {
         Matrix yi = MatrixFactory::ShallowSubVector(*m_Y, kj); // yi
-        Matrix b = yi*(*r);
+        Matrix b = yi * (*r);
         double beta = b[0] / (*m_Ys)[kj];
         Matrix s = MatrixFactory::ShallowSubVector(*m_S, kj);
         Matrix::add(*r, (*m_alphas)[kj] - beta, s, 1.0);
