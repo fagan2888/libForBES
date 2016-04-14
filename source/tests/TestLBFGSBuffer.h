@@ -18,6 +18,7 @@ class TestLBFGSBuffer : public CPPUNIT_NS::TestFixture {
 
     CPPUNIT_TEST(testPush1);
     CPPUNIT_TEST(testPush2);
+    CPPUNIT_TEST(testUpdate);
 
     CPPUNIT_TEST_SUITE_END();
 
@@ -30,6 +31,7 @@ public:
 private:
     void testPush1();
     void testPush2();
+    void testUpdate();
 
 };
 

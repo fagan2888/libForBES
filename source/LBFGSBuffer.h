@@ -88,6 +88,9 @@ public:
      * Provide a new pair \f$(s,y)\f$ to the buffer. This method updates the 
      * buffers of \c s, \c y and of their inner product.
      * 
+     * \note The buffer stores <em>hard copies</em> of the pairs (s,y) that are
+     * provided to it.
+     * 
      * @param s
      * @param y
      * @return returns \link ForBESUtils::STATUS_OK STATUS_OK\endlink on success
@@ -105,17 +108,26 @@ public:
      * \f[
      *  r_k = H_k q_k,
      * \f]
-     * for a given vector \f$q_k\f$.
+     * for a given vector \f$q_k\f$ without explicitly forming or using \f$H_k\f$.
      * 
      * Details about the algorithm can be found in J. Nocedal and S.J. Wright,
      * <em>Numerical Optimization</em>, Second edition, Springer, 2006 (see Alg.
      * 7.4).
      * 
-     * @param q given vector \f$q_k\f$
-     * @param r result
+     * @param q (input) given vector \f$q_k\f$
+     * 
+     * @param r (output) result, that is \f$r_k = H_k q_k\f$.
+     * 
+     * @param gamma0 (input) Initial guess of the Hessian at the first iteration
+     * which is given by \f$H_0^0 = \gamma_0^0 I\f$. After the first iteration (when
+     * there are at least two elements in the buffer), this input is not used. <br/>
+     * (output) at output and for \f$k\geq 2\f$ returns the initial guess of 
+     * the Hessian \f$\gamma_k^0\f$, i.e., the initial Hessian approximation 
+     * \f$H_k^0=\gamma_k^0 I\f$.
+     * 
      * @return Returns \link ForBESUtils::STATUS_OK STATUS_OK\endlink on success
      */
-    int update(Matrix * q, Matrix * r);
+    int update(const Matrix * q, Matrix * r, double & gamma0);
 
     /**
      * @param j
