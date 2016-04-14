@@ -118,7 +118,7 @@ void TestLBFGSBuffer::testTwoLoopQuadratic() {
                         2.6000,3.9000,-0.8000  -12.4000,0.5000,2.9000,14.5000,1.7000,-4.9000,1.2000,
                         3.4000,3.0000,-3.0000,-2.5000,0.9000,-1.3000,1.7000,6.6000,-0.8000,2.7000,
                         -1.9000,-3.6000,5.3000,5.5000,-0.4000,-4.3000,-4.9000,-0.8000,7.9000,5.7000,
-                        -7.5000,-4.4000,5.5000,2.1000,-2.0000,-5.1000,1.2000,2.7000,5.7000,16.1000 };
+                        -7.5000,-4.4000,5.5000,2.1000,-2.0000,-5.1000,1.2000,2.7000,5.7000, 16.1000};
 
     double data_xs[][10] = { {1.0,0.01,0.02,0.03,0.04,0.05,0.06,0.07,0.08,0.09},
                             {0.09,1.0,0.01,0.02,0.03,0.04,0.05,0.06,0.07,0.08},
@@ -126,13 +126,19 @@ void TestLBFGSBuffer::testTwoLoopQuadratic() {
                             {0.07,0.08,0.09,1.0,0.01,0.02,0.03,0.04,0.05,0.06},
                             {0.06,0.07,0.08,0.09,1.0,0.01,0.02,0.03,0.04,0.05} };
 
-    double data_q[] = {  2.9000,0.8000,1.3000,-1.1000,-0.5000,-0.3000,1.0000,-0.3000,0.7000,-2.1000 };
+    double data_q[] = {2.9000,0.8000,1.3000,-1.1000,-0.5000,-0.3000,1.0000,-0.3000,0.7000,-2.1000};
 
     size_t mem = 3;
 
     LBFGSBuffer * buffer = new LBFGSBuffer(n, mem);
     Matrix * Q = new Matrix(n, n, data_Q);
+
+    // std::cout << std::endl << *Q << std::endl;
+
     Matrix * q = new Matrix(n, 1, data_q);
+
+    // std::cout << std::endl << *q << std::endl;
+
     Function * f = new Quadratic(*Q, *q);
 
     Matrix * y = new Matrix(n, 1);
@@ -157,7 +163,7 @@ void TestLBFGSBuffer::testTwoLoopQuadratic() {
         buffer->update(grad, d);
         for (int j=0; j<n; j++) {
             // keep the minus sign in -d.get(j, 0), since I multiplied H times grad instead of -grad
-            CPPUNIT_ASSERT_DOUBLES_EQUAL(dirs[i][j], -d->get(j, 0), DOUBLES_EQUAL_DELTA);
+            CPPUNIT_ASSERT_DOUBLES_EQUAL(dirs[i-1][j], -d->get(j, 0), DOUBLES_EQUAL_DELTA);
         }
         (*x_old) = (*x);
         (*grad_old) = (*grad);
