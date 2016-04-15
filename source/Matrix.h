@@ -715,7 +715,6 @@ private:
     friend class LDLFactorization;
     friend class S_LDLFactorization;
     friend class MatrixWriter;
-    friend class LeastSquares;
 
     size_t m_nrows; /**< Number of rows */
     size_t m_ncols; /**< Number of columns */
