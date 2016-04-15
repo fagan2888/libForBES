@@ -1,0 +1,3123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="97">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="f2" displayName="core" projectFiles="true">
+        <itemPath>source/FBCache.cpp</itemPath>
+        <itemPath>source/FBCache.h</itemPath>
+        <itemPath>source/FBProblem.cpp</itemPath>
+        <itemPath>source/FBProblem.h</itemPath>
+        <itemPath>source/FBSplitting.cpp</itemPath>
+        <itemPath>source/FBSplitting.h</itemPath>
+        <itemPath>source/FBSplittingFast.cpp</itemPath>
+        <itemPath>source/FBSplittingFast.h</itemPath>
+        <itemPath>source/FBStopping.cpp</itemPath>
+        <itemPath>source/FBStopping.h</itemPath>
+        <itemPath>source/FBStoppingRelative.cpp</itemPath>
+        <itemPath>source/FBStoppingRelative.h</itemPath>
+        <itemPath>source/LBFGSBuffer.cpp</itemPath>
+        <itemPath>source/LBFGSBuffer.h</itemPath>
+        <itemPath>source/Properties.cpp</itemPath>
+        <itemPath>source/Properties.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f3" displayName="function" projectFiles="true">
+        <logicalFolder name="f4" displayName="distance" projectFiles="true">
+          <itemPath>source/DistanceToBall2.cpp</itemPath>
+          <itemPath>source/DistanceToBall2.h</itemPath>
+          <itemPath>source/DistanceToBox.cpp</itemPath>
+          <itemPath>source/DistanceToBox.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f1" displayName="indicator" projectFiles="true">
+          <itemPath>source/IndBall2.cpp</itemPath>
+          <itemPath>source/IndBall2.h</itemPath>
+          <itemPath>source/IndBox.cpp</itemPath>
+          <itemPath>source/IndBox.h</itemPath>
+          <itemPath>source/IndPos.cpp</itemPath>
+          <itemPath>source/IndPos.h</itemPath>
+          <itemPath>source/IndProbSimplex.cpp</itemPath>
+          <itemPath>source/IndProbSimplex.h</itemPath>
+          <itemPath>source/IndSOC.cpp</itemPath>
+          <itemPath>source/IndSOC.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f2" displayName="loss" projectFiles="true">
+          <itemPath>source/HingeLoss.cpp</itemPath>
+          <itemPath>source/HingeLoss.h</itemPath>
+          <itemPath>source/HuberLoss.cpp</itemPath>
+          <itemPath>source/HuberLoss.h</itemPath>
+          <itemPath>source/LogLogisticLoss.cpp</itemPath>
+          <itemPath>source/LogLogisticLoss.h</itemPath>
+          <itemPath>source/QuadraticLoss.cpp</itemPath>
+          <itemPath>source/QuadraticLoss.h</itemPath>
+          <itemPath>source/QuadraticLossOverAffine.cpp</itemPath>
+          <itemPath>source/QuadraticLossOverAffine.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f3" displayName="norm" projectFiles="true">
+          <itemPath>source/Norm.cpp</itemPath>
+          <itemPath>source/Norm.h</itemPath>
+          <itemPath>source/Norm1.cpp</itemPath>
+          <itemPath>source/Norm1.h</itemPath>
+          <itemPath>source/Norm2.cpp</itemPath>
+          <itemPath>source/Norm2.h</itemPath>
+          <itemPath>source/SumOfNorm2.cpp</itemPath>
+          <itemPath>source/SumOfNorm2.h</itemPath>
+        </logicalFolder>
+        <itemPath>source/CongSeparableSum.cpp</itemPath>
+        <itemPath>source/CongSeparableSum.h</itemPath>
+        <itemPath>source/ConjugateFunction.cpp</itemPath>
+        <itemPath>source/ConjugateFunction.h</itemPath>
+        <itemPath>source/ElasticNet.cpp</itemPath>
+        <itemPath>source/ElasticNet.h</itemPath>
+        <itemPath>source/Function.cpp</itemPath>
+        <itemPath>source/Function.h</itemPath>
+        <itemPath>source/LQCost.cpp</itemPath>
+        <itemPath>source/LQCost.h</itemPath>
+        <itemPath>source/QuadOverAffine.cpp</itemPath>
+        <itemPath>source/QuadOverAffine.h</itemPath>
+        <itemPath>source/Quadratic.cpp</itemPath>
+        <itemPath>source/Quadratic.h</itemPath>
+        <itemPath>source/QuadraticOperator.cpp</itemPath>
+        <itemPath>source/QuadraticOperator.h</itemPath>
+        <itemPath>source/SeparableSum.cpp</itemPath>
+        <itemPath>source/SeparableSum.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f6" displayName="lin_operator" projectFiles="true">
+        <itemPath>source/LinearOperator.cpp</itemPath>
+        <itemPath>source/LinearOperator.h</itemPath>
+        <itemPath>source/MatrixOperator.cpp</itemPath>
+        <itemPath>source/MatrixOperator.h</itemPath>
+        <itemPath>source/OpAdjoint.cpp</itemPath>
+        <itemPath>source/OpAdjoint.h</itemPath>
+        <itemPath>source/OpComposition.cpp</itemPath>
+        <itemPath>source/OpComposition.h</itemPath>
+        <itemPath>source/OpDCT2.cpp</itemPath>
+        <itemPath>source/OpDCT2.h</itemPath>
+        <itemPath>source/OpDCT3.cpp</itemPath>
+        <itemPath>source/OpDCT3.h</itemPath>
+        <itemPath>source/OpGradient.cpp</itemPath>
+        <itemPath>source/OpGradient.h</itemPath>
+        <itemPath>source/OpGradient2D.cpp</itemPath>
+        <itemPath>source/OpGradient2D.h</itemPath>
+        <itemPath>source/OpLTI.cpp</itemPath>
+        <itemPath>source/OpLTI.h</itemPath>
+        <itemPath>source/OpLinearCombination.cpp</itemPath>
+        <itemPath>source/OpLinearCombination.h</itemPath>
+        <itemPath>source/OpReverseVector.cpp</itemPath>
+        <itemPath>source/OpReverseVector.h</itemPath>
+        <itemPath>source/OpSum.cpp</itemPath>
+        <itemPath>source/OpSum.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f4" displayName="lin_sys_solver" projectFiles="true">
+        <itemPath>source/CGSolver.cpp</itemPath>
+        <itemPath>source/CGSolver.h</itemPath>
+        <itemPath>source/CholeskyFactorization.cpp</itemPath>
+        <itemPath>source/CholeskyFactorization.h</itemPath>
+        <itemPath>source/FactoredSolver.cpp</itemPath>
+        <itemPath>source/FactoredSolver.h</itemPath>
+        <itemPath>source/LDLFactorization.cpp</itemPath>
+        <itemPath>source/LDLFactorization.h</itemPath>
+        <itemPath>source/LinOpSolver.cpp</itemPath>
+        <itemPath>source/LinOpSolver.h</itemPath>
+        <itemPath>source/LinSysSolver.cpp</itemPath>
+        <itemPath>source/LinSysSolver.h</itemPath>
+        <itemPath>source/MatrixSolver.cpp</itemPath>
+        <itemPath>source/MatrixSolver.h</itemPath>
+        <itemPath>source/S_LDLFactorization.cpp</itemPath>
+        <itemPath>source/S_LDLFactorization.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f1" displayName="matrix" projectFiles="true">
+        <itemPath>source/Matrix.cpp</itemPath>
+        <itemPath>source/Matrix.h</itemPath>
+        <itemPath>source/MatrixFactory.cpp</itemPath>
+        <itemPath>source/MatrixFactory.h</itemPath>
+        <itemPath>source/MatrixWriter.cpp</itemPath>
+        <itemPath>source/MatrixWriter.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f5" displayName="ontology" projectFiles="true">
+        <itemPath>source/FunctionOntologicalClass.cpp</itemPath>
+        <itemPath>source/FunctionOntologicalClass.h</itemPath>
+        <itemPath>source/FunctionOntologyRegistry.cpp</itemPath>
+        <itemPath>source/FunctionOntologyRegistry.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f7" displayName="util" projectFiles="true">
+        <itemPath>source/ForBES.h</itemPath>
+        <itemPath>source/ForBESUtils.cpp</itemPath>
+        <itemPath>source/ForBESUtils.h</itemPath>
+      </logicalFolder>
+      <itemPath>source/main.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+      <logicalFolder name="f1"
+                     displayName="TestCGSolver"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestCGSolver.cpp</itemPath>
+        <itemPath>source/tests/TestCGSolver.h</itemPath>
+        <itemPath>source/tests/TestCGSolverRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2"
+                     displayName="TestCholesky"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestCholesky.cpp</itemPath>
+        <itemPath>source/tests/TestCholesky.h</itemPath>
+        <itemPath>source/tests/TestCholeskyRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f3"
+                     displayName="TestConjugateFunction"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestConjugateFunction.cpp</itemPath>
+        <itemPath>source/tests/TestConjugateFunction.h</itemPath>
+        <itemPath>source/tests/TestConjugateFunctionRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f4"
+                     displayName="TestDistanceToBall2"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestDistanceToBall2.cpp</itemPath>
+        <itemPath>source/tests/TestDistanceToBall2.h</itemPath>
+        <itemPath>source/tests/TestDistanceToBall2Runner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f5"
+                     displayName="TestDistanceToBox"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestDistanceToBox.cpp</itemPath>
+        <itemPath>source/tests/TestDistanceToBox.h</itemPath>
+        <itemPath>source/tests/TestDistanceToBoxRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f6"
+                     displayName="TestElasticNet"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestElasticNet.cpp</itemPath>
+        <itemPath>source/tests/TestElasticNet.h</itemPath>
+        <itemPath>source/tests/TestElasticNetRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f7"
+                     displayName="TestFBCache"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestFBCache.cpp</itemPath>
+        <itemPath>source/tests/TestFBCache.h</itemPath>
+        <itemPath>source/tests/TestFBCacheRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f8"
+                     displayName="TestFBSplitting"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestFBSplitting.cpp</itemPath>
+        <itemPath>source/tests/TestFBSplitting.h</itemPath>
+        <itemPath>source/tests/TestFBSplittingRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f9"
+                     displayName="TestFBSplittingFast"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestFBSplittingFast.cpp</itemPath>
+        <itemPath>source/tests/TestFBSplittingFast.h</itemPath>
+        <itemPath>source/tests/TestFBSplittingFastRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f10"
+                     displayName="TestFunctionOntologicalClass"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestFunctionOntologicalClass.cpp</itemPath>
+        <itemPath>source/tests/TestFunctionOntologicalClass.h</itemPath>
+        <itemPath>source/tests/TestFunctionOntologicalClassRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f11"
+                     displayName="TestFunctionOntologyRegistry"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestFunctionOntologyRegistry.cpp</itemPath>
+        <itemPath>source/tests/TestFunctionOntologyRegistry.h</itemPath>
+        <itemPath>source/tests/TestFunctionOntologyRegistryRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f12"
+                     displayName="TestHingeLoss"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestHingeLoss.cpp</itemPath>
+        <itemPath>source/tests/TestHingeLoss.h</itemPath>
+        <itemPath>source/tests/TestHingeLossRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f13"
+                     displayName="TestHuber"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestHuber.cpp</itemPath>
+        <itemPath>source/tests/TestHuber.h</itemPath>
+        <itemPath>source/tests/TestHuberRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f14"
+                     displayName="TestIndBall2"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestIndBall2.cpp</itemPath>
+        <itemPath>source/tests/TestIndBall2.h</itemPath>
+        <itemPath>source/tests/TestIndBall2Runner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f15"
+                     displayName="TestIndBox"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestIndBox.cpp</itemPath>
+        <itemPath>source/tests/TestIndBox.h</itemPath>
+        <itemPath>source/tests/TestIndBoxRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f16"
+                     displayName="TestIndPos"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestIndPos.cpp</itemPath>
+        <itemPath>source/tests/TestIndPos.h</itemPath>
+        <itemPath>source/tests/TestIndPosRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f17"
+                     displayName="TestIndProbSimplex"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestIndProbSimplex.cpp</itemPath>
+        <itemPath>source/tests/TestIndProbSimplex.h</itemPath>
+        <itemPath>source/tests/TestIndProbSimplexRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f18"
+                     displayName="TestIndSOC"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestIndSOC.cpp</itemPath>
+        <itemPath>source/tests/TestIndSOC.h</itemPath>
+        <itemPath>source/tests/TestIndSOCRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f19"
+                     displayName="TestLasso"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestLasso.cpp</itemPath>
+        <itemPath>source/tests/TestLasso.h</itemPath>
+        <itemPath>source/tests/TestLassoRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f20"
+                     displayName="TestLBFGSBuffer"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestLBFGSBuffer.cpp</itemPath>
+        <itemPath>source/tests/TestLBFGSBuffer.h</itemPath>
+        <itemPath>source/tests/TestLBFGSBufferRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f21" displayName="TestLDL" projectFiles="true" kind="TEST">
+        <itemPath>source/tests/TestLDL.cpp</itemPath>
+        <itemPath>source/tests/TestLDL.h</itemPath>
+        <itemPath>source/tests/TestLDLRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f23"
+                     displayName="TestLogLogisticLoss"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestLogLogisticLoss.cpp</itemPath>
+        <itemPath>source/tests/TestLogLogisticLoss.h</itemPath>
+        <itemPath>source/tests/TestLogLogisticLossRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f24"
+                     displayName="TestMatrix"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestMatrix.cpp</itemPath>
+        <itemPath>source/tests/TestMatrix.h</itemPath>
+        <itemPath>source/tests/TestMatrixRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f25"
+                     displayName="TestMatrixExtras"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestMatrixExtras.cpp</itemPath>
+        <itemPath>source/tests/TestMatrixExtras.h</itemPath>
+        <itemPath>source/tests/TestMatrixExtrasRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f27"
+                     displayName="TestMatrixFactory"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestMatrixFactory.cpp</itemPath>
+        <itemPath>source/tests/TestMatrixFactory.h</itemPath>
+        <itemPath>source/tests/TestMatrixFactoryRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f28"
+                     displayName="TestMatrixOperator"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestMatrixOperator.cpp</itemPath>
+        <itemPath>source/tests/TestMatrixOperator.h</itemPath>
+        <itemPath>source/tests/TestMatrixOperatorRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f29"
+                     displayName="TestNorm1"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestNorm1.cpp</itemPath>
+        <itemPath>source/tests/TestNorm1.h</itemPath>
+        <itemPath>source/tests/TestNorm1Runner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f30"
+                     displayName="TestNorm2"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestNorm2.cpp</itemPath>
+        <itemPath>source/tests/TestNorm2.h</itemPath>
+        <itemPath>source/tests/TestNorm2Runner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f31"
+                     displayName="TestOntRegistry"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestOntRegistry.cpp</itemPath>
+        <itemPath>source/tests/TestOntRegistry.h</itemPath>
+        <itemPath>source/tests/TestOntRegistryRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f32"
+                     displayName="TestOpAdjoint"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestOpAdjoint.cpp</itemPath>
+        <itemPath>source/tests/TestOpAdjoint.h</itemPath>
+        <itemPath>source/tests/TestOpAdjointRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f33"
+                     displayName="TestOpComposition"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestOpComposition.cpp</itemPath>
+        <itemPath>source/tests/TestOpComposition.h</itemPath>
+        <itemPath>source/tests/TestOpCompositionRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f34"
+                     displayName="TestOpDCT2"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestOpDCT2.cpp</itemPath>
+        <itemPath>source/tests/TestOpDCT2.h</itemPath>
+        <itemPath>source/tests/TestOpDCT2Runner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f35"
+                     displayName="TestOpDCT3"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestOpDCT3.cpp</itemPath>
+        <itemPath>source/tests/TestOpDCT3.h</itemPath>
+        <itemPath>source/tests/TestOpDCT3Runner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f36"
+                     displayName="TestOpGradient"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestOpGradient.cpp</itemPath>
+        <itemPath>source/tests/TestOpGradient.h</itemPath>
+        <itemPath>source/tests/TestOpGradientRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f37"
+                     displayName="TestOpReverseVector"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestOpReverseVector.cpp</itemPath>
+        <itemPath>source/tests/TestOpReverseVector.h</itemPath>
+        <itemPath>source/tests/TestOpReverseVectorRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f38"
+                     displayName="TestProperties"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestProperties.cpp</itemPath>
+        <itemPath>source/tests/TestProperties.h</itemPath>
+        <itemPath>source/tests/TestPropertiesRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f39"
+                     displayName="TestQuadOverAffine"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestQuadOverAffine.cpp</itemPath>
+        <itemPath>source/tests/TestQuadOverAffine.h</itemPath>
+        <itemPath>source/tests/TestQuadOverAffineRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f40"
+                     displayName="TestQuadratic"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestQuadratic.cpp</itemPath>
+        <itemPath>source/tests/TestQuadratic.h</itemPath>
+        <itemPath>source/tests/TestQuadraticRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f41"
+                     displayName="TestQuadraticLoss"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestQuadraticLoss.cpp</itemPath>
+        <itemPath>source/tests/TestQuadraticLoss.h</itemPath>
+        <itemPath>source/tests/TestQuadraticLossRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f42"
+                     displayName="TestQuadraticLossOverAffine"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestQuadraticLossOverAffine.cpp</itemPath>
+        <itemPath>source/tests/TestQuadraticLossOverAffine.h</itemPath>
+        <itemPath>source/tests/TestQuadraticLossOverAffineRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f43"
+                     displayName="TestQuadraticOperator"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestQuadraticOperator.cpp</itemPath>
+        <itemPath>source/tests/TestQuadraticOperator.h</itemPath>
+        <itemPath>source/tests/TestQuadraticOperatorRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f44"
+                     displayName="TestSeparableSum"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestSeparableSum.cpp</itemPath>
+        <itemPath>source/tests/TestSeparableSum.h</itemPath>
+        <itemPath>source/tests/TestSeparableSumRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f26"
+                     displayName="TestSLDL"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestSLDL.cpp</itemPath>
+        <itemPath>source/tests/TestSLDL.h</itemPath>
+        <itemPath>source/tests/TestSLDLRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f45"
+                     displayName="TestSumOfNorm2"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestSumOfNorm2.cpp</itemPath>
+        <itemPath>source/tests/TestSumOfNorm2.h</itemPath>
+        <itemPath>source/tests/TestSumOfNorm2Runner.cpp</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+      <itemPath>config.mk</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>source</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+            <pElem>./source</pElem>
+            <pElem>libs/SuiteSparse/CHOLMOD/Include</pElem>
+            <pElem>libs/SuiteSparse/LDL/Include</pElem>
+            <pElem>libs/SuiteSparse/SuiteSparse_config</pElem>
+            <pElem>/usr/local/include</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>USE_LIBS</Elem>
+          </preprocessorList>
+        </ccTool>
+        <linkerTool>
+          <linkerAddLib>
+            <pElem>libs/SuiteSparse/CHOLMOD/Lib</pElem>
+            <pElem>libs/SuiteSparse/AMD/Lib</pElem>
+            <pElem>libs/SuiteSparse/COLAMD/Lib</pElem>
+            <pElem>libs/SuiteSparse/CCOLAMD/Lib</pElem>
+            <pElem>libs/SuiteSparse/CAMD/Lib</pElem>
+            <pElem>libs/SuiteSparse/LDL/Lib</pElem>
+            <pElem>libs/SuiteSparse/SuiteSparse_config</pElem>
+          </linkerAddLib>
+          <commandLine>-lldl -lcholmod -lamd -lcolamd -lsuitesparseconfig -lccolamd -lcamd -llapacke -llapack -lopenblas -lm -lcppunit</commandLine>
+        </linkerTool>
+      </compileType>
+      <folder path="TestFiles/f1">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f1</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f10">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f10</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f11">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f11</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f12">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f12</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f13">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f13</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f14">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f14</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f15">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f15</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f16">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f16</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f17">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f17</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f18">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f18</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f19">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f19</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f2">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f2</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f20">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f20</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f21">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f21</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f23">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f23</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f24">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f24</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f25">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f25</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f26">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f26</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f27">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f27</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f28">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f28</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f29">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f29</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f3">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f3</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f30">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f30</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f31">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f31</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f32">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f32</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f33">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f33</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f34">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f34</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f35">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f35</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f36">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f36</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f37">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f37</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f38">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f38</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f39">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f39</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f4">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f4</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f40">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f40</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f41">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f41</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f42">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f42</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f43">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f43</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f44">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f44</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f45">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f45</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f5">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f5</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f6">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f6</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f7">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f7</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f8">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f8</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f9">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f9</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <item path="source/CGSolver.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/CGSolver.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/CholeskyFactorization.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/CholeskyFactorization.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/CongSeparableSum.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/CongSeparableSum.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/ConjugateFunction.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/ConjugateFunction.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/DistanceToBall2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/DistanceToBall2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/DistanceToBox.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/DistanceToBox.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/ElasticNet.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/ElasticNet.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/FBCache.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/FBCache.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/FBProblem.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/FBProblem.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/FBSplitting.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/FBSplitting.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/FBSplittingFast.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/FBSplittingFast.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/FBStopping.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/FBStopping.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/FBStoppingRelative.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/FBStoppingRelative.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/FactoredSolver.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/FactoredSolver.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/ForBES.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/ForBESUtils.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/ForBESUtils.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Function.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Function.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/FunctionOntologicalClass.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/FunctionOntologicalClass.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/FunctionOntologyRegistry.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/FunctionOntologyRegistry.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/HingeLoss.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/HingeLoss.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/HuberLoss.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/HuberLoss.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/IndBall2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/IndBall2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/IndBox.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/IndBox.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/IndPos.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/IndPos.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/IndProbSimplex.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/IndProbSimplex.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/IndSOC.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/IndSOC.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/LBFGSBuffer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/LBFGSBuffer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/LDLFactorization.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/LDLFactorization.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/LQCost.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/LQCost.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/LinOpSolver.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/LinOpSolver.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/LinSysSolver.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/LinSysSolver.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/LinearOperator.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/LinearOperator.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/LogLogisticLoss.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/LogLogisticLoss.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Matrix.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Matrix.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/MatrixFactory.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/MatrixFactory.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/MatrixOperator.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/MatrixOperator.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/MatrixSolver.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/MatrixSolver.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/MatrixWriter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/MatrixWriter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Norm.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Norm.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Norm1.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Norm1.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Norm2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Norm2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/OpAdjoint.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/OpAdjoint.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/OpComposition.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/OpComposition.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/OpDCT2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/OpDCT2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/OpDCT3.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/OpDCT3.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/OpGradient.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/OpGradient.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/OpGradient2D.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/OpGradient2D.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/OpLTI.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/OpLTI.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/OpLinearCombination.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/OpLinearCombination.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/OpReverseVector.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/OpReverseVector.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/OpSum.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/OpSum.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Properties.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Properties.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/QuadOverAffine.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/QuadOverAffine.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Quadratic.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Quadratic.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/QuadraticLoss.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/QuadraticLoss.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/QuadraticLossOverAffine.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/QuadraticLossOverAffine.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/QuadraticOperator.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/QuadraticOperator.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/S_LDLFactorization.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/S_LDLFactorization.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/SeparableSum.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/SeparableSum.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/SumOfNorm2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/SumOfNorm2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestCGSolver.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestCGSolver.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestCGSolverRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestCholesky.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestCholesky.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestCholeskyRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestConjugateFunction.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestConjugateFunction.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestConjugateFunctionRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestDistanceToBall2.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestDistanceToBall2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestDistanceToBall2Runner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestDistanceToBox.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestDistanceToBox.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestDistanceToBoxRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestElasticNet.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestElasticNet.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestElasticNetRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestFBCache.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestFBCache.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestFBCacheRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestFBSplitting.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestFBSplitting.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestFBSplittingFast.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestFBSplittingFast.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestFBSplittingFastRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestFBSplittingRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestFunctionOntologicalClass.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestFunctionOntologicalClass.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestFunctionOntologicalClassRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestFunctionOntologyRegistry.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestFunctionOntologyRegistry.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestFunctionOntologyRegistryRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestHingeLoss.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestHingeLoss.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestHingeLossRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestHuber.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestHuber.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestHuberRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestIndBall2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestIndBall2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestIndBall2Runner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestIndBox.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestIndBox.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestIndBoxRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestIndPos.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestIndPos.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestIndPosRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestIndProbSimplex.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestIndProbSimplex.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestIndProbSimplexRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestIndSOC.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestIndSOC.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestIndSOCRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestLBFGSBuffer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestLBFGSBuffer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestLBFGSBufferRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestLDL.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestLDL.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestLDLRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestLasso.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestLasso.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestLassoRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestLogLogisticLoss.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestLogLogisticLoss.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestLogLogisticLossRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestMatrix.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestMatrix.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestMatrixExtras.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestMatrixExtras.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestMatrixExtrasRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestMatrixFactory.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestMatrixFactory.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestMatrixFactoryRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestMatrixOperator.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestMatrixOperator.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestMatrixOperatorRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestMatrixRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestNorm1.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestNorm1.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestNorm1Runner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestNorm2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestNorm2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestNorm2Runner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestOntRegistry.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestOntRegistry.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestOntRegistryRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestOpAdjoint.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestOpAdjoint.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestOpAdjointRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestOpComposition.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestOpComposition.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestOpCompositionRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestOpDCT2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestOpDCT2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestOpDCT2Runner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestOpDCT3.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestOpDCT3.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestOpDCT3Runner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestOpGradient.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestOpGradient.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestOpGradientRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestOpReverseVector.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestOpReverseVector.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestOpReverseVectorRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestProperties.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestProperties.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestPropertiesRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestQuadOverAffine.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestQuadOverAffine.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestQuadOverAffineRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestQuadratic.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestQuadratic.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestQuadraticLoss.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestQuadraticLoss.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestQuadraticLossOverAffine.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestQuadraticLossOverAffine.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestQuadraticLossOverAffineRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestQuadraticLossRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestQuadraticOperator.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestQuadraticOperator.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestQuadraticOperatorRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestQuadraticRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestSLDL.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestSLDL.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestSLDLRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestSeparableSum.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestSeparableSum.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestSeparableSumRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestSumOfNorm2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestSumOfNorm2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestSumOfNorm2Runner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <folder path="TestFiles/f1">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f1</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f10">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f10</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f11">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f11</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f12">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f12</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f13">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f13</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f14">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f14</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f15">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f15</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f16">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f16</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f17">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f17</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f18">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f18</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f19">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f19</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f2">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f2</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f20">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f20</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f21">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f21</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f23">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f23</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f24">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f24</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f25">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f25</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f26">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f26</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f27">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f27</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f28">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f28</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f29">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f29</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f3">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f3</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f30">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f30</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f31">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f31</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f32">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f32</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f33">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f33</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f34">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f34</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f35">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f35</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f36">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f36</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f37">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f37</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f38">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f38</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f39">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f39</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f4">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f4</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f40">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f40</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f41">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f41</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f42">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f42</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f43">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f43</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f44">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f44</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f45">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f45</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f5">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f5</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f6">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f6</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f7">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f7</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f8">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f8</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f9">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f9</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <item path="source/CGSolver.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/CGSolver.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/CholeskyFactorization.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/CholeskyFactorization.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/CongSeparableSum.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/CongSeparableSum.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/ConjugateFunction.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/ConjugateFunction.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/DistanceToBall2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/DistanceToBall2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/DistanceToBox.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/DistanceToBox.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/ElasticNet.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/ElasticNet.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/FBCache.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/FBCache.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/FBProblem.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/FBProblem.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/FBSplitting.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/FBSplitting.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/FBSplittingFast.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/FBSplittingFast.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/FBStopping.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/FBStopping.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/FBStoppingRelative.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/FBStoppingRelative.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/FactoredSolver.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/FactoredSolver.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/ForBES.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/ForBESUtils.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/ForBESUtils.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Function.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Function.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/FunctionOntologicalClass.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/FunctionOntologicalClass.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/FunctionOntologyRegistry.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/FunctionOntologyRegistry.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/HingeLoss.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/HingeLoss.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/HuberLoss.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/HuberLoss.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/IndBall2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/IndBall2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/IndBox.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/IndBox.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/IndPos.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/IndPos.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/IndProbSimplex.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/IndProbSimplex.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/IndSOC.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/IndSOC.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/LBFGSBuffer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/LBFGSBuffer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/LDLFactorization.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/LDLFactorization.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/LQCost.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/LQCost.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/LinOpSolver.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/LinOpSolver.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/LinSysSolver.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/LinSysSolver.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/LinearOperator.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/LinearOperator.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/LogLogisticLoss.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/LogLogisticLoss.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Matrix.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Matrix.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/MatrixFactory.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/MatrixFactory.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/MatrixOperator.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/MatrixOperator.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/MatrixSolver.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/MatrixSolver.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/MatrixWriter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/MatrixWriter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Norm.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Norm.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Norm1.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Norm1.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Norm2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Norm2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/OpAdjoint.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/OpAdjoint.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/OpComposition.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/OpComposition.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/OpDCT2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/OpDCT2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/OpDCT3.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/OpDCT3.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/OpGradient.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/OpGradient.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/OpGradient2D.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/OpGradient2D.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/OpLTI.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/OpLTI.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/OpLinearCombination.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/OpLinearCombination.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/OpReverseVector.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/OpReverseVector.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/OpSum.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/OpSum.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Properties.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Properties.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/QuadOverAffine.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/QuadOverAffine.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Quadratic.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Quadratic.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/QuadraticLoss.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/QuadraticLoss.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/QuadraticLossOverAffine.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/QuadraticLossOverAffine.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/QuadraticOperator.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/QuadraticOperator.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/S_LDLFactorization.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/S_LDLFactorization.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/SeparableSum.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/SeparableSum.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/SumOfNorm2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/SumOfNorm2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestCGSolver.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestCGSolver.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestCGSolverRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestCholesky.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestCholesky.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestCholeskyRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestConjugateFunction.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestConjugateFunction.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestConjugateFunctionRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestDistanceToBall2.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestDistanceToBall2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestDistanceToBall2Runner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestDistanceToBox.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestDistanceToBox.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestDistanceToBoxRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestElasticNet.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestElasticNet.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestElasticNetRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestFBCache.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestFBCache.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestFBCacheRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestFBSplitting.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestFBSplitting.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestFBSplittingFast.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestFBSplittingFast.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestFBSplittingFastRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestFBSplittingRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestFunctionOntologicalClass.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestFunctionOntologicalClass.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestFunctionOntologicalClassRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestFunctionOntologyRegistry.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestFunctionOntologyRegistry.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestFunctionOntologyRegistryRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestHingeLoss.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestHingeLoss.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestHingeLossRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestHuber.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestHuber.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestHuberRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestIndBall2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestIndBall2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestIndBall2Runner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestIndBox.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestIndBox.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestIndBoxRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestIndPos.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestIndPos.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestIndPosRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestIndProbSimplex.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestIndProbSimplex.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestIndProbSimplexRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestIndSOC.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestIndSOC.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestIndSOCRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestLBFGSBuffer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestLBFGSBuffer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestLBFGSBufferRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestLDL.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestLDL.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestLDLRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestLasso.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestLasso.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestLassoRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestLogLogisticLoss.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestLogLogisticLoss.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestLogLogisticLossRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestMatrix.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestMatrix.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestMatrixExtras.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestMatrixExtras.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestMatrixExtrasRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestMatrixFactory.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestMatrixFactory.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestMatrixFactoryRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestMatrixOperator.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestMatrixOperator.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestMatrixOperatorRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestMatrixRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestNorm1.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestNorm1.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestNorm1Runner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestNorm2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestNorm2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestNorm2Runner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestOntRegistry.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestOntRegistry.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestOntRegistryRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestOpAdjoint.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestOpAdjoint.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestOpAdjointRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestOpComposition.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestOpComposition.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestOpCompositionRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestOpDCT2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestOpDCT2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestOpDCT2Runner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestOpDCT3.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestOpDCT3.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestOpDCT3Runner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestOpGradient.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestOpGradient.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestOpGradientRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestOpReverseVector.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestOpReverseVector.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestOpReverseVectorRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestProperties.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestProperties.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestPropertiesRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestQuadOverAffine.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestQuadOverAffine.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestQuadOverAffineRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestQuadratic.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestQuadratic.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestQuadraticLoss.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestQuadraticLoss.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestQuadraticLossOverAffine.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestQuadraticLossOverAffine.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestQuadraticLossOverAffineRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestQuadraticLossRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestQuadraticOperator.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestQuadraticOperator.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestQuadraticOperatorRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestQuadraticRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestSLDL.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestSLDL.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestSLDLRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestSeparableSum.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestSeparableSum.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestSeparableSumRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/tests/TestSumOfNorm2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestSumOfNorm2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestSumOfNorm2Runner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
