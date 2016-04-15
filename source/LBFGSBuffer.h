@@ -38,6 +38,9 @@
  * 
  * LBFGSBuffer is a finite length buffer for pairs \f$(s_k, y_k)\f$ which 
  * are necessary for the computation of \f$r_k = H_k q_k\f$ in the LBFGS algorithm.
+ * 
+ * \todo Implement generalized inner product so that this class supports general
+ * matrices and not only vectors.
  */
 class LBFGSBuffer {
 public:
@@ -66,12 +69,18 @@ public:
     /**
      * Buffered values of \f$s_{k} = x_{k+1} - x_{k}\f$
      * @return pointer to buffered data for all \c s
+     * 
+     * \sa #cursor
+     * \sa #push
      */
     Matrix* get_S() const;
 
     /**
      * Buffered values of \f$y_{k} = \nabla f_{k+1} - \nabla f_{k}\f$
      * @return pointer to buffered data for all \c y
+     * 
+     * \sa #cursor
+     * \sa #push
      */
     Matrix* get_Y() const;
 
@@ -79,20 +88,40 @@ public:
     /**
      * Buffered values of \f$\psi_{k} = \langle s_k, y_k \rangle\f$
      * @return pointer to buffered data for all \c y
+     * 
+     * \sa #cursor
+     * \sa #push
      */
     Matrix* get_Ys() const;
 
     /**
-     * Internal buffer used for values \f$\alpha_k\f$
-     * @return 
+     * Internal buffer used for values \f$\alpha_k\f$.
+     * 
+     * @return pointer to buffered values of alpha
+     * 
+     * \sa #cursor
+     * \sa #push
      */
     Matrix* get_alphas() const;
 
     /**
-     * Current index
-     * @return 
+     * Current cursor position.
+     * 
+     * For instance, if you need to access the current stored vector \f$y_k\f$
+     * you can use the following piece of code:
+     * 
+     * \code{.cpp}
+     *  LBFGSBuffer * buffer = new LBFGSBuffer( ... );
+     *  long c = buffer.cursor();
+     *  if (c != LBFGSBuffer::LBFGS_BUFFER_EOB){
+     *   Matrix * Y = buffer->get_Y();                        // Y cache
+     *   Matrix yk = MatrixFactory::ShallowSubVector(*Y, c);  // Current y
+     *  }
+     * \endcode
+     * 
+     * @return cursor position
      */
-    long get_idx() const;
+    long cursor() const;
 
     /**
      * Provide a new pair \f$(s,y)\f$ to the buffer. This method updates the 
@@ -101,8 +130,9 @@ public:
      * \note The buffer stores <em>hard copies</em> of the pairs (s,y) that are
      * provided to it.
      * 
-     * @param s
-     * @param y
+     * @param s the update difference \f$s_{k} = x_{k+1} - x_{k}\f$
+     * @param y the gradient update different \f$y_{k} = \nabla f_{k+1} - \nabla f_{k}\f$
+     * 
      * @return returns \link ForBESUtils::STATUS_OK STATUS_OK\endlink on success
      */
     int push(Matrix * s, Matrix * y);
@@ -129,21 +159,46 @@ public:
      * @param r (output) result, that is \f$r_k = H_k q_k\f$.
      * 
      * @param gamma0 (input) Initial guess of the Hessian at the first iteration
-     * which is given by \f$H_k^0 = \gamma_0^0 I\f$.
+     * which is given by \f$H_k^0 = \gamma_0^0 I\f$. A possible choice is computed 
+     * by #hessian_estimate.
      * 
      * @return Returns \link ForBESUtils::STATUS_OK STATUS_OK\endlink on success
+     * 
+     * \sa #hessian_estimate
      */
     int update(const Matrix * q, Matrix * r, double & gamma0);
 
+    
+    /**
+     * Computes an estimation of the Hessian using the buffered info.
+     * 
+     * The Hessian approximation is a scaled-identity matrix of the form
+     * \f$H = \gamma I\f$; this method returns the scalar \f$\gamma\f$.
+     * 
+     * For details see Equation (7.20) in J. Nocedal and S.J. Wright,
+     * <em>Numerical Optimization</em>, Second edition, Springer, 2006.
+     * 
+     * @return gamma (Hessian approximation)
+     * 
+     * \sa #update
+     */
     double hessian_estimate();
     
-    size_t get_current_mem() const {
-        return m_current_mem;
-    }
+    /**
+     * Returns the current size of the buffer.
+     * 
+     * @return buffer size
+     * 
+     */
+    size_t get_current_mem() const;
 
     /**
-     * @param j
-     * @return 
+     * In order to access the \f$k-j\f$ cached vectors \f$y_{k-j}\f$ and
+     * \f$s_{k-j}\f$, one first needs to retrieve their index in the cache
+     * which is returned by this method
+     * 
+     * @param j past index (j &gt; 0)
+     * @return cache index
      */
     inline long get_k_minus_j(size_t j) {
         register long t = m_idx - j;

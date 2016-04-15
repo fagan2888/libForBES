@@ -1,6 +1,8 @@
 build/
 dist/
-nbproject/
+nbproject/build-impl.xml
+nbproject/private
+nbbuild/
 source/nbproject
 *.tag
 *.o
@@ -27,6 +29,8 @@ octave-workspace
 .~lock*
 *.odt
 *~
+source/*~
+source/test/*~
 Configuration
 main.cpp
 source/main.cpp

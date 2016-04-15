@@ -30,7 +30,6 @@ Quadratic::Quadratic() {
     m_solver = NULL;
     m_Q = NULL;
     m_q = NULL;
-    m_delete_Q = false;
 }
 
 Quadratic::Quadratic(Matrix& QQ) {
@@ -39,7 +38,6 @@ Quadratic::Quadratic(Matrix& QQ) {
     m_is_q_zero = true;
     m_solver = NULL;
     m_q = NULL;
-    m_delete_Q = false;
 }
 
 Quadratic::Quadratic(Matrix& QQ, Matrix& qq) {
@@ -48,16 +46,12 @@ Quadratic::Quadratic(Matrix& QQ, Matrix& qq) {
     m_solver = NULL;
     m_is_Q_eye = false;
     m_is_q_zero = false;
-    m_delete_Q = false;
 }
 
 Quadratic::~Quadratic() {
     if (m_solver != NULL) {
         delete m_solver;
-    }
-    if (m_delete_Q) {
-        delete m_Q;
-    }
+    }    
 }
 
 void Quadratic::setQ(Matrix& Q) {

@@ -75,7 +75,7 @@ Matrix* LBFGSBuffer::get_alphas() const {
     return m_alphas;
 }
 
-long LBFGSBuffer::get_idx() const {
+long LBFGSBuffer::cursor() const {
     return m_idx;
 }
 
@@ -116,6 +116,10 @@ int LBFGSBuffer::reset() {
     return ForBESUtils::STATUS_OK;
 }
 
+size_t LBFGSBuffer::get_current_mem() const {
+    return m_current_mem;
+}
+
 double LBFGSBuffer::hessian_estimate() {
     // returns Hk0 = ys_prev / (y_prev'*y_prev)
     // or 1.0 is no ys_prev is cached
@@ -135,7 +139,6 @@ double LBFGSBuffer::hessian_estimate() {
 
 int LBFGSBuffer::update(const Matrix* q, Matrix* r, double& gamma0) {
     Matrix qq = *q;
-    const size_t n = q->getNrows();
 
     /*
      * STEP 1:  First loop (compute alpha, update qq)

@@ -43,6 +43,8 @@ public:
      */
     virtual ~CongSeparableSum();
 
+    virtual int call(Matrix& x, double& f);
+
 private:
     int m_n_functions; /**< number of functions */
     std::vector<size_t> m_splitting; /**< assignment of arguments (congruently) */
