@@ -70,6 +70,7 @@ void TestCGSolver::testSolve2() {
     Matrix sol(n, 1);
     int status = solver.solve(b, sol);
     _ASSERT_EQ(ForBESUtils::STATUS_MAX_ITERATIONS_REACHED, status);
+    _ASSERT_EQ(max_iter, solver.last_num_iter());
 }
 
 void TestCGSolver::testSolveNoPredcond() {

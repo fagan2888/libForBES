@@ -86,7 +86,7 @@ int CGSolver::solve(Matrix& b, Matrix& solution) {
         z = z_new;                                  // z = z_new
         r = r_new;                                  // r = r_new
         m_iterations_count++;                       // k = k + 1
-        if (m_iterations_count > m_max_iterations) {
+        if (m_iterations_count == m_max_iterations) {
             keepgoing = false;
         }
     }
