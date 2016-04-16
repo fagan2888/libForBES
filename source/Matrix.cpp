@@ -1243,8 +1243,14 @@ int Matrix::generic_add_helper_left_dense(Matrix& C, double alpha, Matrix& A, do
             }
         }
     } else if (type_of_A == MATRIX_DIAGONAL) { /* DENSE + DIAGONAL */
-        for (size_t i = 0; i < A.getNrows(); i++) {
-            C._addIJ(i, i, alpha * A.m_data[i], gamma);
+        if (is_gamma_one) {
+            for (size_t i = 0; i < A.length(); i++)
+                C.m_data[i * (1 + C.m_nrows)] += (alpha * A.m_data[i]);
+        } else {
+            // C := gamma * C  and C is dense [generic_add_helper_left_dense]
+            cblas_dscal(C.m_dataLength, gamma, C.m_data, 1);
+            for (size_t i = 0; i < C.getNcols(); i++)
+                C[i * (1 + C.m_nrows)] += (alpha * A.m_data[i]);
         }
     } else if (type_of_A == MATRIX_LOWERTR) { /* DENSE + LOWER */
         /* TODO This is to be tested!!! */

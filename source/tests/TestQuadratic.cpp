@@ -157,9 +157,9 @@ void TestQuadratic::testCallProx() {
 
     const double gamma = 0.737;
     const double tol = 1e-7;
-    
+
     Matrix prox;
-    
+
     _ASSERT_NOT(F->category().defines_prox());
     _ASSERT_EQ(ForBESUtils::STATUS_OK, F->callProx(x, gamma, prox));
     _ASSERT_NUM_EQ(0.511066527061120, prox[0], tol);

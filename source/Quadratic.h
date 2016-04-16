@@ -93,7 +93,7 @@ class Quadratic : public Function {
 public:
 
     using Function::callConj;
-    //using Function::callProx;
+    using Function::callProx;
 
     /**
      * Create a trivial quadratic function with zero Hessian and
@@ -141,11 +141,7 @@ public:
      * Custom implementations are allowed to return other non-zero error/warning
      * status codes.
      */
-    virtual int callProx(Matrix& x, double gamma, Matrix& prox);
-
-    virtual int callProx(Matrix& x, double gamma, Matrix& prox, double& f_at_prox) {
-        return 2;
-    };
+    virtual int callProx(Matrix& x, double gamma, Matrix& prox);   
 
 
     /**
