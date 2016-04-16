@@ -51,7 +51,7 @@ Quadratic::Quadratic(Matrix& QQ, Matrix& qq) {
 Quadratic::~Quadratic() {
     if (m_solver != NULL) {
         delete m_solver;
-    }    
+    }
 }
 
 void Quadratic::setQ(Matrix& Q) {
@@ -73,10 +73,11 @@ int Quadratic::call(Matrix& x, double& f) {
             f = m_Q->quad(x, *m_q);
         }
     } else {
-        f = (x * x).get(0, 0);
+        f = static_cast<Matrix> (x * x)[0];
         if (!m_is_q_zero) {
-            f += ((*m_q) * x).get(0, 0);
+            f += static_cast<Matrix> ((*m_q) * x)[0];
         }
+        f = f / 2.0;
     }
     return ForBESUtils::STATUS_OK;
 }
@@ -87,13 +88,12 @@ int Quadratic::call(Matrix& x, double& f, Matrix& grad) {
         return statusComputeGrad;
     }
     // f = (1/2)*(grad+q)'*x
-    f = ((m_is_q_zero ? grad : grad + (*m_q)) * x).get(0, 0) / 2;
+    f = static_cast<Matrix> ((m_is_q_zero ? grad : grad + (*m_q)) * x)[0] / 2;
     return ForBESUtils::STATUS_OK;
 }
 
-
 int Quadratic::hessianProduct(Matrix& x, Matrix& z, Matrix& Hz) {
-    Hz = (*m_Q)*z;
+    Hz = (*m_Q) * z;
     return ForBESUtils::STATUS_OK;
 }
 
@@ -107,7 +107,7 @@ int Quadratic::callConj(Matrix& y, double& f_star, Matrix& g) {
     Matrix z = (m_is_q_zero || m_q == NULL) ? y : y - *m_q; // z = y    
     if (m_is_Q_eye || m_Q == NULL) {
         g = z;
-        f_star = (z * z).get(0, 0);
+        f_star = static_cast<Matrix> (z * z)[0];
         return ForBESUtils::STATUS_OK;
     }
     if (m_Q != NULL && Matrix::MATRIX_DIAGONAL == m_Q->getType()) {
@@ -130,7 +130,7 @@ int Quadratic::callConj(Matrix& y, double& f_star, Matrix& g) {
     }
 
     m_solver->solve(z, g); // Q*g = z   OR  g = Q \ z
-    f_star = (z * g).get(0, 0); // fstar = z' *g 
+    f_star = static_cast<Matrix> (z * g)[0]; // fstar = z' *g 
     return ForBESUtils::STATUS_OK;
 }
 
@@ -151,49 +151,37 @@ FunctionOntologicalClass Quadratic::category() {
 }
 
 int Quadratic::callProx(Matrix& v, double gamma, Matrix& prox) {
+
+    Matrix v_gamma_b = v;
+    if (!m_is_q_zero) Matrix::add(v_gamma_b, -gamma, *m_q, 1.0);
+
+
+
     // (I+gamma Q)^{-1}(v-gamma q)
     int status;
-    CGSolver * solver = NULL;
     if (!m_is_Q_eye) {
         // If Q is not I, we need to create a CGSolver for (I + gamma Q)
         Matrix Q_tilde(*m_Q);
         size_t n = m_Q->getNrows();
         static Matrix Eye = MatrixFactory::MakeIdentity(n, 1.0);
-        status = Matrix::add(Q_tilde, 1.0, Eye, gamma);
-        if (!ForBESUtils::is_status_ok(status)) {
-            return status;
-        }
+        Q_tilde *= gamma;
+        Q_tilde += Eye;
+
         MatrixOperator Q_tilde_op(Q_tilde);
         Matrix P(n, n, Matrix::MATRIX_DIAGONAL);
         for (size_t i = 0; i < n; i++) {
             P[i] = 1 / Q_tilde.get(i, i);
         }
         MatrixOperator P_op(P);
-        solver = new CGSolver(Q_tilde_op, P_op);
-    }
-    /*
-     * v_gamma_b = v - gamma * b
-     */
-    Matrix v_gamma_b = MatrixFactory::ShallowVector();
-    if (m_is_q_zero) {
-        v_gamma_b = MatrixFactory::ShallowMatrix(v);
+        CGSolver solver(Q_tilde_op, P_op, 1e-6, 1500);
+        status = solver.solve(v_gamma_b, prox);
+        if (!ForBESUtils::is_status_ok(status)) return status;
     } else {
-        v_gamma_b = v;
-        status = Matrix::add(v_gamma_b, -gamma, *m_q, 1.0);
-        if (!ForBESUtils::is_status_ok(status)) {
-            return status;
-        }
-    }
-    if (!m_is_Q_eye) {
-        status = solver->solve(v_gamma_b, prox);
-        if (!ForBESUtils::is_status_ok(status)) {
-            return status;
-        }
-    } else {
+        // Q = I
+        // (v-gamma q)/(1+gamma)
+        v_gamma_b *= (1. / (1. + gamma));
         prox = v_gamma_b;
-    }
-    if (solver != NULL) {
-        delete solver;
+        return ForBESUtils::STATUS_OK;
     }
     return ForBESUtils::STATUS_OK;
 

@@ -19,7 +19,7 @@
  */
 
 #ifndef QUADRATIC_H
-#define	QUADRATIC_H
+#define QUADRATIC_H
 
 #include "Function.h"
 #include "Matrix.h"
@@ -93,7 +93,7 @@ class Quadratic : public Function {
 public:
 
     using Function::callConj;
-    using Function::callProx;
+    //using Function::callProx;
 
     /**
      * Create a trivial quadratic function with zero Hessian and
@@ -121,7 +121,32 @@ public:
     Quadratic(Matrix& Q, Matrix& q); // both Q and q    
 
 
+    /**
+     * Computes the proximal operator of the current quadratic function
+     * which is given by
+     * 
+     * \f[
+     *  \mathrm{prox}_{\gamma f}(v) = (I+gamma Q)^{-1}(v-gamma q)
+     * \f]
+     * 
+     * @param x The vector x where \f$\mathrm{prox}_{\gamma f}(x)\f$ should be computed.
+     * @param gamma The parameter \f$\gamma\f$ of \f$\mathrm{prox}_{\gamma f}\f$
+     * @param prox The result of this operation
+     * 
+     * @return 
+     * status code which is equal to <code>STATUS_OK=0</code> if the computation
+     * has succeeded without any problems, <code>STATUS_UNDEFINED_FUNCTION=2</code> if
+     * this function is not defined by the derived class and <code>STATUS_NUMERICAL_PROBLEMS=1</code>
+     * if some numerical problems prevented the computation of a reliable result. 
+     * Custom implementations are allowed to return other non-zero error/warning
+     * status codes.
+     */
     virtual int callProx(Matrix& x, double gamma, Matrix& prox);
+
+    virtual int callProx(Matrix& x, double gamma, Matrix& prox, double& f_at_prox) {
+        return 2;
+    };
+
 
     /**
      * Destructor.
@@ -210,5 +235,5 @@ private:
 
 };
 
-#endif	/* QUADRATIC_H */
+#endif /* QUADRATIC_H */
 

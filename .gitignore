@@ -17,7 +17,6 @@ various/
 *.svg
 *.map
 *.md5
-nbproject/**
 various/**
 ./.*
 .*
@@ -34,5 +33,5 @@ source/test/*~
 Configuration
 main.cpp
 source/main.cpp
-*.mk
+config.mk
 main.cpp
