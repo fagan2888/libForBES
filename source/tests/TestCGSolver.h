@@ -19,6 +19,7 @@ class TestCGSolver : public CPPUNIT_NS::TestFixture {
 
     CPPUNIT_TEST(testSolve);
     CPPUNIT_TEST(testSolve2);
+    CPPUNIT_TEST(testSolveNoPredcond);
 
     CPPUNIT_TEST_SUITE_END();
 
@@ -31,6 +32,7 @@ public:
 private:
     void testSolve();
     void testSolve2();
+    void testSolveNoPredcond();
 
 };
 

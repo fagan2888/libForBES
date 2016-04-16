@@ -39,13 +39,19 @@ void TestCGSolver::testSolve() {
     MatrixOperator M(ID);
 
     size_t max_iter = n;
-    CGSolver solver(Aop, M, 1e-4, max_iter);
+    const double tolerance = 1e-4;
+    CGSolver solver(Aop, M, tolerance, max_iter);
     Matrix sol(n, 1);
     int status = solver.solve(b, sol);
-    _ASSERT_EQ(ForBESUtils::STATUS_OK, status);
+    _ASSERT(ForBESUtils::is_status_ok(status));
     _ASSERT(solver.last_num_iter() < max_iter);
-    _ASSERT(solver.last_error() < 1e-4);
+    _ASSERT(solver.last_error() < tolerance);
     _ASSERT(solver.last_num_iter() > 0);
+
+    Matrix Asol = Aop.call(sol);
+    for (size_t i = 0; i < n; i++) {
+        _ASSERT_NUM_EQ(Asol[i], b[i], tolerance);
+    }
 
 }
 
@@ -63,7 +69,22 @@ void TestCGSolver::testSolve2() {
     CGSolver solver(Aop, M, 1e-4, max_iter);
     Matrix sol(n, 1);
     int status = solver.solve(b, sol);
-    _ASSERT_EQ(ForBESUtils::STATUS_MAX_ITERATIONS_REACHED, status);    
+    _ASSERT_EQ(ForBESUtils::STATUS_MAX_ITERATIONS_REACHED, status);
 }
 
+void TestCGSolver::testSolveNoPredcond() {
+    size_t n = 500;
+
+    Matrix b = MatrixFactory::MakeRandomMatrix(n, 1, 0.0, 1.0);
+    Matrix A = MatrixFactory::MakeRandomMatrix(n, n, 0.0, 1.0, Matrix::MATRIX_SYMMETRIC);
+
+    MatrixOperator Aop(A);
+
+    CGSolver solver(Aop);
+    Matrix sol(n, 1);
+    int status = solver.solve(b, sol);
+    _ASSERT(ForBESUtils::is_status_ok(status));
+    const double default_tolerance = 1e-4;
+    _ASSERT(solver.last_error() < default_tolerance);
+}
 
