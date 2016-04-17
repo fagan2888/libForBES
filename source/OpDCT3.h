@@ -52,10 +52,21 @@ public:
     using LinearOperator::call;
     using LinearOperator::callAdjoint;
     
+    /**
+     * Constructs an instance of OpDCT3 with indeterminate dimension. 
+     * It is advisable that you use #OpDCT3(2) instead.
+     */
     OpDCT3();
 
+    /**
+     * Construct a new instance of OpDCT3 with a given input/output dimension
+     * @param m_dimension
+     */
     explicit OpDCT3(size_t m_dimension);
 
+    /**
+     * Default destructor
+     */
     virtual ~OpDCT3();
     
     virtual int call(Matrix& y, double alpha, Matrix& x, double gamma);

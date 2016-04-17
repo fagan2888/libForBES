@@ -38,6 +38,7 @@ class TestMatrixExtras : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST(test_add_DTDT);
     
     CPPUNIT_TEST(test_add_DS);
+    CPPUNIT_TEST(test_add_DX);
     CPPUNIT_TEST(test_add_DST);
     
     CPPUNIT_TEST(test_add_SS);
@@ -81,6 +82,7 @@ private:
     void test_add_DTDT();
     
     void test_add_DS();
+    void test_add_DX();
     void test_add_DST();
     
     // sparse with sparse: fully tested!

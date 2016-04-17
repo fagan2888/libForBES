@@ -35,6 +35,8 @@ void TestOpDCT3::testCall() {
     _ASSERT_EQ(n, op->dimensionOut().first);
     Matrix *x = new Matrix();
     Matrix *y = new Matrix();
+    
+    _ASSERT_NOT(op->isSelfAdjoint());
 
     for (size_t q = 0; q < repeat; q++) {
         *x = MatrixFactory::MakeRandomMatrix(n, 1, 0.0, 10.0, Matrix::MATRIX_DENSE);

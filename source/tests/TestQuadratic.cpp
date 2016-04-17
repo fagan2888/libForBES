@@ -18,6 +18,8 @@
  * along with ForBES. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include <complex>
+
 #include "TestQuadratic.h"
 
 
@@ -85,7 +87,7 @@ void TestQuadratic::testQuadratic2() {
     _ASSERT(F->category().defines_grad());
     _ASSERT_EQ(ForBESUtils::STATUS_OK, F->call(x, fval, grad));
 
-    const double fval_expected = (x * x).get(0, 0) / 2;
+    const double fval_expected = static_cast<Matrix> (x * x).get(0, 0) / 2;
     _ASSERT_NUM_EQ(fval_expected, fval, tol);
 
     Matrix q(n, 1);
@@ -121,42 +123,95 @@ void TestQuadratic::testQuadratic3() {
     F->setQ(Q);
     _ASSERT_OK(status = F->callConj(x, fval));
     _ASSERT_EQ(ForBESUtils::STATUS_OK, status);
-    
-        Matrix q(n, 1);
-        for (size_t i = 0; i < n; ++i) {
-            q.set(i, 0, i + 1);
-            x.set(i, 0, 2 * i + 1);
-        }
-    
-    
-        Matrix grad;
-        static_cast<Quadratic*> (F)->setq(q);
-    
-        _ASSERT_OK(status = F->callConj(x, fval, grad));
-        _ASSERT_EQ(ForBESUtils::STATUS_OK, status);
-    
-        const double fval_exp = 190.002976190476;
-        const double tol = 1e-8;
-    
-        _ASSERT_NUM_EQ(fval_exp, fval, tol);
-    
-        double grad0_exp = -0.0446428571428572;
-        _ASSERT_NUM_EQ(grad0_exp, grad.get(0, 0), tol);
-    
-        std::cout << fval;
-        _ASSERT_OK(delete F);
+
+    Matrix q(n, 1);
+    for (size_t i = 0; i < n; ++i) {
+        q.set(i, 0, i + 1);
+        x.set(i, 0, 2 * i + 1);
+    }
+
+
+    Matrix grad;
+    static_cast<Quadratic*> (F)->setq(q);
+
+    _ASSERT_OK(status = F->callConj(x, fval, grad));
+    _ASSERT_EQ(ForBESUtils::STATUS_OK, status);
+
+    const double fval_exp = 190.002976190476;
+    const double tol = 1e-8;
+
+    _ASSERT_NUM_EQ(fval_exp, fval, tol);
+
+    double grad0_exp = -0.0446428571428572;
+    _ASSERT_NUM_EQ(grad0_exp, grad.get(0, 0), tol);
+
+    _ASSERT_OK(delete F);
 }
 
 void TestQuadratic::testCallProx() {
     Function *F = new Quadratic(); // F(x) = (1/2)x'x
-    Matrix x;
+    Matrix x(4, 1);
+    for (size_t i = 0; i < 4; i++) {
+        x[i] = 0.34 + std::sqrt(i+0.3);
+    }
+
+    const double gamma = 0.737;
+    const double tol = 1e-7;
+
     Matrix prox;
+
     _ASSERT_NOT(F->category().defines_prox());
-    _ASSERT_EQ(ForBESUtils::STATUS_OK, F->callProx(x, 0.5, prox));
-    
-    
-    
+    _ASSERT_EQ(ForBESUtils::STATUS_OK, F->callProx(x, gamma, prox));
+    _ASSERT_NUM_EQ(0.511066527061120, prox[0], tol);
+    _ASSERT_NUM_EQ(0.852144746746769, prox[1], tol);
+    _ASSERT_NUM_EQ(1.068840005072142, prox[2], tol);
+    _ASSERT_NUM_EQ(1.241560283510935, prox[3], tol);
+
     delete F;
+}
+
+void TestQuadratic::testCallProx2() {
+    const size_t n = 3;
+    double data_Q[9] = {
+        0.29507822324818300, 0.00199205562668041, 0.00423436821643449,
+        0.00199205562668041, 0.24650478030564038, 0.00233990839749903,
+        0.00423436821643449, 0.00233990839749903, 0.27841699644617668
+    };
+    Matrix Q(n, n, data_Q);
+
+    double data_q[n * n] = {0.1, 0.2, -0.3};
+    Matrix q(n, 1, data_q);
+
+    const double gamma = 0.02;
+
+    double data_v[n] = {-1.0, 2.0, -0.5};
+    Matrix v(n, 1, data_v);
+
+    double data_prox_exp[] = {
+        -0.996158636187904,
+        1.986270176873906,
+        -0.491273016601634
+    };
+    Matrix prox_exp(n, 1, data_prox_exp);
+
+    Quadratic F(Q, q);
+    Matrix prox(n, 1);
+    F.callProx(v, gamma, prox);
+
+    _ASSERT_EQ(prox_exp, prox);
+}
+
+void TestQuadratic::testCall2() {
+    Function * quad = new Quadratic();
+    Matrix x(4, 1);
+    for (size_t i = 0; i < 4; i++) {
+        x[i] = 0.1 * (i + 1.0);
+    }
+    double f;
+    int status = quad->call(x, f);
+    _ASSERT(ForBESUtils::is_status_ok(status));
+    _ASSERT_NUM_EQ(0.15, f, 1e-6);
+    delete quad;
 }
 
 void TestQuadratic::testCall() {
@@ -439,7 +494,7 @@ void TestQuadratic::testHessianSparse() {
     Matrix Hd_reference = Matrix(n, 1);
 
     Function * quad = new Quadratic(Q);
-    Hd_reference = Q*d;    
+    Hd_reference = Q*d;
     int status = quad->hessianProduct(x, d, Hd);
     _ASSERT(ForBESUtils::is_status_ok(status));
     _ASSERT_EQ(Hd, Hd_reference);
@@ -460,29 +515,29 @@ void TestQuadratic::testApproximateHessian() {
 
     Matrix Q = Matrix(n, n, Qdata);
     Matrix q = Matrix(n, 1, qdata);
-    
+
 
     Quadratic quadratic(Q, q);
 
     Matrix x = Matrix(n, 1, xdata);
-    Matrix z = MatrixFactory::MakeRandomMatrix(n,1,0.0,2.0);
+    Matrix z = MatrixFactory::MakeRandomMatrix(n, 1, 0.0, 2.0);
     const double epsilon = 1e-8;
     const double one_over_epsilon = 1e8;
-    
+
     /* t = t + εz */
     Matrix t(x);
     Matrix::add(t, epsilon, z, 1.0);
-    
-    
-    Matrix Hz(n,1);
-    quadratic.call(t, f, Hz);       /* Hz = nabla f(t)              */
-    quadratic.call(x, f, grad_x);   /* grad_x = nabla f(x)          */
-    Hz -= grad_x;                   /* Hz = nabla f(t) - nabla f(x) */
+
+
+    Matrix Hz(n, 1);
+    quadratic.call(t, f, Hz); /* Hz = nabla f(t)              */
+    quadratic.call(x, f, grad_x); /* grad_x = nabla f(x)          */
+    Hz -= grad_x; /* Hz = nabla f(t) - nabla f(x) */
     Hz *= one_over_epsilon;
-    
+
     Matrix Hz_copy = Hz;
-    
-    quadratic.hessianProduct(x,z,Hz);
+
+    quadratic.hessianProduct(x, z, Hz);
 
     for (size_t i = 0; i < n; i++) {
         _ASSERT_NUM_EQ(Hz_copy[i], Hz[i], 1e-6);

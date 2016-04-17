@@ -18,6 +18,7 @@ class TestIndBall2 : public CPPUNIT_NS::TestFixture {
 
     CPPUNIT_TEST(testCallProx);
     CPPUNIT_TEST(testCategory);
+    CPPUNIT_TEST(testFail);
 
     CPPUNIT_TEST_SUITE_END();
 
@@ -30,6 +31,7 @@ public:
 private:
     void testCallProx();
     void testCategory();
+    void testFail();
 
 };
 

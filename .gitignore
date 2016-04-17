@@ -1,6 +1,8 @@
 build/
 dist/
-nbproject/
+nbproject/build-impl.xml
+nbproject/private
+nbbuild/
 source/nbproject
 *.tag
 *.o
@@ -15,7 +17,6 @@ various/
 *.svg
 *.map
 *.md5
-nbproject/**
 various/**
 ./.*
 .*
@@ -27,8 +28,10 @@ octave-workspace
 .~lock*
 *.odt
 *~
+source/*~
+source/test/*~
 Configuration
 main.cpp
 source/main.cpp
-*.mk
+config.mk
 main.cpp

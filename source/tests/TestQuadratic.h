@@ -34,7 +34,9 @@ class TestQuadratic : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST(testQuadratic2);
     CPPUNIT_TEST(testQuadratic3);
     CPPUNIT_TEST(testCallProx);
+    CPPUNIT_TEST(testCallProx2);
     CPPUNIT_TEST(testCall);
+    CPPUNIT_TEST(testCall2);
     CPPUNIT_TEST(testCallWithGradient);
     CPPUNIT_TEST(testCallConj);
     CPPUNIT_TEST(testCallConj2);
@@ -60,7 +62,9 @@ private:
     void testQuadratic2();
     void testQuadratic3();
     void testCallProx();
+    void testCallProx2();
     void testCall();
+    void testCall2();
     void testCallWithGradient();
     void testCallConj();
     void testCallConj2();

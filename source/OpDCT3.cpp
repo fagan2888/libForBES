@@ -27,9 +27,10 @@ LinearOperator(),
 m_dimension(_VECTOR_OP_DIM(dimension)) {
 }
 
+//LCOV_EXCL_START
 OpDCT3::OpDCT3() : m_dimension(_EMPTY_OP_DIM) {
-
 }
+//LCOV_EXCL_STOP
 
 OpDCT3::~OpDCT3() {
 }
@@ -45,7 +46,7 @@ int OpDCT3::call(Matrix& y, double alpha, Matrix& x, double gamma) {
         for (size_t i = 1; i < n; i++) {
             yk += (x[i] * std::cos(i * M_PI * (k + 0.5) / n));
         }
-        y.set(k, 0, gamma * y[k] + alpha * yk);
+        y[k] = gamma * y[k] + alpha * yk;
     }
     return ForBESUtils::STATUS_OK;
 }
@@ -59,13 +60,13 @@ int OpDCT3::callAdjoint(Matrix& y, double alpha, Matrix& x, double gamma) {
     for (size_t i = 0; i < n; i++) {
         tk += x[i] / 2.0;
     }
-    y.set(0, 0, gamma * y.get(0, 0) + alpha * tk);
+    y[0] = gamma * y[0] + alpha * tk;
     for (size_t k = 1; k < n; k++) {
         tk = 0.0;
         for (size_t i = 0; i < n; i++) {
             tk += (x[i] * std::cos(k * M_PI * (i + 0.5) / n));
         }
-        y.set(k, 0, gamma * y[k] + alpha * tk);
+        y[k] = gamma * y[k] + alpha * tk;
     }
     return ForBESUtils::STATUS_OK;
 }

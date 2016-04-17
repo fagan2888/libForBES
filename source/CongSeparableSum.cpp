@@ -19,6 +19,7 @@
  */
 
 #include "CongSeparableSum.h"
+#include "MatrixFactory.h"
 
 CongSeparableSum::CongSeparableSum(
         size_t n_functions,
@@ -27,11 +28,18 @@ CongSeparableSum::CongSeparableSum(
 : Function(),
 m_n_functions(n_functions),
 m_splitting(splitting),
-m_functions(functions) 
-{
+m_functions(functions) {
 
 }
 
 CongSeparableSum::~CongSeparableSum() {
 }
+
+int CongSeparableSum::call(Matrix& x, double& f) {
+    for (size_t i = 0; i < m_n_functions; i++) {
+        // use shallow vector
+    }
+    return ForBESUtils::STATUS_OK;
+}
+
 

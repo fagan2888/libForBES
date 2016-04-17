@@ -31,34 +31,34 @@ Function::~Function() {
 int Function::call(Matrix& x, double& f) {
     return ForBESUtils::STATUS_UNDEFINED_FUNCTION;
 }
-//LCOV_EXCL_STOP
 
 int Function::call(Matrix& x, double& f, Matrix& grad) {
     return ForBESUtils::STATUS_UNDEFINED_FUNCTION;
 }
+//LCOV_EXCL_STOP
 
 int Function::hessianProduct(Matrix& x, Matrix& z, Matrix& Hz) {
     const double epsilon = 1e-8;
     const double one_over_epsilon = 1e8;
 
-    /* t = t + epsilon * z */
+    /* t = x + epsilon * z */
     Matrix t(x);
     Matrix::add(t, epsilon, z, 1.0);
 
 
     Matrix grad_x(x.getNrows(), x.getNcols());
-    ;
+
     double f;
-    /* Hz = nabla f(t) */
-    int status = call(t, f, Hz); 
-    
+    /* Hz = nabla f(x+e*z) */
+    int status = call(t, f, Hz);
+
     /* grad_x = nabla f(x) */
-    status = std::max(status, callConj(x, f, grad_x)); 
-    
-    /* Hz = nabla f(t) - nabla f(x) */
-    Hz -= grad_x; 
+    status = std::max(status, call(x, f, grad_x));
+
+    /* Hz = (nabla f(t) - nabla f(x))/epsilon */
+    Hz -= grad_x;
     Hz *= one_over_epsilon;
-    
+
     return status;
 }
 
@@ -74,7 +74,7 @@ int Function::hessianProductConj(Matrix& x, Matrix& z, Matrix& Hz) {
     const double epsilon = 1e-8;
     const double one_over_epsilon = 1e8;
 
-    /* t = t + epsilon * z */
+    /* t = x + epsilon * z */
     Matrix t(x);
     Matrix::add(t, epsilon, z, 1.0);
 
@@ -88,11 +88,10 @@ int Function::hessianProductConj(Matrix& x, Matrix& z, Matrix& Hz) {
     return status;
 }
 
+//LCOV_EXCL_START
 int Function::callProx(Matrix& x, double gamma, Matrix& prox) {
     return ForBESUtils::STATUS_UNDEFINED_FUNCTION;
 }
-
-//LCOV_EXCL_START
 
 int Function::callProx(Matrix& x, double gamma, Matrix& prox, double& f_at_prox) {
     return ForBESUtils::STATUS_UNDEFINED_FUNCTION;

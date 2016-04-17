@@ -32,7 +32,6 @@ void FBProblem::init() {
     m_lin = NULL;
 }
 
-
 FBProblem::FBProblem(
         Function& fun_f1,
         LinearOperator& L_1,
@@ -57,7 +56,7 @@ FBProblem::FBProblem(
         LinearOperator& L,
         Matrix& d,
         Function& fun_g) {
-	init();
+    init();
     if (fun_f.category().is_quadratic()) {
         m_f1 = &fun_f;
         m_L1 = &L;
@@ -67,7 +66,7 @@ FBProblem::FBProblem(
         m_L2 = &L;
         m_d2 = &d;
     }
-	m_g = &fun_g;
+    m_g = &fun_g;
 }
 
 FBProblem::FBProblem(
@@ -88,13 +87,13 @@ FBProblem::FBProblem(
 FBProblem::FBProblem(
         Function& fun_f,
         Function& fun_g) {
-	init();
-	if (fun_f.category().is_quadratic()) {
+    init();
+    if (fun_f.category().is_quadratic()) {
         m_f1 = &fun_f;
     } else {
         m_f2 = &fun_f;
     }
-	m_g = &fun_g;
+    m_g = &fun_g;
 }
 
 LinearOperator * FBProblem::L1() {

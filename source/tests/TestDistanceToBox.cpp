@@ -1,6 +1,6 @@
 /*
  * File:   TestDistanceToBox.cpp
- * Author: chung
+ * Author: Pantelis Sopasakis
  *
  * Created on Oct 28, 2015, 7:28:27 PM
  * 
@@ -31,6 +31,7 @@ TestDistanceToBox::~TestDistanceToBox() {
 }
 
 void TestDistanceToBox::setUp() {
+    std::srand(time(NULL));
 }
 
 void TestDistanceToBox::tearDown() {
@@ -113,4 +114,40 @@ void TestDistanceToBox::testCall2() {
     delete d2b_;
 }
 
+void TestDistanceToBox::testCall3() {
+    double lb = -1.1;
+    double ub = 1.2;
+    double w = 0.985;
+    Function * db = new DistanceToBox(lb, ub, w);
+
+    const size_t n = 10;
+
+    Matrix lb_vec(n, 1);
+    Matrix ub_vec(n, 1);
+    Matrix w_vec(n, 1);
+
+    for (size_t i = 0; i < n; i++) {
+        lb_vec[i] = lb;
+        ub_vec[i] = ub;
+        w_vec[i] = w;
+    }
+
+    Function * db_ = new DistanceToBox(&lb_vec, &ub_vec, &w_vec);
+
+    const double tol = 1e-12;
+
+    for (size_t r = 0; r < 50; r++) {
+        double f;
+        double f_;
+        int status;
+        Matrix x = MatrixFactory::MakeRandomMatrix(n, 1, -1.0, 2.0);
+        status = db->call(x, f);
+        _ASSERT(ForBESUtils::is_status_ok(status));
+        status = db_->call(x, f_);
+        _ASSERT(ForBESUtils::is_status_ok(status));
+        _ASSERT_NUM_EQ(f, f_, tol);
+
+    }
+
+}
 

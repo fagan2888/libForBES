@@ -113,6 +113,38 @@ void TestMatrixExtras::test_add_DS() {
 
 }
 
+void TestMatrixExtras::test_add_DX() {
+    size_t n = 10;
+
+    Matrix D = MatrixFactory::MakeRandomMatrix(n, n, 2.0, 6.0);
+    Matrix Dorig(D);
+
+    Matrix X = MatrixFactory::MakeRandomMatrix(n, 1, 4.0, 10.0);
+    X.toggle_diagonal();
+
+    double alpha = -4.23512323;
+    double gamma = 0.24325345;
+    Matrix::add(D, alpha, X, gamma);
+
+    const double tol = 1e-7;
+
+    // check diagonal entries
+    for (size_t i = 0; i < n; i++) {
+        _ASSERT_NUM_EQ(gamma * Dorig.get(i, i) + alpha * X[i], D.get(i, i), tol);
+    }
+
+    // check all non-diagonal entries
+    for (size_t i = 0; i < n; i++) {
+        for (size_t j = 0; j < i; j++) {
+            _ASSERT_NUM_EQ(gamma * Dorig.get(i, j), D.get(i, j), tol);
+        }
+        for (size_t j = i + 1; j < n; j++) {
+            _ASSERT_NUM_EQ(gamma * Dorig.get(i, j), D.get(i, j), tol);
+        }
+    }
+
+}
+
 void TestMatrixExtras::test_add_DST() {
     for (size_t n = 11; n < 40; n += 5) {
         for (size_t m = 13; m < 30; m += 3) {

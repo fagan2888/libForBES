@@ -19,7 +19,7 @@
  */
 
 #ifndef QUADRATIC_H
-#define	QUADRATIC_H
+#define QUADRATIC_H
 
 #include "Function.h"
 #include "Matrix.h"
@@ -110,15 +110,39 @@ public:
     explicit Quadratic(Matrix&Q);
 
     /**
-     * Create a quadratic-plus-linear function of the form <code>f(x) = 0.5*x'*Q*x + q'*x</code>,
-     * where <code>Q</code> is a square matrix and <code>q</code> is a vector.
+     * 
+     * Create a quadratic-plus-linear function of the form 
+     * <code>f(x) = 0.5*x'*Q*x + q'*x</code>, where <code>Q</code> 
+     * is a square matrix and <code>q</code> is a vector.
+     * 
      * @param Q A square matrix
      * @param q A vector
      */
     Quadratic(Matrix& Q, Matrix& q); // both Q and q    
 
 
-    virtual int callProx(Matrix& x, double gamma, Matrix& prox);
+    /**
+     * Computes the proximal operator of the current quadratic function
+     * which is given by
+     * 
+     * \f[
+     *  \mathrm{prox}_{\gamma f}(v) = (I+\gamma Q)^{-1}(v-\gamma q)
+     * \f]
+     * 
+     * @param x The vector x where \f$\mathrm{prox}_{\gamma f}(x)\f$ should be computed.
+     * @param gamma The parameter \f$\gamma\f$ of \f$\mathrm{prox}_{\gamma f}\f$
+     * @param prox The result of this operation
+     * 
+     * @return 
+     * status code which is equal to <code>STATUS_OK=0</code> if the computation
+     * has succeeded without any problems, <code>STATUS_UNDEFINED_FUNCTION=2</code> if
+     * this function is not defined by the derived class and <code>STATUS_NUMERICAL_PROBLEMS=1</code>
+     * if some numerical problems prevented the computation of a reliable result. 
+     * Custom implementations are allowed to return other non-zero error/warning
+     * status codes.
+     */
+    virtual int callProx(Matrix& x, double gamma, Matrix& prox);   
+
 
     /**
      * Destructor.
@@ -140,7 +164,8 @@ public:
     void setq(Matrix& q);
 
     /**
-     * Returns the value of function f which is computed as <code>Q(x)=0.5*x'*Q*x + q'*x</code>.
+     * Returns the value of function f which is computed as 
+     * <code>Q(x)=0.5*x'*Q*x + q'*x</code>.
      * 
      * @param x The vector x where f(x) should be computed.
      * 
@@ -149,8 +174,9 @@ public:
      * @return
      * Status code which is equal to <code>STATUS_OK</code> if the computation
      * has succeeded without any problems, <code>STATUS_UNDEFINED_FUNCTION</code> if
-     * this function is not defined by the derived class and <code>STATUS_NUMERICAL_PROBLEMS</code>
-     * if some numerical problems prevented the computation of a reliable result. 
+     * this function is not defined by the derived class and 
+     * <code>STATUS_NUMERICAL_PROBLEMS</code> if some numerical problems 
+     * prevented the computation of a reliable result. 
      * Custom implementations are allowed to return other non-zero error/warning
      * status codes.
      * 
@@ -187,7 +213,6 @@ private:
     FactoredSolver *m_solver; /**< Cholesky factor L */
     bool m_is_Q_eye; /**< TRUE if Q is the identity matrix */
     bool m_is_q_zero; /**< TRUE is q is the zero vector */
-    bool m_delete_Q; /**< Whether to delete Q in the destructor */
 
     /**
      * Computes the gradient of this function at a given vector x. 
@@ -206,5 +231,5 @@ private:
 
 };
 
-#endif	/* QUADRATIC_H */
+#endif /* QUADRATIC_H */
 

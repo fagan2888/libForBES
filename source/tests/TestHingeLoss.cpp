@@ -47,8 +47,21 @@ void TestHingeLoss::testCall() {
     double f;
     _ASSERT(hinge->category().defines_f());
     int status = hinge->call(x, f);
-    _ASSERT_EQ(ForBESUtils::STATUS_OK, status);
+    _ASSERT(ForBESUtils::is_status_ok(status));
     delete hinge;
+
+    hinge = new HingeLoss(b);
+    Function * hinge1 = new HingeLoss(b, 1.0);
+    status = hinge->call(x, f);
+    _ASSERT(ForBESUtils::is_status_ok(status));
+    double f1;
+    status = hinge1->call(x, f1);
+    _ASSERT(ForBESUtils::is_status_ok(status));
+    _ASSERT_NUM_EQ(f, f1, 1e-9);
+
+    delete hinge;
+    delete hinge1;
+
 }
 
 void TestHingeLoss::testCall2() {

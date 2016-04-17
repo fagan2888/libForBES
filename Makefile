@@ -36,9 +36,9 @@ ifeq (1, $(DO_PARALLEL))
 	ifeq ($(OS),Darwin) # Assume Mac OS X
 	    NPROCS:=$(shell sysctl -n hw.ncpu)
 	endif
-	#NPROCS:=$$(($(NPROCS)-1))
-	#MAKEFLAGS += -j $(NPROCS)
-	MAKEFLAGS += -j 2
+	NPROCS:=$$(($(NPROCS)-2))
+	MAKEFLAGS += -j $(NPROCS)
+	#MAKEFLAGS += -j 2
 	MAKEFLAGS += --no-print-directory
 endif
 
@@ -56,7 +56,7 @@ endif
 
 # Additional compiler flags (e.g., -O2 or -O3 optimization flags, etc)
 # To create a test coverage report add: -fprofile-arcs -ftest-coverage
-CFLAGS_ADDITIONAL = -O3
+CFLAGS_ADDITIONAL = -O0	
 ifeq (1, $(DO_PROFILE))
 	CFLAGS_ADDITIONAL += -fprofile-arcs 
 	CFLAGS_ADDITIONAL += -ftest-coverage
@@ -269,7 +269,8 @@ TESTS = \
 	TestLasso.test \
 	TestSumOfNorm2.test \
 	TestProperties.test \
-	TestLBFGSBuffer.test
+	TestLBFGSBuffer.test \
+	TestFBProblem.test
 
 TEST_BINS = $(TESTS:%.test=$(BIN_TEST_DIR)/%)
 
@@ -326,6 +327,7 @@ test: build-tests
 	${BIN_TEST_DIR}/TestOpGradient
 	@echo "\n*** ALGORITHMS ***"
 	${BIN_TEST_DIR}/TestFBCache
+	${BIN_TEST_DIR}/TestFBProblem
 	${BIN_TEST_DIR}/TestLBFGSBuffer
 	${BIN_TEST_DIR}/TestFBSplitting
 	${BIN_TEST_DIR}/TestFBSplittingFast
