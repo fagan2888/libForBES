@@ -20,6 +20,7 @@ var searchData=
   ['_7enorm',['~Norm',['../class_norm.html#abf233c9604e01ee05c3ba8babde6ec26',1,'Norm']]],
   ['_7enorm1',['~Norm1',['../class_norm1.html#a3edca38ac9f0ce4842ebfcc9463e1aa8',1,'Norm1']]],
   ['_7enorm2',['~Norm2',['../class_norm2.html#ac7e20b3dd61cb37517fe6d0c248a9329',1,'Norm2']]],
+  ['_7eopdct3',['~OpDCT3',['../class_op_d_c_t3.html#a2a985af64734df0a435ced4d671b07cd',1,'OpDCT3']]],
   ['_7equadoveraffine',['~QuadOverAffine',['../class_quad_over_affine.html#ad8ee8bdc977e4fc3d331387aa7f866b6',1,'QuadOverAffine']]],
   ['_7equadratic',['~Quadratic',['../class_quadratic.html#aa13fc6c074a1b435e196af1e11d51e78',1,'Quadratic']]],
   ['_7equadraticloss',['~QuadraticLoss',['../class_quadratic_loss.html#a318ed283cc14092ecfb4d62c7e2d3718',1,'QuadraticLoss']]],

@@ -103,17 +103,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <dd>Test for "quadraticness" of fun_f, and appropriately assign internally all the input arguments. </dd>
 <dt><a class="anchor" id="_todo000006"></a>Member <a class="el" href="class_function.html#a880fe818690c6453d3a03a72b5dd7efb">Function::callConj</a>  (<a class="el" href="class_matrix.html" title="A generic matrix API. ">Matrix</a> &amp;x, double &amp;f_star)</dt>
 <dd>Implement a dummy callConj which used its counterpart <a class="el" href="class_function.html#ae973f75fbad73c328f4d098ed5bc21aa">callConj(3)</a> to compute f_star and discard grad. </dd>
-<dt><a class="anchor" id="_todo000008"></a>Member <a class="el" href="class_matrix.html#a78b473bbaefb449026e64127a17d517f">Matrix::add</a>  (<a class="el" href="class_matrix.html" title="A generic matrix API. ">Matrix</a> &amp;C, double alpha, <a class="el" href="class_matrix.html" title="A generic matrix API. ">Matrix</a> &amp;A, double gamma)</dt>
+<dt><a class="anchor" id="_todo000007"></a>Class <a class="el" href="class_l_b_f_g_s_buffer.html">LBFGSBuffer</a>  </dt>
+<dd>Implement generalized inner product so that this class supports general matrices and not only vectors.  </dd>
+<dt><a class="anchor" id="_todo000009"></a>Member <a class="el" href="class_matrix.html#a78b473bbaefb449026e64127a17d517f">Matrix::add</a>  (<a class="el" href="class_matrix.html" title="A generic matrix API. ">Matrix</a> &amp;C, double alpha, <a class="el" href="class_matrix.html" title="A generic matrix API. ">Matrix</a> &amp;A, double gamma)</dt>
 <dd>Handle the case where \(\alpha = \gamma = 0.0\). </dd>
-<dt><a class="anchor" id="_todo000009"></a>Member <a class="el" href="class_matrix.html#a967b3c0361c14f7539de4712226dac76">Matrix::mult</a>  (<a class="el" href="class_matrix.html" title="A generic matrix API. ">Matrix</a> &amp;C, double alpha, <a class="el" href="class_matrix.html" title="A generic matrix API. ">Matrix</a> &amp;A, <a class="el" href="class_matrix.html" title="A generic matrix API. ">Matrix</a> &amp;B, double gamma)</dt>
+<dt><a class="anchor" id="_todo000010"></a>Member <a class="el" href="class_matrix.html#a967b3c0361c14f7539de4712226dac76">Matrix::mult</a>  (<a class="el" href="class_matrix.html" title="A generic matrix API. ">Matrix</a> &amp;C, double alpha, <a class="el" href="class_matrix.html" title="A generic matrix API. ">Matrix</a> &amp;A, <a class="el" href="class_matrix.html" title="A generic matrix API. ">Matrix</a> &amp;B, double gamma)</dt>
 <dd>Handle the case where \(\alpha = \gamma = 0.0\). Especially the case \(\alpha=0.0\) should be trivially handled by <code>*=</code>.  </dd>
-<dt><a class="anchor" id="_todo000007"></a>Member <a class="el" href="class_matrix.html#aa0c3fb9c6f0159041a9d3780d0aa7f0c">Matrix::quad</a>  (<a class="el" href="class_matrix.html" title="A generic matrix API. ">Matrix</a> &amp;x) const </dt>
+<dt><a class="anchor" id="_todo000008"></a>Member <a class="el" href="class_matrix.html#aa0c3fb9c6f0159041a9d3780d0aa7f0c">Matrix::quad</a>  (<a class="el" href="class_matrix.html" title="A generic matrix API. ">Matrix</a> &amp;x) const </dt>
 <dd>Implement quadFromSparse in case the matrix is sparse, but there are no triplets available.</dd>
 </dl>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Apr 14 2016 16:42:42 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 17 2016 14:47:38 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

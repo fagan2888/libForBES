@@ -130,43 +130,45 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_operator.html#acd650f6c273bbf3f4334d2d258823903">LinearOperator::call</a>;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">using</span> LinearOperator::callAdjoint;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="class_op_d_c_t3.html">OpDCT3</a>();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_op_d_c_t3.html">OpDCT3</a>(<span class="keywordtype">size_t</span> m_dimension);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="class_op_d_c_t3.html">OpDCT3</a>();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_op_d_c_t3.html#a90cc82e29ccc8aaeeb6069162e939b74">call</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; y, <span class="keywordtype">double</span> alpha, <a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span> gamma);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_op_d_c_t3.html#a7fad6c13523c057508c9c5eb6b931288">callAdjoint</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; y, <span class="keywordtype">double</span> alpha, <a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span> gamma);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">virtual</span> std::pair&lt;size_t, size_t&gt; <a class="code" href="class_op_d_c_t3.html#a90246cde6097f65dfb56cb7c398cf4df">dimensionIn</a>();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="class_op_d_c_t3.html#a110b2a21c31f9cbeceb7ad89b9d60cb1">OpDCT3</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_op_d_c_t3.html#a110b2a21c31f9cbeceb7ad89b9d60cb1">OpDCT3</a>(<span class="keywordtype">size_t</span> m_dimension);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">virtual</span> std::pair&lt;size_t, size_t&gt; <a class="code" href="class_op_d_c_t3.html#a28f8042154607bca64eb5d2474adc728">dimensionOut</a>();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_op_d_c_t3.html#a5412ab8daf43ec001ab473c012469f7c">isSelfAdjoint</a>();</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    std::pair&lt;size_t, size_t&gt; m_dimension;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;};</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* OPDCT3_H */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor"></span></div>
-<div class="ttc" id="class_op_d_c_t3_html_a90246cde6097f65dfb56cb7c398cf4df"><div class="ttname"><a href="class_op_d_c_t3.html#a90246cde6097f65dfb56cb7c398cf4df">OpDCT3::dimensionIn</a></div><div class="ttdeci">virtual std::pair&lt; size_t, size_t &gt; dimensionIn()</div><div class="ttdef"><b>Definition:</b> OpDCT3.cpp:73</div></div>
-<div class="ttc" id="class_op_d_c_t3_html_a5412ab8daf43ec001ab473c012469f7c"><div class="ttname"><a href="class_op_d_c_t3.html#a5412ab8daf43ec001ab473c012469f7c">OpDCT3::isSelfAdjoint</a></div><div class="ttdeci">virtual bool isSelfAdjoint()</div><div class="ttdef"><b>Definition:</b> OpDCT3.cpp:81</div></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_op_d_c_t3.html#a2a985af64734df0a435ced4d671b07cd">~OpDCT3</a>();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_op_d_c_t3.html#a90cc82e29ccc8aaeeb6069162e939b74">call</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; y, <span class="keywordtype">double</span> alpha, <a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span> gamma);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_op_d_c_t3.html#a7fad6c13523c057508c9c5eb6b931288">callAdjoint</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; y, <span class="keywordtype">double</span> alpha, <a class="code" href="class_matrix.html">Matrix</a>&amp; x, <span class="keywordtype">double</span> gamma);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">virtual</span> std::pair&lt;size_t, size_t&gt; <a class="code" href="class_op_d_c_t3.html#a90246cde6097f65dfb56cb7c398cf4df">dimensionIn</a>();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">virtual</span> std::pair&lt;size_t, size_t&gt; <a class="code" href="class_op_d_c_t3.html#a28f8042154607bca64eb5d2474adc728">dimensionOut</a>();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_op_d_c_t3.html#a5412ab8daf43ec001ab473c012469f7c">isSelfAdjoint</a>();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    std::pair&lt;size_t, size_t&gt; m_dimension;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;};</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* OPDCT3_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor"></span></div>
+<div class="ttc" id="class_op_d_c_t3_html_a90246cde6097f65dfb56cb7c398cf4df"><div class="ttname"><a href="class_op_d_c_t3.html#a90246cde6097f65dfb56cb7c398cf4df">OpDCT3::dimensionIn</a></div><div class="ttdeci">virtual std::pair&lt; size_t, size_t &gt; dimensionIn()</div><div class="ttdef"><b>Definition:</b> OpDCT3.cpp:74</div></div>
+<div class="ttc" id="class_op_d_c_t3_html_a2a985af64734df0a435ced4d671b07cd"><div class="ttname"><a href="class_op_d_c_t3.html#a2a985af64734df0a435ced4d671b07cd">OpDCT3::~OpDCT3</a></div><div class="ttdeci">virtual ~OpDCT3()</div><div class="ttdef"><b>Definition:</b> OpDCT3.cpp:35</div></div>
+<div class="ttc" id="class_op_d_c_t3_html_a5412ab8daf43ec001ab473c012469f7c"><div class="ttname"><a href="class_op_d_c_t3.html#a5412ab8daf43ec001ab473c012469f7c">OpDCT3::isSelfAdjoint</a></div><div class="ttdeci">virtual bool isSelfAdjoint()</div><div class="ttdef"><b>Definition:</b> OpDCT3.cpp:82</div></div>
 <div class="ttc" id="class_linear_operator_html_acd650f6c273bbf3f4334d2d258823903"><div class="ttname"><a href="class_linear_operator.html#acd650f6c273bbf3f4334d2d258823903">LinearOperator::call</a></div><div class="ttdeci">virtual int call(Matrix &amp;y, double alpha, Matrix &amp;x, double gamma)=0</div></div>
-<div class="ttc" id="class_op_d_c_t3_html_a28f8042154607bca64eb5d2474adc728"><div class="ttname"><a href="class_op_d_c_t3.html#a28f8042154607bca64eb5d2474adc728">OpDCT3::dimensionOut</a></div><div class="ttdeci">virtual std::pair&lt; size_t, size_t &gt; dimensionOut()</div><div class="ttdef"><b>Definition:</b> OpDCT3.cpp:77</div></div>
+<div class="ttc" id="class_op_d_c_t3_html_a28f8042154607bca64eb5d2474adc728"><div class="ttname"><a href="class_op_d_c_t3.html#a28f8042154607bca64eb5d2474adc728">OpDCT3::dimensionOut</a></div><div class="ttdeci">virtual std::pair&lt; size_t, size_t &gt; dimensionOut()</div><div class="ttdef"><b>Definition:</b> OpDCT3.cpp:78</div></div>
 <div class="ttc" id="class_matrix_html"><div class="ttname"><a href="class_matrix.html">Matrix</a></div><div class="ttdoc">A generic matrix API. </div><div class="ttdef"><b>Definition:</b> Matrix.h:67</div></div>
 <div class="ttc" id="class_linear_operator_html"><div class="ttname"><a href="class_linear_operator.html">LinearOperator</a></div><div class="ttdoc">A linear operator T(x) </div><div class="ttdef"><b>Definition:</b> LinearOperator.h:51</div></div>
-<div class="ttc" id="class_op_d_c_t3_html_a7fad6c13523c057508c9c5eb6b931288"><div class="ttname"><a href="class_op_d_c_t3.html#a7fad6c13523c057508c9c5eb6b931288">OpDCT3::callAdjoint</a></div><div class="ttdeci">virtual int callAdjoint(Matrix &amp;y, double alpha, Matrix &amp;x, double gamma)</div><div class="ttdef"><b>Definition:</b> OpDCT3.cpp:53</div></div>
-<div class="ttc" id="class_op_d_c_t3_html_a90cc82e29ccc8aaeeb6069162e939b74"><div class="ttname"><a href="class_op_d_c_t3.html#a90cc82e29ccc8aaeeb6069162e939b74">OpDCT3::call</a></div><div class="ttdeci">virtual int call(Matrix &amp;y, double alpha, Matrix &amp;x, double gamma)</div><div class="ttdef"><b>Definition:</b> OpDCT3.cpp:37</div></div>
+<div class="ttc" id="class_op_d_c_t3_html_a7fad6c13523c057508c9c5eb6b931288"><div class="ttname"><a href="class_op_d_c_t3.html#a7fad6c13523c057508c9c5eb6b931288">OpDCT3::callAdjoint</a></div><div class="ttdeci">virtual int callAdjoint(Matrix &amp;y, double alpha, Matrix &amp;x, double gamma)</div><div class="ttdef"><b>Definition:</b> OpDCT3.cpp:54</div></div>
+<div class="ttc" id="class_op_d_c_t3_html_a90cc82e29ccc8aaeeb6069162e939b74"><div class="ttname"><a href="class_op_d_c_t3.html#a90cc82e29ccc8aaeeb6069162e939b74">OpDCT3::call</a></div><div class="ttdeci">virtual int call(Matrix &amp;y, double alpha, Matrix &amp;x, double gamma)</div><div class="ttdef"><b>Definition:</b> OpDCT3.cpp:38</div></div>
 <div class="ttc" id="class_op_d_c_t3_html"><div class="ttname"><a href="class_op_d_c_t3.html">OpDCT3</a></div><div class="ttdoc">The Discrete Cosine Transform Type III (DCT-III or IDCT) </div><div class="ttdef"><b>Definition:</b> OpDCT3.h:49</div></div>
+<div class="ttc" id="class_op_d_c_t3_html_a110b2a21c31f9cbeceb7ad89b9d60cb1"><div class="ttname"><a href="class_op_d_c_t3.html#a110b2a21c31f9cbeceb7ad89b9d60cb1">OpDCT3::OpDCT3</a></div><div class="ttdeci">OpDCT3()</div><div class="ttdef"><b>Definition:</b> OpDCT3.cpp:31</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Apr 14 2016 16:42:42 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 17 2016 14:47:38 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

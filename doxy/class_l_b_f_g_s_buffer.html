@@ -122,14 +122,18 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6bec80fdcc7b5299f3c59edca57603ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a764e594872ae4db0a291eed9843a612b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_matrix.html">Matrix</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_b_f_g_s_buffer.html#a764e594872ae4db0a291eed9843a612b">get_alphas</a> () const </td></tr>
 <tr class="separator:a764e594872ae4db0a291eed9843a612b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3c1172521860f24e92197761d169290"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_b_f_g_s_buffer.html#ab3c1172521860f24e92197761d169290">get_idx</a> () const </td></tr>
-<tr class="separator:ab3c1172521860f24e92197761d169290"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb30a641fb7d286b647890be2cc8dea6"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_b_f_g_s_buffer.html#acb30a641fb7d286b647890be2cc8dea6">cursor</a> () const </td></tr>
+<tr class="separator:acb30a641fb7d286b647890be2cc8dea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a103f2077c77677d1107b535c116aab44"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_b_f_g_s_buffer.html#a103f2077c77677d1107b535c116aab44">push</a> (<a class="el" href="class_matrix.html">Matrix</a> *s, <a class="el" href="class_matrix.html">Matrix</a> *y)</td></tr>
 <tr class="separator:a103f2077c77677d1107b535c116aab44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa0a86c38a9897dd0130595d814c48a1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_b_f_g_s_buffer.html#afa0a86c38a9897dd0130595d814c48a1">reset</a> ()</td></tr>
 <tr class="separator:afa0a86c38a9897dd0130595d814c48a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5119dc59b46b83feaa8d13f125e37d06"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_b_f_g_s_buffer.html#a5119dc59b46b83feaa8d13f125e37d06">update</a> (const <a class="el" href="class_matrix.html">Matrix</a> *q, <a class="el" href="class_matrix.html">Matrix</a> *r, double &amp;gamma0)</td></tr>
 <tr class="separator:a5119dc59b46b83feaa8d13f125e37d06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57cbc2270822dba37979802201dcdcd2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_b_f_g_s_buffer.html#a57cbc2270822dba37979802201dcdcd2">hessian_estimate</a> ()</td></tr>
+<tr class="separator:a57cbc2270822dba37979802201dcdcd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2548bb3bafa5220d43f085d9f3564236"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_b_f_g_s_buffer.html#a2548bb3bafa5220d43f085d9f3564236">get_current_mem</a> () const </td></tr>
+<tr class="separator:a2548bb3bafa5220d43f085d9f3564236"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a392f7e243bbe8bf29216cc5be2988923"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_b_f_g_s_buffer.html#a392f7e243bbe8bf29216cc5be2988923">get_k_minus_j</a> (size_t j)</td></tr>
 <tr class="separator:a392f7e243bbe8bf29216cc5be2988923"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -141,7 +145,8 @@ Static Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Buffer for the Limited Memory BFGS algorithm. </p>
 <dl class="section version"><dt>Version</dt><dd>version 0.1</dd></dl>
-<p><a class="el" href="class_l_b_f_g_s_buffer.html" title="Buffer for the Limited Memory BFGS algorithm. ">LBFGSBuffer</a> is a finite length buffer for pairs \((s_k, y_k)\) which are necessary for the computation of \(r_k = H_k q_k\) in the LBFGS algorithm. </p>
+<p><a class="el" href="class_l_b_f_g_s_buffer.html" title="Buffer for the Limited Memory BFGS algorithm. ">LBFGSBuffer</a> is a finite length buffer for pairs \((s_k, y_k)\) which are necessary for the computation of \(r_k = H_k q_k\) in the LBFGS algorithm.</p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000007">Todo:</a></b></dt><dd>Implement generalized inner product so that this class supports general matrices and not only vectors. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a5e6a7d2eb0ce5bbdfbbeaef7ab8dab2f"></a>
 <div class="memitem">
@@ -202,6 +207,30 @@ Static Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="acb30a641fb7d286b647890be2cc8dea6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long LBFGSBuffer::cursor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Current cursor position.</p>
+<p>For instance, if you need to access the current stored vector \(y_k\) you can use the following piece of code:</p>
+<div class="fragment"><div class="line"><a class="code" href="class_l_b_f_g_s_buffer.html">LBFGSBuffer</a> * buffer = <span class="keyword">new</span> <a class="code" href="class_l_b_f_g_s_buffer.html#a5e6a7d2eb0ce5bbdfbbeaef7ab8dab2f">LBFGSBuffer</a>( ... );</div>
+<div class="line"><span class="keywordtype">long</span> c = buffer.<a class="code" href="class_l_b_f_g_s_buffer.html#acb30a641fb7d286b647890be2cc8dea6">cursor</a>();</div>
+<div class="line"><span class="keywordflow">if</span> (c != <a class="code" href="class_l_b_f_g_s_buffer.html#a92a296626907a14e7660e33fd72c6c8d">LBFGSBuffer::LBFGS_BUFFER_EOB</a>){</div>
+<div class="line"> <a class="code" href="class_matrix.html">Matrix</a> * Y = buffer-&gt;<a class="code" href="class_l_b_f_g_s_buffer.html#a0fbba886c215c5f844c703ddc857e51c">get_Y</a>();                        <span class="comment">// Y cache</span></div>
+<div class="line"> <a class="code" href="class_matrix.html">Matrix</a> yk = <a class="code" href="class_matrix_factory.html#a6a20eb9c1586b6b92c02011a6649045e">MatrixFactory::ShallowSubVector</a>(*Y, c);  <span class="comment">// Current y</span></div>
+<div class="line">}</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>cursor position </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a764e594872ae4db0a291eed9843a612b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -214,25 +243,28 @@ Static Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Internal buffer used for values \(\alpha_k\) </p>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p>Internal buffer used for values \(\alpha_k\).</p>
+<dl class="section return"><dt>Returns</dt><dd>pointer to buffered values of alpha</dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_l_b_f_g_s_buffer.html#acb30a641fb7d286b647890be2cc8dea6">cursor</a> </dd>
+<dd>
+<a class="el" href="class_l_b_f_g_s_buffer.html#a103f2077c77677d1107b535c116aab44">push</a> </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ab3c1172521860f24e92197761d169290"></a>
+<a class="anchor" id="a2548bb3bafa5220d43f085d9f3564236"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">long LBFGSBuffer::get_idx </td>
+          <td class="memname">size_t LBFGSBuffer::get_current_mem </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Current index </p>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p>Returns the current size of the buffer.</p>
+<dl class="section return"><dt>Returns</dt><dd>buffer size </dd></dl>
 
 </div>
 </div>
@@ -257,13 +289,14 @@ Static Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>In order to access the \(k-j\) cached vectors \(y_{k-j}\) and \(s_{k-j}\), one first needs to retrieve their index in the cache which is returned by this method</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">j</td><td></td></tr>
+    <tr><td class="paramname">j</td><td>past index (j &gt; 0) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>cache index </dd></dl>
 
 </div>
 </div>
@@ -281,6 +314,9 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Buffered values of \(s_{k} = x_{k+1} - x_{k}\) </p>
 <dl class="section return"><dt>Returns</dt><dd>pointer to buffered data for all <code>s</code> </dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_l_b_f_g_s_buffer.html#acb30a641fb7d286b647890be2cc8dea6">cursor</a> </dd>
+<dd>
+<a class="el" href="class_l_b_f_g_s_buffer.html#a103f2077c77677d1107b535c116aab44">push</a> </dd></dl>
 
 </div>
 </div>
@@ -298,6 +334,9 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Buffered values of \(y_{k} = \nabla f_{k+1} - \nabla f_{k}\) </p>
 <dl class="section return"><dt>Returns</dt><dd>pointer to buffered data for all <code>y</code> </dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_l_b_f_g_s_buffer.html#acb30a641fb7d286b647890be2cc8dea6">cursor</a> </dd>
+<dd>
+<a class="el" href="class_l_b_f_g_s_buffer.html#a103f2077c77677d1107b535c116aab44">push</a> </dd></dl>
 
 </div>
 </div>
@@ -315,6 +354,29 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Buffered values of \(\psi_{k} = \langle s_k, y_k \rangle\) </p>
 <dl class="section return"><dt>Returns</dt><dd>pointer to buffered data for all <code>y</code> </dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_l_b_f_g_s_buffer.html#acb30a641fb7d286b647890be2cc8dea6">cursor</a> </dd>
+<dd>
+<a class="el" href="class_l_b_f_g_s_buffer.html#a103f2077c77677d1107b535c116aab44">push</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a57cbc2270822dba37979802201dcdcd2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double LBFGSBuffer::hessian_estimate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Computes an estimation of the Hessian using the buffered info.</p>
+<p>The Hessian approximation is a scaled-identity matrix of the form \(H = \gamma I\); this method returns the scalar \(\gamma\).</p>
+<p>For details see Equation (7.20) in J. Nocedal and S.J. Wright, <em>Numerical Optimization</em>, Second edition, Springer, 2006.</p>
+<dl class="section return"><dt>Returns</dt><dd>gamma (Hessian approximation)</dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_l_b_f_g_s_buffer.html#a5119dc59b46b83feaa8d13f125e37d06">update</a> </dd></dl>
 
 </div>
 </div>
@@ -345,8 +407,8 @@ Static Public Attributes</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>The buffer stores <em>hard copies</em> of the pairs (s,y) that are provided to it.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">s</td><td></td></tr>
-    <tr><td class="paramname">y</td><td></td></tr>
+    <tr><td class="paramname">s</td><td>the update difference \(s_{k} = x_{k+1} - x_{k}\) </td></tr>
+    <tr><td class="paramname">y</td><td>the gradient update different \(y_{k} = \nabla f_{k+1} - \nabla f_{k}\)</td></tr>
   </table>
   </dd>
 </dl>
@@ -410,12 +472,12 @@ Static Public Attributes</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">q</td><td>(input) given vector \(q_k\)</td></tr>
     <tr><td class="paramname">r</td><td>(output) result, that is \(r_k = H_k q_k\).</td></tr>
-    <tr><td class="paramname">gamma0</td><td>(input) Initial guess of the Hessian at the first iteration which is given by \(H_0^0 = \gamma_0^0 I\). After the first iteration (when there are at least two elements in the buffer), this input is not used. <br/>
- (output) at output and for \(k\geq 2\) returns the initial guess of the Hessian \(\gamma_k^0\), i.e., the initial Hessian approximation \(H_k^0=\gamma_k^0 I\).</td></tr>
+    <tr><td class="paramname">gamma0</td><td>(input) Initial guess of the Hessian at the first iteration which is given by \(H_k^0 = \gamma_0^0 I\). A possible choice is computed by <a class="el" href="class_l_b_f_g_s_buffer.html#a57cbc2270822dba37979802201dcdcd2">hessian_estimate</a>.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns <a class="el" href="class_for_b_e_s_utils.html#a3778b88ef7ec8a5024eec49a0d7a656d">STATUS_OK</a> on success </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns <a class="el" href="class_for_b_e_s_utils.html#a3778b88ef7ec8a5024eec49a0d7a656d">STATUS_OK</a> on success</dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_l_b_f_g_s_buffer.html#a57cbc2270822dba37979802201dcdcd2">hessian_estimate</a> </dd></dl>
 
 </div>
 </div>
@@ -448,7 +510,7 @@ Static Public Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Apr 14 2016 16:42:42 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 17 2016 14:47:38 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

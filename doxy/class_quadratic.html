@@ -274,7 +274,7 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Create a quadratic-plus-linear function of the form <code>f(x) = 0.5*x'*Q*x + q'*x</code>, where <code>Q</code> is a square matrix and <code>q</code> is a vector. </p>
+<p>Create a quadratic-plus-linear function of the form <code>f(x) = 0.5*x'*Q*x + q'*x</code>, where <code>Q</code> is a square matrix and <code>q</code> is a vector.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">Q</td><td>A square matrix </td></tr>
@@ -560,22 +560,19 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Computes the proximal of this function at a point <code>x</code> with parameter <code>gamma</code>.</p>
+<p>Computes the proximal operator of the current quadratic function which is given by</p>
+<p class="formulaDsp">
+\[ \mathrm{prox}_{\gamma f}(v) = (I+\gamma Q)^{-1}(v-\gamma q) \]
+</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>The vector x where \(\mathrm{prox}_{\gamma f}(x)\) should be computed. </td></tr>
     <tr><td class="paramname">gamma</td><td>The parameter \(\gamma\) of \(\mathrm{prox}_{\gamma f}\) </td></tr>
-    <tr><td class="paramname">prox</td><td>The result of this operation </td></tr>
+    <tr><td class="paramname">prox</td><td>The result of this operation</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>status code which is equal to <code>STATUS_OK=0</code> if the computation has succeeded without any problems, <code>STATUS_UNDEFINED_FUNCTION=2</code> if this function is not defined by the derived class and <code>STATUS_NUMERICAL_PROBLEMS=1</code> if some numerical problems prevented the computation of a reliable result. Custom implementations are allowed to return other non-zero error/warning status codes.</dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">std::invalid_argument</td><td>an <code>invalid_argument</code> exception is thrown in case the function argument <code>x</code> and/or <code>prox</code> are of incompatible dimensions. </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section return"><dt>Returns</dt><dd>status code which is equal to <code>STATUS_OK=0</code> if the computation has succeeded without any problems, <code>STATUS_UNDEFINED_FUNCTION=2</code> if this function is not defined by the derived class and <code>STATUS_NUMERICAL_PROBLEMS=1</code> if some numerical problems prevented the computation of a reliable result. Custom implementations are allowed to return other non-zero error/warning status codes. </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_function.html#a1f5065a00f21681a6bf617bbaf3b1181">Function</a>.</p>
 
@@ -723,7 +720,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Apr 14 2016 16:42:42 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 17 2016 14:47:38 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

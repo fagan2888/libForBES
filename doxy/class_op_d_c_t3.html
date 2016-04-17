@@ -119,9 +119,12 @@ Collaboration diagram for OpDCT3:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a701d8662375025abc2dc29fc26391fbd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a701d8662375025abc2dc29fc26391fbd"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>OpDCT3</b> (size_t m_dimension)</td></tr>
+<tr class="memitem:a110b2a21c31f9cbeceb7ad89b9d60cb1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_op_d_c_t3.html#a110b2a21c31f9cbeceb7ad89b9d60cb1">OpDCT3</a> ()</td></tr>
+<tr class="separator:a110b2a21c31f9cbeceb7ad89b9d60cb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a701d8662375025abc2dc29fc26391fbd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_op_d_c_t3.html#a701d8662375025abc2dc29fc26391fbd">OpDCT3</a> (size_t m_dimension)</td></tr>
 <tr class="separator:a701d8662375025abc2dc29fc26391fbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a985af64734df0a435ced4d671b07cd"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_op_d_c_t3.html#a2a985af64734df0a435ced4d671b07cd">~OpDCT3</a> ()</td></tr>
+<tr class="separator:a2a985af64734df0a435ced4d671b07cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90cc82e29ccc8aaeeb6069162e939b74"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_op_d_c_t3.html#a90cc82e29ccc8aaeeb6069162e939b74">call</a> (<a class="el" href="class_matrix.html">Matrix</a> &amp;y, double alpha, <a class="el" href="class_matrix.html">Matrix</a> &amp;x, double gamma)</td></tr>
 <tr class="separator:a90cc82e29ccc8aaeeb6069162e939b74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7fad6c13523c057508c9c5eb6b931288"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_op_d_c_t3.html#a7fad6c13523c057508c9c5eb6b931288">callAdjoint</a> (<a class="el" href="class_matrix.html">Matrix</a> &amp;y, double alpha, <a class="el" href="class_matrix.html">Matrix</a> &amp;x, double gamma)</td></tr>
@@ -153,7 +156,79 @@ virtual <a class="el" href="class_matrix.html">Matrix</a>&#160;</td><td class="m
 </p>
 <p>for \(k=0,\ldots, n-1\).</p>
 <p>Because it is the inverse of DCT-II (up to a scale factor), this form is sometimes simply referred to as "the inverse DCT" ("IDCT"). </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a110b2a21c31f9cbeceb7ad89b9d60cb1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">OpDCT3::OpDCT3 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Constructs an instance of <a class="el" href="class_op_d_c_t3.html" title="The Discrete Cosine Transform Type III (DCT-III or IDCT) ">OpDCT3</a> with indeterminate dimension. It is advisable that you use #OpDCT3(2) instead. </p>
+
+</div>
+</div>
+<a class="anchor" id="a701d8662375025abc2dc29fc26391fbd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">OpDCT3::OpDCT3 </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>m_dimension</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Construct a new instance of <a class="el" href="class_op_d_c_t3.html" title="The Discrete Cosine Transform Type III (DCT-III or IDCT) ">OpDCT3</a> with a given input/output dimension </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m_dimension</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a2a985af64734df0a435ced4d671b07cd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">OpDCT3::~OpDCT3 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Default destructor </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a90cc82e29ccc8aaeeb6069162e939b74"></a>
 <div class="memitem">
 <div class="memproto">
@@ -379,7 +454,7 @@ virtual <a class="el" href="class_matrix.html">Matrix</a>&#160;</td><td class="m
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Apr 14 2016 16:42:42 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 17 2016 14:47:38 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

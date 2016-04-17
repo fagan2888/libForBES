@@ -4,7 +4,7 @@ var searchData=
   ['opadjoint',['OpAdjoint',['../class_op_adjoint.html',1,'']]],
   ['opcomposition',['OpComposition',['../class_op_composition.html',1,'']]],
   ['opdct2',['OpDCT2',['../class_op_d_c_t2.html',1,'OpDCT2'],['../class_op_d_c_t2.html#ad48b071d3e75b7d1e51b99c663c6f819',1,'OpDCT2::OpDCT2()'],['../class_op_d_c_t2.html#af9e2aba60e3c7b236faf60ae1b7562ac',1,'OpDCT2::OpDCT2(size_t n)']]],
-  ['opdct3',['OpDCT3',['../class_op_d_c_t3.html',1,'']]],
+  ['opdct3',['OpDCT3',['../class_op_d_c_t3.html',1,'OpDCT3'],['../class_op_d_c_t3.html#a110b2a21c31f9cbeceb7ad89b9d60cb1',1,'OpDCT3::OpDCT3()'],['../class_op_d_c_t3.html#a701d8662375025abc2dc29fc26391fbd',1,'OpDCT3::OpDCT3(size_t m_dimension)']]],
   ['operator_2a',['operator*',['../class_matrix.html#a6f117287672b1edcedf1cab6edaea2b5',1,'Matrix']]],
   ['operator_2a_3d',['operator*=',['../class_matrix.html#ad5c437f59e2afd60da8a880e8417856f',1,'Matrix']]],
   ['operator_2b',['operator+',['../class_matrix.html#a248b41795fe69f2591aa95f4a5dbac79',1,'Matrix']]],

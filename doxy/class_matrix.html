@@ -238,9 +238,6 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>S_LDLFactorization</
 <tr class="memitem:a0d94e4b35755819c28bf205258ae0d80"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0d94e4b35755819c28bf205258ae0d80"></a>
 class&#160;</td><td class="memItemRight" valign="bottom"><b>MatrixWriter</b></td></tr>
 <tr class="separator:a0d94e4b35755819c28bf205258ae0d80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8699a51d66c82c81079c939609e45f0e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8699a51d66c82c81079c939609e45f0e"></a>
-class&#160;</td><td class="memItemRight" valign="bottom"><b>LeastSquares</b></td></tr>
-<tr class="separator:a8699a51d66c82c81079c939609e45f0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5c437f59e2afd60da8a880e8417856f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_matrix.html">Matrix</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#ad5c437f59e2afd60da8a880e8417856f">operator*=</a> (<a class="el" href="class_matrix.html">Matrix</a> &amp;obj, double alpha)</td></tr>
 <tr class="separator:ad5c437f59e2afd60da8a880e8417856f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37d865fbe59bcafacb9a36d4901d769a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a37d865fbe59bcafacb9a36d4901d769a"></a>
@@ -615,7 +612,7 @@ A factor for this class, namely <a class="el" href="class_matrix_factory.html" t
   </table>
   </dd>
 </dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000008">Todo:</a></b></dt><dd>Handle the case where \(\alpha = \gamma = 0.0\).</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000009">Todo:</a></b></dt><dd>Handle the case where \(\alpha = \gamma = 0.0\).</dd></dl>
 <dl class="bug"><dt><b><a class="el" href="bug.html#_bug000001">Bug:</a></b></dt><dd>SPARSE + LOWER_TRI is too slow! </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="shallow_example_8cpp-example.html#a3">shallow_example.cpp</a>.</dd>
 </dl>
@@ -977,7 +974,7 @@ A factor for this class, namely <a class="el" href="class_matrix_factory.html" t
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A status code. The method will return a <a class="el" href="class_for_b_e_s_utils.html#a3778b88ef7ec8a5024eec49a0d7a656d">success code</a> if the operation has succeeded and there was no need to perform any memory allocation operations.</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000009">Todo:</a></b></dt><dd>Handle the case where \(\alpha = \gamma = 0.0\). Especially the case \(\alpha=0.0\) should be trivially handled by <code>*=</code>. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000010">Todo:</a></b></dt><dd>Handle the case where \(\alpha = \gamma = 0.0\). Especially the case \(\alpha=0.0\) should be trivially handled by <code>*=</code>. </dd></dl>
 
 </div>
 </div>
@@ -1376,7 +1373,7 @@ A factor for this class, namely <a class="el" href="class_matrix_factory.html" t
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Scalar 0.5*x'*Q*x as <code>double</code> as a double.</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000007">Todo:</a></b></dt><dd>Implement quadFromSparse in case the matrix is sparse, but there are no triplets available.</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000008">Todo:</a></b></dt><dd>Implement quadFromSparse in case the matrix is sparse, but there are no triplets available.</dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">std::invalid_argument</td><td>if the provided argument <code>x</code> is not a column-vector, or the current matrix object does not correspond to a square matrix, or <code>x</code> is of incompatible dimensions. </td></tr>
@@ -1697,7 +1694,7 @@ A factor for this class, namely <a class="el" href="class_matrix_factory.html" t
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Apr 14 2016 16:42:42 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 17 2016 14:47:38 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
