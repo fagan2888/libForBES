@@ -43,7 +43,7 @@
  */
 inline bool is_close(const double a, const double b) {
     return abs(a - b) <= std::max(
-            FB_CACHE_RELATIVE_TOL * std::max(std::abs(a), std::abs(b)), 
+            FB_CACHE_RELATIVE_TOL * std::max(std::abs(a), std::abs(b)),
             FB_CACHE_ABSOLUTE_TOL);
 }
 
@@ -181,28 +181,23 @@ int FBCache::update_eval_f(bool order_grad_f2) {
 
 int FBCache::update_forward_step(double gamma) {
     bool is_gamma_the_same = is_close(gamma, m_gamma);
-    if (!is_gamma_the_same) {
-        reset(STATUS_EVALF);
-    }
+    if (!is_gamma_the_same) reset(STATUS_EVALF);
+
 
     if (m_status >= STATUS_FORWARD) {
-        if (is_gamma_the_same) {
-            return ForBESUtils::STATUS_OK;
-        }
+        if (is_gamma_the_same) return ForBESUtils::STATUS_OK;
         *m_y = *m_x;
         Matrix::add(*m_y, -gamma, *m_gradfx, 1.0);
         m_gamma = gamma;
         return ForBESUtils::STATUS_OK;
     }
-    
+
     int status;
-    
+
     if (m_status < STATUS_EVALF) {
         m_cached_grad_f2 = false;
         status = update_eval_f(true);
-        if (!ForBESUtils::is_status_ok(status)) {
-            return status;
-        }
+        if (!ForBESUtils::is_status_ok(status)) return status;
     }
 
     if (m_prob.f1() != NULL) {
@@ -217,9 +212,7 @@ int FBCache::update_forward_step(double gamma) {
     if (m_prob.f2() != NULL) {
         if (!m_cached_grad_f2) {
             status = m_prob.f2()->call(*m_res2x, m_f2x, *m_gradf2x);
-            if (!ForBESUtils::is_status_ok(status)) {
-                return status;
-            }
+            if (!ForBESUtils::is_status_ok(status)) return status;
             // now gradf2x has been computed:
             m_cached_grad_f2 = true;
         }
@@ -264,7 +257,7 @@ int FBCache::update_forward_backward_step(double gamma) {
             return status;
         }
     }
-    
+
     status = m_prob.g()->callProx(*m_y, gamma, *m_z, m_gz);
     if (!ForBESUtils::is_status_ok(status)) {
         return status;
@@ -317,7 +310,7 @@ int FBCache::update_grad_FBE(double gamma) {
         if (!ForBESUtils::is_status_ok(status)) {
             return status;
         }
-    }   
+    }
 
     *m_gradFBEx = *m_FPRx;
 

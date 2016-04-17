@@ -30,6 +30,7 @@ class TestHuber : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST_SUITE(TestHuber);
 
     CPPUNIT_TEST(testCall);
+    CPPUNIT_TEST(testHessian);
 
     CPPUNIT_TEST_SUITE_END();
 
@@ -41,6 +42,7 @@ public:
 
 private:
     void testCall();
+    void testHessian();
 
 };
 

@@ -123,7 +123,7 @@ size_t LBFGSBuffer::get_current_mem() const {
 double LBFGSBuffer::hessian_estimate() {
     // returns Hk0 = ys_prev / (y_prev'*y_prev)
     // or 1.0 is no ys_prev is cached
-    size_t idx_current = get_k_minus_j(0);
+    size_t idx_current = cursor();
     size_t n = m_Y->getNrows();
     double gamma_k_0 = 1.0;
     if (m_current_mem > 0) {

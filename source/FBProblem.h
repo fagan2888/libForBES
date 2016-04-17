@@ -1,5 +1,5 @@
 #ifndef FBPROBLEM_H
-#define	FBPROBLEM_H
+#define FBPROBLEM_H
 
 #include "Function.h"
 #include "LinearOperator.h"
@@ -41,7 +41,7 @@ private:
     Matrix * m_lin;
 
     void init();
-    
+
 
 public:
 
@@ -76,7 +76,7 @@ public:
             Matrix& d_2,
             Matrix& linear,
             Function& fun_g);
-    
+
     /**
      * Allocates an FBProblem given only one smooth term and the affine
      * map composed with it. 

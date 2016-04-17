@@ -35,6 +35,10 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/examples/matop_example.o \
+	${OBJECTDIR}/examples/matrix_example.o \
+	${OBJECTDIR}/examples/qp_box.o \
+	${OBJECTDIR}/examples/shallow_example.o \
 	${OBJECTDIR}/source/CGSolver.o \
 	${OBJECTDIR}/source/CholeskyFactorization.o \
 	${OBJECTDIR}/source/CongSeparableSum.o \
@@ -108,6 +112,7 @@ TESTFILES= \
 	${TESTDIR}/TestFiles/f5 \
 	${TESTDIR}/TestFiles/f6 \
 	${TESTDIR}/TestFiles/f7 \
+	${TESTDIR}/TestFiles/f22 \
 	${TESTDIR}/TestFiles/f8 \
 	${TESTDIR}/TestFiles/f9 \
 	${TESTDIR}/TestFiles/f10 \
@@ -162,6 +167,8 @@ TESTOBJECTFILES= \
 	${TESTDIR}/source/tests/TestElasticNetRunner.o \
 	${TESTDIR}/source/tests/TestFBCache.o \
 	${TESTDIR}/source/tests/TestFBCacheRunner.o \
+	${TESTDIR}/source/tests/TestFBProblem.o \
+	${TESTDIR}/source/tests/TestFBProblemRunner.o \
 	${TESTDIR}/source/tests/TestFBSplitting.o \
 	${TESTDIR}/source/tests/TestFBSplittingFast.o \
 	${TESTDIR}/source/tests/TestFBSplittingFastRunner.o \
@@ -260,6 +267,26 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libforbes: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libforbes ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/examples/matop_example.o: examples/matop_example.cpp 
+	${MKDIR} -p ${OBJECTDIR}/examples
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/examples/matop_example.o examples/matop_example.cpp
+
+${OBJECTDIR}/examples/matrix_example.o: examples/matrix_example.cpp 
+	${MKDIR} -p ${OBJECTDIR}/examples
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/examples/matrix_example.o examples/matrix_example.cpp
+
+${OBJECTDIR}/examples/qp_box.o: examples/qp_box.cpp 
+	${MKDIR} -p ${OBJECTDIR}/examples
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/examples/qp_box.o examples/qp_box.cpp
+
+${OBJECTDIR}/examples/shallow_example.o: examples/shallow_example.cpp 
+	${MKDIR} -p ${OBJECTDIR}/examples
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/examples/shallow_example.o examples/shallow_example.cpp
 
 ${OBJECTDIR}/source/CGSolver.o: source/CGSolver.cpp 
 	${MKDIR} -p ${OBJECTDIR}/source
@@ -596,6 +623,10 @@ ${TESTDIR}/TestFiles/f7: ${TESTDIR}/source/tests/TestFBCache.o ${TESTDIR}/source
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f7 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
 
+${TESTDIR}/TestFiles/f22: ${TESTDIR}/source/tests/TestFBProblem.o ${TESTDIR}/source/tests/TestFBProblemRunner.o ${OBJECTFILES:%.o=%_nomain.o}
+	${MKDIR} -p ${TESTDIR}/TestFiles
+	${LINK.cc}   -o ${TESTDIR}/TestFiles/f22 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+
 ${TESTDIR}/TestFiles/f8: ${TESTDIR}/source/tests/TestFBSplitting.o ${TESTDIR}/source/tests/TestFBSplittingRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f8 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
@@ -827,6 +858,18 @@ ${TESTDIR}/source/tests/TestFBCacheRunner.o: source/tests/TestFBCacheRunner.cpp
 	${MKDIR} -p ${TESTDIR}/source/tests
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/source/tests/TestFBCacheRunner.o source/tests/TestFBCacheRunner.cpp
+
+
+${TESTDIR}/source/tests/TestFBProblem.o: source/tests/TestFBProblem.cpp 
+	${MKDIR} -p ${TESTDIR}/source/tests
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/source/tests/TestFBProblem.o source/tests/TestFBProblem.cpp
+
+
+${TESTDIR}/source/tests/TestFBProblemRunner.o: source/tests/TestFBProblemRunner.cpp 
+	${MKDIR} -p ${TESTDIR}/source/tests
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/source/tests/TestFBProblemRunner.o source/tests/TestFBProblemRunner.cpp
 
 
 ${TESTDIR}/source/tests/TestFBSplitting.o: source/tests/TestFBSplitting.cpp 
@@ -1272,6 +1315,58 @@ ${TESTDIR}/source/tests/TestSumOfNorm2Runner.o: source/tests/TestSumOfNorm2Runne
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/source/tests/TestSumOfNorm2Runner.o source/tests/TestSumOfNorm2Runner.cpp
 
+
+${OBJECTDIR}/examples/matop_example_nomain.o: ${OBJECTDIR}/examples/matop_example.o examples/matop_example.cpp 
+	${MKDIR} -p ${OBJECTDIR}/examples
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/examples/matop_example.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/examples/matop_example_nomain.o examples/matop_example.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/examples/matop_example.o ${OBJECTDIR}/examples/matop_example_nomain.o;\
+	fi
+
+${OBJECTDIR}/examples/matrix_example_nomain.o: ${OBJECTDIR}/examples/matrix_example.o examples/matrix_example.cpp 
+	${MKDIR} -p ${OBJECTDIR}/examples
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/examples/matrix_example.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/examples/matrix_example_nomain.o examples/matrix_example.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/examples/matrix_example.o ${OBJECTDIR}/examples/matrix_example_nomain.o;\
+	fi
+
+${OBJECTDIR}/examples/qp_box_nomain.o: ${OBJECTDIR}/examples/qp_box.o examples/qp_box.cpp 
+	${MKDIR} -p ${OBJECTDIR}/examples
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/examples/qp_box.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/examples/qp_box_nomain.o examples/qp_box.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/examples/qp_box.o ${OBJECTDIR}/examples/qp_box_nomain.o;\
+	fi
+
+${OBJECTDIR}/examples/shallow_example_nomain.o: ${OBJECTDIR}/examples/shallow_example.o examples/shallow_example.cpp 
+	${MKDIR} -p ${OBJECTDIR}/examples
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/examples/shallow_example.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/examples/shallow_example_nomain.o examples/shallow_example.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/examples/shallow_example.o ${OBJECTDIR}/examples/shallow_example_nomain.o;\
+	fi
 
 ${OBJECTDIR}/source/CGSolver_nomain.o: ${OBJECTDIR}/source/CGSolver.o source/CGSolver.cpp 
 	${MKDIR} -p ${OBJECTDIR}/source
@@ -2064,6 +2159,7 @@ ${OBJECTDIR}/source/main_nomain.o: ${OBJECTDIR}/source/main.o source/main.cpp
 	    ${TESTDIR}/TestFiles/f5 || true; \
 	    ${TESTDIR}/TestFiles/f6 || true; \
 	    ${TESTDIR}/TestFiles/f7 || true; \
+	    ${TESTDIR}/TestFiles/f22 || true; \
 	    ${TESTDIR}/TestFiles/f8 || true; \
 	    ${TESTDIR}/TestFiles/f9 || true; \
 	    ${TESTDIR}/TestFiles/f10 || true; \

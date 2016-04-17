@@ -126,7 +126,7 @@ public:
      * which is given by
      * 
      * \f[
-     *  \mathrm{prox}_{\gamma f}(v) = (I+gamma Q)^{-1}(v-gamma q)
+     *  \mathrm{prox}_{\gamma f}(v) = (I+\gamma Q)^{-1}(v-\gamma q)
      * \f]
      * 
      * @param x The vector x where \f$\mathrm{prox}_{\gamma f}(x)\f$ should be computed.

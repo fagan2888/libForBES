@@ -8,6 +8,39 @@
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
                    projectFiles="true">
+      <logicalFolder name="dox" displayName="dox" projectFiles="true">
+        <itemPath>dox/Alg1.png</itemPath>
+        <itemPath>dox/Alg2.png</itemPath>
+        <itemPath>dox/QP.dox</itemPath>
+        <itemPath>dox/applications.png</itemPath>
+        <itemPath>dox/dox_extra.css</itemPath>
+        <itemPath>dox/elastic.dox</itemPath>
+        <itemPath>dox/examples-list.dox</itemPath>
+        <itemPath>dox/functions.dox</itemPath>
+        <itemPath>dox/group-lasso.dox</itemPath>
+        <itemPath>dox/groups.dox</itemPath>
+        <itemPath>dox/indicator_functions.dox</itemPath>
+        <itemPath>dox/install.dox</itemPath>
+        <itemPath>dox/lasso.dox</itemPath>
+        <itemPath>dox/lasso.png</itemPath>
+        <itemPath>dox/linear_operators.dox</itemPath>
+        <itemPath>dox/logit-reg.dox</itemPath>
+        <itemPath>dox/loss_functions.dox</itemPath>
+        <itemPath>dox/main-application.png</itemPath>
+        <itemPath>dox/main-fig.png</itemPath>
+        <itemPath>dox/main_page.dox</itemPath>
+        <itemPath>dox/matrices.dox</itemPath>
+        <itemPath>dox/matrix_factorizations.dox</itemPath>
+        <itemPath>dox/matrix_tests.dox</itemPath>
+        <itemPath>dox/optimal-control.dox</itemPath>
+        <itemPath>dox/separable_sum.dox</itemPath>
+      </logicalFolder>
+      <logicalFolder name="examples" displayName="examples" projectFiles="true">
+        <itemPath>examples/matop_example.cpp</itemPath>
+        <itemPath>examples/matrix_example.cpp</itemPath>
+        <itemPath>examples/qp_box.cpp</itemPath>
+        <itemPath>examples/shallow_example.cpp</itemPath>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
@@ -214,6 +247,14 @@
         <itemPath>source/tests/TestFBCache.cpp</itemPath>
         <itemPath>source/tests/TestFBCache.h</itemPath>
         <itemPath>source/tests/TestFBCacheRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f22"
+                     displayName="TestFBProblem"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestFBProblem.cpp</itemPath>
+        <itemPath>source/tests/TestFBProblem.h</itemPath>
+        <itemPath>source/tests/TestFBProblemRunner.cpp</itemPath>
       </logicalFolder>
       <logicalFolder name="f8"
                      displayName="TestFBSplitting"
@@ -520,6 +561,8 @@
   <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
   <sourceRootList>
     <Elem>source</Elem>
+    <Elem>dox</Elem>
+    <Elem>examples</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -557,6 +600,64 @@
           <commandLine>-lldl -lcholmod -lamd -lcolamd -lsuitesparseconfig -lccolamd -lcamd -llapacke -llapack -lopenblas -lm -lcppunit</commandLine>
         </linkerTool>
       </compileType>
+      <item path="dox/Alg1.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/Alg2.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/QP.dox" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/applications.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/dox_extra.css" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/elastic.dox" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/examples-list.dox" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/functions.dox" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/group-lasso.dox" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/groups.dox" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/indicator_functions.dox" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/install.dox" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/lasso.dox" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/lasso.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/linear_operators.dox" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/logit-reg.dox" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/loss_functions.dox" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/main-application.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/main-fig.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/main_page.dox" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/matrices.dox" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/matrix_factorizations.dox" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/matrix_tests.dox" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/optimal-control.dox" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/separable_sum.dox" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="examples/matop_example.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="examples/matrix_example.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="examples/qp_box.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="examples/shallow_example.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <folder path="TestFiles/f1">
         <cTool>
           <commandLine>`cppunit-config --cflags`</commandLine>
@@ -748,6 +849,20 @@
         </ccTool>
         <linkerTool>
           <output>${TESTDIR}/TestFiles/f21</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f22">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f22</output>
           <linkerLibItems>
             <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
           </linkerLibItems>
@@ -1487,6 +1602,15 @@
       <item path="source/tests/TestFBCache.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="source/tests/TestFBCacheRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestFBProblem.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestFBProblem.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestFBProblemRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
       <item path="source/tests/TestFBSplitting.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1848,6 +1972,64 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="dox/Alg1.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/Alg2.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/QP.dox" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/applications.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/dox_extra.css" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/elastic.dox" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/examples-list.dox" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/functions.dox" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/group-lasso.dox" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/groups.dox" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/indicator_functions.dox" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/install.dox" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/lasso.dox" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/lasso.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/linear_operators.dox" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/logit-reg.dox" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/loss_functions.dox" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/main-application.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/main-fig.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/main_page.dox" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/matrices.dox" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/matrix_factorizations.dox" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/matrix_tests.dox" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/optimal-control.dox" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dox/separable_sum.dox" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="examples/matop_example.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="examples/matrix_example.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="examples/qp_box.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="examples/shallow_example.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <folder path="TestFiles/f1">
         <cTool>
           <commandLine>`cppunit-config --cflags`</commandLine>
@@ -2039,6 +2221,20 @@
         </ccTool>
         <linkerTool>
           <output>${TESTDIR}/TestFiles/f21</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f22">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f22</output>
           <linkerLibItems>
             <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
           </linkerLibItems>
@@ -2778,6 +2974,15 @@
       <item path="source/tests/TestFBCache.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="source/tests/TestFBCacheRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestFBProblem.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestFBProblem.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestFBProblemRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
       <item path="source/tests/TestFBSplitting.cpp" ex="false" tool="1" flavor2="0">
       </item>

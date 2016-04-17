@@ -36,20 +36,59 @@ void TestHuber::setUp() {
 void TestHuber::tearDown() {
 }
 
+const static double X[] = {
+    0.106216344928664,
+    0.372409740055537,
+    0.198118402542975,
+    0.489687638016024,
+    0.339493413390758,
+    0.951630464777727,
+    0.920332039836564,
+    0.052676997680793,
+    0.737858095516997,
+    0.269119426398556
+};
+
+const static double D[] = {
+    1.4374274329354852,
+    0.3054708068289311,
+    -0.0290824365339767,
+    -0.8234036458714026,
+    -0.7637012146815048,
+    -0.2048482849078404,
+    0.8995586109397722,
+    1.0842669895961112,
+    1.1927942674890943,
+    -0.3403099725494878
+};
+
+void TestHuber::testHessian() {
+    const size_t n = 10;
+    const double * xdata = X;
+    Matrix x(n, 1, xdata);
+    const double delta = 0.2;
+    Function * huber = new HuberLoss(delta);
+
+    Matrix Hz(n, 1);
+    const double * ddata = D;
+    Matrix z(n, 1, ddata);
+    int status = huber->hessianProduct(x, z, Hz);
+    _ASSERT(ForBESUtils::is_status_ok(status));
+
+    double fstar;
+    _ASSERT(!huber->category().defines_conjugate());
+    _ASSERT_EQ(ForBESUtils::STATUS_UNDEFINED_FUNCTION, huber->callConj(x, fstar));
+
+    /* test the assignment operator */
+    Function * huber2 = new HuberLoss(delta);
+    _ASSERT_OK(*huber = *huber);
+    _ASSERT_EXCEPTION(*huber2 = *huber, std::logic_error);
+
+}
+
 void TestHuber::testCall() {
     const size_t n = 10;
-    const double xdata[n] = {
-        0.106216344928664,
-        0.372409740055537,
-        0.198118402542975,
-        0.489687638016024,
-        0.339493413390758,
-        0.951630464777727,
-        0.920332039836564,
-        0.052676997680793,
-        0.737858095516997,
-        0.269119426398556
-    };
+    const double * xdata = X;
     Matrix x(n, 1, xdata);
     const double delta = 0.2;
     Function * huber = new HuberLoss(delta);
@@ -62,7 +101,7 @@ void TestHuber::testCall() {
     _ASSERT_EQ(ForBESUtils::STATUS_OK, status);
     const double tol = 1e-12;
     _ASSERT_NUM_EQ(3.513800016594281, f, tol);
-    
+
     status = huber->call(x, f);
     _ASSERT_EQ(ForBESUtils::STATUS_OK, status);
     _ASSERT_NUM_EQ(3.513800016594281, f, tol);

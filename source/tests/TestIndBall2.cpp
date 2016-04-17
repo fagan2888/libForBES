@@ -76,3 +76,8 @@ void TestIndBall2::testCategory() {
     delete indB2;
 }
 
+void TestIndBall2::testFail() {
+    Function * indB2;
+    double rho = -1.0;
+    _ASSERT_EXCEPTION(indB2 = new IndBall2(rho), std::invalid_argument);
+}

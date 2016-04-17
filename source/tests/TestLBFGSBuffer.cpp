@@ -49,7 +49,7 @@ void TestLBFGSBuffer::testPush1() {
         _ASSERT_EQ(curry, y);
 
         Matrix sy = s*y;
-        _ASSERT_NUM_EQ(sy[0], buffer->get_Ys()->get(buffer->get_k_minus_j(0), 0), 1e-9);
+        _ASSERT_NUM_EQ(sy[0], buffer->get_Ys()->get(buffer->cursor(), 0), 1e-9);
     }
 
     delete buffer;
@@ -230,4 +230,29 @@ void TestLBFGSBuffer::testTwoLoopQuadratic() {
     delete grad_old;
     delete d;
     delete grad;
+}
+
+void TestLBFGSBuffer::testHessianEstimate() {
+    std::srand(static_cast<unsigned long> (1433291l));
+    size_t n = 10;
+    size_t mem = 3;
+
+    LBFGSBuffer * buffer = new LBFGSBuffer(n, mem);
+
+    Matrix q = MatrixFactory::MakeRandomMatrix(n, 1, 0.0, 1.0);
+    Matrix r;
+
+    double H0 = 1.0;
+
+    for (size_t i = 0; i < 10; i++) {
+        Matrix yi = MatrixFactory::MakeRandomMatrix(n, 1, -0.4, 1.0);
+        Matrix si = MatrixFactory::MakeRandomMatrix(n, 1, 0.5, 1.0);
+        buffer->push(&si, &yi);
+    }
+
+    double hessian_est = buffer->hessian_estimate();
+    _ASSERT(hessian_est > 0);
+
+    delete buffer;
+
 }

@@ -11,6 +11,8 @@
             <make-dep-projects/>
             <sourceRootList>
                 <sourceRootElem>source</sourceRootElem>
+                <sourceRootElem>dox</sourceRootElem>
+                <sourceRootElem>examples</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>
