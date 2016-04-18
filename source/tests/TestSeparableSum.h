@@ -32,7 +32,10 @@ class TestSeparableSum : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST_SUITE(TestSeparableSum);
 
     CPPUNIT_TEST(testCall);
+    CPPUNIT_TEST(testCallGrad);
     CPPUNIT_TEST(testCallProx);
+    CPPUNIT_TEST(testCallConj);
+    CPPUNIT_TEST(testUndefined);
 
     CPPUNIT_TEST_SUITE_END();
 
@@ -44,7 +47,10 @@ public:
 
 private:
     void testCall();
+    void testCallGrad();
     void testCallProx();
+    void testCallConj();
+    void testUndefined();
     
 };
 
