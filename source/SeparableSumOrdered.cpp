@@ -1,5 +1,5 @@
 /*
- * File:   CongSeparableSum.cpp
+ * File:   SeparableSumOrdered.cpp
  * Author: Pantelis Sopasakis
  *
  * April 14, 2016, 4:04 PM
@@ -18,10 +18,10 @@
  * along with ForBES. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "CongSeparableSum.h"
+#include "SeparableSumOrdered.h"
 #include "MatrixFactory.h"
 
-CongSeparableSum::CongSeparableSum(
+SeparableSumOrdered::SeparableSumOrdered(
         size_t n_functions,
         std::vector<size_t> splitting,
         std::vector<Function*> functions)
@@ -32,10 +32,10 @@ m_functions(functions) {
 
 }
 
-CongSeparableSum::~CongSeparableSum() {
+SeparableSumOrdered::~SeparableSumOrdered() {
 }
 
-int CongSeparableSum::call(Matrix& x, double& f) {
+int SeparableSumOrdered::call(Matrix& x, double& f) {
     for (size_t i = 0; i < m_n_functions; i++) {
         // use shallow vector
     }

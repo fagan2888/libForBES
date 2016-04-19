@@ -28,6 +28,13 @@
 #define FB_CACHE_RELATIVE_TOL 1e-6
 #define FB_CACHE_ABSOLUTE_TOL 1e-14
 
+const int FBCache::STATUS_NONE = 0; 
+const int FBCache::STATUS_EVALF = 1;
+const int FBCache::STATUS_FORWARD = 2;
+const int FBCache::STATUS_FORWARDBACKWARD = 3; 
+const int FBCache::STATUS_FBE = 4;
+const int FBCache::STATUS_GRAD_FBE = 5;
+
 /**
  * Verify whether \c a and \c b are close to one another. Checks whether 
  * \f[
@@ -379,6 +386,14 @@ double FBCache::get_eval_f() {
 Matrix* FBCache::get_forward_step(double gamma) {
     update_forward_step(gamma);
     return m_y;
+}
+
+Matrix* FBCache::get_gradf() const {
+    return m_gradfx;
+}
+
+int FBCache::status() const {
+    return m_status;    
 }
 
 Matrix* FBCache::get_forward_backward_step(double gamma) {

@@ -223,6 +223,8 @@ public:
      * row or column dimension of the matrix.
      * 
      * \note It is faster to use get(size_t), although it is not so convenient.
+     * 
+     * \sa #get(1)
      */
     double get(const size_t i, const size_t j) const;
 

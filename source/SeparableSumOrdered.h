@@ -1,5 +1,5 @@
 /*
- * File:   CongSeparableSum.h
+ * File:   SeparableSumOrdered.h
  * Author: Pantelis Sopasakis
  *
  * April 14, 2016, 4:04 PM
@@ -24,7 +24,7 @@
 #include "Function.h"
 #include <vector>
 
-class CongSeparableSum : public Function {
+class SeparableSumOrdered : public Function {
 public:
 
     /**
@@ -33,7 +33,7 @@ public:
      * @param splitting
      * @param functions
      */
-    CongSeparableSum(
+    SeparableSumOrdered(
             size_t n_functions,
             std::vector<size_t> splitting,
             std::vector<Function*> functions);
@@ -41,13 +41,13 @@ public:
     /**
      * Destructor
      */
-    virtual ~CongSeparableSum();
+    virtual ~SeparableSumOrdered();
 
     virtual int call(Matrix& x, double& f);
 
 private:
     int m_n_functions; /**< number of functions */
-    std::vector<size_t> m_splitting; /**< assignment of arguments (congruently) */
+    std::vector<size_t> m_splitting; /**< assignment of arguments (contiguously) */
     std::vector<Function*> m_functions; /**< registry of functions */
 };
 

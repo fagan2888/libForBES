@@ -56,6 +56,7 @@ private:
     Matrix * m_gradf2x; /**< nabla f_2 (res2x) */
     Matrix * m_gradfx; /**< f(x) = f1(L1*x+d1) + f2(L2*x+d2); gradfx = nabla f(x) */
     Matrix * m_gradFBEx; /** gradient of the FB envelope */    
+    Matrix * m_dir; /** direction (d). */
     double m_f1x; /**< f1(res1x) */
     double m_f2x; /**< f2(res2x) */
     double m_linx; /**< l'*x */
@@ -163,7 +164,7 @@ public:
      * 
      * The internal state of FBCache is stale, or it has not been updated.
      */
-    static const int STATUS_NONE = 0; 
+    static const int STATUS_NONE; 
     /**
      * 
      * 
@@ -175,7 +176,7 @@ public:
      * * The gradient of \f$f_1\f$ at the corresponding residual, \f$ \nabla f_1( r_1(x) ) \f$
      * 
      */
-    static const int STATUS_EVALF = 1;
+    static const int STATUS_EVALF;
     
     /**
      * 
@@ -186,7 +187,7 @@ public:
      * * The gradient of \f$f\f$ at \f$x\f$, that is \f$\nabla f(x)\f$
      * * The value of \f$y = x - \gamma \nabla f(x)\f$
      */
-    static const int STATUS_FORWARD = 2;
+    static const int STATUS_FORWARD;
     /**
      * 
      * Everything that corresponds to #STATUS_FORWARD (and #STATUS_EVALF) has been
@@ -195,7 +196,7 @@ public:
      * * The value \f$g(z)\f$
      * * The square norm of the fixed point residual, that is \f$\|x-z\|^2\f$
      */
-    static const int STATUS_FORWARDBACKWARD = 3; /** everything */
+    static const int STATUS_FORWARDBACKWARD;
     
     /**
      *
@@ -203,7 +204,7 @@ public:
      * it is cached. Additionally, all data which correspond to #STATUS_FORWARDBACKWARD
      * have been computed and are available.
      */
-    static const int STATUS_FBE = 4;
+    static const int STATUS_FBE;
     
     /**
      * 
@@ -211,7 +212,7 @@ public:
      * and, furthermore, the gradient of the FBE, that is \f$\nabla \varphi_\gamma(x)\f$
      * has also been computed and is cached.
      */
-    static const int STATUS_GRAD_FBE = 5;
+    static const int STATUS_GRAD_FBE;
     
     
     /**
@@ -318,6 +319,30 @@ public:
      * \sa update_grad_FBE
      */
     Matrix * get_grad_FBE(double gamma);
+    
+    /**
+     * Returns the gradient of \f$f\f$. 
+     * 
+     * \note Note that this matrix may have not been computed - especially if
+     * the \link #status() status\endlink of the cache is smaller than #STATUS_FORWARD.
+     * 
+     * \note To compute the gradient of f call \link #get_forward_step(double) get_forward_step\endlink.
+     * 
+     * @return Pointer to cached gradient of \c f.
+     */
+    Matrix * get_gradf() const;
+    
+    /**
+     * The internal status of the cache.
+     * * #STATUS_NONE
+     * * #STATUS_EVALF
+     * * #STATUS_FORWARD
+     * * #STATUS_FORWARDBACKWARD
+     * * #STATUS_FBE
+     * * #STATUS_GRAD_FBE
+     * @return status of the cache
+     */
+    int status() const;
 
     /**
      * Erases the internal status of the cache, i.e., sets its status to
