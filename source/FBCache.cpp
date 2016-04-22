@@ -494,9 +494,9 @@ int FBCache::extrapolate_f(double tau, double& fxtd) {
 
     if (m_prob.f1() != NULL) {
         status = extrapolate_f1(tau, fxtd);
-        if (ForBESUtils::is_status_ok(status)) return status;
+        if (!ForBESUtils::is_status_ok(status)) return status;
     }
-    
+
     /* += <l,x> + tau * <l,d> */
     if (m_prob.lin() != NULL) {
         fxtd += m_linx;
@@ -507,7 +507,7 @@ int FBCache::extrapolate_f(double tau, double& fxtd) {
         }
         fxtd += (tau * m_lind);
     }
-    
+
     /* += f2(r2(x) + tau * L2[d]) */
     if (m_prob.f2() != NULL) {
         if (!m_L2d_fresh) {
@@ -521,14 +521,14 @@ int FBCache::extrapolate_f(double tau, double& fxtd) {
             m_L2d_fresh = true;
         }
         Matrix r2xtd(*m_res2x);
-        Matrix::add(r2xtd, tau, m_L2d, 1.0);
+        Matrix::add(r2xtd, tau, *m_L2d, 1.0);
         double f2val;
         status = m_prob.f2()->call(r2xtd, f2val);
-        if (ForBESUtils::is_status_ok(status)) return status;
+        if (!ForBESUtils::is_status_ok(status)) return status;
         fxtd += f2val;
     }
-    
-    return ForBESUtils::STATUS_UNDEFINED_FUNCTION;
+
+    return ForBESUtils::STATUS_OK;
 }
 
 int FBCache::xtd(double tau, Matrix& xtd_matrix) {

@@ -45,6 +45,18 @@ private:
 
 public:
 
+    FBProblem() {
+        m_f1 = NULL;
+        m_f2 = NULL;
+        m_g = NULL;
+        m_L1 = NULL;
+        m_L2 = NULL;
+        m_d1 = NULL;
+        m_d2 = NULL;
+        m_lin = NULL;
+    }
+
+
     /**
      * Allocates an FBProblem given all the details. 
      * 
@@ -133,12 +145,27 @@ public:
      * @param fun_f Function \f$f\f$
      * @param fun_g Closed proper convex function \f$g\f$
      *
-     * \todo Test for "quadraticness" of fun_f, and appropriately assign internally
-     * all the input arguments.
      */
     FBProblem(
             Function& fun_f,
             Function& fun_g);
+
+    void setL1(LinearOperator* _L1);
+
+    void setL2(LinearOperator* _L2);
+
+    void setD1(Matrix* _d1);
+
+    void setD2(Matrix* _d2);
+
+    void setF1(Function* _f1);
+
+    void setF2(Function* _f2);
+
+    void setG(Function* _g);
+
+    void setLin(Matrix* _lin);
+
 
     /**
      * Quadratic function in the problem objective.

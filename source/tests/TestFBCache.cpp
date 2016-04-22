@@ -710,18 +710,86 @@ void TestFBCache::testF1Extrapolate2() {
     FBProblem * prob = new FBProblem(*f, *g);
 
     FBCache * cache = new FBCache(*prob, x, 0.5);
-    
+
     cache->set_direction(d);
-    
+
     double fxtd;
     int status = cache->extrapolate_f1(tau, fxtd);
     _ASSERT(ForBESUtils::is_status_ok(status));
     _ASSERT_NUM_EQ(21.8328487277322, fxtd, 1e-9);
-    
+
     tau = 0.321045;
     status = cache->extrapolate_f1(tau, fxtd);
     _ASSERT(ForBESUtils::is_status_ok(status));
     _ASSERT_NUM_EQ(21.4720009598411, fxtd, 1e-9);
 
     delete f, g, prob, cache;
+}
+
+void TestFBCache::testFExtrapolate() {
+    size_t n = 4;
+    double Q_data[] = {
+        13.07782891441034, 4.27452823704610, -1.94688271579899, -12.55222039172310,
+        4.27452823704610, 6.38874532934156, -2.56106107234657, -5.16047746739994,
+        -1.94688271579899, -2.56106107234657, 12.93139407969478, 4.44426900591413,
+        -12.55222039172310, -5.16047746739994, 4.44426900591413, 21.33625765427502
+    };
+    Matrix Q(n, n, Q_data);
+
+    double q_data[] = {
+        0.350344120851833,
+        0.287966108884680,
+        0.595863756330157,
+        0.526051569078466
+    };
+    Matrix q(n, 1, q_data);
+
+    double x_data[] = {
+        -0.844580319722079,
+        -0.149690044062781,
+        -0.491888830298357,
+        -1.821438441093365
+    };
+    Matrix x(n, 1, x_data);
+
+    double d_data[] = {
+        -0.853564753907463,
+        0.991480551399332,
+        -0.106873218071040,
+        0.104843658971077
+    };
+    Matrix d(n, 1, d_data);
+
+    double lin_data[] = {
+        0.291358532103149,
+        0.336135817296440,
+        -3.309824834569000,
+        2.948510964771869
+    };
+    Matrix lin(n, 1, lin_data);
+
+    double tau = 0.321045;
+
+    double lambda = 0.158723447167506;
+    double mu     = 0.224147467167506;
+    
+    Function *f1 = new Quadratic(Q, q);
+    Function *f2 = new ElasticNet(lambda, mu);
+
+    FBProblem * prob = new FBProblem();
+    prob->setF1(f1);
+    prob->setF2(f2);
+    prob->setLin(&lin);
+
+    FBCache * cache = new FBCache(*prob, x, 0.5);
+
+    cache->set_direction(d);
+
+    double fxtd;
+    int status = cache->extrapolate_f(tau, fxtd);
+    _ASSERT(ForBESUtils::is_status_ok(status));    
+    _ASSERT_NUM_EQ(18.8574969048016, fxtd, 1e-10);
+    _ASSERT_EQ(FBCache::STATUS_EVALF, cache->cache_status());
+
+    delete f1, f2, prob, cache;
 }
