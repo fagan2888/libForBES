@@ -649,19 +649,19 @@ void TestFBCache::testF1Extrapolate() {
     cache->set_point(x);
 
     /* try to invoke f1_extrapolate before a direction is set */
-    status = cache->f1_extrapolate(tau, fxtd);
+    status = cache->extrapolate_f1(tau, fxtd);
     _ASSERT_EQ(ForBESUtils::STATUS_CACHE_NO_DIRECTION, status);
     _ASSERT(ForBESUtils::is_status_error(status));
 
     cache->set_direction(d);
 
-    status = cache->f1_extrapolate(tau, fxtd);
+    status = cache->extrapolate_f1(tau, fxtd);
     _ASSERT(ForBESUtils::is_status_ok(status));
     _ASSERT_NUM_EQ(17.1948186096843, fxtd, 1e-10);
     _ASSERT_EQ(FBCache::STATUS_EVALF, cache->cache_status());
 
     tau = 0.234;
-    status = cache->f1_extrapolate(tau, fxtd);
+    status = cache->extrapolate_f1(tau, fxtd);
     _ASSERT(ForBESUtils::is_status_ok(status));
     _ASSERT_NUM_EQ(11.7963718624767, fxtd, 1e-10);
 
@@ -714,12 +714,12 @@ void TestFBCache::testF1Extrapolate2() {
     cache->set_direction(d);
     
     double fxtd;
-    int status = cache->f1_extrapolate(tau, fxtd);
+    int status = cache->extrapolate_f1(tau, fxtd);
     _ASSERT(ForBESUtils::is_status_ok(status));
     _ASSERT_NUM_EQ(21.8328487277322, fxtd, 1e-9);
     
     tau = 0.321045;
-    status = cache->f1_extrapolate(tau, fxtd);
+    status = cache->extrapolate_f1(tau, fxtd);
     _ASSERT(ForBESUtils::is_status_ok(status));
     _ASSERT_NUM_EQ(21.4720009598411, fxtd, 1e-9);
 

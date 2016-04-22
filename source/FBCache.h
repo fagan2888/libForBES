@@ -42,7 +42,9 @@ private:
 
     int m_status; /**< Cache status. Indicated what has been cached. */
     bool m_cached_grad_f2; /**< whether the gradient of f2 is to be computed along with its value. */
-    bool m_betas; /**< whether beta1 and beta2 are fresh */
+    bool m_betas_fresh; /**< whether beta1 and beta2 are fresh */
+    bool m_lind_fresh; /**< whether the inner product (l,d) is fresh */
+    bool m_L2d_fresh; /**< whether L2*d is fresh */
 
     FBProblem & m_prob; /**< Specifications of the underlying optimization problem. */
     Matrix * m_x; /** Current point (x). */
@@ -58,9 +60,11 @@ private:
     Matrix * m_gradfx; /**< f(x) = f1(L1*x+d1) + f2(L2*x+d2); gradfx = nabla f(x) */
     Matrix * m_gradFBEx; /**< gradient of the FB envelope */    
     Matrix * m_dir; /**< direction (d). */
+    Matrix * m_L2d; /**< Matrix v = L2[d] cached to facilitate the extrapolation on f2 */
     double m_f1x; /**< f1(res1x) */
     double m_f2x; /**< f2(res2x) */
     double m_linx; /**< l'*x */
+    double m_lind; /**< l'*d */
     double m_fx; /**< f(x) */
     double m_gz;  /**< g(z) */
     double m_gamma; /**< parameter gamma */
@@ -414,7 +418,7 @@ public:
      * \sa f_extrapolate
      * \sa cache_status
      */
-    int f1_extrapolate(double tau, double& fxtd);
+    int extrapolate_f1(double tau, double& fxtd);
     
     /**
      * Computes \f$f(x+\tau d)\f$ for the stored values of \f$x\f$ and \f$d\f$.
@@ -433,7 +437,7 @@ public:
      * @param fxtd
      * @return 
      */
-    int f_extrapolate(double tau, double& fxtd);
+    int extrapolate_f(double tau, double& fxtd);
     
     /**
      * Constructs and returns the matrix \f$x+\tau d\f$ for the stored matrices

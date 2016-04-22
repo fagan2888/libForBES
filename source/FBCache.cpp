@@ -67,7 +67,10 @@ m_prob(p),
 m_x(&x),
 m_gamma(gamma) {
     m_status = STATUS_NONE;
-    m_betas = false;
+    m_betas_fresh = false;
+    m_lind_fresh = false;
+    m_L2d_fresh = false;
+
     // get dimensions of things
     size_t m_x_rows = m_x->getNrows();
     size_t m_x_cols = m_x->getNcols();
@@ -375,7 +378,8 @@ int FBCache::update_grad_FBE(double gamma) {
 void FBCache::set_point(Matrix& x) {
     *m_x = x;
     reset(STATUS_NONE);
-    m_betas = false;
+    m_betas_fresh = false;
+    m_lind_fresh = false;
 }
 
 Matrix * FBCache::get_point() {
@@ -388,7 +392,9 @@ void FBCache::set_direction(Matrix& d) {
         m_dir = new Matrix();
     }
     *m_dir = d;
-    m_betas = false;
+    m_betas_fresh = false;
+    m_lind_fresh = false;
+    m_L2d_fresh = false;
 }
 
 Matrix* FBCache::get_direction() {
@@ -449,15 +455,15 @@ int FBCache::fbe_extrapolate(double tau, double& fbe) {
     return ForBESUtils::STATUS_OK;
 }
 
-int FBCache::f1_extrapolate(double tau, double& fxtd) {
+int FBCache::extrapolate_f1(double tau, double& fxtd) {
     if (m_dir == NULL) return ForBESUtils::STATUS_CACHE_NO_DIRECTION;
     if (m_prob.f1() == NULL) {
         fxtd = 0.0;
         return ForBESUtils::STATUS_CACHE_NO_QUADRATIC;
-    }    
+    }
     if (m_status < STATUS_EVALF) update_eval_f(false);
 
-    if (!m_betas) {
+    if (!m_betas_fresh) {
         Matrix *u; /* should we cache this? */
         if (m_prob.L1() != NULL) {
             u = new Matrix();
@@ -469,7 +475,7 @@ int FBCache::f1_extrapolate(double tau, double& fxtd) {
         Matrix Qu;
         m_prob.f1()->hessianProduct(*m_x, *u, Qu);
         m_beta2 = static_cast<Matrix> ((*u) * Qu)[0] / 2;
-        m_betas = true; /* beta1 and beta2 are now cached */
+        m_betas_fresh = true; /* beta1 and beta2 are now cached */
     }
 
     /* Compute fxtd = f1x + tau * beta1 + tau^2 * beta2 */
@@ -479,10 +485,51 @@ int FBCache::f1_extrapolate(double tau, double& fxtd) {
 
 }
 
-int FBCache::f_extrapolate(double tau, double& fxtd) {
+int FBCache::extrapolate_f(double tau, double& fxtd) {
+    if (m_dir == NULL) return ForBESUtils::STATUS_CACHE_NO_DIRECTION;
+    if (m_status < STATUS_EVALF) update_eval_f(false);
+
+    int status;
+    fxtd = 0.0;
+
+    if (m_prob.f1() != NULL) {
+        status = extrapolate_f1(tau, fxtd);
+        if (ForBESUtils::is_status_ok(status)) return status;
+    }
+    
+    /* += <l,x> + tau * <l,d> */
+    if (m_prob.lin() != NULL) {
+        fxtd += m_linx;
+        if (!m_lind_fresh) {
+            /* compute and cache the inner product (lin,d) */
+            m_lind = ((*m_prob.lin())*(*m_dir))[0];
+            m_lind_fresh = true;
+        }
+        fxtd += (tau * m_lind);
+    }
+    
+    /* += f2(r2(x) + tau * L2[d]) */
+    if (m_prob.f2() != NULL) {
+        if (!m_L2d_fresh) {
+            if (m_prob.L2() != NULL) {
+                m_L2d = new Matrix();
+                *m_L2d = m_prob.L1()->call(*m_dir);
+            } else {
+                /* careful how you delete this later... */
+                m_L2d = m_dir;
+            }
+            m_L2d_fresh = true;
+        }
+        Matrix r2xtd(*m_res2x);
+        Matrix::add(r2xtd, tau, m_L2d, 1.0);
+        double f2val;
+        status = m_prob.f2()->call(r2xtd, f2val);
+        if (ForBESUtils::is_status_ok(status)) return status;
+        fxtd += f2val;
+    }
+    
     return ForBESUtils::STATUS_UNDEFINED_FUNCTION;
 }
-
 
 int FBCache::xtd(double tau, Matrix& xtd_matrix) {
     if (m_dir == NULL) return ForBESUtils::STATUS_CACHE_NO_DIRECTION;
