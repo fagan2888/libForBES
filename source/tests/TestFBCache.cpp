@@ -771,8 +771,8 @@ void TestFBCache::testFExtrapolate() {
     double tau = 0.321045;
 
     double lambda = 0.158723447167506;
-    double mu     = 0.224147467167506;
-    
+    double mu = 0.224147467167506;
+
     Function *f1 = new Quadratic(Q, q);
     Function *f2 = new ElasticNet(lambda, mu);
 
@@ -787,9 +787,90 @@ void TestFBCache::testFExtrapolate() {
 
     double fxtd;
     int status = cache->extrapolate_f(tau, fxtd);
-    _ASSERT(ForBESUtils::is_status_ok(status));    
+    _ASSERT(ForBESUtils::is_status_ok(status));
     _ASSERT_NUM_EQ(18.8574969048016, fxtd, 1e-10);
     _ASSERT_EQ(FBCache::STATUS_EVALF, cache->cache_status());
 
     delete f1, f2, prob, cache;
+}
+
+void TestFBCache::testFExtrapolate2() {
+    size_t n = 4;
+    size_t m = 2;
+
+    double Q_data[] = {0.0196669491695277, 0.0353499033971591,
+        0.0353499033971591, 0.0660050923493463};
+    Matrix Q(m, m, Q_data);
+
+    double q_data[] = {0.350344120851833, 0.287966108884680};
+    Matrix q(m, 1, q_data);
+
+    double lin_data[] = {0.291358532103149,
+        0.336135817296440,
+        -3.309824834569000,
+        2.948510964771869};
+    Matrix lin(n, 1, lin_data);
+
+    double L1_data[] = {0.661645791969063, -0.726522971996173,
+        0.177376340590633, -0.742597897889183,
+        0.353154498589040, 0.934864940814033,
+        -0.895801374284240, -1.139320664614462};
+    Matrix L1_mat(m, n, L1_data);
+    MatrixOperator L1(L1_mat);
+
+
+    double L2_data[] = {0.3721975806266081, -0.7303500338761102,
+        -0.0804066652790337, -2.1302110677448840,
+        0.0910764107884579, 0.0866280025361929,
+        -0.6560200562915182, -1.1576835229183660};
+    Matrix L2_mat(m, n, L2_data);
+    MatrixOperator L2(L2_mat);
+
+    double d2_data[] = {0.5426627116070973, -0.0355871044719014};
+    Matrix d2(m, 1, d2_data);
+
+    double x_data[] = {
+        -0.844580319722079,
+        -0.149690044062781,
+        -0.491888830298357,
+        -1.821438441093365
+    };
+    Matrix x(n, 1, x_data);
+
+    double d_data[] = {
+        -0.853564753907463,
+        0.991480551399332,
+        -0.106873218071040,
+        0.104843658971077
+    };
+    Matrix d(n, 1, d_data);
+
+    double tau = 0.459987078261;
+
+    double lambda = 0.158723447167506;
+    double mu = 0.224147467167506;
+
+    Function *f1 = new Quadratic(Q, q);
+    Function *f2 = new ElasticNet(lambda, mu);
+
+    FBProblem * prob = new FBProblem();
+    prob->setLin(&lin);
+    prob->setF1(f1);
+    prob->setF2(f2);
+    prob->setL1(&L1);
+    prob->setL2(&L2);
+    prob->setD2(&d2);
+    prob->setL1(&L1);
+
+    FBCache * cache = new FBCache(*prob, x, 0.5);
+
+    cache->set_direction(d);
+
+    double fxtd;
+    int status = cache->extrapolate_f(tau, fxtd);
+    _ASSERT(ForBESUtils::is_status_ok(status));
+    _ASSERT_NUM_EQ(-1.37225660471873, fxtd, 1e-10);
+
+    delete f1, f2, prob, cache;
+
 }

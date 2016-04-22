@@ -119,6 +119,7 @@ m_gamma(gamma) {
     m_FPRx = NULL;
     m_gradFBEx = NULL;
     m_dir = NULL;
+    m_L2d = NULL;
 
     m_FBEx = std::numeric_limits<double>::infinity();
     m_sqnormFPRx = std::numeric_limits<double>::infinity();
@@ -513,7 +514,7 @@ int FBCache::extrapolate_f(double tau, double& fxtd) {
         if (!m_L2d_fresh) {
             if (m_prob.L2() != NULL) {
                 m_L2d = new Matrix();
-                *m_L2d = m_prob.L1()->call(*m_dir);
+                *m_L2d = m_prob.L2()->call(*m_dir);
             } else {
                 /* careful how you delete this later... */
                 m_L2d = m_dir;
@@ -580,5 +581,9 @@ FBCache::~FBCache() {
     if (m_dir != NULL) {
         delete m_dir;
         m_dir = NULL;
+    }
+    if (m_L2d != NULL && m_L2d != m_dir) {
+        delete m_L2d;
+        m_L2d = NULL;
     }
 }
