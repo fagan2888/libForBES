@@ -55,8 +55,8 @@ private:
     Matrix * m_res2x; /**< L2*x + d2 */
     Matrix * m_gradf2x; /**< nabla f_2 (res2x) */
     Matrix * m_gradfx; /**< f(x) = f1(L1*x+d1) + f2(L2*x+d2); gradfx = nabla f(x) */
-    Matrix * m_gradFBEx; /** gradient of the FB envelope */    
-    Matrix * m_dir; /** direction (d). */
+    Matrix * m_gradFBEx; /**< gradient of the FB envelope */    
+    Matrix * m_dir; /**< direction (d). */
     double m_f1x; /**< f1(res1x) */
     double m_f2x; /**< f2(res2x) */
     double m_linx; /**< l'*x */
@@ -238,6 +238,24 @@ public:
      * @param x new point at which to evaluate the steps
      */
     void set_point(Matrix& x);
+        
+    
+    /**
+     * Passes a new direction to the current modifiable cache which is cached 
+     * internally.
+     * 
+     * \note Before this method is invoked for the first time, no memory is allocated
+     * for the direction.
+     * 
+     * @param d direction
+     */
+    void set_direction(Matrix& d);
+   
+    /**
+     * Returns a pointer to the currently stored direction
+     * @return internally stored direction
+     */
+    Matrix * get_direction();
 
     /**
      * Gets (a pointer to) the point \f$x\f$ to which the FBCache object refer
@@ -324,7 +342,7 @@ public:
      * Returns the gradient of \f$f\f$. 
      * 
      * \note Note that this matrix may have not been computed - especially if
-     * the \link #status() status\endlink of the cache is smaller than #STATUS_FORWARD.
+     * the \link #cache_status() status\endlink of the cache is smaller than #STATUS_FORWARD.
      * 
      * \note To compute the gradient of f call \link #get_forward_step(double) get_forward_step\endlink.
      * 
@@ -342,7 +360,7 @@ public:
      * * #STATUS_GRAD_FBE
      * @return status of the cache
      */
-    int status() const;
+    int cache_status() const;
 
     /**
      * Erases the internal status of the cache, i.e., sets its status to
@@ -350,6 +368,27 @@ public:
      * steps.
      */
     void reset();
+    
+    /**
+     * 
+     * Computes the value of \f$\varphi_\gamma(x+\tau d)\f$ for the cached values 
+     * of \f$x\f$ (using #set_point) and \f$d\f$ (using #set_direction).
+     * 
+     * @param tau parameter \f$\tau\f$
+     * @param fbe (output) value of \f$\varphi_\gamma(x+\tau d)\f$
+     * @return status code: #ForBESUtils:STATUS_OK
+     */
+    int fbe_extrapolate(double tau, double& fbe);
+    
+    /**
+     * Constructs and returns the matrix \f$x+\tau d\f$ for the stored matrices
+     * \f$x\f$ and \f$d\f$.
+     * 
+     * @param tau scalar parameter \f$\tau\f$
+     * @param xtd matrix <code>x + tau * d </code>
+     * @return status code
+     */
+    int xtd(double tau, Matrix& xtd_matrix);
 };
 
 #endif /* FBCACHE_H */

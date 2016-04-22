@@ -28,10 +28,10 @@
 #define FB_CACHE_RELATIVE_TOL 1e-6
 #define FB_CACHE_ABSOLUTE_TOL 1e-14
 
-const int FBCache::STATUS_NONE = 0; 
+const int FBCache::STATUS_NONE = 0;
 const int FBCache::STATUS_EVALF = 1;
 const int FBCache::STATUS_FORWARD = 2;
-const int FBCache::STATUS_FORWARDBACKWARD = 3; 
+const int FBCache::STATUS_FORWARDBACKWARD = 3;
 const int FBCache::STATUS_FBE = 4;
 const int FBCache::STATUS_GRAD_FBE = 5;
 
@@ -66,7 +66,7 @@ FBCache::FBCache(FBProblem & p, Matrix & x, double gamma) :
 m_prob(p),
 m_x(&x),
 m_gamma(gamma) {
-    reset(STATUS_NONE);
+    m_status = STATUS_NONE;
 
     // get dimensions of things
     size_t m_x_rows = m_x->getNrows();
@@ -97,7 +97,7 @@ m_gamma(gamma) {
 
     // allocate memory for residuals and gradients (where needed)
     if (m_prob.f1() != NULL) {
-        m_res1x = new Matrix(m_res1_rows, m_res1_cols);
+        //m_res1x = new Matrix(m_res1_rows, m_res1_cols);
         m_gradf1x = new Matrix(m_res1_rows, m_res1_cols);
     } else {
         m_res1x = NULL;
@@ -111,11 +111,12 @@ m_gamma(gamma) {
         m_gradf2x = NULL;
     }
 
-    m_gradfx = new Matrix(m_x_rows, m_x_cols);
-    m_z = new Matrix(m_x_rows, m_x_cols);
-    m_y = new Matrix(m_x_rows, m_x_cols);
-    m_FPRx = new Matrix(m_x_rows, m_x_cols);
-    m_gradFBEx = new Matrix(m_x_rows, m_x_cols);
+    m_gradfx = NULL;
+    m_z = NULL;
+    m_y = NULL;
+    m_FPRx = NULL;
+    m_gradFBEx = NULL;
+    m_dir = NULL;
 
     m_FBEx = std::numeric_limits<double>::infinity();
     m_sqnormFPRx = std::numeric_limits<double>::infinity();
@@ -138,23 +139,31 @@ int FBCache::update_eval_f(bool order_grad_f2) {
         m_status = STATUS_NONE;
     }
 
-    if (m_status >= STATUS_EVALF) {
-        return ForBESUtils::STATUS_OK;
-    }
+    if (m_status >= STATUS_EVALF) return ForBESUtils::STATUS_OK;
 
     if (m_prob.f1() != NULL) {
-        if (m_prob.L1() != NULL) {
-            *m_res1x = m_prob.L1()->call(*m_x);
+        // quadratic
+
+        /* Compute the residual m_res1x (allocate mem if necessary) */
+        if (m_prob.L1() == NULL && m_prob.d1() == NULL) {
+            /* if there are no L1, d1, allocate no memory for m_res1x */
+            m_res1x = m_x;
         } else {
-            *m_res1x = *m_x;
+            /* if at least one of L1, d1 is defined, allocate memory for m_resx1 */
+            if (m_prob.d1() != NULL) {
+                m_res1x = new Matrix(m_prob.d1()->getNrows(), m_prob.d1()->getNcols());
+            }
+            if (m_prob.L1() != NULL) {
+                m_res1x = new Matrix(m_prob.L1()->dimensionOut());
+                /* If L1 is defined, compute L1[x] */
+                *m_res1x = m_prob.L1()->call(*m_x);
+            }
+            if (m_prob.d1() != NULL) *m_res1x += *m_prob.d1();
         }
-        if (m_prob.d1() != NULL) {
-            *m_res1x += *(m_prob.d1());
-        }
-        int status = m_prob.f1()->call(*m_res1x, m_f1x, *m_gradf1x);
-        if (ForBESUtils::STATUS_OK != status) {
-            return status;
-        }
+
+        int call_status = m_prob.f1()->call(*m_res1x, m_f1x, *m_gradf1x);
+        if (!ForBESUtils::is_status_ok(call_status)) return call_status;
+
     }
 
     if (m_prob.f2() != NULL) {
@@ -171,9 +180,8 @@ int FBCache::update_eval_f(bool order_grad_f2) {
                 ? m_prob.f2()->call(*m_res2x, m_f2x, *m_gradf2x)
                 : m_prob.f2()->call(*m_res2x, m_f2x);
         m_cached_grad_f2 = order_grad_f2;
-        if (ForBESUtils::STATUS_OK != status) {
-            return status;
-        }
+        if (!ForBESUtils::is_status_ok(status)) return status;
+
     }
 
     if (m_prob.lin() != NULL) {
@@ -187,6 +195,10 @@ int FBCache::update_eval_f(bool order_grad_f2) {
 }
 
 int FBCache::update_forward_step(double gamma) {
+
+    if (m_y == NULL) m_y = new Matrix();
+    if (m_gradfx == NULL) m_gradfx = new Matrix(m_x->getNrows(), m_x->getNcols());
+
     bool is_gamma_the_same = is_close(gamma, m_gamma);
     if (!is_gamma_the_same) reset(STATUS_EVALF);
 
@@ -252,6 +264,11 @@ int FBCache::update_forward_step(double gamma) {
 
 int FBCache::update_forward_backward_step(double gamma) {
     int status;
+
+    /* Allocate memory if necessary */
+    if (m_z == NULL) m_z = new Matrix(m_x->getNrows(), m_x->getNcols());
+    if (m_FPRx == NULL) m_FPRx = new Matrix();
+
     if (!is_close(gamma, m_gamma)) {
         reset(STATUS_EVALF);
     }
@@ -308,15 +325,13 @@ int FBCache::update_grad_FBE(double gamma) {
         reset(STATUS_EVALF);
     }
 
-    if (m_status >= STATUS_GRAD_FBE) {
-        return ForBESUtils::STATUS_OK;
-    }
+    if (m_gradFBEx == NULL) m_gradFBEx = new Matrix();
+
+    if (m_status >= STATUS_GRAD_FBE) return ForBESUtils::STATUS_OK;
 
     if (m_status < STATUS_FORWARDBACKWARD) {
         int status = update_forward_backward_step(gamma);
-        if (!ForBESUtils::is_status_ok(status)) {
-            return status;
-        }
+        if (!ForBESUtils::is_status_ok(status)) return status;
     }
 
     *m_gradFBEx = *m_FPRx;
@@ -368,6 +383,18 @@ Matrix * FBCache::get_point() {
     return m_x;
 }
 
+void FBCache::set_direction(Matrix& d) {
+    /* the first time this method is called, allocate memory */
+    if (m_dir == NULL) {
+        m_dir = new Matrix();
+    }
+    *m_dir = d;
+}
+
+Matrix* FBCache::get_direction() {
+    return m_dir;
+}
+
 double FBCache::get_eval_FBE(double gamma) {
     update_eval_FBE(gamma);
     return m_FBEx;
@@ -379,7 +406,10 @@ Matrix * FBCache::get_grad_FBE(double gamma) {
 }
 
 double FBCache::get_eval_f() {
-    update_eval_f(false);
+    int status = update_eval_f(false);
+    if (!ForBESUtils::is_status_ok(status)) {
+        std::cout << "STATUS is : " << status << std::endl;
+    }
     return m_fx;
 }
 
@@ -392,8 +422,8 @@ Matrix* FBCache::get_gradf() const {
     return m_gradfx;
 }
 
-int FBCache::status() const {
-    return m_status;    
+int FBCache::cache_status() const {
+    return m_status;
 }
 
 Matrix* FBCache::get_forward_backward_step(double gamma) {
@@ -409,6 +439,19 @@ Matrix* FBCache::get_fpr() {
 double FBCache::get_norm_fpr() {
     update_forward_backward_step(m_gamma);
     return sqrt(m_sqnormFPRx);
+}
+
+int FBCache::fbe_extrapolate(double tau, double& fbe) {
+    return ForBESUtils::STATUS_OK;
+}
+
+int FBCache::xtd(double tau, Matrix& xtd_matrix) {
+    if (m_dir == NULL) {
+        return ForBESUtils::STATUS_CACHE_NO_DIRECTION;
+    }
+    xtd_matrix = *m_x;
+    Matrix::add(xtd_matrix, tau, *m_dir, 1.0);
+    return ForBESUtils::STATUS_OK;
 }
 
 FBCache::~FBCache() {
@@ -428,7 +471,8 @@ FBCache::~FBCache() {
         delete m_gradf2x;
         m_gradf2x = NULL;
     }
-    if (m_res1x != NULL) {
+    /* if both L1 and d1 are NULL, there has been no mem alloc for m_res1x*/
+    if (m_res1x != NULL && (m_prob.L1() != NULL || m_prob.d1() != NULL)) {
         delete m_res1x;
         m_res1x = NULL;
     }
@@ -447,5 +491,9 @@ FBCache::~FBCache() {
     if (m_gradFBEx != NULL) {
         delete m_gradFBEx;
         m_gradFBEx = NULL;
+    }
+    if (m_dir != NULL) {
+        delete m_dir;
+        m_dir = NULL;
     }
 }

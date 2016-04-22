@@ -75,15 +75,15 @@ void TestFBCache::testBoxQP_small() {
     x = new Matrix(n, 1, data_x1);
     cache = new FBCache(prob, *x, 1.0);
     fx = cache->get_eval_f();
-    _ASSERT_EQ(FBCache::STATUS_EVALF, cache->status());
+    _ASSERT_EQ(FBCache::STATUS_EVALF, cache->cache_status());
     y = cache->get_forward_step(gamma1);
-    _ASSERT_EQ(FBCache::STATUS_FORWARD, cache->status());
+    _ASSERT_EQ(FBCache::STATUS_FORWARD, cache->cache_status());
     z = cache->get_forward_backward_step(gamma1);
-    _ASSERT_EQ(FBCache::STATUS_FORWARDBACKWARD, cache->status());
+    _ASSERT_EQ(FBCache::STATUS_FORWARDBACKWARD, cache->cache_status());
     FBEx = cache->get_eval_FBE(gamma1);
-    _ASSERT_EQ(FBCache::STATUS_FBE, cache->status());
+    _ASSERT_EQ(FBCache::STATUS_FBE, cache->cache_status());
     gradFBEx = cache->get_grad_FBE(gamma1);
-    _ASSERT_EQ(FBCache::STATUS_GRAD_FBE, cache->status());
+    _ASSERT_EQ(FBCache::STATUS_GRAD_FBE, cache->cache_status());
 
     CPPUNIT_ASSERT_DOUBLES_EQUAL(ref_fx1, fx, DOUBLES_EQUAL_DELTA);
     for (int i = 0; i < n; i++) {
@@ -95,13 +95,13 @@ void TestFBCache::testBoxQP_small() {
 
     // change gamma
     y = cache->get_forward_step(gamma2);
-    _ASSERT_EQ(FBCache::STATUS_FORWARD, cache->status());
+    _ASSERT_EQ(FBCache::STATUS_FORWARD, cache->cache_status());
     z = cache->get_forward_backward_step(gamma2);
-    _ASSERT_EQ(FBCache::STATUS_FORWARDBACKWARD, cache->status());
+    _ASSERT_EQ(FBCache::STATUS_FORWARDBACKWARD, cache->cache_status());
     FBEx = cache->get_eval_FBE(gamma2);
-     _ASSERT_EQ(FBCache::STATUS_FBE, cache->status());
+     _ASSERT_EQ(FBCache::STATUS_FBE, cache->cache_status());
     gradFBEx = cache->get_grad_FBE(gamma2);
-    _ASSERT_EQ(FBCache::STATUS_GRAD_FBE, cache->status());
+    _ASSERT_EQ(FBCache::STATUS_GRAD_FBE, cache->cache_status());
 
     CPPUNIT_ASSERT_DOUBLES_EQUAL(ref_fx1, fx, DOUBLES_EQUAL_DELTA);
     for (int i = 0; i < n; i++) {
@@ -116,7 +116,7 @@ void TestFBCache::testBoxQP_small() {
     // change point x
     x = new Matrix(n, 1, data_x2);
     cache->set_point(*x);
-    _ASSERT_EQ(FBCache::STATUS_NONE, cache->status());
+    _ASSERT_EQ(FBCache::STATUS_NONE, cache->cache_status());
     fx = cache->get_eval_f();
     y = cache->get_forward_step(gamma1);
     z = cache->get_forward_backward_step(gamma1);
@@ -378,15 +378,15 @@ void TestFBCache::testLogLossPlusL1_small() {
     CPPUNIT_ASSERT_DOUBLES_EQUAL(ref_FBEx1_g1, FBEx, DOUBLES_EQUAL_DELTA);
 
     // change gamma
-    _ASSERT_EQ(FBCache::STATUS_GRAD_FBE, cache->status());
+    _ASSERT_EQ(FBCache::STATUS_GRAD_FBE, cache->cache_status());
     y = cache->get_forward_step(gamma2);
-    _ASSERT_EQ(FBCache::STATUS_FORWARD, cache->status());
+    _ASSERT_EQ(FBCache::STATUS_FORWARD, cache->cache_status());
     z = cache->get_forward_backward_step(gamma2);
-    _ASSERT_EQ(FBCache::STATUS_FORWARDBACKWARD, cache->status());
+    _ASSERT_EQ(FBCache::STATUS_FORWARDBACKWARD, cache->cache_status());
     FBEx = cache->get_eval_FBE(gamma2);
-    _ASSERT_EQ(FBCache::STATUS_FBE, cache->status());
+    _ASSERT_EQ(FBCache::STATUS_FBE, cache->cache_status());
     gradFBEx = cache->get_grad_FBE(gamma2);
-    _ASSERT_EQ(FBCache::STATUS_GRAD_FBE, cache->status());
+    _ASSERT_EQ(FBCache::STATUS_GRAD_FBE, cache->cache_status());
 
     CPPUNIT_ASSERT_DOUBLES_EQUAL(ref_fx1, fx, DOUBLES_EQUAL_DELTA);
     for (int i = 0; i < n; i++) {
@@ -473,26 +473,57 @@ void TestFBCache::testNormFPR() {
 
 
     double norm_fpr = cache->get_norm_fpr();
-    _ASSERT_EQ(FBCache::STATUS_FORWARDBACKWARD, cache->status());
+    _ASSERT_EQ(FBCache::STATUS_FORWARDBACKWARD, cache->cache_status());
     _ASSERT_NUM_EQ(exp_norm_fpr, norm_fpr, 1e-12);
 
     Matrix * fb = cache->get_forward_step(gamma);
-    _ASSERT_EQ(FBCache::STATUS_FORWARDBACKWARD, cache->status());
+    _ASSERT_EQ(FBCache::STATUS_FORWARDBACKWARD, cache->cache_status());
     _ASSERT_EQ(*fb, exp_fs);
 
     Matrix * fbs = cache->get_forward_backward_step(gamma);
-    _ASSERT_EQ(FBCache::STATUS_FORWARDBACKWARD, cache->status());
+    _ASSERT_EQ(FBCache::STATUS_FORWARDBACKWARD, cache->cache_status());
     _ASSERT_EQ(*fbs, exp_fbs);
 
     Matrix * fpr = cache->get_fpr();
     _ASSERT_EQ(*fpr, exp_FPR);
     
     fb = cache->get_forward_step(2 * gamma);
-    _ASSERT_EQ(FBCache::STATUS_FORWARD, cache->status());
+    _ASSERT_EQ(FBCache::STATUS_FORWARD, cache->cache_status());
     _ASSERT_EQ(*fb, exp_fs2);
+    
+    cache->reset();
+    _ASSERT_EQ(FBCache::STATUS_NONE, cache->cache_status());
     
     delete cache;
     delete quadratic;
     delete norm1;
     delete prob;
+}
+
+void TestFBCache::testSetDirection() {
+
+    Function * f = new Quadratic();
+    Function *g = new Norm1();
+    FBProblem * prob = new FBProblem(*f, *g);
+
+    Matrix x(10, 1);
+    FBCache * cache = new FBCache(*prob, x, 0.5);
+    
+    FBCache * cache2 = new FBCache(*prob, x, 0.5);
+    delete cache2;
+
+    Matrix d(10, 1);
+    for (size_t i = 0; i < 10; i++) d[i] = i + 1.0;
+    
+    cache->set_direction(d);
+    Matrix * dir = cache->get_direction();
+    d[0] = 10000;
+    
+    for (size_t i = 0; i < 10; i++) _ASSERT_NUM_EQ(dir->get(i), i + 1.0, 1e-12);
+    
+    delete f;
+    delete g;
+    delete prob;
+    delete cache;
+    
 }

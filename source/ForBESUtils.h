@@ -62,6 +62,10 @@ public:
      * Solution may be unreliable.
      */
     const static int STATUS_MAX_ITERATIONS_REACHED;
+    /**
+     * No direction has been cached yet. Use FBCache::set_direction first.
+     */
+    const static int STATUS_CACHE_NO_DIRECTION;
 
     static bool is_status_ok(int status);
     static bool is_status_warning(int status);
