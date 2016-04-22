@@ -66,6 +66,10 @@ public:
      * No direction has been cached yet. Use FBCache::set_direction first.
      */
     const static int STATUS_CACHE_NO_DIRECTION;
+    /**
+     * No quadratic function \c f1 is provided
+     */
+    const static int STATUS_CACHE_NO_QUADRATIC;
 
     static bool is_status_ok(int status);
     static bool is_status_warning(int status);

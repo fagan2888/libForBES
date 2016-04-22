@@ -42,6 +42,7 @@ private:
 
     int m_status; /**< Cache status. Indicated what has been cached. */
     bool m_cached_grad_f2; /**< whether the gradient of f2 is to be computed along with its value. */
+    bool m_betas; /**< whether beta1 and beta2 are fresh */
 
     FBProblem & m_prob; /**< Specifications of the underlying optimization problem. */
     Matrix * m_x; /** Current point (x). */
@@ -65,6 +66,8 @@ private:
     double m_gamma; /**< parameter gamma */
     double m_FBEx; /**< FBE(x) */
     double m_sqnormFPRx; /**< ||x-z||^2 */
+    double m_beta1; /**< Parameter used to determin f1(x+tau*d) */
+    double m_beta2; /**< see #f1_extrapolate */
 
 protected:
     /**
@@ -276,7 +279,8 @@ public:
 
     /**
      * Gets the result of the forward-backward (proximal-gradient) with step-size 
-     * \f$\gamma\f$ at \f$x\f$, that is \f$z=\mathrm{prox}_{\gamma g}(y)\f$ where \f$y = x - \gamma \nabla f(x)\f$ 
+     * \f$\gamma\f$ at \f$x\f$, that is 
+     * \f$z=\mathrm{prox}_{\gamma g}(y)\f$ where \f$y = x - \gamma \nabla f(x)\f$ 
      *
      * @param gamma step-size parameter
      * @return a pointer to Matrix containing the forward-backward step
@@ -376,9 +380,60 @@ public:
      * 
      * @param tau parameter \f$\tau\f$
      * @param fbe (output) value of \f$\varphi_\gamma(x+\tau d)\f$
-     * @return status code: #ForBESUtils:STATUS_OK
+     * @return status code: #ForBESUtils:STATUS_OK on success, 
+     * \link #ForBESUtils::STATUS_CACHE_NO_DIRECTION STATUS_CACHE_NO_DIRECTION\endlink 
+     * if no direction is available.
      */
     int fbe_extrapolate(double tau, double& fbe);
+    
+    /**
+     * Computes \f$f_1(r_1(x+\tau d))\f$ for the stored values of \f$x\f$ and \f$d\f$.
+     * 
+     * It makes use of the formula
+     * 
+     * \f[
+     *  f_1(r_1(x+\tau d)) = f_1(r_1(x)) + \beta_1 \tau + \beta_2 \tau^2,
+     * \f]
+     * 
+     * where \f$\beta_1 = \langle u, (\nabla f_1)(r_1(x))\f$, \f$\beta_2 = u'Qu/2\f$
+     * and \f$u=L_1 d\f$.
+     * 
+     * \post After successful completion, the \link #cache_status status \endlink 
+     * of the cache will be at least #STATUS_EVALF.
+     * 
+     * @param tau parameter \f$\tau\f$
+     * @param fxtd result \f$f_1(r_1(x+\tau d))\f$
+     * @return status code: returns \link ForBESUtils::STATUS_OK STATUS_OK\endlink 
+     * if the method has succeeded,
+     * \link ForBESUtils::STATUS_CACHE_NO_DIRECTION STATUS_CACHE_NO_DIRECTION\endlink 
+     * if no direction \f$d\f$ is provided, 
+     * and \link ForBESUtils::STATUS_CACHE_NO_QUADRATIC STATUS_CACHE_NO_QUADRATIC\endlink 
+     * if there is no quadratic function \f$f_1\f$ defined in which case, it sets 
+     * \c fxtd to <code>0.0</code>.
+     * 
+     * \sa f_extrapolate
+     * \sa cache_status
+     */
+    int f1_extrapolate(double tau, double& fxtd);
+    
+    /**
+     * Computes \f$f(x+\tau d)\f$ for the stored values of \f$x\f$ and \f$d\f$.
+     * 
+     * It uses the formula
+     * 
+     * \f[
+     *  f(x+\tau d) = f_1(r_1(x+\tau d)) + \langle l, x\rangle + 
+     *    \tau \langle l, d\rangle + f_2(r_2(x) + \tau v),
+     * \f]
+     * 
+     * where \f$v=L_2 d\f$ and \f$f_1(r_1(x+\tau d))\f$ is computed using 
+     * #f1_extrapolate.
+     * 
+     * @param tau
+     * @param fxtd
+     * @return 
+     */
+    int f_extrapolate(double tau, double& fxtd);
     
     /**
      * Constructs and returns the matrix \f$x+\tau d\f$ for the stored matrices

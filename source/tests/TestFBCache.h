@@ -12,6 +12,9 @@ class TestFBCache : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST_SUITE(TestFBCache);
 
     CPPUNIT_TEST(testSetDirection);
+    CPPUNIT_TEST(testF1Extrapolate);
+    CPPUNIT_TEST(testF1Extrapolate2);
+    CPPUNIT_TEST(testXtd);
     CPPUNIT_TEST(testNormFPR);
     CPPUNIT_TEST(testBoxQP_small);
     CPPUNIT_TEST(testSparseLeastSquares_small);
@@ -28,6 +31,9 @@ public:
 
 private:
     void testSetDirection();
+    void testXtd();
+    void testF1Extrapolate();
+    void testF1Extrapolate2();
     void testNormFPR();
     void testBoxQP_small();
     void testSparseLeastSquares_small();

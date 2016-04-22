@@ -1,3 +1,5 @@
+#include <complex>
+
 #include "FBCache.h"
 #include "FBProblem.h"
 
@@ -99,7 +101,7 @@ void TestFBCache::testBoxQP_small() {
     z = cache->get_forward_backward_step(gamma2);
     _ASSERT_EQ(FBCache::STATUS_FORWARDBACKWARD, cache->cache_status());
     FBEx = cache->get_eval_FBE(gamma2);
-     _ASSERT_EQ(FBCache::STATUS_FBE, cache->cache_status());
+    _ASSERT_EQ(FBCache::STATUS_FBE, cache->cache_status());
     gradFBEx = cache->get_grad_FBE(gamma2);
     _ASSERT_EQ(FBCache::STATUS_GRAD_FBE, cache->cache_status());
 
@@ -486,14 +488,14 @@ void TestFBCache::testNormFPR() {
 
     Matrix * fpr = cache->get_fpr();
     _ASSERT_EQ(*fpr, exp_FPR);
-    
+
     fb = cache->get_forward_step(2 * gamma);
     _ASSERT_EQ(FBCache::STATUS_FORWARD, cache->cache_status());
     _ASSERT_EQ(*fb, exp_fs2);
-    
+
     cache->reset();
     _ASSERT_EQ(FBCache::STATUS_NONE, cache->cache_status());
-    
+
     delete cache;
     delete quadratic;
     delete norm1;
@@ -508,22 +510,218 @@ void TestFBCache::testSetDirection() {
 
     Matrix x(10, 1);
     FBCache * cache = new FBCache(*prob, x, 0.5);
-    
+
     FBCache * cache2 = new FBCache(*prob, x, 0.5);
     delete cache2;
 
     Matrix d(10, 1);
     for (size_t i = 0; i < 10; i++) d[i] = i + 1.0;
-    
+
     cache->set_direction(d);
     Matrix * dir = cache->get_direction();
     d[0] = 10000;
-    
+
     for (size_t i = 0; i < 10; i++) _ASSERT_NUM_EQ(dir->get(i), i + 1.0, 1e-12);
-    
+
     delete f;
     delete g;
     delete prob;
     delete cache;
+
+}
+
+void TestFBCache::testXtd() {
+    Function * f = new Quadratic();
+    Function *g = new Norm1();
+    FBProblem * prob = new FBProblem(*f, *g);
+
+    size_t n = 10;
+    Matrix x(n, 1);
+    for (size_t i = 0; i < n; i++) x[i] = 0.5 * (i + 1.0);
+
+    Matrix d(n, 1);
+    for (size_t i = 0; i < n; i++) d[i] = -0.5 * (i + 1.0) / 1.5;
+    FBCache * cache = new FBCache(*prob, x, 0.5);
+
+    Matrix x_tau_d(n, 1);
+    double tau = 1.5;
+    int status = cache->xtd(tau, x_tau_d);
+    _ASSERT_EQ(ForBESUtils::STATUS_CACHE_NO_DIRECTION, status);
+
+    cache->set_direction(d);
+    status = cache->xtd(tau, x_tau_d);
+    _ASSERT_EQ(ForBESUtils::STATUS_OK, status);
+
+    for (size_t i = 0; i < n; i++) _ASSERT_NUM_EQ(0.0, x_tau_d[i], 1e-9);
+
+    for (size_t i = 0; i < n; i++) d[i] = -0.34 * std::sqrt(i + 1.0) + 0.8711;
+    cache->set_direction(d);
+
+    double xtd_expected_data[] = {
+        0.606220000000000,
+        1.078053477758629,
+        1.556440545085316,
+        2.038220000000000,
+        2.522167377530014,
+        3.007654697490744,
+        3.494308910847608,
+        3.981886955517259,
+        4.470220000000000,
+        4.959185119108550
+    };
+    Matrix xtd_exp_mat(n, 1, xtd_expected_data);
+
+
+    tau = 0.20;
+    status = cache->xtd(tau, x_tau_d);
+    _ASSERT(ForBESUtils::is_status_ok(status));
+    _ASSERT_EQ(xtd_exp_mat, x_tau_d);
+
+    delete f, g, prob, cache;
+
+}
+
+void TestFBCache::testF1Extrapolate() {
+    size_t n = 5;
+    size_t m = 3;
+    double Q_data[] = {
+        0.4682401168034621, 0.1250290451308249, 0.3947847653912130,
+        0.1250290451308249, 0.1889285094926554, 0.0822874869755427,
+        0.3947847653912130, 0.0822874869755427, 0.6481945377896851
+    };
+    Matrix Q(m, m, Q_data);
+
+    double q_data[] = {
+        1.252714488082575,
+        -0.162112130185000,
+        -0.712181636903632
+    };
+    Matrix q(m, 1, q_data);
+
+    double L1_data[] = {
+        -0.692230203627379, 0.431672354643698, 1.863064599390096,
+        0.225062443539148, -1.085058314483432, 0.849888831130944,
+        -0.409202015705218, -0.169508457312986, -1.374362765552479,
+        -0.868945887672006, -0.823226696576784, -0.479066472366443,
+        -1.013729375356155, 1.071808719869932, 0.230142693472345
+    };
+    Matrix L1mat(m, n, L1_data);
+    MatrixOperator L1(L1mat);
+
+    double d1_data[] = {
+        1.754315938562508,
+        0.482182452870281,
+        -0.270685669219013
+    };
+    Matrix d1(m, 1, d1_data);
+
+    double x_data[] = {
+        -1.6299024138570919,
+        0.0814464520421837,
+        -0.8315536121964472,
+        -1.5783009661145104,
+        -0.2455701367042583
+    };
+    Matrix x(n, 1, x_data);
+
+    double d_data[] = {
+        0.0847805653887511,
+        -0.1675336688893896,
+        0.0261277258933478,
+        -1.0977941989055824,
+        -0.0741381776134543
+    };
+    Matrix d(n, 1, d_data);
+
+    double tau = 1.38222142831014;
+
+    Function *f1 = new Quadratic(Q, q);
+    Function *f2 = new HuberLoss(1.0);
+    Function *g = new Norm1();
+
+    FBProblem * prob = new FBProblem(*f1, L1, d1, *f2, L1, d1, x, *g);
+    FBCache * cache = new FBCache(*prob, x, 0.6);
+
+    int status;
+    double fxtd; /* f1(r1(x+tau*d)) */
+
+
+    cache->set_point(x);
+
+    /* try to invoke f1_extrapolate before a direction is set */
+    status = cache->f1_extrapolate(tau, fxtd);
+    _ASSERT_EQ(ForBESUtils::STATUS_CACHE_NO_DIRECTION, status);
+    _ASSERT(ForBESUtils::is_status_error(status));
+
+    cache->set_direction(d);
+
+    status = cache->f1_extrapolate(tau, fxtd);
+    _ASSERT(ForBESUtils::is_status_ok(status));
+    _ASSERT_NUM_EQ(17.1948186096843, fxtd, 1e-10);
+    _ASSERT_EQ(FBCache::STATUS_EVALF, cache->cache_status());
+
+    tau = 0.234;
+    status = cache->f1_extrapolate(tau, fxtd);
+    _ASSERT(ForBESUtils::is_status_ok(status));
+    _ASSERT_NUM_EQ(11.7963718624767, fxtd, 1e-10);
+
+    delete f1, g, prob, cache;
+}
+
+void TestFBCache::testF1Extrapolate2() {
+    size_t n = 4;
+    double Q_data[] = {
+        13.07782891441034, 4.27452823704610, -1.94688271579899, -12.55222039172310,
+        4.27452823704610, 6.38874532934156, -2.56106107234657, -5.16047746739994,
+        -1.94688271579899, -2.56106107234657, 12.93139407969478, 4.44426900591413,
+        -12.55222039172310, -5.16047746739994, 4.44426900591413, 21.33625765427502
+    };
+    Matrix Q(n, n, Q_data);
+
+    double q_data[] = {
+        0.350344120851833,
+        0.287966108884680,
+        0.595863756330157,
+        0.526051569078466
+    };
+    Matrix q(n, 1, q_data);
+
+    double x_data[] = {
+        -0.844580319722079,
+        -0.149690044062781,
+        -0.491888830298357,
+        -1.821438441093365
+    };
+    Matrix x(n, 1, x_data);
+
+    double d_data[] = {
+        -0.853564753907463,
+        0.991480551399332,
+        -0.106873218071040,
+        0.104843658971077
+    };
+    Matrix d(n, 1, d_data);
+
+    double tau = 0.2145;
+
+    Function *f = new Quadratic(Q, q);
+    Function *g = new Norm1();
+
+    FBProblem * prob = new FBProblem(*f, *g);
+
+    FBCache * cache = new FBCache(*prob, x, 0.5);
     
+    cache->set_direction(d);
+    
+    double fxtd;
+    int status = cache->f1_extrapolate(tau, fxtd);
+    _ASSERT(ForBESUtils::is_status_ok(status));
+    _ASSERT_NUM_EQ(21.8328487277322, fxtd, 1e-9);
+    
+    tau = 0.321045;
+    status = cache->f1_extrapolate(tau, fxtd);
+    _ASSERT(ForBESUtils::is_status_ok(status));
+    _ASSERT_NUM_EQ(21.4720009598411, fxtd, 1e-9);
+
+    delete f, g, prob, cache;
 }

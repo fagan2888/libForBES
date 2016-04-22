@@ -35,6 +35,7 @@ const int ForBESUtils::STATUS_NUMERICAL_PROBLEMS = 500;
 const int ForBESUtils::STATUS_UNDEFINED_FUNCTION = 501;
 const int ForBESUtils::STATUS_MAX_ITERATIONS_REACHED = 502;
 const int ForBESUtils::STATUS_CACHE_NO_DIRECTION = 503;
+const int ForBESUtils::STATUS_CACHE_NO_QUADRATIC = 504;
 
 void ForBESUtils::fail_on_error(int status) {
     if (is_status_error(status)) {
