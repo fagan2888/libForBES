@@ -386,6 +386,7 @@ void FBCache::set_point(Matrix& x) {
     m_betas_fresh = false;
     m_lind_fresh = false;
     m_fxtd_fresh = false;
+    m_cached_grad_f2 = false;
 }
 
 Matrix * FBCache::get_point() {
@@ -402,6 +403,7 @@ void FBCache::set_direction(Matrix& d) {
     m_lind_fresh = false;
     m_L2d_fresh = false;
     m_fxtd_fresh = false;
+    m_cached_grad_f2 = false;
 }
 
 Matrix* FBCache::get_direction() {
@@ -452,6 +454,11 @@ double FBCache::get_norm_fpr() {
 }
 
 int FBCache::extrapolate_fbe(double tau, double gamma, double& fbe) {
+    fbe = 0.0;
+    
+    /* if tau has changed, set m_fxtd_fresh to false */
+    if (std::isinf(m_tau) || !is_close(tau, m_tau)) m_fxtd_fresh = false;
+    
     /* compute x_tau_d = x + tau*d */
     Matrix x_tau_d(m_x->getNrows(), m_x->getNcols());
     int status = xtd(tau, x_tau_d);

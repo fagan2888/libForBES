@@ -224,6 +224,8 @@ public:
      * 
      * \note It is faster to use get(size_t), although it is not so convenient.
      * 
+     * \sa \link #get(const size_t i) const get(1)\endlink
+     * \sa #set
      */
     double get(const size_t i, const size_t j) const;
 
@@ -239,7 +241,10 @@ public:
      * \warning this method will result in unexpected results or may cause the
      * programme to crash if the index provided does not correspond to a valid
      * position in memory. This will happen if the matrix is empty, or
-     * <code>i>=length()</code>, or the matrix is of type Matrix::MATRIX_SPARSE.
+     * <code>i>=%length()</code>, or the matrix is of type #MATRIX_SPARSE.
+     * 
+     * \sa \link #get(const size_t i, const size_t j) const get(2)\endlink
+     * \sa \link #operator[](const size_t sub) const operator[]\endlink
      */
     double get(const size_t i) const;
 
