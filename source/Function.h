@@ -90,7 +90,7 @@ public:
      *  7. \f$\langle \nabla^2 f^*(x), z\rangle,\f$.
      * 
      * @return \link FunctionOntologicalClass Ontological class\endlink of the 
-     * current \c%Function object.
+     * current \c %Function object.
      */
     virtual FunctionOntologicalClass category() = 0;
 

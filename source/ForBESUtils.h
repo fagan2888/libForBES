@@ -71,9 +71,31 @@ public:
      */
     const static int STATUS_CACHE_NO_QUADRATIC;
 
+    /**
+     * Checks whether a status code is merely informative and the call has 
+     * succeeded
+     * @param status status code
+     * @return \c true iff status code is OK
+     */
     static bool is_status_ok(int status);
+    /**
+     * Returns true if the status code corresponds to a warning
+     * @param status status code
+     * @return \c true iff status code is a warning
+     */
     static bool is_status_warning(int status);
+    /**
+     * Checks whether a status code corresponds to an error
+     * @param status status code
+     * @return  \c true iff status code is an error
+     */
     static bool is_status_error(int status);
+    /**
+     * Fails by throwing a \c logic_error exception if the status code corresponds 
+     * to an error
+     * 
+     * @param status status code
+     */
     static void fail_on_error(int status);
 
 

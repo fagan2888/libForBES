@@ -445,7 +445,7 @@ double FBCache::get_norm_fpr() {
     return sqrt(m_sqnormFPRx);
 }
 
-int FBCache::fbe_extrapolate(double tau, double& fbe) {
+int FBCache::extrapolate_fbe(double tau, double& fbe) {
     Matrix x_tau_d(m_x->getNrows(), m_x->getNcols());
     int status = xtd(tau, x_tau_d);
     if (!ForBESUtils::is_status_ok(status)) return status;
@@ -530,6 +530,11 @@ int FBCache::extrapolate_f(double tau, double& fxtd) {
     }
 
     return ForBESUtils::STATUS_OK;
+}
+
+
+int FBCache::extrapolate_gradf(double tau, Matrix& grad_xtd) {
+    return ForBESUtils::STATUS_UNDEFINED_FUNCTION;
 }
 
 int FBCache::xtd(double tau, Matrix& xtd_matrix) {
