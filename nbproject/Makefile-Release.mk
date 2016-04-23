@@ -41,7 +41,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/examples/shallow_example.o \
 	${OBJECTDIR}/source/CGSolver.o \
 	${OBJECTDIR}/source/CholeskyFactorization.o \
-	${OBJECTDIR}/source/CongSeparableSum.o \
 	${OBJECTDIR}/source/ConjugateFunction.o \
 	${OBJECTDIR}/source/DistanceToBall2.o \
 	${OBJECTDIR}/source/DistanceToBox.o \
@@ -97,6 +96,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/source/QuadraticOperator.o \
 	${OBJECTDIR}/source/S_LDLFactorization.o \
 	${OBJECTDIR}/source/SeparableSum.o \
+	${OBJECTDIR}/source/SeparableSumOrdered.o \
 	${OBJECTDIR}/source/SumOfNorm2.o \
 	${OBJECTDIR}/source/main.o
 
@@ -297,11 +297,6 @@ ${OBJECTDIR}/source/CholeskyFactorization.o: source/CholeskyFactorization.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/CholeskyFactorization.o source/CholeskyFactorization.cpp
-
-${OBJECTDIR}/source/CongSeparableSum.o: source/CongSeparableSum.cpp 
-	${MKDIR} -p ${OBJECTDIR}/source
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/CongSeparableSum.o source/CongSeparableSum.cpp
 
 ${OBJECTDIR}/source/ConjugateFunction.o: source/ConjugateFunction.cpp 
 	${MKDIR} -p ${OBJECTDIR}/source
@@ -577,6 +572,11 @@ ${OBJECTDIR}/source/SeparableSum.o: source/SeparableSum.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/SeparableSum.o source/SeparableSum.cpp
+
+${OBJECTDIR}/source/SeparableSumOrdered.o: source/SeparableSumOrdered.cpp 
+	${MKDIR} -p ${OBJECTDIR}/source
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/SeparableSumOrdered.o source/SeparableSumOrdered.cpp
 
 ${OBJECTDIR}/source/SumOfNorm2.o: source/SumOfNorm2.cpp 
 	${MKDIR} -p ${OBJECTDIR}/source
@@ -1394,19 +1394,6 @@ ${OBJECTDIR}/source/CholeskyFactorization_nomain.o: ${OBJECTDIR}/source/Cholesky
 	    ${CP} ${OBJECTDIR}/source/CholeskyFactorization.o ${OBJECTDIR}/source/CholeskyFactorization_nomain.o;\
 	fi
 
-${OBJECTDIR}/source/CongSeparableSum_nomain.o: ${OBJECTDIR}/source/CongSeparableSum.o source/CongSeparableSum.cpp 
-	${MKDIR} -p ${OBJECTDIR}/source
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/source/CongSeparableSum.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    ${RM} "$@.d";\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/CongSeparableSum_nomain.o source/CongSeparableSum.cpp;\
-	else  \
-	    ${CP} ${OBJECTDIR}/source/CongSeparableSum.o ${OBJECTDIR}/source/CongSeparableSum_nomain.o;\
-	fi
-
 ${OBJECTDIR}/source/ConjugateFunction_nomain.o: ${OBJECTDIR}/source/ConjugateFunction.o source/ConjugateFunction.cpp 
 	${MKDIR} -p ${OBJECTDIR}/source
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/source/ConjugateFunction.o`; \
@@ -2120,6 +2107,19 @@ ${OBJECTDIR}/source/SeparableSum_nomain.o: ${OBJECTDIR}/source/SeparableSum.o so
 	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/SeparableSum_nomain.o source/SeparableSum.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/source/SeparableSum.o ${OBJECTDIR}/source/SeparableSum_nomain.o;\
+	fi
+
+${OBJECTDIR}/source/SeparableSumOrdered_nomain.o: ${OBJECTDIR}/source/SeparableSumOrdered.o source/SeparableSumOrdered.cpp 
+	${MKDIR} -p ${OBJECTDIR}/source
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/source/SeparableSumOrdered.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/SeparableSumOrdered_nomain.o source/SeparableSumOrdered.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/source/SeparableSumOrdered.o ${OBJECTDIR}/source/SeparableSumOrdered_nomain.o;\
 	fi
 
 ${OBJECTDIR}/source/SumOfNorm2_nomain.o: ${OBJECTDIR}/source/SumOfNorm2.o source/SumOfNorm2.cpp 

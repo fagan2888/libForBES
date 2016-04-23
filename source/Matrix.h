@@ -223,6 +223,7 @@ public:
      * row or column dimension of the matrix.
      * 
      * \note It is faster to use get(size_t), although it is not so convenient.
+     * 
      */
     double get(const size_t i, const size_t j) const;
 
@@ -238,7 +239,7 @@ public:
      * \warning this method will result in unexpected results or may cause the
      * programme to crash if the index provided does not correspond to a valid
      * position in memory. This will happen if the matrix is empty, or
-     * <code>i>=length()</code>, or the matrix is if type Matrix::MATRIX_SPARSE.
+     * <code>i>=length()</code>, or the matrix is of type Matrix::MATRIX_SPARSE.
      */
     double get(const size_t i) const;
 
@@ -355,27 +356,27 @@ public:
     size_t length() const;
     
     /**
-     * This method returns the squared 2-norm of a vector or the squared Frobenius
+     * This method returns the 2-norm of a vector or the Frobenius
      * norm of a Matrix.
      * 
      * For \f$x\in\mathbb{R}^n\f$, the squared 2-norm is
      * 
      * \f[
-     *  \|x\|_2^2 = \sum_{i=1}^{n}x_i^2.
+     *  \|x\|_2 = \sqrt{\sum_{i=1}^{n}x_i^2}.
      * \f]
      * 
-     * The squared Frobenius norm of matrix \f$A\in\mathbb{R}^{m\times n}\f$ is
+     * The Frobenius norm of matrix \f$A\in\mathbb{R}^{m\times n}\f$ is
      * defined as
      * 
      * \f[
-     * \|A\|_{\mathrm{fro}}^2 = \sum_{i=1}^{m}\sum_{j=1}^{n}A_{i,j}^2.
+     * \|A\|_{\mathrm{fro}} = \sqrt{\sum_{i=1}^{m}\sum_{j=1}^{n}A_{i,j}^2}.
      * \f]
      * 
      * Returns \c 0.0 if the matrix is empty.
      * 
-     * @return Squared Frobenius norm.
+     * @return L2-norm of a vector or Frobenius norm of a matrix.
      */
-    double norm_fro_sq();
+    double norm_fro();
 
     /**
      * Computes the quadratic form <code>0.5 * x'*Q*x</code>.

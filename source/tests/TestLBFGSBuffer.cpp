@@ -129,7 +129,7 @@ void TestLBFGSBuffer::testUpdate() {
                     _ASSERT_NUM_EQ(0.0, (*alpha)[2], 1e-9);
                 }
             }
-            _ASSERT(r.norm_fro_sq() > 0.1);
+            _ASSERT(r.norm_fro() > 0.1);
         }
     }
 

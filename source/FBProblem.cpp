@@ -131,3 +131,35 @@ Matrix* FBProblem::lin() {
 FBProblem::~FBProblem() {
     // nothing to delete    
 }
+
+void FBProblem::setD1(Matrix* _d1) {
+    m_d1 = _d1;
+}
+
+void FBProblem::setD2(Matrix* _d2) {
+    m_d2 = _d2;
+}
+
+void FBProblem::setF1(Function* _f1) {
+    m_f1 = _f1;
+}
+
+void FBProblem::setF2(Function* _f2) {
+    m_f2 = _f2;
+}
+
+void FBProblem::setG(Function* _g) {
+    m_g = _g;
+}
+
+void FBProblem::setL1(LinearOperator* _L1) {
+    m_L1 = _L1;
+}
+
+void FBProblem::setL2(LinearOperator* _L2) {
+    m_L2 = _L2;
+}
+
+void FBProblem::setLin(Matrix* _lin) {
+    m_lin = _lin;
+}

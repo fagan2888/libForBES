@@ -56,12 +56,49 @@
  * 
  * As a result, it suffices to be able to compute \f$ \mathrm{prox}_{\gamma f_j}(\cdot)\f$
  * to compute the proximal of a separable sum.
+ * 
+ * Let us give an example of how this class can be used to construct an instance
+ * of the separable sum of an ElasticNet and a HingeLoss function:
+ * 
+ * \code{.cpp}
+ *  size_t num_idx_1 = 3; // Function #1 points to 3 indices
+ *  size_t num_idx_2 = 2; // Function #2 points to 2 indices 
+ *
+ *  // Define the sets I1 (idx1) and I2 (idx2)
+ *  std::vector<size_t> idx1(num_idx_1);
+ *  std::vector<size_t> idx2(num_idx_2);
+ *  idx1[0] = 0;
+ *  idx1[1] = 3;
+ *  idx1[2] = 4; // f1(x_0, x_3, x_4) 
+ *  idx2[0] = 1;
+ *  idx2[1] = 2; // f2(x_1, x_2)
+ *
+ *  // Construct an instance of ElasticNet
+ *  Function * f1 = new ElasticNet(2.5, 1.3);
+ *
+ *  // Construct an instance of HingeLoss
+ *  Matrix b(2, 1);
+ *  b[0] = 0.8;
+ *  b[1] = 1.5;
+ *  Function * f2 = new HingeLoss(b, 1.4);
+ *
+ *  // Construct the function map
+ *  std::map<Function*, std::vector<size_t>* > fun_idx_map;
+ *  fun_idx_map[f1] = &idx1;
+ *  fun_idx_map[f2] = &idx2;
+ *
+ *  // Construct the separable sum
+ *  Function * sep_sum = new SeparableSum(fun_idx_map);
+ * \endcode   
  */
 class SeparableSum : public Function {
 public:    
     using Function::call;
     using Function::callConj;
 
+    /**
+     * Default destructor.
+     */
     virtual ~SeparableSum();
 
     /**

@@ -73,7 +73,7 @@
  * \code{.cpp}
  *  FBProblem prob = FBProblem(*f, *OpA, minus_b, *g);
  *  Matrix x0(n, 1);
- *  double gamma = 0.999/A.norm_fro_sq();
+ *  double gamma = 0.999/A.norm_fro();
  *  FBSplitting * solver = new FBSplitting(prob, x0, gamma);
  *  solver->run();
  *  Matrix xstar = solver->getSolution();

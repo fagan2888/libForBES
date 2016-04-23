@@ -104,8 +104,6 @@
           <itemPath>source/SumOfNorm2.cpp</itemPath>
           <itemPath>source/SumOfNorm2.h</itemPath>
         </logicalFolder>
-        <itemPath>source/CongSeparableSum.cpp</itemPath>
-        <itemPath>source/CongSeparableSum.h</itemPath>
         <itemPath>source/ConjugateFunction.cpp</itemPath>
         <itemPath>source/ConjugateFunction.h</itemPath>
         <itemPath>source/ElasticNet.cpp</itemPath>
@@ -122,6 +120,8 @@
         <itemPath>source/QuadraticOperator.h</itemPath>
         <itemPath>source/SeparableSum.cpp</itemPath>
         <itemPath>source/SeparableSum.h</itemPath>
+        <itemPath>source/SeparableSumOrdered.cpp</itemPath>
+        <itemPath>source/SeparableSumOrdered.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f6" displayName="lin_operator" projectFiles="true">
         <itemPath>source/LinearOperator.cpp</itemPath>
@@ -1296,10 +1296,6 @@
       </item>
       <item path="source/CholeskyFactorization.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="source/CongSeparableSum.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="source/CongSeparableSum.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="source/ConjugateFunction.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="source/ConjugateFunction.h" ex="false" tool="3" flavor2="0">
@@ -1527,6 +1523,10 @@
       <item path="source/SeparableSum.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="source/SeparableSum.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/SeparableSumOrdered.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/SeparableSumOrdered.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="source/SumOfNorm2.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -2668,10 +2668,6 @@
       </item>
       <item path="source/CholeskyFactorization.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="source/CongSeparableSum.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="source/CongSeparableSum.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="source/ConjugateFunction.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="source/ConjugateFunction.h" ex="false" tool="3" flavor2="0">
@@ -2899,6 +2895,10 @@
       <item path="source/SeparableSum.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="source/SeparableSum.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/SeparableSumOrdered.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/SeparableSumOrdered.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="source/SumOfNorm2.cpp" ex="false" tool="1" flavor2="0">
       </item>

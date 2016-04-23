@@ -21,7 +21,13 @@
 #include "SeparableSum.h"
 #include <iostream>
 
-
+/**
+ * Constructs the sub-vector \c c_x which is defined by a given set of indexes.
+ * 
+ * @param c_idx set of indexes
+ * @param x original vector x
+ * @param c_x sub-vector
+ */
 void prepare_cx(std::vector<size_t> * c_idx, const Matrix& x, Matrix * c_x);
 
 SeparableSum::~SeparableSum() {
@@ -33,9 +39,9 @@ Function(), m_fun_idx_map(fun_idx_map) {
 
 void prepare_cx(std::vector<size_t> * c_idx, const Matrix& x, Matrix * c_x) {
     size_t k = 0;
-
-    /* construct the sub-matrix  */
-    for (std::vector<size_t>::iterator idx_iterator = c_idx->begin(); idx_iterator != c_idx->end(); ++idx_iterator) {
+    for (std::vector<size_t>::iterator idx_iterator = c_idx->begin();
+            idx_iterator != c_idx->end();
+            ++idx_iterator) {
         c_x -> set(k, 0, x.get(*idx_iterator, 0));
         k++;
     }
@@ -43,9 +49,7 @@ void prepare_cx(std::vector<size_t> * c_idx, const Matrix& x, Matrix * c_x) {
 
 int SeparableSum::call(Matrix& x, double& f) {
     //LCOV_EXCL_START
-    if (!x.isColumnVector()) {
-        throw std::invalid_argument("x must be a column-vector");
-    }
+    if (!x.isColumnVector()) throw std::invalid_argument("x must be a column-vector");
     //LCOV_EXCL_STOP
 
     /* sub-matrix */
@@ -83,13 +87,11 @@ int SeparableSum::call(Matrix& x, double& f) {
 
         /* invoke sub-function on c_x, return f_temp */
         status = c_fun -> call(*c_x, f_temp);
-        //LCOV_EXCL_START
         if (ForBESUtils::STATUS_OK != status) {
             delete c_x;
             c_x = NULL;
             return status;
         }
-        //LCOV_EXCL_STOP
         f += f_temp;
     }
 
@@ -101,7 +103,51 @@ int SeparableSum::call(Matrix& x, double& f) {
 }
 
 int SeparableSum::call(Matrix& x, double& f, Matrix& grad) {
-    return ForBESUtils::STATUS_UNDEFINED_FUNCTION;
+    Matrix *c_x = NULL;
+    f = 0.0;
+    Matrix *c_grad = NULL;
+    /* Invoke all functions */
+    for (std::map<Function*, std::vector<size_t> * >::iterator map_iterator = m_fun_idx_map.begin()
+            ; map_iterator != m_fun_idx_map.end()
+            ; ++map_iterator) {
+        std::vector<size_t> * c_idx = NULL;
+        double f_temp;
+        int status;
+        Function * c_fun = NULL;
+        c_fun = map_iterator->first;
+        c_idx = map_iterator->second;
+        c_x = new Matrix(c_idx->size(), 1);
+        prepare_cx(c_idx, x, c_x);
+        c_grad = new Matrix(c_idx->size(), 1);
+        status = c_fun -> call(*c_x, f_temp, *c_grad);
+
+        if (!ForBESUtils::is_status_ok(status)) {
+            delete c_x;
+            c_x = NULL;
+            delete c_grad;
+            c_grad = NULL;
+            return status;
+        }
+
+        size_t k = 0;
+        std::vector<size_t>::iterator idx_iterator;
+        for (idx_iterator = c_idx->begin(); idx_iterator != c_idx->end(); ++idx_iterator) {
+            grad[*idx_iterator] = c_grad->get(k);
+            k++;
+        }
+
+        f += f_temp;
+    }
+
+    if (c_x != NULL) {
+        delete c_x;
+        c_x = NULL;
+    }
+    if (c_grad != NULL) {
+        delete c_grad;
+        c_grad = NULL;
+    }
+    return ForBESUtils::STATUS_OK;
 }
 
 int SeparableSum::callProx(Matrix& x, double gamma, Matrix& prox) {
@@ -124,6 +170,47 @@ int SeparableSum::callProx(Matrix& x, double gamma, Matrix& prox) {
 
         c_prox = new Matrix(c_idx->size(), 1);
         int status = c_fun -> callProx(*c_x, gamma, *c_prox);
+        if (!ForBESUtils::is_status_ok(status)) {
+            delete c_x;
+            delete c_prox;
+            return status;
+        }
+        size_t k = 0;
+        std::vector<size_t>::iterator idx_iterator;
+        for (idx_iterator = c_idx->begin(); idx_iterator != c_idx->end(); ++idx_iterator) {
+            prox[*idx_iterator] = c_prox->get(k);
+            k++;
+        }
+    }
+    if (c_x != NULL) delete c_x;
+    if (c_prox != NULL) delete c_prox;
+    return ForBESUtils::STATUS_OK;
+}
+
+int SeparableSum::callProx(Matrix& x, double gamma, Matrix& prox, double& f_at_prox) {
+    //LCOV_EXCL_START
+    if (!x.isColumnVector()) {
+        throw std::invalid_argument("x must be a column-vector");
+    }
+    //LCOV_EXCL_STOP
+
+    Matrix *c_x = NULL;
+    Matrix *c_prox = NULL;
+
+    f_at_prox = 0.0;
+    double f_at_prox_temp = 0.0;
+    for (std::map<Function*, std::vector<size_t> * >::iterator map_iterator = m_fun_idx_map.begin()
+            ; map_iterator != m_fun_idx_map.end()
+            ; ++map_iterator) {
+        Function * c_fun = map_iterator->first;
+        std::vector<size_t> * c_idx = map_iterator->second;
+        c_x = new Matrix(c_idx->size(), 1);
+        prepare_cx(c_idx, x, c_x);
+
+        c_prox = new Matrix(c_idx->size(), 1);
+        int status = c_fun -> callProx(*c_x, gamma, *c_prox, f_at_prox_temp);
+        f_at_prox += f_at_prox_temp;
+
         //LCOV_EXCL_START
         if (ForBESUtils::STATUS_OK != status) {
             delete c_x;
@@ -131,20 +218,17 @@ int SeparableSum::callProx(Matrix& x, double gamma, Matrix& prox) {
             return status;
         }
         //LCOV_EXCL_STOP
+
         size_t k = 0;
         std::vector<size_t>::iterator idx_iterator;
         for (idx_iterator = c_idx->begin(); idx_iterator != c_idx->end(); ++idx_iterator) {
-            prox.set(*idx_iterator, 0, c_prox->get(k, 0));
+            prox[*idx_iterator] = c_prox->get(k);
             k++;
         }
     }
-    delete c_x;
-    delete c_prox;
+    if (c_x != NULL) delete c_x;
+    if (c_prox != NULL) delete c_prox;
     return ForBESUtils::STATUS_OK;
-}
-
-int SeparableSum::callProx(Matrix& x, double gamma, Matrix& prox, double& f_at_prox) {
-    return ForBESUtils::STATUS_UNDEFINED_FUNCTION;
 }
 
 int SeparableSum::callConj(Matrix& x, double& f_star) {
@@ -168,9 +252,9 @@ int SeparableSum::callConj(Matrix& x, double& f_star) {
 
         double f_star_temp;
         int status = c_fun -> callConj(*c_x, f_star_temp);
-        //LCOV_EXCL_START
-        if (ForBESUtils::STATUS_OK != status) {
+        if (!ForBESUtils::is_status_ok(status)) {
             delete c_x;
+            c_x = NULL;
             return status;
         }
         f_star += f_star_temp;

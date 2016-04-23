@@ -19,7 +19,7 @@
  */
 
 #ifndef FBCACHE_H
-#define	FBCACHE_H
+#define FBCACHE_H
 
 #include "Matrix.h"
 #include "FBProblem.h"
@@ -38,34 +38,132 @@
  * with p.
  */
 class FBCache {
-private:    
+private:
+
+    /*
+     * We declare TestFBCache as a `friend` to be able to test private methods.
+     */
+    friend class TestFBCache;    
 
     int m_status; /**< Cache status. Indicated what has been cached. */
     bool m_cached_grad_f2; /**< whether the gradient of f2 is to be computed along with its value. */
+    bool m_betas_fresh; /**< whether beta1 and beta2 are fresh */
+    bool m_lind_fresh; /**< whether the inner product (l,d) is fresh */
+    bool m_L2d_fresh; /**< whether L2*d is fresh */
+    bool m_fxtd_fresh; /**< whether m_fxtd is cached and fresh */
 
     FBProblem & m_prob; /**< Specifications of the underlying optimization problem. */
     Matrix * m_x; /** Current point (x). */
-       
+
     /* Internal storage for computing proximal-gradient steps */
     Matrix * m_y; /**< x-gamma nabla f(x) */
     Matrix * m_z; /**< prox_{gamma g} (y) =  prox_{gamma g} ( x - gamma * nabla f(x))  */
-    Matrix * m_FPRx; /**< x-z (fixed point residual) */
-    Matrix * m_res1x;  /**< L1*x + d1 */
+    Matrix * m_FPRx; /**< x-z (fixed point residual) - see also m_sqnormFPRx */
+    Matrix * m_res1x; /**< L1*x + d1 */
     Matrix * m_gradf1x; /**< nabla f_1 (res1x)*/
     Matrix * m_res2x; /**< L2*x + d2 */
     Matrix * m_gradf2x; /**< nabla f_2 (res2x) */
     Matrix * m_gradfx; /**< f(x) = f1(L1*x+d1) + f2(L2*x+d2); gradfx = nabla f(x) */
-    Matrix * m_gradFBEx; /** gradient of the FB envelope */    
+    Matrix * m_gradFBEx; /**< gradient of the FB envelope */
+    Matrix * m_dir; /**< direction (d). */
+    Matrix * m_L2d; /**< Matrix v = L2[d] cached to facilitate the extrapolation on f2 */
+    Matrix * m_Qu; /**< Q*L1[d] */
     double m_f1x; /**< f1(res1x) */
     double m_f2x; /**< f2(res2x) */
     double m_linx; /**< l'*x */
+    double m_lind; /**< l'*d */
     double m_fx; /**< f(x) */
-    double m_gz;  /**< g(z) */
+    double m_gz; /**< g(z) */
     double m_gamma; /**< parameter gamma */
     double m_FBEx; /**< FBE(x) */
-    double m_sqnormFPRx; /**< ||x-z||^2 */
+    double m_sqnormFPRx; /**< Squared norm-2 of the FPR ||x-z||^2 - see also m_FPRx */
+    double m_beta1; /**< Parameter used to determin f1(x+tau*d) */
+    double m_beta2; /**< Parameter used to determin f1(x+tau*d) - see #f1_extrapolate */
+    double m_tau; /**< tau */
+    double m_fxtd; /**< cached value of f(x+tau*d) which is fresh if <code>m_fxtd_fresh == true</code> */
 
 protected:
+    
+    /**
+     * Computes \f$f_1(r_1(x+\tau d))\f$ for the stored values of \f$x\f$ and \f$d\f$.
+     * 
+     * It makes use of the formula
+     * 
+     * \f[
+     *  f_1(r_1(x+\tau d)) = f_1(r_1(x)) + \beta_1 \tau + \beta_2 \tau^2,
+     * \f]
+     * 
+     * where \f$\beta_1 = \langle u, (\nabla f_1)(r_1(x))\f$, \f$\beta_2 = u'Qu/2\f$
+     * and \f$u=L_1 d\f$.
+     * 
+     * \post After successful completion, the \link #cache_status status \endlink 
+     * of the cache will be at least #STATUS_EVALF.
+     * 
+     * @param tau parameter \f$\tau\f$
+     * @param fxtd result \f$f_1(r_1(x+\tau d))\f$
+     * @return status code: returns \link ForBESUtils::STATUS_OK STATUS_OK\endlink 
+     * if the method has succeeded,
+     * \link ForBESUtils::STATUS_CACHE_NO_DIRECTION STATUS_CACHE_NO_DIRECTION\endlink 
+     * if no direction \f$d\f$ is provided, 
+     * and \link ForBESUtils::STATUS_CACHE_NO_QUADRATIC STATUS_CACHE_NO_QUADRATIC\endlink 
+     * if there is no quadratic function \f$f_1\f$ defined in which case, it sets 
+     * \c fxtd to <code>0.0</code>.
+     * 
+     * \sa extrapolate_f
+     * \sa cache_status
+     */
+    int extrapolate_f1(double tau, double& fxtd);
+
+    /**
+     * Computes \f$f(x+\tau d)\f$ for the stored values of \f$x\f$ and \f$d\f$.
+     * 
+     * It uses the formula
+     * 
+     * \f[
+     *  f(x+\tau d) = f_1(r_1(x+\tau d)) + \langle l, x\rangle + 
+     *    \tau \langle l, d\rangle + f_2(r_2(x) + \tau v),
+     * \f]
+     * 
+     * where \f$v=L_2 d\f$ and \f$f_1(r_1(x+\tau d))\f$ is computed using 
+     * #extrapolate_f1.
+     * 
+     * \post After successful completion, the \link #cache_status status \endlink 
+     * of the cache will be at least #STATUS_EVALF.
+     * 
+     * @param tau scalar parameter \f$\tau\f$
+     * @param fxtd result \f$f(x+\tau d)\f$ for the given \f$\tau\f$
+     * @return status code: returns \link ForBESUtils::STATUS_OK STATUS_OK\endlink 
+     * if the method has succeeded, \link ForBESUtils::STATUS_CACHE_NO_DIRECTION 
+     * STATUS_CACHE_NO_DIRECTION\endlink if no direction \f$d\f$ is provided.
+     * 
+     * \sa extrapolate_f1
+     */
+    int extrapolate_f(double tau, double& fxtd);
+
+    /**
+     * Computes the gradient of \f$f\f$ at \f$x+\tau d\f$ that is \f$\nabla f(x+\tau d)\f$
+     * for the stored values of \f$x\f$ and \f$d\f$.
+     * 
+     * @param tau scalar parameter \f$\tau\f$
+     * @param grad_xtd the resulting gradient 
+     * @return status code: returns \link ForBESUtils::STATUS_OK STATUS_OK\endlink 
+     * if the method has succeeded, \link ForBESUtils::STATUS_CACHE_NO_DIRECTION 
+     * STATUS_CACHE_NO_DIRECTION\endlink if no direction \f$d\f$ is provided.
+     */
+    int extrapolate_gradf(double tau, Matrix& grad_xtd);
+
+    /**
+     * Constructs and returns the matrix \f$x+\tau d\f$ for the stored matrices
+     * \f$x\f$ and \f$d\f$.
+     * 
+     * @param tau scalar parameter \f$\tau\f$
+     * @param xtd matrix <code>x + tau * d </code>
+     * @return status code: returns \link ForBESUtils::STATUS_OK STATUS_OK\endlink 
+     * if the method has succeeded, \link ForBESUtils::STATUS_CACHE_NO_DIRECTION 
+     * STATUS_CACHE_NO_DIRECTION\endlink if no direction \f$d\f$ is provided.
+     */
+    int xtd(double tau, Matrix& xtd_matrix);
+    
     /**
      * Evaluates \f$f(x)\f$ and updates the internal status of FBCache.
      * 
@@ -147,23 +245,22 @@ protected:
      * Used to set the internal status of the object at a specific value.
      * For example, if the point at which to evaluate operations is changed
      * (using set_point) then the status is reset to 
-     * \c \link #STATUS_NONE\endlink; if \c gamma
-     * instead is changed, the status is reset to 
-     * \c \link #STATUS_EVALF\endlink. In fact, the
-     * value of f is independent of gamma, and is not to be recomputed.
+     * \c #STATUS_NONE; if \c gamma instead is changed, the status is reset to 
+     * \c #STATUS_EVALF. In fact, the value of f is independent of gamma, and is 
+     * not to be recomputed.
      * 
      * @param status a status code (see static private const members)
      */
     void reset(int status);
 
 public:
-    
+
     /**
      * 
      * 
      * The internal state of FBCache is stale, or it has not been updated.
      */
-    static const int STATUS_NONE = 0; 
+    static const int STATUS_NONE;
     /**
      * 
      * 
@@ -175,8 +272,8 @@ public:
      * * The gradient of \f$f_1\f$ at the corresponding residual, \f$ \nabla f_1( r_1(x) ) \f$
      * 
      */
-    static const int STATUS_EVALF = 1;
-    
+    static const int STATUS_EVALF;
+
     /**
      * 
      * 
@@ -186,7 +283,7 @@ public:
      * * The gradient of \f$f\f$ at \f$x\f$, that is \f$\nabla f(x)\f$
      * * The value of \f$y = x - \gamma \nabla f(x)\f$
      */
-    static const int STATUS_FORWARD = 2;
+    static const int STATUS_FORWARD;
     /**
      * 
      * Everything that corresponds to #STATUS_FORWARD (and #STATUS_EVALF) has been
@@ -195,25 +292,25 @@ public:
      * * The value \f$g(z)\f$
      * * The square norm of the fixed point residual, that is \f$\|x-z\|^2\f$
      */
-    static const int STATUS_FORWARDBACKWARD = 3; /** everything */
-    
+    static const int STATUS_FORWARDBACKWARD;
+
     /**
      *
      * The forward backward envelope \f$\varphi_\gamma(x)\f$ has been computed and
      * it is cached. Additionally, all data which correspond to #STATUS_FORWARDBACKWARD
      * have been computed and are available.
      */
-    static const int STATUS_FBE = 4;
-    
+    static const int STATUS_FBE;
+
     /**
      * 
      * All information which has been computed up to level #STATUS_FBE is available
      * and, furthermore, the gradient of the FBE, that is \f$\nabla \varphi_\gamma(x)\f$
      * has also been computed and is cached.
      */
-    static const int STATUS_GRAD_FBE = 5;
-    
-    
+    static const int STATUS_GRAD_FBE;
+
+
     /**
      * Initialize an FBCache object
      *
@@ -238,13 +335,31 @@ public:
      */
     void set_point(Matrix& x);
 
+
+    /**
+     * Passes a new direction to the current modifiable cache which is cached 
+     * internally.
+     * 
+     * \note Before this method is invoked for the first time, no memory is allocated
+     * for the direction.
+     * 
+     * @param d direction
+     */
+    void set_direction(Matrix& d);
+
+    /**
+     * Returns a pointer to the currently stored direction
+     * @return internally stored direction
+     */
+    Matrix * get_direction();
+
     /**
      * Gets (a pointer to) the point \f$x\f$ to which the FBCache object refer
      *
      * @return a pointer to Matrix containing the handled point
      */
     Matrix * get_point();
-    
+
     /**
      * Gets the result of the forward (gradient) step, with step-size \f$\gamma\f$, at \f$x\f$
      *
@@ -257,7 +372,8 @@ public:
 
     /**
      * Gets the result of the forward-backward (proximal-gradient) with step-size 
-     * \f$\gamma\f$ at \f$x\f$, that is \f$z=\mathrm{prox}_{\gamma g}(y)\f$ where \f$y = x - \gamma \nabla f(x)\f$ 
+     * \f$\gamma\f$ at \f$x\f$, that is 
+     * \f$z=\mathrm{prox}_{\gamma g}(y)\f$ where \f$y = x - \gamma \nabla f(x)\f$ 
      *
      * @param gamma step-size parameter
      * @return a pointer to Matrix containing the forward-backward step
@@ -320,11 +436,70 @@ public:
     Matrix * get_grad_FBE(double gamma);
 
     /**
+     * Returns the gradient of \f$f\f$. 
+     * 
+     * \note Note that this matrix may have not been computed - especially if
+     * the \link #cache_status() status\endlink of the cache is smaller than #STATUS_FORWARD.
+     * 
+     * \note To compute the gradient of f call \link #get_forward_step(double) get_forward_step\endlink.
+     * 
+     * @return Pointer to cached gradient of \c f.
+     */
+    Matrix * get_gradf() const;
+
+    /**
+     * The internal status of the cache.
+     * * #STATUS_NONE
+     * * #STATUS_EVALF
+     * * #STATUS_FORWARD
+     * * #STATUS_FORWARDBACKWARD
+     * * #STATUS_FBE
+     * * #STATUS_GRAD_FBE
+     * @return status of the cache
+     */
+    int cache_status() const;
+
+    /**
      * Erases the internal status of the cache, i.e., sets its status to
-     * \link FBCache::STATUS_NONE STATUS_NONE\endlink. This means that any getter will require to recompute all 
+     * \link FBCache::STATUS_NONE STATUS_NONE\endlink. This means that any 
+     * getter will require to recompute everything.
      * steps.
      */
     void reset();
+
+    /**
+     * 
+     * Computes the value of \f$\varphi_\gamma(x+\tau d)\f$ for the cached values 
+     * of \f$x\f$ (using #set_point) and \f$d\f$ (using #set_direction).
+     * 
+     * The extrapolation is based on the formula
+     * 
+     * \f[
+     *  \varphi_\gamma(x+\tau d) = 
+     *         f(x+\tau d) + g(z(x+\tau d)) + \frac{1}{2\gamma}\|R_\gamma(x+\tau d)\|^2
+     *         - \langle \nabla f(x+\tau d), R_\gamma(x+\tau d) \rangle
+     * \f]
+     * 
+     * where \f$z(x+\tau d) = \mathrm{prox}_{\gamma g}(y(x+\tau d))\f$ and
+     * \f$y(x+\tau d) = x + \tau d - \gamma \nabla f(x+\tau d)\f$ and 
+     * \f$R_\gamma(x+\tau d) = x+\tau d - z(x+\tau d)\f$.
+     * 
+     * The values of \f$f(x+\tau d)\f$ and \f$\nabla f(x+\tau d)\f$ are computed
+     * efficiently using #extrapolate_f and #extrapolate_gradf.
+     * 
+     * \pre it is necessary that you provide a direction \f$d\f$ before you invoke
+     * this method.
+     * 
+     * 
+     * @param tau parameter \f$\tau\f$
+     * @param gamma parameter \f$\gamma\f$ of the FBE
+     * @param fbe (output) value of \f$\varphi_\gamma(x+\tau d)\f$
+     * @return status code: \link ForBESUtils::STATUS_OK STATUS_OK\endlink on success, 
+     * \link ForBESUtils::STATUS_CACHE_NO_DIRECTION STATUS_CACHE_NO_DIRECTION\endlink 
+     * if no direction is available.
+     */
+    int extrapolate_fbe(double tau, double gamma, double& fbe);
+
 };
 
 #endif /* FBCACHE_H */
