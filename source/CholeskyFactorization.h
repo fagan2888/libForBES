@@ -65,7 +65,7 @@
  *  int status = cholesky->solve(b, sol);
  *   
  *  std::cout << status << std::endl;    
- *  double error = (A*sol-b).norm_fro_sq();
+ *  double error = (A*sol-b).norm_fro();
  *  std::cout << error;
  *   
  *  delete cholesky;

@@ -58,7 +58,7 @@ private:
     /* Internal storage for computing proximal-gradient steps */
     Matrix * m_y; /**< x-gamma nabla f(x) */
     Matrix * m_z; /**< prox_{gamma g} (y) =  prox_{gamma g} ( x - gamma * nabla f(x))  */
-    Matrix * m_FPRx; /**< x-z (fixed point residual) */
+    Matrix * m_FPRx; /**< x-z (fixed point residual) - see also m_sqnormFPRx */
     Matrix * m_res1x; /**< L1*x + d1 */
     Matrix * m_gradf1x; /**< nabla f_1 (res1x)*/
     Matrix * m_res2x; /**< L2*x + d2 */
@@ -76,7 +76,7 @@ private:
     double m_gz; /**< g(z) */
     double m_gamma; /**< parameter gamma */
     double m_FBEx; /**< FBE(x) */
-    double m_sqnormFPRx; /**< ||x-z||^2 */
+    double m_sqnormFPRx; /**< Squared norm-2 of the FPR ||x-z||^2 - see also m_FPRx */
     double m_beta1; /**< Parameter used to determin f1(x+tau*d) */
     double m_beta2; /**< Parameter used to determin f1(x+tau*d) - see #f1_extrapolate */
     double m_tau; /**< tau */
@@ -143,9 +143,6 @@ protected:
     /**
      * Computes the gradient of \f$f\f$ at \f$x+\tau d\f$ that is \f$\nabla f(x+\tau d)\f$
      * for the stored values of \f$x\f$ and \f$d\f$.
-     * 
-     * \pre When this method is invoked, it is assumed that #extrapolate_f has been 
-     * invoked first, otherwise the method may fail or return erroneous results.
      * 
      * @param tau scalar parameter \f$\tau\f$
      * @param grad_xtd the resulting gradient 
@@ -475,13 +472,33 @@ public:
      * Computes the value of \f$\varphi_\gamma(x+\tau d)\f$ for the cached values 
      * of \f$x\f$ (using #set_point) and \f$d\f$ (using #set_direction).
      * 
+     * The extrapolation is based on the formula
+     * 
+     * \f[
+     *  \varphi_\gamma(x+\tau d) = 
+     *         f(x+\tau d) + g(z(x+\tau d)) + \frac{1}{2\gamma}\|R_\gamma(x+\tau d)\|^2
+     *         - \langle \nabla f(x+\tau d), R_\gamma(x+\tau d) \rangle
+     * \f]
+     * 
+     * where \f$z(x+\tau d) = \mathrm{prox}_{\gamma g}(y(x+\tau d))\f$ and
+     * \f$y(x+\tau d) = x + \tau d - \gamma \nabla f(x+\tau d)\f$ and 
+     * \f$R_\gamma(x+\tau d) = x+\tau d - z(x+\tau d)\f$.
+     * 
+     * The values of \f$f(x+\tau d)\f$ and \f$\nabla f(x+\tau d)\f$ are computed
+     * efficiently using #extrapolate_f and #extrapolate_gradf.
+     * 
+     * \pre it is necessary that you provide a direction \f$d\f$ before you invoke
+     * this method.
+     * 
+     * 
      * @param tau parameter \f$\tau\f$
+     * @param gamma parameter \f$\gamma\f$ of the FBE
      * @param fbe (output) value of \f$\varphi_\gamma(x+\tau d)\f$
-     * @return status code: #ForBESUtils:STATUS_OK on success, 
+     * @return status code: \link ForBESUtils::STATUS_OK STATUS_OK\endlink on success, 
      * \link ForBESUtils::STATUS_CACHE_NO_DIRECTION STATUS_CACHE_NO_DIRECTION\endlink 
      * if no direction is available.
      */
-    int extrapolate_fbe(double tau, double& fbe);
+    int extrapolate_fbe(double tau, double gamma, double& fbe);
 
 };
 

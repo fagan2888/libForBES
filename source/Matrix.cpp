@@ -331,7 +331,7 @@ void Matrix::set(size_t i, size_t j, double v) {
 
 }
 
-double Matrix::norm_fro_sq() {
+double Matrix::norm_fro() {
     if (m_type == Matrix::MATRIX_DENSE
             || m_type == Matrix::MATRIX_DIAGONAL
             || m_type == Matrix::MATRIX_LOWERTR) {

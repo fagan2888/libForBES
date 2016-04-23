@@ -972,12 +972,19 @@ void TestFBCache::testGradfExtrapolate() {
 
     FBCache * cache = new FBCache(*prob, x, 0.5);
 
-    cache->set_direction(d);
-
-    Matrix gradfxtd(L1.dimensionIn());
+    Matrix gradfxtd;
     int status;
+    
+    status = cache->extrapolate_gradf(tau, gradfxtd);
+    _ASSERT_EQ(ForBESUtils::STATUS_CACHE_NO_DIRECTION, status);
+    
+    cache->set_direction(d);
+    
     status = cache->extrapolate_gradf(tau, gradfxtd);
     _ASSERT(ForBESUtils::is_status_ok(status));
+
+    _ASSERT(cache->m_betas_fresh);
+    _ASSERT(cache->m_fxtd_fresh);
 
 
     double grad_exp_data[] = {
@@ -988,7 +995,13 @@ void TestFBCache::testGradfExtrapolate() {
     };
     Matrix grad_exp(n, 1, grad_exp_data);
     _ASSERT_EQ(gradfxtd, grad_exp);
+    _ASSERT_NUM_EQ(-2.2981109362733574, cache->m_fxtd, 1e-10);
+    
+    cache->reset();
+    
+    status = cache->extrapolate_gradf(tau, gradfxtd);
+    _ASSERT(ForBESUtils::is_status_ok(status));
+    _ASSERT_EQ(gradfxtd, grad_exp);
     
     delete f1, f2, prob, cache;
-
 }
