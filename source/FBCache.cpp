@@ -71,6 +71,8 @@ FBCache::FBCache(FBProblem & p, Matrix & x, double gamma) :
 m_prob(p),
 m_x(&x),
 m_gamma(gamma) {
+
+    /* reset the cache */
     m_status = STATUS_NONE;
     m_betas_fresh = false;
     m_lind_fresh = false;
@@ -78,31 +80,9 @@ m_gamma(gamma) {
     m_fxtd_fresh = false;
     m_cached_grad_f2 = false;
 
-    // get dimensions of things
-    size_t m_x_rows = m_x->getNrows();
-    size_t m_x_cols = m_x->getNcols();
-    size_t m_res2_rows, m_res2_cols;
-
-    if (m_prob.d2() != NULL) {
-        m_res2_rows = m_prob.d2()->getNrows();
-        m_res2_cols = m_prob.d2()->getNcols();
-    } else if (m_prob.L2() != NULL) {
-        m_res2_rows = m_prob.L2()->dimensionOut().first;
-        m_res2_cols = m_prob.L2()->dimensionOut().second;
-    } else {
-        m_res2_rows = m_x_rows;
-        m_res2_cols = m_x_cols;
-    }
-
-
+    /* set pointers to NULL */
     m_res2x = NULL;
     m_gradf2x = NULL;
-
-    if (m_prob.f2() != NULL) {
-        m_res2x = new Matrix(m_res2_rows, m_res2_cols);
-        m_gradf2x = new Matrix(m_res2_rows, m_res2_cols);
-    }
-
     m_gradf1x = NULL;
     m_gradfx = NULL;
     m_z = NULL;
@@ -113,16 +93,15 @@ m_gamma(gamma) {
     m_L2d = NULL;
     m_Qu = NULL;
 
+    /* initialize double variables */
     m_FBEx = std::numeric_limits<double>::infinity();
     m_sqnormFPRx = std::numeric_limits<double>::infinity();
     m_tau = std::numeric_limits<double>::infinity();
-
     m_f1x = 0.0;
     m_f2x = 0.0;
     m_linx = 0.0;
     m_fx = 0.0;
     m_gz = 0.0;
-
 }
 
 int FBCache::update_eval_f(bool order_grad_f2) {
@@ -146,10 +125,12 @@ int FBCache::update_eval_f(bool order_grad_f2) {
         } else {
             /* if at least one of L1, d1 is defined, allocate memory for m_resx1 */
             if (m_prob.d1() != NULL) {
+                /* if there is a d1, use it to get the dimensions */
                 m_res1x = new Matrix(m_prob.d1()->getNrows(), m_prob.d1()->getNcols());
             }
             if (m_prob.L1() != NULL) {
-                m_res1x = new Matrix(m_prob.L1()->dimensionOut());
+                /* if there is an L1, and there has been no d1, use L1 to get the dimensions */
+                if (m_res1x == NULL) m_res1x = new Matrix(m_prob.L1()->dimensionOut());
                 /* If L1 is defined, compute L1[x] */
                 *m_res1x = m_prob.L1()->call(*m_x);
             }
@@ -162,14 +143,19 @@ int FBCache::update_eval_f(bool order_grad_f2) {
     }
 
     if (m_prob.f2() != NULL) {
-        if (m_prob.L2() != NULL) {
-            *m_res2x = m_prob.L2()->call(*m_x);
+
+        if (m_prob.L2() == NULL && m_prob.d2() == NULL) {
+            m_res2x = m_x;
         } else {
-            *m_res2x = *m_x;
+            if (m_prob.d2() != NULL) m_res1x = new Matrix(m_prob.d2()->getNrows(), m_prob.d2()->getNcols());
+            if (m_prob.L2() != NULL) {
+                if (m_res2x == NULL) m_res2x = new Matrix(m_prob.L2()->dimensionOut());
+                *m_res2x = m_prob.L2()->call(*m_x);
+            }
+            if (m_prob.d2() != NULL) *m_res2x += *m_prob.d2();
         }
-        if (m_prob.d2() != NULL) {
-            *m_res2x += *(m_prob.d2());
-        }
+        if (m_gradf2x == NULL) m_gradf2x = new Matrix(m_res2x->getNrows(), m_res2x->getNcols());
+
         int status =
                 order_grad_f2
                 ? m_prob.f2()->call(*m_res2x, m_f2x, *m_gradf2x)
@@ -632,7 +618,7 @@ FBCache::~FBCache() {
         delete m_y;
         m_y = NULL;
     }
-    if (m_res2x != NULL) {
+    if (m_res2x != NULL && m_res2x != m_x) {
         delete m_res2x;
         m_res2x = NULL;
     }
