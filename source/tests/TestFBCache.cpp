@@ -1120,6 +1120,14 @@ void TestFBCache::testFBEExtrapolate() {
     tau = 0.01223451;
     status = cache->extrapolate_fbe(tau, gamma, fbe_xtd);
     _ASSERT_NUM_EQ(-4.23660375940972, fbe_xtd, 1e-10);
+    
+    _ASSERT(cache->m_Qu != NULL);
+    _ASSERT(cache->m_L2d != NULL);
+    _ASSERT(cache->m_L2d != cache->m_dir);
 
-    delete f1, f2, g, prob, cache;
+    delete f1;
+    delete f2;
+    delete g;
+    delete prob;
+    delete cache;
 }
