@@ -43,8 +43,47 @@ private:
     /*
      * We declare TestFBCache as a `friend` to be able to test private methods.
      */
-    friend class TestFBCache;
+    friend class TestFBCache;    
 
+    int m_status; /**< Cache status. Indicated what has been cached. */
+    bool m_cached_grad_f2; /**< whether the gradient of f2 is to be computed along with its value. */
+    bool m_betas_fresh; /**< whether beta1 and beta2 are fresh */
+    bool m_lind_fresh; /**< whether the inner product (l,d) is fresh */
+    bool m_L2d_fresh; /**< whether L2*d is fresh */
+    bool m_fxtd_fresh; /**< whether m_fxtd is cached and fresh */
+
+    FBProblem & m_prob; /**< Specifications of the underlying optimization problem. */
+    Matrix * m_x; /** Current point (x). */
+
+    /* Internal storage for computing proximal-gradient steps */
+    Matrix * m_y; /**< x-gamma nabla f(x) */
+    Matrix * m_z; /**< prox_{gamma g} (y) =  prox_{gamma g} ( x - gamma * nabla f(x))  */
+    Matrix * m_FPRx; /**< x-z (fixed point residual) */
+    Matrix * m_res1x; /**< L1*x + d1 */
+    Matrix * m_gradf1x; /**< nabla f_1 (res1x)*/
+    Matrix * m_res2x; /**< L2*x + d2 */
+    Matrix * m_gradf2x; /**< nabla f_2 (res2x) */
+    Matrix * m_gradfx; /**< f(x) = f1(L1*x+d1) + f2(L2*x+d2); gradfx = nabla f(x) */
+    Matrix * m_gradFBEx; /**< gradient of the FB envelope */
+    Matrix * m_dir; /**< direction (d). */
+    Matrix * m_L2d; /**< Matrix v = L2[d] cached to facilitate the extrapolation on f2 */
+    Matrix * m_Qu; /**< Q*L1[d] */
+    double m_f1x; /**< f1(res1x) */
+    double m_f2x; /**< f2(res2x) */
+    double m_linx; /**< l'*x */
+    double m_lind; /**< l'*d */
+    double m_fx; /**< f(x) */
+    double m_gz; /**< g(z) */
+    double m_gamma; /**< parameter gamma */
+    double m_FBEx; /**< FBE(x) */
+    double m_sqnormFPRx; /**< ||x-z||^2 */
+    double m_beta1; /**< Parameter used to determin f1(x+tau*d) */
+    double m_beta2; /**< Parameter used to determin f1(x+tau*d) - see #f1_extrapolate */
+    double m_tau; /**< tau */
+    double m_fxtd; /**< cached value of f(x+tau*d) which is fresh if <code>m_fxtd_fresh == true</code> */
+
+protected:
+    
     /**
      * Computes \f$f_1(r_1(x+\tau d))\f$ for the stored values of \f$x\f$ and \f$d\f$.
      * 
@@ -102,8 +141,11 @@ private:
     int extrapolate_f(double tau, double& fxtd);
 
     /**
-     * Computes the gradient of \f$\f$ at \f$x+\tau d\f$ that is \f[\nabla f(x+\tau d)\f$
+     * Computes the gradient of \f$f\f$ at \f$x+\tau d\f$ that is \f$\nabla f(x+\tau d)\f$
      * for the stored values of \f$x\f$ and \f$d\f$.
+     * 
+     * \pre When this method is invoked, it is assumed that #extrapolate_f has been 
+     * invoked first, otherwise the method may fail or return erroneous results.
      * 
      * @param tau scalar parameter \f$\tau\f$
      * @param grad_xtd the resulting gradient 
@@ -124,41 +166,7 @@ private:
      * STATUS_CACHE_NO_DIRECTION\endlink if no direction \f$d\f$ is provided.
      */
     int xtd(double tau, Matrix& xtd_matrix);
-
-    int m_status; /**< Cache status. Indicated what has been cached. */
-    bool m_cached_grad_f2; /**< whether the gradient of f2 is to be computed along with its value. */
-    bool m_betas_fresh; /**< whether beta1 and beta2 are fresh */
-    bool m_lind_fresh; /**< whether the inner product (l,d) is fresh */
-    bool m_L2d_fresh; /**< whether L2*d is fresh */
-
-    FBProblem & m_prob; /**< Specifications of the underlying optimization problem. */
-    Matrix * m_x; /** Current point (x). */
-
-    /* Internal storage for computing proximal-gradient steps */
-    Matrix * m_y; /**< x-gamma nabla f(x) */
-    Matrix * m_z; /**< prox_{gamma g} (y) =  prox_{gamma g} ( x - gamma * nabla f(x))  */
-    Matrix * m_FPRx; /**< x-z (fixed point residual) */
-    Matrix * m_res1x; /**< L1*x + d1 */
-    Matrix * m_gradf1x; /**< nabla f_1 (res1x)*/
-    Matrix * m_res2x; /**< L2*x + d2 */
-    Matrix * m_gradf2x; /**< nabla f_2 (res2x) */
-    Matrix * m_gradfx; /**< f(x) = f1(L1*x+d1) + f2(L2*x+d2); gradfx = nabla f(x) */
-    Matrix * m_gradFBEx; /**< gradient of the FB envelope */
-    Matrix * m_dir; /**< direction (d). */
-    Matrix * m_L2d; /**< Matrix v = L2[d] cached to facilitate the extrapolation on f2 */
-    double m_f1x; /**< f1(res1x) */
-    double m_f2x; /**< f2(res2x) */
-    double m_linx; /**< l'*x */
-    double m_lind; /**< l'*d */
-    double m_fx; /**< f(x) */
-    double m_gz; /**< g(z) */
-    double m_gamma; /**< parameter gamma */
-    double m_FBEx; /**< FBE(x) */
-    double m_sqnormFPRx; /**< ||x-z||^2 */
-    double m_beta1; /**< Parameter used to determin f1(x+tau*d) */
-    double m_beta2; /**< see #f1_extrapolate */
-
-protected:
+    
     /**
      * Evaluates \f$f(x)\f$ and updates the internal status of FBCache.
      * 

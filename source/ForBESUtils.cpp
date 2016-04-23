@@ -30,6 +30,7 @@
 
 const int ForBESUtils::STATUS_OK = 0;
 const int ForBESUtils::STATUS_HAD_TO_REALLOC = 1;
+const int ForBESUtils::STATUS_CACHED_ALREADY = 2;
 
 const int ForBESUtils::STATUS_NUMERICAL_PROBLEMS = 500;
 const int ForBESUtils::STATUS_UNDEFINED_FUNCTION = 501;

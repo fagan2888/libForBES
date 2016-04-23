@@ -46,6 +46,11 @@ public:
      * using new[].
      */
     const static int STATUS_HAD_TO_REALLOC;
+    
+    /**
+     * Result was cached, so it was not re-computed.
+     */
+    const static int STATUS_CACHED_ALREADY;
 
     /**
      * Method is undefined.
