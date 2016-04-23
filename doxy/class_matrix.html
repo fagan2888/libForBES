@@ -177,8 +177,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6750126006caf8bcf092eaac0e01fe08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67ff18ea6f0710847b5828361a155c12"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a67ff18ea6f0710847b5828361a155c12">length</a> () const </td></tr>
 <tr class="separator:a67ff18ea6f0710847b5828361a155c12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2037979913d8ff3fda87484c275a129"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#af2037979913d8ff3fda87484c275a129">norm_fro_sq</a> ()</td></tr>
-<tr class="separator:af2037979913d8ff3fda87484c275a129"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa6a63fca46278cf9797ef349cd7b782"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#aaa6a63fca46278cf9797ef349cd7b782">norm_fro</a> ()</td></tr>
+<tr class="separator:aaa6a63fca46278cf9797ef349cd7b782"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0c3fb9c6f0159041a9d3780d0aa7f0c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#aa0c3fb9c6f0159041a9d3780d0aa7f0c">quad</a> (<a class="el" href="class_matrix.html">Matrix</a> &amp;x) const </td></tr>
 <tr class="separator:aa0c3fb9c6f0159041a9d3780d0aa7f0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a335a1a88224406dd9495deb69b40e540"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a335a1a88224406dd9495deb69b40e540">quad</a> (<a class="el" href="class_matrix.html">Matrix</a> &amp;x, <a class="el" href="class_matrix.html">Matrix</a> &amp;q) const </td></tr>
@@ -612,7 +612,7 @@ A factor for this class, namely <a class="el" href="class_matrix_factory.html" t
   </table>
   </dd>
 </dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000009">Todo:</a></b></dt><dd>Handle the case where \(\alpha = \gamma = 0.0\).</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000008">Todo:</a></b></dt><dd>Handle the case where \(\alpha = \gamma = 0.0\).</dd></dl>
 <dl class="bug"><dt><b><a class="el" href="bug.html#_bug000001">Bug:</a></b></dt><dd>SPARSE + LOWER_TRI is too slow! </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="shallow_example_8cpp-example.html#a3">shallow_example.cpp</a>.</dd>
 </dl>
@@ -733,7 +733,7 @@ A factor for this class, namely <a class="el" href="class_matrix_factory.html" t
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>data value</dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>this method will result in unexpected results or may cause the programme to crash if the index provided does not correspond to a valid position in memory. This will happen if the matrix is empty, or <code>i&gt;=<a class="el" href="class_matrix.html#a67ff18ea6f0710847b5828361a155c12">length()</a></code>, or the matrix is if type <a class="el" href="class_matrix.html#a5269c84de25f7f2ac7d05efcffde1046aaca75f6fbf0a161cc6662f2becc5ca29">Matrix::MATRIX_SPARSE</a>. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>this method will result in unexpected results or may cause the programme to crash if the index provided does not correspond to a valid position in memory. This will happen if the matrix is empty, or <code>i&gt;=<a class="el" href="class_matrix.html#a67ff18ea6f0710847b5828361a155c12">length()</a></code>, or the matrix is of type <a class="el" href="class_matrix.html#a5269c84de25f7f2ac7d05efcffde1046aaca75f6fbf0a161cc6662f2becc5ca29">Matrix::MATRIX_SPARSE</a>. </dd></dl>
 
 </div>
 </div>
@@ -974,7 +974,7 @@ A factor for this class, namely <a class="el" href="class_matrix_factory.html" t
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A status code. The method will return a <a class="el" href="class_for_b_e_s_utils.html#a3778b88ef7ec8a5024eec49a0d7a656d">success code</a> if the operation has succeeded and there was no need to perform any memory allocation operations.</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000010">Todo:</a></b></dt><dd>Handle the case where \(\alpha = \gamma = 0.0\). Especially the case \(\alpha=0.0\) should be trivially handled by <code>*=</code>. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000009">Todo:</a></b></dt><dd>Handle the case where \(\alpha = \gamma = 0.0\). Especially the case \(\alpha=0.0\) should be trivially handled by <code>*=</code>. </dd></dl>
 
 </div>
 </div>
@@ -1070,29 +1070,29 @@ A factor for this class, namely <a class="el" href="class_matrix_factory.html" t
 
 </div>
 </div>
-<a class="anchor" id="af2037979913d8ff3fda87484c275a129"></a>
+<a class="anchor" id="aaa6a63fca46278cf9797ef349cd7b782"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double Matrix::norm_fro_sq </td>
+          <td class="memname">double Matrix::norm_fro </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This method returns the squared 2-norm of a vector or the squared Frobenius norm of a <a class="el" href="class_matrix.html" title="A generic matrix API. ">Matrix</a>.</p>
+<p>This method returns the 2-norm of a vector or the Frobenius norm of a <a class="el" href="class_matrix.html" title="A generic matrix API. ">Matrix</a>.</p>
 <p>For \(x\in\mathbb{R}^n\), the squared 2-norm is</p>
 <p class="formulaDsp">
-\[ \|x\|_2^2 = \sum_{i=1}^{n}x_i^2. \]
+\[ \|x\|_2 = \sqrt{\sum_{i=1}^{n}x_i^2}. \]
 </p>
-<p>The squared Frobenius norm of matrix \(A\in\mathbb{R}^{m\times n}\) is defined as</p>
+<p>The Frobenius norm of matrix \(A\in\mathbb{R}^{m\times n}\) is defined as</p>
 <p class="formulaDsp">
-\[ \|A\|_{\mathrm{fro}}^2 = \sum_{i=1}^{m}\sum_{j=1}^{n}A_{i,j}^2. \]
+\[ \|A\|_{\mathrm{fro}} = \sqrt{\sum_{i=1}^{m}\sum_{j=1}^{n}A_{i,j}^2}. \]
 </p>
 <p>Returns <code>0.0</code> if the matrix is empty.</p>
-<dl class="section return"><dt>Returns</dt><dd>Squared Frobenius norm. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>L2-norm of a vector or Frobenius norm of a matrix. </dd></dl>
 
 </div>
 </div>
@@ -1373,7 +1373,7 @@ A factor for this class, namely <a class="el" href="class_matrix_factory.html" t
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Scalar 0.5*x'*Q*x as <code>double</code> as a double.</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000008">Todo:</a></b></dt><dd>Implement quadFromSparse in case the matrix is sparse, but there are no triplets available.</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000007">Todo:</a></b></dt><dd>Implement quadFromSparse in case the matrix is sparse, but there are no triplets available.</dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">std::invalid_argument</td><td>if the provided argument <code>x</code> is not a column-vector, or the current matrix object does not correspond to a square matrix, or <code>x</code> is of incompatible dimensions. </td></tr>
@@ -1694,7 +1694,7 @@ A factor for this class, namely <a class="el" href="class_matrix_factory.html" t
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 17 2016 14:47:38 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 23 2016 18:27:28 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

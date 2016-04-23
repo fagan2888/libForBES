@@ -175,191 +175,191 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_matrix.html#aa753de1a2ed37c8eb934e06823fee179">transpose</a>();</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="keywordtype">double</span> <span class="keyword">get</span>(<span class="keyword">const</span> <span class="keywordtype">size_t</span> i, <span class="keyword">const</span> <span class="keywordtype">size_t</span> j) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keywordtype">double</span> <span class="keyword">get</span>(<span class="keyword">const</span> <span class="keywordtype">size_t</span> i) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordtype">double</span> <span class="keyword">get</span>(<span class="keyword">const</span> <span class="keywordtype">size_t</span> i, <span class="keyword">const</span> <span class="keywordtype">size_t</span> j) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keywordtype">double</span> <span class="keyword">get</span>(<span class="keyword">const</span> <span class="keywordtype">size_t</span> i) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_matrix.html#a8b21e3beb1071bd78b920c5b53b3e044">set</a>(<span class="keywordtype">size_t</span> i, <span class="keywordtype">size_t</span> j, <span class="keywordtype">double</span> val);</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_matrix.html#a8b21e3beb1071bd78b920c5b53b3e044">set</a>(<span class="keywordtype">size_t</span> i, <span class="keywordtype">size_t</span> j, <span class="keywordtype">double</span> val);</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="comment">/* Getters */</span></div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="class_matrix.html#ae9b720197e7a5fe44f83d942604c0ed9">getNcols</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="class_matrix.html#ae1329328637e15c238ff88d8bd002a90">getNrows</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <span class="keywordtype">double</span> * <a class="code" href="class_matrix.html#a563d2eea637fa4cec85649bfdb83e649">getData</a>();</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <a class="code" href="class_matrix.html#a5269c84de25f7f2ac7d05efcffde1046">MatrixType</a> <a class="code" href="class_matrix.html#a4354c8f295ce0d7bc1593c47a6b0e458">getType</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    std::string <a class="code" href="class_matrix.html#a9aad4156bde7ca184d008f84650287c8">getTypeString</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="comment">/* Utilities */</span></div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_matrix.html#a78c9e38b32c51598d4535823c6d596f7">reshape</a>(<span class="keywordtype">size_t</span> nrows, <span class="keywordtype">size_t</span> ncols);</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="comment">/* Getters */</span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="class_matrix.html#ae9b720197e7a5fe44f83d942604c0ed9">getNcols</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="class_matrix.html#ae1329328637e15c238ff88d8bd002a90">getNrows</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="keywordtype">double</span> * <a class="code" href="class_matrix.html#a563d2eea637fa4cec85649bfdb83e649">getData</a>();</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <a class="code" href="class_matrix.html#a5269c84de25f7f2ac7d05efcffde1046">MatrixType</a> <a class="code" href="class_matrix.html#a4354c8f295ce0d7bc1593c47a6b0e458">getType</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    std::string <a class="code" href="class_matrix.html#a9aad4156bde7ca184d008f84650287c8">getTypeString</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="comment">/* Utilities */</span></div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_matrix.html#a78c9e38b32c51598d4535823c6d596f7">reshape</a>(<span class="keywordtype">size_t</span> nrows, <span class="keywordtype">size_t</span> ncols);</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_matrix.html#a7493d04952515b36ff3f145ae2244ff6">isSymmetric</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_matrix.html#a863f25e7addbd2a92b48ed25a7223cfb">isColumnVector</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_matrix.html#aecb04d447ba10e54fdd9ceef3fbf2aac">isRowVector</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_matrix.html#a6750126006caf8bcf092eaac0e01fe08">isEmpty</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="class_matrix.html#a67ff18ea6f0710847b5828361a155c12">length</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    </div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_matrix.html#af2037979913d8ff3fda87484c275a129">norm_fro_sq</a>();</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_matrix.html#aa0c3fb9c6f0159041a9d3780d0aa7f0c">quad</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; x) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_matrix.html#aa0c3fb9c6f0159041a9d3780d0aa7f0c">quad</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <a class="code" href="class_matrix.html">Matrix</a>&amp; q) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_matrix.html#a7493d04952515b36ff3f145ae2244ff6">isSymmetric</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_matrix.html#a863f25e7addbd2a92b48ed25a7223cfb">isColumnVector</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_matrix.html#aecb04d447ba10e54fdd9ceef3fbf2aac">isRowVector</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_matrix.html#a6750126006caf8bcf092eaac0e01fe08">isEmpty</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="class_matrix.html#a67ff18ea6f0710847b5828361a155c12">length</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    </div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_matrix.html#aaa6a63fca46278cf9797ef349cd7b782">norm_fro</a>();</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_matrix.html#aa0c3fb9c6f0159041a9d3780d0aa7f0c">quad</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; x) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_matrix.html#aa0c3fb9c6f0159041a9d3780d0aa7f0c">quad</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; x, <a class="code" href="class_matrix.html">Matrix</a>&amp; q) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_matrix.html#a498f80096c04994899f302fbbe1abe40">toggle_diagonal</a>();</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_matrix.html#a60b85bd659def86b7d7c30c89e284d4f">plusop</a>();</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;</div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_matrix.html#a60b85bd659def86b7d7c30c89e284d4f">plusop</a>(<a class="code" href="class_matrix.html">Matrix</a>* mat) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_matrix.html#a498f80096c04994899f302fbbe1abe40">toggle_diagonal</a>();</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_matrix.html#a60b85bd659def86b7d7c30c89e284d4f">plusop</a>();</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_matrix.html#a60b85bd659def86b7d7c30c89e284d4f">plusop</a>(<a class="code" href="class_matrix.html">Matrix</a>* mat) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;</div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;    <span class="comment">/* Operators */</span></div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;</div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;    <span class="keywordtype">double</span> &amp;<a class="code" href="class_matrix.html#a60596b6608bb8a51a2d79afcaf092849">operator[]</a>(<span class="keyword">const</span> <span class="keywordtype">size_t</span> sub) <span class="keyword">const</span>; <span class="comment">//overloading []</span></div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;</div>
-<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;    <a class="code" href="class_matrix.html">Matrix</a> <a class="code" href="class_matrix.html#a248b41795fe69f2591aa95f4a5dbac79">operator+</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; right) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;</div>
-<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;    <a class="code" href="class_matrix.html">Matrix</a> <a class="code" href="class_matrix.html#a2d6e772e2faa6080fadd50c9a2d2b130">operator-</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; right) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;</div>
-<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;    <a class="code" href="class_matrix.html">Matrix</a>&amp; <a class="code" href="class_matrix.html#a13feaec63b337a207e70bd954956d8ba">operator+=</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; right);</div>
-<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;</div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;    <a class="code" href="class_matrix.html">Matrix</a>&amp; <a class="code" href="class_matrix.html#a42ce920a1bbf67675d4e7717f7afed35">operator-=</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; right);</div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;</div>
-<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;    <a class="code" href="class_matrix.html">Matrix</a> <a class="code" href="class_matrix.html#a6f117287672b1edcedf1cab6edaea2b5">operator*</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; right);</div>
-<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;</div>
-<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;    <span class="keyword">friend</span> <a class="code" href="class_matrix.html">Matrix</a>&amp; <a class="code" href="class_matrix.html#ad5c437f59e2afd60da8a880e8417856f">operator*=</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; obj, <span class="keywordtype">double</span> alpha);</div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;</div>
-<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;    <span class="keyword">friend</span> <a class="code" href="class_matrix.html">Matrix</a> <a class="code" href="class_matrix.html#a6f117287672b1edcedf1cab6edaea2b5">operator*</a>(<span class="keywordtype">double</span> alpha, <a class="code" href="class_matrix.html">Matrix</a>&amp; obj);</div>
-<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;    </div>
-<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;</div>
-<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;    <a class="code" href="class_matrix.html">Matrix</a>&amp; <a class="code" href="class_matrix.html#a127463de2d624abeaf5924c0f2fe798d">operator=</a>(<span class="keyword">const</span> <a class="code" href="class_matrix.html">Matrix</a>&amp; right);</div>
-<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;</div>
-<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_matrix.html#a6910c400bcff2148875ce8132baf70e9">operator==</a>(<span class="keyword">const</span> <a class="code" href="class_matrix.html">Matrix</a>&amp; right) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    <span class="comment">/* Operators */</span></div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;    <span class="keywordtype">double</span> &amp;<a class="code" href="class_matrix.html#a60596b6608bb8a51a2d79afcaf092849">operator[]</a>(<span class="keyword">const</span> <span class="keywordtype">size_t</span> sub) <span class="keyword">const</span>; <span class="comment">//overloading []</span></div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;    <a class="code" href="class_matrix.html">Matrix</a> <a class="code" href="class_matrix.html#a248b41795fe69f2591aa95f4a5dbac79">operator+</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; right) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;    <a class="code" href="class_matrix.html">Matrix</a> <a class="code" href="class_matrix.html#a2d6e772e2faa6080fadd50c9a2d2b130">operator-</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; right) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;    <a class="code" href="class_matrix.html">Matrix</a>&amp; <a class="code" href="class_matrix.html#a13feaec63b337a207e70bd954956d8ba">operator+=</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; right);</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;    <a class="code" href="class_matrix.html">Matrix</a>&amp; <a class="code" href="class_matrix.html#a42ce920a1bbf67675d4e7717f7afed35">operator-=</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; right);</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    <a class="code" href="class_matrix.html">Matrix</a> <a class="code" href="class_matrix.html#a6f117287672b1edcedf1cab6edaea2b5">operator*</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; right);</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;    <span class="keyword">friend</span> <a class="code" href="class_matrix.html">Matrix</a>&amp; <a class="code" href="class_matrix.html#ad5c437f59e2afd60da8a880e8417856f">operator*=</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; obj, <span class="keywordtype">double</span> alpha);</div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;    <span class="keyword">friend</span> <a class="code" href="class_matrix.html">Matrix</a> <a class="code" href="class_matrix.html#a6f117287672b1edcedf1cab6edaea2b5">operator*</a>(<span class="keywordtype">double</span> alpha, <a class="code" href="class_matrix.html">Matrix</a>&amp; obj);</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;    </div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;</div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;    <a class="code" href="class_matrix.html">Matrix</a>&amp; <a class="code" href="class_matrix.html#a127463de2d624abeaf5924c0f2fe798d">operator=</a>(<span class="keyword">const</span> <a class="code" href="class_matrix.html">Matrix</a>&amp; right);</div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_matrix.html#a6910c400bcff2148875ce8132baf70e9">operator==</a>(<span class="keyword">const</span> <a class="code" href="class_matrix.html">Matrix</a>&amp; right) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;</div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;    <span class="keyword">friend</span> std::ostream&amp; <a class="code" href="class_matrix.html#ae3f78084a0dd9b26068bf0e2878406ad">operator&lt;&lt;</a>(std::ostream&amp; os, <span class="keyword">const</span> <a class="code" href="class_matrix.html">Matrix</a>&amp; obj);</div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;</div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    <a class="code" href="class_matrix.html">Matrix</a> <a class="code" href="class_matrix.html#ad35c63af2aa542ef4f2a3d9b5150412c">submatrixCopy</a>(<span class="keywordtype">size_t</span> row_start, <span class="keywordtype">size_t</span> row_end, <span class="keywordtype">size_t</span> col_start, <span class="keywordtype">size_t</span> col_end);</div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;</div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;    <a class="code" href="class_matrix.html">Matrix</a> <a class="code" href="class_matrix.html#a32b765e9e9d2c46bc2f6af1674d7080a">multiplySubmatrix</a>(</div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;            <a class="code" href="class_matrix.html">Matrix</a>&amp; rhs,</div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">size_t</span> left_row_start,</div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">size_t</span> left_row_end,</div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">size_t</span> left_col_start,</div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">size_t</span> left_col_end,</div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">size_t</span> right_row_start,</div>
-<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">size_t</span> right_row_end,</div>
-<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">size_t</span> right_col_start,</div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">size_t</span> right_col_end);</div>
-<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;</div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;    <span class="keyword">friend</span> std::ostream&amp; <a class="code" href="class_matrix.html#ae3f78084a0dd9b26068bf0e2878406ad">operator&lt;&lt;</a>(std::ostream&amp; os, <span class="keyword">const</span> <a class="code" href="class_matrix.html">Matrix</a>&amp; obj);</div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;    <a class="code" href="class_matrix.html">Matrix</a> <a class="code" href="class_matrix.html#ad35c63af2aa542ef4f2a3d9b5150412c">submatrixCopy</a>(<span class="keywordtype">size_t</span> row_start, <span class="keywordtype">size_t</span> row_end, <span class="keywordtype">size_t</span> col_start, <span class="keywordtype">size_t</span> col_end);</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;</div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;    <a class="code" href="class_matrix.html">Matrix</a> <a class="code" href="class_matrix.html#a32b765e9e9d2c46bc2f6af1674d7080a">multiplySubmatrix</a>(</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;            <a class="code" href="class_matrix.html">Matrix</a>&amp; rhs,</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">size_t</span> left_row_start,</div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">size_t</span> left_row_end,</div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">size_t</span> left_col_start,</div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">size_t</span> left_col_end,</div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">size_t</span> right_row_start,</div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">size_t</span> right_row_end,</div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">size_t</span> right_col_start,</div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">size_t</span> right_col_end);</div>
 <div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;</div>
-<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;<span class="comment">     * New tentative methods</span></div>
-<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;</div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;<span class="comment">     * New tentative methods</span></div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;<span class="comment">     */</span></div>
 <div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;</div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_matrix.html#a78b473bbaefb449026e64127a17d517f">add</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; C, <span class="keywordtype">double</span> alpha, <a class="code" href="class_matrix.html">Matrix</a>&amp; A, <span class="keywordtype">double</span> gamma);</div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;</div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_matrix.html#a967b3c0361c14f7539de4712226dac76">mult</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; C, <span class="keywordtype">double</span> alpha, <a class="code" href="class_matrix.html">Matrix</a>&amp; A, <a class="code" href="class_matrix.html">Matrix</a>&amp; B, <span class="keywordtype">double</span> gamma);</div>
-<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;</div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_matrix.html#a78b473bbaefb449026e64127a17d517f">add</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; C, <span class="keywordtype">double</span> alpha, <a class="code" href="class_matrix.html">Matrix</a>&amp; A, <span class="keywordtype">double</span> gamma);</div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;</div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_matrix.html#a967b3c0361c14f7539de4712226dac76">mult</a>(<a class="code" href="class_matrix.html">Matrix</a>&amp; C, <span class="keywordtype">double</span> alpha, <a class="code" href="class_matrix.html">Matrix</a>&amp; A, <a class="code" href="class_matrix.html">Matrix</a>&amp; B, <span class="keywordtype">double</span> gamma);</div>
 <div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;</div>
 <div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;</div>
 <div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;</div>
 <div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;</div>
 <div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;</div>
 <div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;</div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;</div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_matrix.html#a2dba13c45127354c9f75ef576f49269b">Matrix</a>(<span class="keywordtype">bool</span> shallow);</div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;</div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;    <span class="comment">/* MatrixFactory is allowed to access these private fields! */</span></div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_matrix_factory.html">MatrixFactory</a>;</div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_cholesky_factorization.html">CholeskyFactorization</a>;</div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_l_d_l_factorization.html">LDLFactorization</a>;</div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_s___l_d_l_factorization.html">S_LDLFactorization</a>;</div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_matrix_writer.html">MatrixWriter</a>;</div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;</div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;    <span class="keywordtype">size_t</span> m_nrows; </div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;    <span class="keywordtype">size_t</span> m_ncols; </div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;    <span class="keywordtype">bool</span> m_transpose; </div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;    <a class="code" href="class_matrix.html#a5269c84de25f7f2ac7d05efcffde1046">MatrixType</a> m_type; </div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;    <span class="comment">/* For dense matrices: */</span></div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;</div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;    <span class="keywordtype">size_t</span> m_dataLength; </div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;    <span class="keywordtype">double</span> *m_data; </div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;    <span class="keywordtype">bool</span> m_delete_data; </div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;    <span class="comment">/* CSparse members */</span></div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;    cholmod_triplet *m_triplet; </div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;    cholmod_sparse *m_sparse; </div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;    cholmod_dense *m_dense; </div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;    <span class="comment">/* SINGLETON CHOLMOD HANDLE */</span></div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;    <span class="keyword">static</span> cholmod_common *ms_singleton; </div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;    <span class="keywordtype">void</span> _createSparse();</div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_matrix.html#a2dba13c45127354c9f75ef576f49269b">Matrix</a>(<span class="keywordtype">bool</span> shallow);</div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;    <span class="comment">/* MatrixFactory is allowed to access these private fields! */</span></div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_matrix_factory.html">MatrixFactory</a>;</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_cholesky_factorization.html">CholeskyFactorization</a>;</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_l_d_l_factorization.html">LDLFactorization</a>;</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_s___l_d_l_factorization.html">S_LDLFactorization</a>;</div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_matrix_writer.html">MatrixWriter</a>;</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;</div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;    <span class="keywordtype">size_t</span> m_nrows; </div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;    <span class="keywordtype">size_t</span> m_ncols; </div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;    <span class="keywordtype">bool</span> m_transpose; </div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;    <a class="code" href="class_matrix.html#a5269c84de25f7f2ac7d05efcffde1046">MatrixType</a> m_type; </div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;    <span class="comment">/* For dense matrices: */</span></div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;</div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;    <span class="keywordtype">size_t</span> m_dataLength; </div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;    <span class="keywordtype">double</span> *m_data; </div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;    <span class="keywordtype">bool</span> m_delete_data; </div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;    <span class="comment">/* CSparse members */</span></div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;    cholmod_triplet *m_triplet; </div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;    cholmod_sparse *m_sparse; </div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;    cholmod_dense *m_dense; </div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;    <span class="comment">/* SINGLETON CHOLMOD HANDLE */</span></div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;    <span class="keyword">static</span> cholmod_common *ms_singleton; </div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;    <span class="keywordtype">void</span> _createSparse();</div>
 <div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;    <span class="keywordtype">void</span> _createTriplet();</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;</div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> init(<span class="keywordtype">size_t</span> nrows, <span class="keywordtype">size_t</span> ncols, <a class="code" href="class_matrix.html#a5269c84de25f7f2ac7d05efcffde1046">MatrixType</a> matrixType);</div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;</div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> indexWithinBounds(<span class="keywordtype">size_t</span> i, <span class="keywordtype">size_t</span> j) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;</div>
-<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;    <span class="keyword">inline</span> <a class="code" href="class_matrix.html">Matrix</a> multiplyLeftDense(<span class="keyword">const</span> <a class="code" href="class_matrix.html">Matrix</a>&amp; right) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;</div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;    <span class="keyword">inline</span> <a class="code" href="class_matrix.html">Matrix</a> multiplyLeftDiagonal(<span class="keyword">const</span> <a class="code" href="class_matrix.html">Matrix</a>&amp; right) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;</div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;    <span class="keyword">inline</span> <a class="code" href="class_matrix.html">Matrix</a> multiplyLeftSymmetric(<span class="keyword">const</span> <a class="code" href="class_matrix.html">Matrix</a>&amp; right) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;</div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;    <span class="keyword">inline</span> <a class="code" href="class_matrix.html">Matrix</a> multiplyLeftSparse(<a class="code" href="class_matrix.html">Matrix</a>&amp; right);</div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;</div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;    <span class="keywordtype">void</span> _createTriplet();</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;</div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> init(<span class="keywordtype">size_t</span> nrows, <span class="keywordtype">size_t</span> ncols, <a class="code" href="class_matrix.html#a5269c84de25f7f2ac7d05efcffde1046">MatrixType</a> matrixType);</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;</div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> indexWithinBounds(<span class="keywordtype">size_t</span> i, <span class="keywordtype">size_t</span> j) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;</div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;    <span class="keyword">inline</span> <a class="code" href="class_matrix.html">Matrix</a> multiplyLeftDense(<span class="keyword">const</span> <a class="code" href="class_matrix.html">Matrix</a>&amp; right) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;</div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;    <span class="keyword">inline</span> <a class="code" href="class_matrix.html">Matrix</a> multiplyLeftDiagonal(<span class="keyword">const</span> <a class="code" href="class_matrix.html">Matrix</a>&amp; right) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;</div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;    <span class="keyword">inline</span> <a class="code" href="class_matrix.html">Matrix</a> multiplyLeftSymmetric(<span class="keyword">const</span> <a class="code" href="class_matrix.html">Matrix</a>&amp; right) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;</div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;    <span class="keyword">inline</span> <a class="code" href="class_matrix.html">Matrix</a> multiplyLeftSparse(<a class="code" href="class_matrix.html">Matrix</a>&amp; right);</div>
 <div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;</div>
 <div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;</div>
 <div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;</div>
-<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;    <span class="keywordtype">void</span> domm(<span class="keyword">const</span> <a class="code" href="class_matrix.html">Matrix</a> &amp;right, <a class="code" href="class_matrix.html">Matrix</a> &amp;result) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;</div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> domm(<a class="code" href="class_matrix.html">Matrix</a>&amp; C, <span class="keywordtype">double</span> alpha, <a class="code" href="class_matrix.html">Matrix</a>&amp; A, <a class="code" href="class_matrix.html">Matrix</a>&amp; B, <span class="keywordtype">double</span> gamma);</div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;</div>
-<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;    <span class="keyword">enum</span> SparseMatrixStorageType {</div>
-<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;        CHOLMOD_TYPE_TRIPLET = 444,</div>
-<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;        CHOLMOD_TYPE_SPARSE = 555,</div>
-<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;        CHOLMOD_TYPE_DENSE = 666</div>
-<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;    };</div>
-<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;</div>
-<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;    SparseMatrixStorageType m_sparseStorageType;</div>
-<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;</div>
-<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">double</span> quadFromTriplet(<span class="keyword">const</span> <a class="code" href="class_matrix.html">Matrix</a>&amp; x) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;</div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;</div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;    <span class="keywordtype">void</span> domm(<span class="keyword">const</span> <a class="code" href="class_matrix.html">Matrix</a> &amp;right, <a class="code" href="class_matrix.html">Matrix</a> &amp;result) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;</div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> domm(<a class="code" href="class_matrix.html">Matrix</a>&amp; C, <span class="keywordtype">double</span> alpha, <a class="code" href="class_matrix.html">Matrix</a>&amp; A, <a class="code" href="class_matrix.html">Matrix</a>&amp; B, <span class="keywordtype">double</span> gamma);</div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;</div>
+<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;    <span class="keyword">enum</span> SparseMatrixStorageType {</div>
+<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;        CHOLMOD_TYPE_TRIPLET = 444,</div>
+<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;        CHOLMOD_TYPE_SPARSE = 555,</div>
+<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;        CHOLMOD_TYPE_DENSE = 666</div>
+<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;    };</div>
+<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;</div>
+<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;    SparseMatrixStorageType m_sparseStorageType;</div>
+<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;</div>
+<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">double</span> quadFromTriplet(<span class="keyword">const</span> <a class="code" href="class_matrix.html">Matrix</a>&amp; x) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;</div>
-<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> _addIJ(<span class="keywordtype">size_t</span> i, <span class="keywordtype">size_t</span> j, <span class="keywordtype">double</span> v);</div>
-<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> _addIJ(<span class="keywordtype">size_t</span> i, <span class="keywordtype">size_t</span> j, <span class="keywordtype">double</span> v, <span class="keywordtype">double</span> gamma);</div>
-<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;</div>
-<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> vectorAdd(<span class="keywordtype">size_t</span> len, <span class="keywordtype">double</span> * pV1, <span class="keyword">const</span> <span class="keywordtype">double</span> * pV2);</div>
-<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;</div>
+<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;</div>
+<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> _addIJ(<span class="keywordtype">size_t</span> i, <span class="keywordtype">size_t</span> j, <span class="keywordtype">double</span> v);</div>
+<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> _addIJ(<span class="keywordtype">size_t</span> i, <span class="keywordtype">size_t</span> j, <span class="keywordtype">double</span> v, <span class="keywordtype">double</span> gamma);</div>
+<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;</div>
+<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> vectorAdd(<span class="keywordtype">size_t</span> len, <span class="keywordtype">double</span> * pV1, <span class="keyword">const</span> <span class="keywordtype">double</span> * pV2);</div>
 <div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;</div>
-<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> generic_add_helper_left_dense(<a class="code" href="class_matrix.html">Matrix</a>&amp; C, <span class="keywordtype">double</span> alpha, <a class="code" href="class_matrix.html">Matrix</a>&amp; A, <span class="keywordtype">double</span> gamma);</div>
-<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> generic_add_helper_left_symmetric(<a class="code" href="class_matrix.html">Matrix</a>&amp; C, <span class="keywordtype">double</span> alpha, <a class="code" href="class_matrix.html">Matrix</a>&amp; A, <span class="keywordtype">double</span> gamma);</div>
-<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> generic_add_helper_left_sparse(<a class="code" href="class_matrix.html">Matrix</a>&amp; C, <span class="keywordtype">double</span> alpha, <a class="code" href="class_matrix.html">Matrix</a>&amp; A, <span class="keywordtype">double</span> gamma);</div>
-<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> generic_add_helper_left_diagonal(<a class="code" href="class_matrix.html">Matrix</a>&amp; C, <span class="keywordtype">double</span> alpha, <a class="code" href="class_matrix.html">Matrix</a>&amp; A, <span class="keywordtype">double</span> gamma);</div>
-<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> generic_add_helper_left_lower_tri(<a class="code" href="class_matrix.html">Matrix</a>&amp; C, <span class="keywordtype">double</span> alpha, <a class="code" href="class_matrix.html">Matrix</a>&amp; A, <span class="keywordtype">double</span> gamma);</div>
-<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;</div>
-<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> multiply_helper_left_dense(<a class="code" href="class_matrix.html">Matrix</a>&amp; C, <span class="keywordtype">double</span> alpha, <a class="code" href="class_matrix.html">Matrix</a>&amp; A, <a class="code" href="class_matrix.html">Matrix</a>&amp; B, <span class="keywordtype">double</span> gamma);</div>
-<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> multiply_helper_left_sparse(<a class="code" href="class_matrix.html">Matrix</a>&amp; C, <span class="keywordtype">double</span> alpha, <a class="code" href="class_matrix.html">Matrix</a>&amp; A, <a class="code" href="class_matrix.html">Matrix</a>&amp; B, <span class="keywordtype">double</span> gamma);</div>
-<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> multiply_helper_left_diagonal(<a class="code" href="class_matrix.html">Matrix</a>&amp; C, <span class="keywordtype">double</span> alpha, <a class="code" href="class_matrix.html">Matrix</a>&amp; A, <a class="code" href="class_matrix.html">Matrix</a>&amp; B, <span class="keywordtype">double</span> gamma);</div>
-<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> multiply_helper_left_symmetric(<a class="code" href="class_matrix.html">Matrix</a>&amp; C, <span class="keywordtype">double</span> alpha, <a class="code" href="class_matrix.html">Matrix</a>&amp; A, <a class="code" href="class_matrix.html">Matrix</a>&amp; B, <span class="keywordtype">double</span> gamma);</div>
-<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;</div>
-<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;};</div>
-<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;</div>
-<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* MATRIX_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;</div>
+<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> generic_add_helper_left_dense(<a class="code" href="class_matrix.html">Matrix</a>&amp; C, <span class="keywordtype">double</span> alpha, <a class="code" href="class_matrix.html">Matrix</a>&amp; A, <span class="keywordtype">double</span> gamma);</div>
+<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> generic_add_helper_left_symmetric(<a class="code" href="class_matrix.html">Matrix</a>&amp; C, <span class="keywordtype">double</span> alpha, <a class="code" href="class_matrix.html">Matrix</a>&amp; A, <span class="keywordtype">double</span> gamma);</div>
+<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> generic_add_helper_left_sparse(<a class="code" href="class_matrix.html">Matrix</a>&amp; C, <span class="keywordtype">double</span> alpha, <a class="code" href="class_matrix.html">Matrix</a>&amp; A, <span class="keywordtype">double</span> gamma);</div>
+<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> generic_add_helper_left_diagonal(<a class="code" href="class_matrix.html">Matrix</a>&amp; C, <span class="keywordtype">double</span> alpha, <a class="code" href="class_matrix.html">Matrix</a>&amp; A, <span class="keywordtype">double</span> gamma);</div>
+<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> generic_add_helper_left_lower_tri(<a class="code" href="class_matrix.html">Matrix</a>&amp; C, <span class="keywordtype">double</span> alpha, <a class="code" href="class_matrix.html">Matrix</a>&amp; A, <span class="keywordtype">double</span> gamma);</div>
+<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;</div>
+<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> multiply_helper_left_dense(<a class="code" href="class_matrix.html">Matrix</a>&amp; C, <span class="keywordtype">double</span> alpha, <a class="code" href="class_matrix.html">Matrix</a>&amp; A, <a class="code" href="class_matrix.html">Matrix</a>&amp; B, <span class="keywordtype">double</span> gamma);</div>
+<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> multiply_helper_left_sparse(<a class="code" href="class_matrix.html">Matrix</a>&amp; C, <span class="keywordtype">double</span> alpha, <a class="code" href="class_matrix.html">Matrix</a>&amp; A, <a class="code" href="class_matrix.html">Matrix</a>&amp; B, <span class="keywordtype">double</span> gamma);</div>
+<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> multiply_helper_left_diagonal(<a class="code" href="class_matrix.html">Matrix</a>&amp; C, <span class="keywordtype">double</span> alpha, <a class="code" href="class_matrix.html">Matrix</a>&amp; A, <a class="code" href="class_matrix.html">Matrix</a>&amp; B, <span class="keywordtype">double</span> gamma);</div>
+<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> multiply_helper_left_symmetric(<a class="code" href="class_matrix.html">Matrix</a>&amp; C, <span class="keywordtype">double</span> alpha, <a class="code" href="class_matrix.html">Matrix</a>&amp; A, <a class="code" href="class_matrix.html">Matrix</a>&amp; B, <span class="keywordtype">double</span> gamma);</div>
+<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;</div>
+<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;};</div>
+<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;</div>
+<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* MATRIX_H */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="class_s___l_d_l_factorization_html"><div class="ttname"><a href="class_s___l_d_l_factorization.html">S_LDLFactorization</a></div><div class="ttdoc">LDL factorization of A&#39;A+bI. </div><div class="ttdef"><b>Definition:</b> S_LDLFactorization.h:83</div></div>
 <div class="ttc" id="class_matrix_html_a2d6e772e2faa6080fadd50c9a2d2b130"><div class="ttname"><a href="class_matrix.html#a2d6e772e2faa6080fadd50c9a2d2b130">Matrix::operator-</a></div><div class="ttdeci">Matrix operator-(Matrix &amp;right) const </div><div class="ttdef"><b>Definition:</b> Matrix.cpp:599</div></div>
 <div class="ttc" id="class_matrix_html_a5269c84de25f7f2ac7d05efcffde1046a1dda72be4635b65b8d689ec7583239a1"><div class="ttname"><a href="class_matrix.html#a5269c84de25f7f2ac7d05efcffde1046a1dda72be4635b65b8d689ec7583239a1">Matrix::MATRIX_SYMMETRIC</a></div><div class="ttdef"><b>Definition:</b> Matrix.h:104</div></div>
@@ -390,6 +390,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="class_matrix_writer_html"><div class="ttname"><a href="class_matrix_writer.html">MatrixWriter</a></div><div class="ttdef"><b>Definition:</b> MatrixWriter.h:43</div></div>
 <div class="ttc" id="class_matrix_html_a6750126006caf8bcf092eaac0e01fe08"><div class="ttname"><a href="class_matrix.html#a6750126006caf8bcf092eaac0e01fe08">Matrix::isEmpty</a></div><div class="ttdeci">bool isEmpty() const </div><div class="ttdef"><b>Definition:</b> Matrix.cpp:171</div></div>
 <div class="ttc" id="class_matrix_html_a78b473bbaefb449026e64127a17d517f"><div class="ttname"><a href="class_matrix.html#a78b473bbaefb449026e64127a17d517f">Matrix::add</a></div><div class="ttdeci">static int add(Matrix &amp;C, double alpha, Matrix &amp;A, double gamma)</div><div class="ttdef"><b>Definition:</b> Matrix.cpp:1199</div></div>
+<div class="ttc" id="class_matrix_html_aaa6a63fca46278cf9797ef349cd7b782"><div class="ttname"><a href="class_matrix.html#aaa6a63fca46278cf9797ef349cd7b782">Matrix::norm_fro</a></div><div class="ttdeci">double norm_fro()</div><div class="ttdef"><b>Definition:</b> Matrix.cpp:334</div></div>
 <div class="ttc" id="class_matrix_html_a67ff18ea6f0710847b5828361a155c12"><div class="ttname"><a href="class_matrix.html#a67ff18ea6f0710847b5828361a155c12">Matrix::length</a></div><div class="ttdeci">size_t length() const </div><div class="ttdef"><b>Definition:</b> Matrix.cpp:183</div></div>
 <div class="ttc" id="class_matrix_html_a32b765e9e9d2c46bc2f6af1674d7080a"><div class="ttname"><a href="class_matrix.html#a32b765e9e9d2c46bc2f6af1674d7080a">Matrix::multiplySubmatrix</a></div><div class="ttdeci">Matrix multiplySubmatrix(Matrix &amp;rhs, const size_t left_row_start, const size_t left_row_end, const size_t left_col_start, const size_t left_col_end, const size_t right_row_start, const size_t right_row_end, const size_t right_col_start, const size_t right_col_end)</div><div class="ttdef"><b>Definition:</b> Matrix.cpp:1111</div></div>
 <div class="ttc" id="class_matrix_html_a5269c84de25f7f2ac7d05efcffde1046a8201b6f37bd6e24656d4a7a6778caaab"><div class="ttname"><a href="class_matrix.html#a5269c84de25f7f2ac7d05efcffde1046a8201b6f37bd6e24656d4a7a6778caaab">Matrix::MATRIX_DIAGONAL</a></div><div class="ttdef"><b>Definition:</b> Matrix.h:102</div></div>
@@ -409,12 +410,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="class_matrix_html_a13feaec63b337a207e70bd954956d8ba"><div class="ttname"><a href="class_matrix.html#a13feaec63b337a207e70bd954956d8ba">Matrix::operator+=</a></div><div class="ttdeci">Matrix &amp; operator+=(Matrix &amp;right)</div><div class="ttdef"><b>Definition:</b> Matrix.cpp:558</div></div>
 <div class="ttc" id="class_matrix_html_a5269c84de25f7f2ac7d05efcffde1046"><div class="ttname"><a href="class_matrix.html#a5269c84de25f7f2ac7d05efcffde1046">Matrix::MatrixType</a></div><div class="ttdeci">MatrixType</div><div class="ttdef"><b>Definition:</b> Matrix.h:99</div></div>
 <div class="ttc" id="class_matrix_html_a1630a647355c737bcf17e416e6a72018aa7a4271dae437af4d58bf01192b3c08b"><div class="ttname"><a href="class_matrix.html#a1630a647355c737bcf17e416e6a72018aa7a4271dae437af4d58bf01192b3c08b">Matrix::SPARSE_UNSYMMETRIC</a></div><div class="ttdef"><b>Definition:</b> Matrix.h:111</div></div>
-<div class="ttc" id="class_matrix_html_af2037979913d8ff3fda87484c275a129"><div class="ttname"><a href="class_matrix.html#af2037979913d8ff3fda87484c275a129">Matrix::norm_fro_sq</a></div><div class="ttdeci">double norm_fro_sq()</div><div class="ttdef"><b>Definition:</b> Matrix.cpp:334</div></div>
 <div class="ttc" id="class_matrix_html_ae1329328637e15c238ff88d8bd002a90"><div class="ttname"><a href="class_matrix.html#ae1329328637e15c238ff88d8bd002a90">Matrix::getNrows</a></div><div class="ttdeci">size_t getNrows() const </div><div class="ttdef"><b>Definition:</b> Matrix.cpp:163</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 17 2016 14:47:37 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 23 2016 18:27:28 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

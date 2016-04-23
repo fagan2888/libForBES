@@ -98,6 +98,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="class_f_b_cache-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">FBCache Class Reference<div class="ingroups"><a class="el" href="group___f_b_solver-group.html">Solver</a></div></div>  </div>
@@ -117,6 +118,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:abe9339ea922371b4dc198208290f87e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2df713cad0efbefb9bc5a45762ef9520"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_b_cache.html#a2df713cad0efbefb9bc5a45762ef9520">set_point</a> (<a class="el" href="class_matrix.html">Matrix</a> &amp;x)</td></tr>
 <tr class="separator:a2df713cad0efbefb9bc5a45762ef9520"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8e2d32b25ee38717a5290afbf4c71ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_b_cache.html#ab8e2d32b25ee38717a5290afbf4c71ce">set_direction</a> (<a class="el" href="class_matrix.html">Matrix</a> &amp;d)</td></tr>
+<tr class="separator:ab8e2d32b25ee38717a5290afbf4c71ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a837c7ae1215f3f3ab58cda956b756500"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_matrix.html">Matrix</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_b_cache.html#a837c7ae1215f3f3ab58cda956b756500">get_direction</a> ()</td></tr>
+<tr class="separator:a837c7ae1215f3f3ab58cda956b756500"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a687b045cff0feca570a62ede44365c27"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_matrix.html">Matrix</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_b_cache.html#a687b045cff0feca570a62ede44365c27">get_point</a> ()</td></tr>
 <tr class="separator:a687b045cff0feca570a62ede44365c27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a17518af4f69d3081449a21ffee5adf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_matrix.html">Matrix</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_b_cache.html#a3a17518af4f69d3081449a21ffee5adf">get_forward_step</a> (double gamma)</td></tr>
@@ -133,8 +138,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aac11960fb56fbe6953ab929f3ddb0f5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad856f5a13591d28dd4730a15d1b389d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_matrix.html">Matrix</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_b_cache.html#ad856f5a13591d28dd4730a15d1b389d6">get_grad_FBE</a> (double gamma)</td></tr>
 <tr class="separator:ad856f5a13591d28dd4730a15d1b389d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43fe44760b96de4eb4291502dba1a2fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_matrix.html">Matrix</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_b_cache.html#a43fe44760b96de4eb4291502dba1a2fd">get_gradf</a> () const </td></tr>
+<tr class="separator:a43fe44760b96de4eb4291502dba1a2fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a474203848b40a41a01487f11325db617"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_b_cache.html#a474203848b40a41a01487f11325db617">cache_status</a> () const </td></tr>
+<tr class="separator:a474203848b40a41a01487f11325db617"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19625dcc982647ad0540a1bbc676cca6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_b_cache.html#a19625dcc982647ad0540a1bbc676cca6">reset</a> ()</td></tr>
 <tr class="separator:a19625dcc982647ad0540a1bbc676cca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9bcaa174487da95399fc522abbae89e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_b_cache.html#af9bcaa174487da95399fc522abbae89e">extrapolate_fbe</a> (double tau, double gamma, double &amp;fbe)</td></tr>
+<tr class="separator:af9bcaa174487da95399fc522abbae89e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -153,6 +164,14 @@ Static Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
+<tr class="memitem:a45daef367b114f70f158ed3ed1830d58"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_b_cache.html#a45daef367b114f70f158ed3ed1830d58">extrapolate_f1</a> (double tau, double &amp;fxtd)</td></tr>
+<tr class="separator:a45daef367b114f70f158ed3ed1830d58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4e88cd653fb4c4c200f6d74e2e2a152"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_b_cache.html#ab4e88cd653fb4c4c200f6d74e2e2a152">extrapolate_f</a> (double tau, double &amp;fxtd)</td></tr>
+<tr class="separator:ab4e88cd653fb4c4c200f6d74e2e2a152"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46cb71000e838d458ee1f8185190b50d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_b_cache.html#a46cb71000e838d458ee1f8185190b50d">extrapolate_gradf</a> (double tau, <a class="el" href="class_matrix.html">Matrix</a> &amp;grad_xtd)</td></tr>
+<tr class="separator:a46cb71000e838d458ee1f8185190b50d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c5d60e9326e7d297b38899b99abc9c0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_b_cache.html#a3c5d60e9326e7d297b38899b99abc9c0">xtd</a> (double tau, <a class="el" href="class_matrix.html">Matrix</a> &amp;xtd_matrix)</td></tr>
+<tr class="separator:a3c5d60e9326e7d297b38899b99abc9c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab2874fa463b0c441ae2093f4de5f34d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_b_cache.html#aab2874fa463b0c441ae2093f4de5f34d">update_eval_f</a> (bool order_grad_f2)</td></tr>
 <tr class="separator:aab2874fa463b0c441ae2093f4de5f34d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a619455e76309c135ad7d22cd1606f1d7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_b_cache.html#a619455e76309c135ad7d22cd1606f1d7">update_forward_step</a> (double gamma)</td></tr>
@@ -165,6 +184,12 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:ae5862c60c6a668fe90c91b20081a0186"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e0d363d14c4dac6f641aa30cc50bee5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_b_cache.html#a8e0d363d14c4dac6f641aa30cc50bee5">reset</a> (int status)</td></tr>
 <tr class="separator:a8e0d363d14c4dac6f641aa30cc50bee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a5245ae99f9459a762b13aac7fd4d47cf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5245ae99f9459a762b13aac7fd4d47cf"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>TestFBCache</b></td></tr>
+<tr class="separator:a5245ae99f9459a762b13aac7fd4d47cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Low-level forward-backward operations management class. </p>
@@ -237,6 +262,242 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a474203848b40a41a01487f11325db617"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int FBCache::cache_status </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The internal status of the cache.</p>
+<ul>
+<li><a class="el" href="class_f_b_cache.html#a0d67e145ba6b0222ea15a315ba3371b3">STATUS_NONE</a></li>
+<li><a class="el" href="class_f_b_cache.html#a648787c2da4c8cf9645417bb9423def5">STATUS_EVALF</a></li>
+<li><a class="el" href="class_f_b_cache.html#ad88c012431d3153f467285374b9be49d">STATUS_FORWARD</a></li>
+<li><a class="el" href="class_f_b_cache.html#ae41ced0b5e19e5f3cfdb382d75703aec">STATUS_FORWARDBACKWARD</a></li>
+<li><a class="el" href="class_f_b_cache.html#a0b27de4a04bb3227ebf0e8c0c4ea7035">STATUS_FBE</a></li>
+<li><a class="el" href="class_f_b_cache.html#af8c4b0ac1a7f0e7469a79f75c26a59ef">STATUS_GRAD_FBE</a> <dl class="section return"><dt>Returns</dt><dd>status of the cache </dd></dl>
+</li>
+</ul>
+
+</div>
+</div>
+<a class="anchor" id="ab4e88cd653fb4c4c200f6d74e2e2a152"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int FBCache::extrapolate_f </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tau</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>fxtd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Computes \(f(x+\tau d)\) for the stored values of \(x\) and \(d\).</p>
+<p>It uses the formula</p>
+<p class="formulaDsp">
+\[ f(x+\tau d) = f_1(r_1(x+\tau d)) + \langle l, x\rangle + \tau \langle l, d\rangle + f_2(r_2(x) + \tau v), \]
+</p>
+<p>where \(v=L_2 d\) and \(f_1(r_1(x+\tau d))\) is computed using <a class="el" href="class_f_b_cache.html#a45daef367b114f70f158ed3ed1830d58">extrapolate_f1</a>.</p>
+<dl class="section post"><dt>Postcondition</dt><dd>After successful completion, the <a class="el" href="class_f_b_cache.html#a474203848b40a41a01487f11325db617">status </a> of the cache will be at least <a class="el" href="class_f_b_cache.html#a648787c2da4c8cf9645417bb9423def5">STATUS_EVALF</a>.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tau</td><td>scalar parameter \(\tau\) </td></tr>
+    <tr><td class="paramname">fxtd</td><td>result \(f(x+\tau d)\) for the given \(\tau\) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>status code: returns <a class="el" href="class_for_b_e_s_utils.html#a3778b88ef7ec8a5024eec49a0d7a656d">STATUS_OK</a> if the method has succeeded, <a class="el" href="class_for_b_e_s_utils.html#a0af987ab54a1718c518085bcc8972b80">STATUS_CACHE_NO_DIRECTION</a> if no direction \(d\) is provided.</dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_f_b_cache.html#a45daef367b114f70f158ed3ed1830d58">extrapolate_f1</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a45daef367b114f70f158ed3ed1830d58"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int FBCache::extrapolate_f1 </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tau</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>fxtd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Computes \(f_1(r_1(x+\tau d))\) for the stored values of \(x\) and \(d\).</p>
+<p>It makes use of the formula</p>
+<p class="formulaDsp">
+\[ f_1(r_1(x+\tau d)) = f_1(r_1(x)) + \beta_1 \tau + \beta_2 \tau^2, \]
+</p>
+<p>where \(\beta_1 = \langle u, (\nabla f_1)(r_1(x))\), \(\beta_2 = u&#39;Qu/2\) and \(u=L_1 d\).</p>
+<dl class="section post"><dt>Postcondition</dt><dd>After successful completion, the <a class="el" href="class_f_b_cache.html#a474203848b40a41a01487f11325db617">status </a> of the cache will be at least <a class="el" href="class_f_b_cache.html#a648787c2da4c8cf9645417bb9423def5">STATUS_EVALF</a>.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tau</td><td>parameter \(\tau\) </td></tr>
+    <tr><td class="paramname">fxtd</td><td>result \(f_1(r_1(x+\tau d))\) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>status code: returns <a class="el" href="class_for_b_e_s_utils.html#a3778b88ef7ec8a5024eec49a0d7a656d">STATUS_OK</a> if the method has succeeded, <a class="el" href="class_for_b_e_s_utils.html#a0af987ab54a1718c518085bcc8972b80">STATUS_CACHE_NO_DIRECTION</a> if no direction \(d\) is provided, and <a class="el" href="class_for_b_e_s_utils.html#a7f764569f67297a5b45b249fbfd6dd57">STATUS_CACHE_NO_QUADRATIC</a> if there is no quadratic function \(f_1\) defined in which case, it sets <code>fxtd</code> to <code>0.0</code>.</dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_f_b_cache.html#ab4e88cd653fb4c4c200f6d74e2e2a152">extrapolate_f</a> </dd>
+<dd>
+<a class="el" href="class_f_b_cache.html#a474203848b40a41a01487f11325db617">cache_status</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af9bcaa174487da95399fc522abbae89e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int FBCache::extrapolate_fbe </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tau</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>gamma</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>fbe</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Computes the value of \(\varphi_\gamma(x+\tau d)\) for the cached values of \(x\) (using <a class="el" href="class_f_b_cache.html#a2df713cad0efbefb9bc5a45762ef9520">set_point</a>) and \(d\) (using <a class="el" href="class_f_b_cache.html#ab8e2d32b25ee38717a5290afbf4c71ce">set_direction</a>).</p>
+<p>The extrapolation is based on the formula</p>
+<p class="formulaDsp">
+\[ \varphi_\gamma(x+\tau d) = f(x+\tau d) + g(z(x+\tau d)) + \frac{1}{2\gamma}\|R_\gamma(x+\tau d)\|^2 - \langle \nabla f(x+\tau d), R_\gamma(x+\tau d) \rangle \]
+</p>
+<p>where \(z(x+\tau d) = \mathrm{prox}_{\gamma g}(y(x+\tau d))\) and \(y(x+\tau d) = x + \tau d - \gamma \nabla f(x+\tau d)\) and \(R_\gamma(x+\tau d) = x+\tau d - z(x+\tau d)\).</p>
+<p>The values of \(f(x+\tau d)\) and \(\nabla f(x+\tau d)\) are computed efficiently using <a class="el" href="class_f_b_cache.html#ab4e88cd653fb4c4c200f6d74e2e2a152">extrapolate_f</a> and <a class="el" href="class_f_b_cache.html#a46cb71000e838d458ee1f8185190b50d">extrapolate_gradf</a>.</p>
+<dl class="section pre"><dt>Precondition</dt><dd>it is necessary that you provide a direction \(d\) before you invoke this method.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tau</td><td>parameter \(\tau\) </td></tr>
+    <tr><td class="paramname">gamma</td><td>parameter \(\gamma\) of the FBE </td></tr>
+    <tr><td class="paramname">fbe</td><td>(output) value of \(\varphi_\gamma(x+\tau d)\) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>status code: <a class="el" href="class_for_b_e_s_utils.html#a3778b88ef7ec8a5024eec49a0d7a656d">STATUS_OK</a> on success, <a class="el" href="class_for_b_e_s_utils.html#a0af987ab54a1718c518085bcc8972b80">STATUS_CACHE_NO_DIRECTION</a> if no direction is available. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a46cb71000e838d458ee1f8185190b50d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int FBCache::extrapolate_gradf </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tau</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_matrix.html">Matrix</a> &amp;&#160;</td>
+          <td class="paramname"><em>grad_xtd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Computes the gradient of \(f\) at \(x+\tau d\) that is \(\nabla f(x+\tau d)\) for the stored values of \(x\) and \(d\).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tau</td><td>scalar parameter \(\tau\) </td></tr>
+    <tr><td class="paramname">grad_xtd</td><td>the resulting gradient </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>status code: returns <a class="el" href="class_for_b_e_s_utils.html#a3778b88ef7ec8a5024eec49a0d7a656d">STATUS_OK</a> if the method has succeeded, <a class="el" href="class_for_b_e_s_utils.html#a0af987ab54a1718c518085bcc8972b80">STATUS_CACHE_NO_DIRECTION</a> if no direction \(d\) is provided. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a837c7ae1215f3f3ab58cda956b756500"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_matrix.html">Matrix</a> * FBCache::get_direction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns a pointer to the currently stored direction </p>
+<dl class="section return"><dt>Returns</dt><dd>internally stored direction </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a2253007a954120a848fd32b4cfaac8a9"></a>
 <div class="memitem">
 <div class="memproto">
@@ -373,6 +634,26 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a43fe44760b96de4eb4291502dba1a2fd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_matrix.html">Matrix</a> * FBCache::get_gradf </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns the gradient of \(f\).</p>
+<dl class="section note"><dt>Note</dt><dd>Note that this matrix may have not been computed - especially if the <a class="el" href="class_f_b_cache.html#a474203848b40a41a01487f11325db617">status</a> of the cache is smaller than <a class="el" href="class_f_b_cache.html#ad88c012431d3153f467285374b9be49d">STATUS_FORWARD</a>.</dd>
+<dd>
+To compute the gradient of f call <a class="el" href="class_f_b_cache.html#a3a17518af4f69d3081449a21ffee5adf">get_forward_step</a>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to cached gradient of <code>f</code>. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="afbdab3f7a8279f6ccb93ee53a9961b28"></a>
 <div class="memitem">
 <div class="memproto">
@@ -433,7 +714,7 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Used to set the internal status of the object at a specific value. For example, if the point at which to evaluate operations is changed (using set_point) then the status is reset to <code></code>  <a class="el" href="class_f_b_cache.html#a0d67e145ba6b0222ea15a315ba3371b3">STATUS_NONE</a>; if <code>gamma</code> instead is changed, the status is reset to <code></code>  <a class="el" href="class_f_b_cache.html#a648787c2da4c8cf9645417bb9423def5">STATUS_EVALF</a>. In fact, the value of f is independent of gamma, and is not to be recomputed.</p>
+<p>Used to set the internal status of the object at a specific value. For example, if the point at which to evaluate operations is changed (using set_point) then the status is reset to <code><a class="el" href="class_f_b_cache.html#a0d67e145ba6b0222ea15a315ba3371b3">STATUS_NONE</a></code>; if <code>gamma</code> instead is changed, the status is reset to <code><a class="el" href="class_f_b_cache.html#a648787c2da4c8cf9645417bb9423def5">STATUS_EVALF</a></code>. In fact, the value of f is independent of gamma, and is not to be recomputed.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">status</td><td>a status code (see static private const members) </td></tr>
@@ -455,7 +736,31 @@ Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Erases the internal status of the cache, i.e., sets its status to <a class="el" href="class_f_b_cache.html#a0d67e145ba6b0222ea15a315ba3371b3">STATUS_NONE</a>. This means that any getter will require to recompute all steps. </p>
+<p>Erases the internal status of the cache, i.e., sets its status to <a class="el" href="class_f_b_cache.html#a0d67e145ba6b0222ea15a315ba3371b3">STATUS_NONE</a>. This means that any getter will require to recompute everything. steps. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab8e2d32b25ee38717a5290afbf4c71ce"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FBCache::set_direction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_matrix.html">Matrix</a> &amp;&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Passes a new direction to the current modifiable cache which is cached internally.</p>
+<dl class="section note"><dt>Note</dt><dd>Before this method is invoked for the first time, no memory is allocated for the direction.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td>direction </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -642,6 +947,49 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a3c5d60e9326e7d297b38899b99abc9c0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int FBCache::xtd </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tau</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_matrix.html">Matrix</a> &amp;&#160;</td>
+          <td class="paramname"><em>xtd_matrix</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Constructs and returns the matrix \(x+\tau d\) for the stored matrices \(x\) and \(d\).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tau</td><td>scalar parameter \(\tau\) </td></tr>
+    <tr><td class="paramname">xtd</td><td>matrix <code>x + tau * d </code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>status code: returns <a class="el" href="class_for_b_e_s_utils.html#a3778b88ef7ec8a5024eec49a0d7a656d">STATUS_OK</a> if the method has succeeded, <a class="el" href="class_for_b_e_s_utils.html#a0af987ab54a1718c518085bcc8972b80">STATUS_CACHE_NO_DIRECTION</a> if no direction \(d\) is provided. </dd></dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a class="anchor" id="a648787c2da4c8cf9645417bb9423def5"></a>
 <div class="memitem">
@@ -688,7 +1036,6 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>everything</p>
 <p>The forward backward envelope \(\varphi_\gamma(x)\) has been computed and it is cached. Additionally, all data which correspond to <a class="el" href="class_f_b_cache.html#ae41ced0b5e19e5f3cfdb382d75703aec">STATUS_FORWARDBACKWARD</a> have been computed and are available. </p>
 
 </div>
@@ -794,7 +1141,7 @@ Protected Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 17 2016 14:47:38 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 23 2016 18:27:28 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

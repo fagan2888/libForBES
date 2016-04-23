@@ -121,59 +121,87 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="class_f_b_problem.html#a826b688c0187dcc292647532720065d0">FBProblem</a>(</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <a class="code" href="class_function.html">Function</a>&amp; fun_f1,</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <a class="code" href="class_linear_operator.html">LinearOperator</a>&amp; L_1,</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <a class="code" href="class_matrix.html">Matrix</a>&amp; d_1,</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <a class="code" href="class_function.html">Function</a>&amp; fun_f2,</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <a class="code" href="class_linear_operator.html">LinearOperator</a>&amp; L_2,</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <a class="code" href="class_matrix.html">Matrix</a>&amp; d_2,</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <a class="code" href="class_matrix.html">Matrix</a>&amp; linear,</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <a class="code" href="class_function.html">Function</a>&amp; fun_g);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="class_f_b_problem.html#a826b688c0187dcc292647532720065d0">FBProblem</a>(</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <a class="code" href="class_function.html">Function</a>&amp; fun_f,</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <a class="code" href="class_linear_operator.html">LinearOperator</a>&amp; L,</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <a class="code" href="class_matrix.html">Matrix</a>&amp; d,</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <a class="code" href="class_function.html">Function</a>&amp; fun_g);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <a class="code" href="class_f_b_problem.html#a826b688c0187dcc292647532720065d0">FBProblem</a>(</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <a class="code" href="class_function.html">Function</a>&amp; fun_f,</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            <a class="code" href="class_linear_operator.html">LinearOperator</a>&amp; L,</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <a class="code" href="class_function.html">Function</a>&amp; fun_g);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <a class="code" href="class_f_b_problem.html#a826b688c0187dcc292647532720065d0">FBProblem</a>(</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            <a class="code" href="class_function.html">Function</a>&amp; fun_f,</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            <a class="code" href="class_function.html">Function</a>&amp; fun_g);</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <a class="code" href="class_function.html">Function</a> * <a class="code" href="class_f_b_problem.html#a9a9c37bd1e5e1c4f4e5920a25ce17610">f1</a>();</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <a class="code" href="class_function.html">Function</a> * <a class="code" href="class_f_b_problem.html#abe0a2ebaedd0758cdd53be88e03c9cdd">f2</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="class_f_b_problem.html">FBProblem</a>() {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        m_f1 = NULL;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        m_f2 = NULL;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        m_g = NULL;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        m_L1 = NULL;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        m_L2 = NULL;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        m_d1 = NULL;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        m_d2 = NULL;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        m_lin = NULL;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="class_f_b_problem.html">FBProblem</a>(</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <a class="code" href="class_function.html">Function</a>&amp; fun_f1,</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <a class="code" href="class_linear_operator.html">LinearOperator</a>&amp; L_1,</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <a class="code" href="class_matrix.html">Matrix</a>&amp; d_1,</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <a class="code" href="class_function.html">Function</a>&amp; fun_f2,</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <a class="code" href="class_linear_operator.html">LinearOperator</a>&amp; L_2,</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <a class="code" href="class_matrix.html">Matrix</a>&amp; d_2,</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <a class="code" href="class_matrix.html">Matrix</a>&amp; linear,</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <a class="code" href="class_function.html">Function</a>&amp; fun_g);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="class_f_b_problem.html">FBProblem</a>(</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <a class="code" href="class_function.html">Function</a>&amp; fun_f,</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <a class="code" href="class_linear_operator.html">LinearOperator</a>&amp; L,</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <a class="code" href="class_matrix.html">Matrix</a>&amp; d,</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <a class="code" href="class_function.html">Function</a>&amp; fun_g);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <a class="code" href="class_f_b_problem.html">FBProblem</a>(</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <a class="code" href="class_function.html">Function</a>&amp; fun_f,</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <a class="code" href="class_linear_operator.html">LinearOperator</a>&amp; L,</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            <a class="code" href="class_function.html">Function</a>&amp; fun_g);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <a class="code" href="class_f_b_problem.html">FBProblem</a>(</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            <a class="code" href="class_function.html">Function</a>&amp; fun_f,</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            <a class="code" href="class_function.html">Function</a>&amp; fun_g);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordtype">void</span> setL1(<a class="code" href="class_linear_operator.html">LinearOperator</a>* _L1);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordtype">void</span> setL2(<a class="code" href="class_linear_operator.html">LinearOperator</a>* _L2);</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <a class="code" href="class_linear_operator.html">LinearOperator</a> * <a class="code" href="class_f_b_problem.html#a219bc23b3ae00401da7afb7584e21cc5">L1</a>();</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <a class="code" href="class_linear_operator.html">LinearOperator</a> * <a class="code" href="class_f_b_problem.html#a16f281cc99f372b8272e0f951c84df39">L2</a>();</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <a class="code" href="class_matrix.html">Matrix</a> * <a class="code" href="class_f_b_problem.html#abac2d62fa9d3908eb06f16f08eac2e03">d1</a>();</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <a class="code" href="class_matrix.html">Matrix</a> * <a class="code" href="class_f_b_problem.html#ad06b3fbb6ba1f60eca7afe9cf046cbc4">d2</a>();</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <a class="code" href="class_matrix.html">Matrix</a> * <a class="code" href="class_f_b_problem.html#a4ef6ef5767fe7412bc25edcd0ac6111c">lin</a>();</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <a class="code" href="class_function.html">Function</a> * <a class="code" href="class_f_b_problem.html#a3ea145d916a855a319d52b42f87683e1">g</a>();</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="class_f_b_problem.html">FBProblem</a>();</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;};</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* FBPROBLEM_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordtype">void</span> setD1(<a class="code" href="class_matrix.html">Matrix</a>* _d1);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordtype">void</span> setD2(<a class="code" href="class_matrix.html">Matrix</a>* _d2);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordtype">void</span> setF1(<a class="code" href="class_function.html">Function</a>* _f1);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordtype">void</span> setF2(<a class="code" href="class_function.html">Function</a>* _f2);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordtype">void</span> setG(<a class="code" href="class_function.html">Function</a>* _g);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordtype">void</span> setLin(<a class="code" href="class_matrix.html">Matrix</a>* _lin);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <a class="code" href="class_function.html">Function</a> * <a class="code" href="class_f_b_problem.html#a9a9c37bd1e5e1c4f4e5920a25ce17610">f1</a>();</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <a class="code" href="class_function.html">Function</a> * <a class="code" href="class_f_b_problem.html#abe0a2ebaedd0758cdd53be88e03c9cdd">f2</a>();</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <a class="code" href="class_linear_operator.html">LinearOperator</a> * <a class="code" href="class_f_b_problem.html#a219bc23b3ae00401da7afb7584e21cc5">L1</a>();</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <a class="code" href="class_linear_operator.html">LinearOperator</a> * <a class="code" href="class_f_b_problem.html#a16f281cc99f372b8272e0f951c84df39">L2</a>();</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <a class="code" href="class_matrix.html">Matrix</a> * <a class="code" href="class_f_b_problem.html#abac2d62fa9d3908eb06f16f08eac2e03">d1</a>();</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <a class="code" href="class_matrix.html">Matrix</a> * <a class="code" href="class_f_b_problem.html#ad06b3fbb6ba1f60eca7afe9cf046cbc4">d2</a>();</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <a class="code" href="class_matrix.html">Matrix</a> * <a class="code" href="class_f_b_problem.html#a4ef6ef5767fe7412bc25edcd0ac6111c">lin</a>();</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <a class="code" href="class_function.html">Function</a> * <a class="code" href="class_f_b_problem.html#a3ea145d916a855a319d52b42f87683e1">g</a>();</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="class_f_b_problem.html">FBProblem</a>();</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;};</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* FBPROBLEM_H */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="class_f_b_problem_html_a16f281cc99f372b8272e0f951c84df39"><div class="ttname"><a href="class_f_b_problem.html#a16f281cc99f372b8272e0f951c84df39">FBProblem::L2</a></div><div class="ttdeci">LinearOperator * L2()</div><div class="ttdef"><b>Definition:</b> FBProblem.cpp:103</div></div>
 <div class="ttc" id="class_f_b_problem_html_abe0a2ebaedd0758cdd53be88e03c9cdd"><div class="ttname"><a href="class_f_b_problem.html#abe0a2ebaedd0758cdd53be88e03c9cdd">FBProblem::f2</a></div><div class="ttdeci">Function * f2()</div><div class="ttdef"><b>Definition:</b> FBProblem.cpp:119</div></div>
 <div class="ttc" id="class_f_b_problem_html_a219bc23b3ae00401da7afb7584e21cc5"><div class="ttname"><a href="class_f_b_problem.html#a219bc23b3ae00401da7afb7584e21cc5">FBProblem::L1</a></div><div class="ttdeci">LinearOperator * L1()</div><div class="ttdef"><b>Definition:</b> FBProblem.cpp:99</div></div>
 <div class="ttc" id="class_f_b_problem_html_ad06b3fbb6ba1f60eca7afe9cf046cbc4"><div class="ttname"><a href="class_f_b_problem.html#ad06b3fbb6ba1f60eca7afe9cf046cbc4">FBProblem::d2</a></div><div class="ttdeci">Matrix * d2()</div><div class="ttdef"><b>Definition:</b> FBProblem.cpp:111</div></div>
 <div class="ttc" id="class_f_b_problem_html"><div class="ttname"><a href="class_f_b_problem.html">FBProblem</a></div><div class="ttdoc">Low level FB problem description. </div><div class="ttdef"><b>Definition:</b> FBProblem.h:32</div></div>
-<div class="ttc" id="class_f_b_problem_html_a826b688c0187dcc292647532720065d0"><div class="ttname"><a href="class_f_b_problem.html#a826b688c0187dcc292647532720065d0">FBProblem::FBProblem</a></div><div class="ttdeci">FBProblem(Function &amp;fun_f1, LinearOperator &amp;L_1, Matrix &amp;d_1, Function &amp;fun_f2, LinearOperator &amp;L_2, Matrix &amp;d_2, Matrix &amp;linear, Function &amp;fun_g)</div><div class="ttdef"><b>Definition:</b> FBProblem.cpp:35</div></div>
 <div class="ttc" id="class_f_b_problem_html_abac2d62fa9d3908eb06f16f08eac2e03"><div class="ttname"><a href="class_f_b_problem.html#abac2d62fa9d3908eb06f16f08eac2e03">FBProblem::d1</a></div><div class="ttdeci">Matrix * d1()</div><div class="ttdef"><b>Definition:</b> FBProblem.cpp:107</div></div>
 <div class="ttc" id="class_f_b_problem_html_a4ef6ef5767fe7412bc25edcd0ac6111c"><div class="ttname"><a href="class_f_b_problem.html#a4ef6ef5767fe7412bc25edcd0ac6111c">FBProblem::lin</a></div><div class="ttdeci">Matrix * lin()</div><div class="ttdef"><b>Definition:</b> FBProblem.cpp:127</div></div>
 <div class="ttc" id="class_f_b_problem_html_a3ea145d916a855a319d52b42f87683e1"><div class="ttname"><a href="class_f_b_problem.html#a3ea145d916a855a319d52b42f87683e1">FBProblem::g</a></div><div class="ttdeci">Function * g()</div><div class="ttdef"><b>Definition:</b> FBProblem.cpp:123</div></div>
@@ -184,7 +212,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 17 2016 14:47:37 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 23 2016 18:27:28 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -16,113 +16,113 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="class_cong_separable_sum.html" target="_top" xlink:title="CongSeparableSum">
-<polygon fill="white" stroke="black" points="101,-722.5 101,-741.5 205,-741.5 205,-722.5 101,-722.5"/>
-<text text-anchor="middle" x="153" y="-729.5" font-family="Helvetica,sans-Serif" font-size="10.00">CongSeparableSum</text>
+<g id="a_node2"><a xlink:href="class_conjugate_function.html" target="_top" xlink:title="Conjugate of a given function. ">
+<polygon fill="white" stroke="black" points="104,-722.5 104,-741.5 202,-741.5 202,-722.5 104,-722.5"/>
+<text text-anchor="middle" x="153" y="-729.5" font-family="Helvetica,sans-Serif" font-size="10.00">ConjugateFunction</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge"><title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M28.942,-390.697C32.4572,-456.075 46.899,-664.486 90,-713 93.4395,-716.871 97.6448,-719.965 102.23,-722.435"/>
+<path fill="none" stroke="midnightblue" d="M28.942,-390.697C32.4572,-456.075 46.899,-664.486 90,-713 93.8134,-717.292 98.568,-720.628 103.738,-723.219"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="32.4285,-390.342 28.4231,-380.533 25.4376,-390.699 32.4285,-390.342"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="class_conjugate_function.html" target="_top" xlink:title="Conjugate of a given function. ">
-<polygon fill="white" stroke="black" points="104,-684.5 104,-703.5 202,-703.5 202,-684.5 104,-684.5"/>
-<text text-anchor="middle" x="153" y="-691.5" font-family="Helvetica,sans-Serif" font-size="10.00">ConjugateFunction</text>
+<g id="a_node3"><a xlink:href="class_distance_to_ball2.html" target="_top" xlink:title="Distance from the unit ball of R^n. ">
+<polygon fill="white" stroke="black" points="108.5,-684.5 108.5,-703.5 197.5,-703.5 197.5,-684.5 108.5,-684.5"/>
+<text text-anchor="middle" x="153" y="-691.5" font-family="Helvetica,sans-Serif" font-size="10.00">DistanceToBall2</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
 <g id="edge2" class="edge"><title>Node1&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M29.4417,-390.837C34.2342,-451.45 51.5571,-632.67 90,-675 93.8601,-679.25 98.6428,-682.561 103.827,-685.138"/>
+<path fill="none" stroke="midnightblue" d="M29.4417,-390.837C34.2342,-451.45 51.5571,-632.67 90,-675 94.9954,-680.5 101.536,-684.428 108.493,-687.227"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="32.9183,-390.395 28.6689,-380.69 25.9385,-390.927 32.9183,-390.395"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
-<g id="a_node4"><a xlink:href="class_distance_to_ball2.html" target="_top" xlink:title="Distance from the unit ball of R^n. ">
-<polygon fill="white" stroke="black" points="108.5,-646.5 108.5,-665.5 197.5,-665.5 197.5,-646.5 108.5,-646.5"/>
-<text text-anchor="middle" x="153" y="-653.5" font-family="Helvetica,sans-Serif" font-size="10.00">DistanceToBall2</text>
+<g id="a_node4"><a xlink:href="class_distance_to_box.html" target="_top" xlink:title="Distance from a box in R^n. ">
+<polygon fill="white" stroke="black" points="111,-646.5 111,-665.5 195,-665.5 195,-646.5 111,-646.5"/>
+<text text-anchor="middle" x="153" y="-653.5" font-family="Helvetica,sans-Serif" font-size="10.00">DistanceToBox</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
 <g id="edge3" class="edge"><title>Node1&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M30.0711,-390.844C36.2335,-446.223 56.1591,-600.763 90,-637 94.9945,-642.348 101.45,-646.205 108.302,-648.984"/>
+<path fill="none" stroke="midnightblue" d="M30.0711,-390.844C36.2335,-446.223 56.1591,-600.763 90,-637 95.6092,-643.006 103.061,-647.132 110.848,-649.962"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="33.5194,-390.176 28.9649,-380.61 26.5599,-390.928 33.5194,-390.176"/>
 </g>
 <!-- Node5 -->
 <g id="node5" class="node"><title>Node5</title>
-<g id="a_node5"><a xlink:href="class_distance_to_box.html" target="_top" xlink:title="Distance from a box in R^n. ">
-<polygon fill="white" stroke="black" points="111,-608.5 111,-627.5 195,-627.5 195,-608.5 111,-608.5"/>
-<text text-anchor="middle" x="153" y="-615.5" font-family="Helvetica,sans-Serif" font-size="10.00">DistanceToBox</text>
+<g id="a_node5"><a xlink:href="class_elastic_net.html" target="_top" xlink:title="Elastic net regularization function. ">
+<polygon fill="white" stroke="black" points="122,-608.5 122,-627.5 184,-627.5 184,-608.5 122,-608.5"/>
+<text text-anchor="middle" x="153" y="-615.5" font-family="Helvetica,sans-Serif" font-size="10.00">ElasticNet</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node5 -->
 <g id="edge4" class="edge"><title>Node1&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M27.4058,-391.024C27.2321,-434.907 33.1478,-540.307 90,-599 95.6396,-604.822 103.011,-608.872 110.695,-611.687"/>
+<path fill="none" stroke="midnightblue" d="M27.4058,-391.024C27.2321,-434.907 33.1478,-540.307 90,-599 98.3811,-607.652 110.587,-612.391 121.957,-614.976"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="30.9087,-390.864 27.5663,-380.811 23.9095,-390.754 30.9087,-390.864"/>
 </g>
 <!-- Node6 -->
 <g id="node6" class="node"><title>Node6</title>
-<g id="a_node6"><a xlink:href="class_elastic_net.html" target="_top" xlink:title="Elastic net regularization function. ">
-<polygon fill="white" stroke="black" points="122,-570.5 122,-589.5 184,-589.5 184,-570.5 122,-570.5"/>
-<text text-anchor="middle" x="153" y="-577.5" font-family="Helvetica,sans-Serif" font-size="10.00">ElasticNet</text>
+<g id="a_node6"><a xlink:href="class_hinge_loss.html" target="_top" xlink:title="Hinge loss function ">
+<polygon fill="white" stroke="black" points="121.5,-570.5 121.5,-589.5 184.5,-589.5 184.5,-570.5 121.5,-570.5"/>
+<text text-anchor="middle" x="153" y="-577.5" font-family="Helvetica,sans-Serif" font-size="10.00">HingeLoss</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node6 -->
 <g id="edge5" class="edge"><title>Node1&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M28.7346,-391.313C31.2413,-429.886 42.2139,-514.069 90,-561 98.5141,-569.362 110.607,-574.056 121.856,-576.687"/>
+<path fill="none" stroke="midnightblue" d="M28.7346,-391.313C31.2413,-429.886 42.2139,-514.069 90,-561 98.3534,-569.204 110.152,-573.878 121.218,-576.536"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="32.2079,-390.704 28.197,-380.898 25.2172,-391.065 32.2079,-390.704"/>
 </g>
 <!-- Node7 -->
 <g id="node7" class="node"><title>Node7</title>
-<g id="a_node7"><a xlink:href="class_hinge_loss.html" target="_top" xlink:title="Hinge loss function ">
-<polygon fill="white" stroke="black" points="121.5,-532.5 121.5,-551.5 184.5,-551.5 184.5,-532.5 121.5,-532.5"/>
-<text text-anchor="middle" x="153" y="-539.5" font-family="Helvetica,sans-Serif" font-size="10.00">HingeLoss</text>
+<g id="a_node7"><a xlink:href="class_huber_loss.html" target="_top" xlink:title="Huber loss function. ">
+<polygon fill="white" stroke="black" points="121,-532.5 121,-551.5 185,-551.5 185,-532.5 121,-532.5"/>
+<text text-anchor="middle" x="153" y="-539.5" font-family="Helvetica,sans-Serif" font-size="10.00">HuberLoss</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node7 -->
 <g id="edge6" class="edge"><title>Node1&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M30.5893,-390.825C35.8611,-423.161 50.8565,-487.227 90,-523 98.5597,-530.823 110.268,-535.426 121.206,-538.135"/>
+<path fill="none" stroke="midnightblue" d="M30.5893,-390.825C35.8611,-423.161 50.8565,-487.227 90,-523 98.4766,-530.747 110.041,-535.336 120.887,-538.055"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="34.0334,-390.189 29.1065,-380.81 27.1089,-391.214 34.0334,-390.189"/>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node"><title>Node8</title>
-<g id="a_node8"><a xlink:href="class_huber_loss.html" target="_top" xlink:title="Huber loss function. ">
-<polygon fill="white" stroke="black" points="121,-494.5 121,-513.5 185,-513.5 185,-494.5 121,-494.5"/>
-<text text-anchor="middle" x="153" y="-501.5" font-family="Helvetica,sans-Serif" font-size="10.00">HuberLoss</text>
+<g id="a_node8"><a xlink:href="class_ind_ball2.html" target="_top" xlink:title="Indicator of a Euclidean ball. ">
+<polygon fill="white" stroke="black" points="127,-494.5 127,-513.5 179,-513.5 179,-494.5 127,-494.5"/>
+<text text-anchor="middle" x="153" y="-501.5" font-family="Helvetica,sans-Serif" font-size="10.00">IndBall2</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node8 -->
 <g id="edge7" class="edge"><title>Node1&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M33.4012,-390.145C41.5291,-415.501 59.3154,-459.931 90,-485 98.7182,-492.123 110.086,-496.58 120.703,-499.367"/>
+<path fill="none" stroke="midnightblue" d="M33.4012,-390.145C41.5291,-415.501 59.3154,-459.931 90,-485 100.462,-493.547 114.739,-498.256 126.955,-500.847"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="36.7464,-389.115 30.4997,-380.558 30.0465,-391.143 36.7464,-389.115"/>
 </g>
 <!-- Node9 -->
 <g id="node9" class="node"><title>Node9</title>
-<g id="a_node9"><a xlink:href="class_ind_ball2.html" target="_top" xlink:title="Indicator of a Euclidean ball. ">
-<polygon fill="white" stroke="black" points="127,-456.5 127,-475.5 179,-475.5 179,-456.5 127,-456.5"/>
-<text text-anchor="middle" x="153" y="-463.5" font-family="Helvetica,sans-Serif" font-size="10.00">IndBall2</text>
+<g id="a_node9"><a xlink:href="class_ind_box.html" target="_top" xlink:title="Indicator of a box. ">
+<polygon fill="white" stroke="black" points="129.5,-456.5 129.5,-475.5 176.5,-475.5 176.5,-456.5 129.5,-456.5"/>
+<text text-anchor="middle" x="153" y="-463.5" font-family="Helvetica,sans-Serif" font-size="10.00">IndBox</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node9 -->
 <g id="edge8" class="edge"><title>Node1&#45;&gt;Node9</title>
-<path fill="none" stroke="midnightblue" d="M38.5303,-389.357C49.3398,-406.627 67.704,-432.009 90,-447 101.024,-454.412 115.058,-459.028 126.985,-461.851"/>
+<path fill="none" stroke="midnightblue" d="M38.5303,-389.357C49.3398,-406.627 67.704,-432.009 90,-447 101.772,-454.915 116.975,-459.641 129.38,-462.4"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="41.4828,-387.476 33.3253,-380.715 35.4864,-391.087 41.4828,-387.476"/>
 </g>
 <!-- Node10 -->
 <g id="node10" class="node"><title>Node10</title>
-<g id="a_node10"><a xlink:href="class_ind_box.html" target="_top" xlink:title="Indicator of a box. ">
+<g id="a_node10"><a xlink:href="class_ind_pos.html" target="_top" xlink:title="Indicator of the positive orthant ">
 <polygon fill="white" stroke="black" points="129.5,-418.5 129.5,-437.5 176.5,-437.5 176.5,-418.5 129.5,-418.5"/>
-<text text-anchor="middle" x="153" y="-425.5" font-family="Helvetica,sans-Serif" font-size="10.00">IndBox</text>
+<text text-anchor="middle" x="153" y="-425.5" font-family="Helvetica,sans-Serif" font-size="10.00">IndPos</text>
 </a>
 </g>
 </g>
@@ -133,185 +133,185 @@
 </g>
 <!-- Node11 -->
 <g id="node11" class="node"><title>Node11</title>
-<g id="a_node11"><a xlink:href="class_ind_pos.html" target="_top" xlink:title="Indicator of the positive orthant ">
-<polygon fill="white" stroke="black" points="129.5,-380.5 129.5,-399.5 176.5,-399.5 176.5,-380.5 129.5,-380.5"/>
-<text text-anchor="middle" x="153" y="-387.5" font-family="Helvetica,sans-Serif" font-size="10.00">IndPos</text>
+<g id="a_node11"><a xlink:href="class_ind_prob_simplex.html" target="_top" xlink:title="Indicator of the probability simplex ">
+<polygon fill="white" stroke="black" points="110,-380.5 110,-399.5 196,-399.5 196,-380.5 110,-380.5"/>
+<text text-anchor="middle" x="153" y="-387.5" font-family="Helvetica,sans-Serif" font-size="10.00">IndProbSimplex</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node11 -->
 <g id="edge10" class="edge"><title>Node1&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M64.2151,-376.549C85.3249,-379.784 111.287,-383.762 129.482,-386.55"/>
+<path fill="none" stroke="midnightblue" d="M64.2114,-376.549C78.4378,-378.728 94.8686,-381.246 109.641,-383.509"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="64.712,-373.084 54.2972,-375.029 63.6517,-380.004 64.712,-373.084"/>
 </g>
 <!-- Node12 -->
 <g id="node12" class="node"><title>Node12</title>
-<g id="a_node12"><a xlink:href="class_ind_prob_simplex.html" target="_top" xlink:title="Indicator of the probability simplex ">
-<polygon fill="white" stroke="black" points="110,-342.5 110,-361.5 196,-361.5 196,-342.5 110,-342.5"/>
-<text text-anchor="middle" x="153" y="-349.5" font-family="Helvetica,sans-Serif" font-size="10.00">IndProbSimplex</text>
+<g id="a_node12"><a xlink:href="class_ind_s_o_c.html" target="_top" xlink:title="Indicator of a second&#45;order cone ">
+<polygon fill="white" stroke="black" points="127,-342.5 127,-361.5 179,-361.5 179,-342.5 127,-342.5"/>
+<text text-anchor="middle" x="153" y="-349.5" font-family="Helvetica,sans-Serif" font-size="10.00">IndSOC</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node12 -->
 <g id="edge11" class="edge"><title>Node1&#45;&gt;Node12</title>
-<path fill="none" stroke="midnightblue" d="M64.2114,-365.451C78.4378,-363.272 94.8686,-360.754 109.641,-358.491"/>
+<path fill="none" stroke="midnightblue" d="M64.3031,-365.437C84.3011,-362.373 108.633,-358.645 126.589,-355.894"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="63.6517,-361.996 54.2972,-366.971 64.712,-368.916 63.6517,-361.996"/>
 </g>
 <!-- Node13 -->
 <g id="node13" class="node"><title>Node13</title>
-<g id="a_node13"><a xlink:href="class_ind_s_o_c.html" target="_top" xlink:title="Indicator of a second&#45;order cone ">
-<polygon fill="white" stroke="black" points="127,-304.5 127,-323.5 179,-323.5 179,-304.5 127,-304.5"/>
-<text text-anchor="middle" x="153" y="-311.5" font-family="Helvetica,sans-Serif" font-size="10.00">IndSOC</text>
+<g id="a_node13"><a xlink:href="class_log_logistic_loss.html" target="_top" xlink:title="Log&#45;logistic loss function. ">
+<polygon fill="white" stroke="black" points="109.5,-304.5 109.5,-323.5 196.5,-323.5 196.5,-304.5 109.5,-304.5"/>
+<text text-anchor="middle" x="153" y="-311.5" font-family="Helvetica,sans-Serif" font-size="10.00">LogLogisticLoss</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node13 -->
 <g id="edge12" class="edge"><title>Node1&#45;&gt;Node13</title>
-<path fill="none" stroke="midnightblue" d="M50.2272,-355.482C61.7182,-347.957 76.1965,-339.224 90,-333 101.7,-327.725 115.274,-323.38 126.734,-320.183"/>
+<path fill="none" stroke="midnightblue" d="M50.2272,-355.482C61.7182,-347.957 76.1965,-339.224 90,-333 98.0051,-329.39 106.888,-326.217 115.37,-323.548"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="48.0773,-352.709 41.7221,-361.187 51.9766,-358.523 48.0773,-352.709"/>
 </g>
 <!-- Node14 -->
 <g id="node14" class="node"><title>Node14</title>
-<g id="a_node14"><a xlink:href="class_log_logistic_loss.html" target="_top" xlink:title="Log&#45;logistic loss function. ">
-<polygon fill="white" stroke="black" points="109.5,-266.5 109.5,-285.5 196.5,-285.5 196.5,-266.5 109.5,-266.5"/>
-<text text-anchor="middle" x="153" y="-273.5" font-family="Helvetica,sans-Serif" font-size="10.00">LogLogisticLoss</text>
+<g id="a_node14"><a xlink:href="class_l_q_cost.html" target="_top" xlink:title="Smooth part of a linear&#45;quadratic optimal control problem. ">
+<polygon fill="white" stroke="black" points="128,-266.5 128,-285.5 178,-285.5 178,-266.5 128,-266.5"/>
+<text text-anchor="middle" x="153" y="-273.5" font-family="Helvetica,sans-Serif" font-size="10.00">LQCost</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node14 -->
 <g id="edge13" class="edge"><title>Node1&#45;&gt;Node14</title>
-<path fill="none" stroke="midnightblue" d="M38.5303,-352.643C49.3398,-335.373 67.704,-309.991 90,-295 95.8858,-291.043 102.63,-287.882 109.453,-285.366"/>
+<path fill="none" stroke="midnightblue" d="M38.5303,-352.643C49.3398,-335.373 67.704,-309.991 90,-295 101.305,-287.399 115.774,-282.739 127.891,-279.937"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="35.4864,-350.913 33.3253,-361.285 41.4828,-354.524 35.4864,-350.913"/>
 </g>
 <!-- Node15 -->
 <g id="node15" class="node"><title>Node15</title>
-<g id="a_node15"><a xlink:href="class_l_q_cost.html" target="_top" xlink:title="Smooth part of a linear&#45;quadratic optimal control problem. ">
-<polygon fill="white" stroke="black" points="128,-228.5 128,-247.5 178,-247.5 178,-228.5 128,-228.5"/>
-<text text-anchor="middle" x="153" y="-235.5" font-family="Helvetica,sans-Serif" font-size="10.00">LQCost</text>
+<g id="a_node15"><a xlink:href="class_norm.html" target="_top" xlink:title="Abstract norm class. ">
+<polygon fill="white" stroke="black" points="132.5,-228.5 132.5,-247.5 173.5,-247.5 173.5,-228.5 132.5,-228.5"/>
+<text text-anchor="middle" x="153" y="-235.5" font-family="Helvetica,sans-Serif" font-size="10.00">Norm</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node15 -->
 <g id="edge14" class="edge"><title>Node1&#45;&gt;Node15</title>
-<path fill="none" stroke="midnightblue" d="M33.4012,-351.855C41.5291,-326.499 59.3154,-282.069 90,-257 100.723,-248.239 115.455,-243.511 127.868,-240.962"/>
+<path fill="none" stroke="midnightblue" d="M33.4012,-351.855C41.5291,-326.499 59.3154,-282.069 90,-257 102.031,-247.171 119.108,-242.417 132.294,-240.124"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="30.0465,-350.857 30.4997,-361.442 36.7464,-352.885 30.0465,-350.857"/>
 </g>
-<!-- Node16 -->
-<g id="node16" class="node"><title>Node16</title>
-<g id="a_node16"><a xlink:href="class_norm.html" target="_top" xlink:title="Abstract norm class. ">
-<polygon fill="white" stroke="black" points="132.5,-190.5 132.5,-209.5 173.5,-209.5 173.5,-190.5 132.5,-190.5"/>
-<text text-anchor="middle" x="153" y="-197.5" font-family="Helvetica,sans-Serif" font-size="10.00">Norm</text>
+<!-- Node19 -->
+<g id="node19" class="node"><title>Node19</title>
+<g id="a_node19"><a xlink:href="class_quad_over_affine.html" target="_top" xlink:title="Function F(x) = 0.5*x&#39;*Q*x + q&#39;*x + delta(x|Z) ">
+<polygon fill="white" stroke="black" points="110,-190.5 110,-209.5 196,-209.5 196,-190.5 110,-190.5"/>
+<text text-anchor="middle" x="153" y="-197.5" font-family="Helvetica,sans-Serif" font-size="10.00">QuadOverAffine</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node16 -->
-<g id="edge15" class="edge"><title>Node1&#45;&gt;Node16</title>
-<path fill="none" stroke="midnightblue" d="M30.5893,-351.175C35.8611,-318.839 50.8565,-254.773 90,-219 101.551,-208.443 118.837,-203.749 132.225,-201.663"/>
+<!-- Node1&#45;&gt;Node19 -->
+<g id="edge18" class="edge"><title>Node1&#45;&gt;Node19</title>
+<path fill="none" stroke="midnightblue" d="M30.5893,-351.175C35.8611,-318.839 50.8565,-254.773 90,-219 95.6511,-213.836 102.674,-210.074 109.943,-207.335"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="27.1089,-350.786 29.1065,-361.19 34.0334,-351.811 27.1089,-350.786"/>
 </g>
 <!-- Node20 -->
 <g id="node20" class="node"><title>Node20</title>
-<g id="a_node20"><a xlink:href="class_quad_over_affine.html" target="_top" xlink:title="Function F(x) = 0.5*x&#39;*Q*x + q&#39;*x + delta(x|Z) ">
-<polygon fill="white" stroke="black" points="110,-152.5 110,-171.5 196,-171.5 196,-152.5 110,-152.5"/>
-<text text-anchor="middle" x="153" y="-159.5" font-family="Helvetica,sans-Serif" font-size="10.00">QuadOverAffine</text>
+<g id="a_node20"><a xlink:href="class_quadratic.html" target="_top" xlink:title="A quadratic function F(x) = 0.5 * x&#39;*Q*x + q&#39;*x ">
+<polygon fill="white" stroke="black" points="123.5,-152.5 123.5,-171.5 182.5,-171.5 182.5,-152.5 123.5,-152.5"/>
+<text text-anchor="middle" x="153" y="-159.5" font-family="Helvetica,sans-Serif" font-size="10.00">Quadratic</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node20 -->
 <g id="edge19" class="edge"><title>Node1&#45;&gt;Node20</title>
-<path fill="none" stroke="midnightblue" d="M28.7346,-350.687C31.2413,-312.114 42.2139,-227.931 90,-181 95.5422,-175.557 102.601,-171.668 109.956,-168.89"/>
+<path fill="none" stroke="midnightblue" d="M28.7346,-350.687C31.2413,-312.114 42.2139,-227.931 90,-181 98.9157,-172.244 111.756,-167.509 123.441,-164.954"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="25.2172,-350.935 28.197,-361.102 32.2079,-351.296 25.2172,-350.935"/>
 </g>
 <!-- Node21 -->
 <g id="node21" class="node"><title>Node21</title>
-<g id="a_node21"><a xlink:href="class_quadratic.html" target="_top" xlink:title="A quadratic function F(x) = 0.5 * x&#39;*Q*x + q&#39;*x ">
-<polygon fill="white" stroke="black" points="123.5,-114.5 123.5,-133.5 182.5,-133.5 182.5,-114.5 123.5,-114.5"/>
-<text text-anchor="middle" x="153" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00">Quadratic</text>
+<g id="a_node21"><a xlink:href="class_quadratic_loss.html" target="_top" xlink:title="Quadratic loss function ">
+<polygon fill="white" stroke="black" points="113,-114.5 113,-133.5 193,-133.5 193,-114.5 113,-114.5"/>
+<text text-anchor="middle" x="153" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00">QuadraticLoss</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node21 -->
 <g id="edge20" class="edge"><title>Node1&#45;&gt;Node21</title>
-<path fill="none" stroke="midnightblue" d="M27.4058,-350.976C27.2321,-307.093 33.1478,-201.693 90,-143 98.6944,-134.024 111.505,-129.26 123.228,-126.743"/>
+<path fill="none" stroke="midnightblue" d="M27.4058,-350.976C27.2321,-307.093 33.1478,-201.693 90,-143 96.1879,-136.612 104.461,-132.357 112.943,-129.527"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="23.9095,-351.246 27.5663,-361.189 30.9087,-351.136 23.9095,-351.246"/>
 </g>
 <!-- Node22 -->
 <g id="node22" class="node"><title>Node22</title>
-<g id="a_node22"><a xlink:href="class_quadratic_loss.html" target="_top" xlink:title="Quadratic loss function ">
-<polygon fill="white" stroke="black" points="113,-76.5 113,-95.5 193,-95.5 193,-76.5 113,-76.5"/>
-<text text-anchor="middle" x="153" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">QuadraticLoss</text>
+<g id="a_node22"><a xlink:href="class_quadratic_loss_over_affine.html" target="_top" xlink:title="Quadratic loss over an affine subspace ">
+<polygon fill="white" stroke="black" points="90,-76.5 90,-95.5 216,-95.5 216,-76.5 90,-76.5"/>
+<text text-anchor="middle" x="153" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">QuadraticLossOverAffine</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node22 -->
 <g id="edge21" class="edge"><title>Node1&#45;&gt;Node22</title>
-<path fill="none" stroke="midnightblue" d="M30.0711,-351.156C36.2335,-295.777 56.1591,-141.237 90,-105 96.0702,-98.4999 104.298,-94.2022 112.774,-91.3666"/>
+<path fill="none" stroke="midnightblue" d="M30.0711,-351.156C36.2335,-295.777 56.1591,-141.237 90,-105 93.6114,-101.133 97.9866,-98.0452 102.723,-95.5812"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="26.5599,-351.072 28.9649,-361.39 33.5194,-351.824 26.5599,-351.072"/>
 </g>
 <!-- Node23 -->
 <g id="node23" class="node"><title>Node23</title>
-<g id="a_node23"><a xlink:href="class_quadratic_loss_over_affine.html" target="_top" xlink:title="Quadratic loss over an affine subspace ">
-<polygon fill="white" stroke="black" points="90,-38.5 90,-57.5 216,-57.5 216,-38.5 90,-38.5"/>
-<text text-anchor="middle" x="153" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">QuadraticLossOverAffine</text>
+<g id="a_node23"><a xlink:href="class_separable_sum.html" target="_top" xlink:title="Separable sum. ">
+<polygon fill="white" stroke="black" points="113,-38.5 113,-57.5 193,-57.5 193,-38.5 113,-38.5"/>
+<text text-anchor="middle" x="153" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">SeparableSum</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node23 -->
 <g id="edge22" class="edge"><title>Node1&#45;&gt;Node23</title>
-<path fill="none" stroke="midnightblue" d="M29.4417,-351.163C34.2342,-290.55 51.5571,-109.33 90,-67 93.4816,-63.1663 97.7139,-60.0969 102.315,-57.6409"/>
+<path fill="none" stroke="midnightblue" d="M29.4417,-351.163C34.2342,-290.55 51.5571,-109.33 90,-67 96.055,-60.3328 104.38,-55.9771 112.966,-53.1393"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="25.9385,-351.073 28.6689,-361.31 32.9183,-351.605 25.9385,-351.073"/>
 </g>
 <!-- Node24 -->
 <g id="node24" class="node"><title>Node24</title>
-<g id="a_node24"><a xlink:href="class_separable_sum.html" target="_top" xlink:title="Separable sum. ">
-<polygon fill="white" stroke="black" points="113,-0.5 113,-19.5 193,-19.5 193,-0.5 113,-0.5"/>
-<text text-anchor="middle" x="153" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">SeparableSum</text>
+<g id="a_node24"><a xlink:href="class_separable_sum_ordered.html" target="_top" xlink:title="SeparableSumOrdered">
+<polygon fill="white" stroke="black" points="95.5,-0.5 95.5,-19.5 210.5,-19.5 210.5,-0.5 95.5,-0.5"/>
+<text text-anchor="middle" x="153" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">SeparableSumOrdered</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node24 -->
 <g id="edge23" class="edge"><title>Node1&#45;&gt;Node24</title>
-<path fill="none" stroke="midnightblue" d="M28.942,-351.303C32.4572,-285.925 46.899,-77.5138 90,-29 95.9818,-22.267 104.28,-17.8867 112.862,-15.0461"/>
+<path fill="none" stroke="midnightblue" d="M28.942,-351.303C32.4572,-285.925 46.899,-77.5138 90,-29 93.4395,-25.1285 97.6448,-22.0349 102.23,-19.5646"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="25.4376,-351.301 28.4231,-361.467 32.4285,-351.658 25.4376,-351.301"/>
+</g>
+<!-- Node16 -->
+<g id="node16" class="node"><title>Node16</title>
+<g id="a_node16"><a xlink:href="class_norm1.html" target="_top" xlink:title="Norm&#45;1 loss function ">
+<polygon fill="white" stroke="black" points="268,-266.5 268,-285.5 314,-285.5 314,-266.5 268,-266.5"/>
+<text text-anchor="middle" x="291" y="-273.5" font-family="Helvetica,sans-Serif" font-size="10.00">Norm1</text>
+</a>
+</g>
+</g>
+<!-- Node15&#45;&gt;Node16 -->
+<g id="edge15" class="edge"><title>Node15&#45;&gt;Node16</title>
+<path fill="none" stroke="midnightblue" d="M183.604,-246.272C208.997,-253.367 245.016,-263.431 267.944,-269.837"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="184.349,-242.846 173.776,-243.526 182.465,-249.588 184.349,-242.846"/>
 </g>
 <!-- Node17 -->
 <g id="node17" class="node"><title>Node17</title>
-<g id="a_node17"><a xlink:href="class_norm1.html" target="_top" xlink:title="Norm&#45;1 loss function ">
+<g id="a_node17"><a xlink:href="class_norm2.html" target="_top" xlink:title="Euclidean norm. ">
 <polygon fill="white" stroke="black" points="268,-228.5 268,-247.5 314,-247.5 314,-228.5 268,-228.5"/>
-<text text-anchor="middle" x="291" y="-235.5" font-family="Helvetica,sans-Serif" font-size="10.00">Norm1</text>
+<text text-anchor="middle" x="291" y="-235.5" font-family="Helvetica,sans-Serif" font-size="10.00">Norm2</text>
 </a>
 </g>
 </g>
-<!-- Node16&#45;&gt;Node17 -->
-<g id="edge16" class="edge"><title>Node16&#45;&gt;Node17</title>
-<path fill="none" stroke="midnightblue" d="M183.604,-208.272C208.997,-215.367 245.016,-225.431 267.944,-231.837"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="184.349,-204.846 173.776,-205.526 182.465,-211.588 184.349,-204.846"/>
+<!-- Node15&#45;&gt;Node17 -->
+<g id="edge16" class="edge"><title>Node15&#45;&gt;Node17</title>
+<path fill="none" stroke="midnightblue" d="M183.943,-238C209.317,-238 245.118,-238 267.944,-238"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="183.776,-234.5 173.776,-238 183.776,-241.5 183.776,-234.5"/>
 </g>
 <!-- Node18 -->
 <g id="node18" class="node"><title>Node18</title>
-<g id="a_node18"><a xlink:href="class_norm2.html" target="_top" xlink:title="Euclidean norm. ">
-<polygon fill="white" stroke="black" points="268,-190.5 268,-209.5 314,-209.5 314,-190.5 268,-190.5"/>
-<text text-anchor="middle" x="291" y="-197.5" font-family="Helvetica,sans-Serif" font-size="10.00">Norm2</text>
+<g id="a_node18"><a xlink:href="class_sum_of_norm2.html" target="_top" xlink:title="Sum of 2&#45;norms. ">
+<polygon fill="white" stroke="black" points="252.5,-190.5 252.5,-209.5 329.5,-209.5 329.5,-190.5 252.5,-190.5"/>
+<text text-anchor="middle" x="291" y="-197.5" font-family="Helvetica,sans-Serif" font-size="10.00">SumOfNorm2</text>
 </a>
 </g>
 </g>
-<!-- Node16&#45;&gt;Node18 -->
-<g id="edge17" class="edge"><title>Node16&#45;&gt;Node18</title>
-<path fill="none" stroke="midnightblue" d="M183.943,-200C209.317,-200 245.118,-200 267.944,-200"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="183.776,-196.5 173.776,-200 183.776,-203.5 183.776,-196.5"/>
-</g>
-<!-- Node19 -->
-<g id="node19" class="node"><title>Node19</title>
-<g id="a_node19"><a xlink:href="class_sum_of_norm2.html" target="_top" xlink:title="Sum of 2&#45;norms. ">
-<polygon fill="white" stroke="black" points="252.5,-152.5 252.5,-171.5 329.5,-171.5 329.5,-152.5 252.5,-152.5"/>
-<text text-anchor="middle" x="291" y="-159.5" font-family="Helvetica,sans-Serif" font-size="10.00">SumOfNorm2</text>
-</a>
-</g>
-</g>
-<!-- Node16&#45;&gt;Node19 -->
-<g id="edge18" class="edge"><title>Node16&#45;&gt;Node19</title>
-<path fill="none" stroke="midnightblue" d="M183.576,-191.736C204.893,-185.78 233.709,-177.728 255.98,-171.506"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="182.465,-188.412 173.776,-194.474 184.349,-195.154 182.465,-188.412"/>
+<!-- Node15&#45;&gt;Node18 -->
+<g id="edge17" class="edge"><title>Node15&#45;&gt;Node18</title>
+<path fill="none" stroke="midnightblue" d="M183.576,-229.736C204.893,-223.78 233.709,-215.728 255.98,-209.506"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="182.465,-226.412 173.776,-232.474 184.349,-233.154 182.465,-226.412"/>
 </g>
 </g>
 </svg>

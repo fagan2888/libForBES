@@ -1,6 +1,9 @@
 var searchData=
 [
   ['size_5ft_5ftype',['SIZE_T_TYPE',['../class_properties.html#a5c47c0dcde5867dbe2adb26144105a0a',1,'Properties']]],
+  ['status_5fcache_5fno_5fdirection',['STATUS_CACHE_NO_DIRECTION',['../class_for_b_e_s_utils.html#a0af987ab54a1718c518085bcc8972b80',1,'ForBESUtils']]],
+  ['status_5fcache_5fno_5fquadratic',['STATUS_CACHE_NO_QUADRATIC',['../class_for_b_e_s_utils.html#a7f764569f67297a5b45b249fbfd6dd57',1,'ForBESUtils']]],
+  ['status_5fcached_5falready',['STATUS_CACHED_ALREADY',['../class_for_b_e_s_utils.html#aabff97140865c81347d21a400da099c4',1,'ForBESUtils']]],
   ['status_5fevalf',['STATUS_EVALF',['../class_f_b_cache.html#a648787c2da4c8cf9645417bb9423def5',1,'FBCache']]],
   ['status_5ffbe',['STATUS_FBE',['../class_f_b_cache.html#a0b27de4a04bb3227ebf0e8c0c4ea7035',1,'FBCache']]],
   ['status_5fforward',['STATUS_FORWARD',['../class_f_b_cache.html#ad88c012431d3153f467285374b9be49d',1,'FBCache']]],
