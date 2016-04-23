@@ -461,20 +461,20 @@ int FBCache::extrapolate_fbe(double tau, double gamma, double& fbe) {
     Matrix grad_xtd;
     status = extrapolate_gradf(tau, grad_xtd);
     if (!ForBESUtils::is_status_ok(status)) return status;
-
+        
     /* Update FBE (1) */
     fbe = m_fxtd;
 
     /* Compute y(x+tau*d) = x_tau_d - gamma*gradf_xtd */
     Matrix y_xtd = x_tau_d;
     Matrix::add(y_xtd, -gamma, grad_xtd, 1.0);
-
+    
     /* Compute z(x+tau*d) = prox_(gamma*g)(y_xtd)*/
     double g_z_xtd; // g(z(x+tau*d))
-    Matrix z_xtd; // z(x+tau*d)
+    Matrix z_xtd(y_xtd.getNrows(), y_xtd.getNcols()); // z(x+tau*d)
     status = m_prob.g()->callProx(y_xtd, gamma, z_xtd, g_z_xtd);
     if (!ForBESUtils::is_status_ok(status)) return status;
-
+    
     /* Update FBE (2) */
     fbe += g_z_xtd;
 
