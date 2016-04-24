@@ -181,11 +181,28 @@ int FBCache::update_forward_step(double gamma) {
     if (m_gradfx == NULL) m_gradfx = new Matrix(m_x->getNrows(), m_x->getNcols());
 
     bool is_gamma_the_same = is_close(gamma, m_gamma);
-    if (!is_gamma_the_same) reset(STATUS_EVALF);
+
+    /* 
+     * If gamma has changed, set the status to STATUS_FORWARD at maximum 
+     * This is because all higher status information gets invalidated by
+     * the change of gamma.
+     * 
+     * If gamma has changed (?), but the previous status was lower than 
+     * STATUS_FORWARD, we don't care.
+     */
+    if (!is_gamma_the_same && m_status > STATUS_FORWARD) reset(STATUS_FORWARD);
 
 
     if (m_status >= STATUS_FORWARD) {
+        /*
+         * If we are at STATUS_FORWARD or higher, and gamma has not changed,
+         * the forward step is cached and fresh.
+         */
         if (is_gamma_the_same) return ForBESUtils::STATUS_CACHED_ALREADY;
+        /*
+         * If gamma has changed, but the gradient of f at x is stored, do
+         * the following:
+         */
         *m_y = *m_x;
         Matrix::add(*m_y, -gamma, *m_gradfx, 1.0);
         m_gamma = gamma;

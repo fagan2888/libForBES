@@ -1154,11 +1154,34 @@ void TestFBCache::testLeanCache() {
     Matrix xtd(n, 1);
     status = cache->xtd(tau, xtd);
     _ASSERT(ForBESUtils::is_status_ok(status));
-    
+
     cache->set_point(xtd);
     double fbe_xtd = cache->get_eval_FBE(gamma);
     _ASSERT_NUM_EQ(fbe_xtd, fxtd, 1e-10);
 
+    _ASSERT_EQ(FBCache::STATUS_FBE, cache->cache_status());
+    Matrix * gradf = cache->get_gradf();
+    _ASSERT_EQ(*gradf, xtd);
+
+    gamma = 0.3544;
+    Matrix * forward_new = cache->get_forward_step(gamma); /* forward step with a different gamma */
+
+    double forward_expected_data[] = {
+        0.0161400000000000,
+        0.0322800000000000,
+        0.0484200000000000,
+        0.0645600000000000,
+        0.0807000000000000,
+        0.0968400000000000,
+        0.1129800000000000,
+        0.1291200000000000,
+        0.1452600000000000,
+        0.1614000000000000
+    };
+    Matrix forward_expected(n,1,forward_expected_data);
+    _ASSERT_EQ(forward_expected, *forward_new);
+    _ASSERT_NUM_EQ(gamma, cache->m_gamma, 1e-10);
+    
     delete f;
     delete g;
     delete prob;
