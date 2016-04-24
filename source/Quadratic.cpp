@@ -93,7 +93,11 @@ int Quadratic::call(Matrix& x, double& f, Matrix& grad) {
 }
 
 int Quadratic::hessianProduct(Matrix& x, Matrix& z, Matrix& Hz) {
-    Hz = (*m_Q) * z;
+    if (m_Q != NULL) {
+        Hz = (*m_Q) * z;
+    } else {
+        Hz = z;
+    }
     return ForBESUtils::STATUS_OK;
 }
 

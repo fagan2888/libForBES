@@ -1014,7 +1014,7 @@ void TestFBCache::testGradfExtrapolate() {
         1.9854184446883179
     };
     Matrix grad_exp2(n, 1, grad_exp2_data);
-    
+
     _ASSERT_EQ(gradfxtd, grad_exp2);
 
     delete f1, f2, prob, cache;
@@ -1120,7 +1120,7 @@ void TestFBCache::testFBEExtrapolate() {
     tau = 0.01223451;
     status = cache->extrapolate_fbe(tau, gamma, fbe_xtd);
     _ASSERT_NUM_EQ(-4.23660375940972, fbe_xtd, 1e-10);
-    
+
     _ASSERT(cache->m_Qu != NULL);
     _ASSERT(cache->m_L2d != NULL);
     _ASSERT(cache->m_L2d != cache->m_dir);
@@ -1130,4 +1130,36 @@ void TestFBCache::testFBEExtrapolate() {
     delete g;
     delete prob;
     delete cache;
+}
+
+void TestFBCache::testLeanCache() {
+    size_t n = 10;
+    Function * f = new Quadratic();
+    Function *g = new Norm1();
+    FBProblem * prob = new FBProblem(*f, *g);
+
+    Matrix x(n, 1);
+    Matrix d(n, 1);
+    for (size_t i = 0; i < n; i++) d[i] = (i + 1.0) / 4.0;
+    double gamma = 0.1;
+    FBCache * cache = new FBCache(*prob, x, gamma);
+    cache->set_direction(d);
+
+    double tau = 0.1;
+    double fxtd;
+    int status;
+    status = cache->extrapolate_fbe(tau, gamma, fxtd);
+    _ASSERT(ForBESUtils::is_status_ok(status));
+
+    Matrix xtd(n, 1);
+    status = cache->xtd(tau, xtd);
+    _ASSERT(ForBESUtils::is_status_ok(status));
+    
+    cache->set_point(xtd);
+    double fbe_xtd = cache->get_eval_FBE(gamma);
+    _ASSERT_NUM_EQ(fbe_xtd, fxtd, 1e-10);
+
+    delete f;
+    delete g;
+    delete prob;
 }

@@ -111,6 +111,7 @@ protected:
      * 
      * \sa extrapolate_f
      * \sa cache_status
+     * \sa extrapolate_fbe
      */
     int extrapolate_f1(double tau, double& fxtd);
 
@@ -137,6 +138,8 @@ protected:
      * STATUS_CACHE_NO_DIRECTION\endlink if no direction \f$d\f$ is provided.
      * 
      * \sa extrapolate_f1
+     * \sa extrapolate_gradf
+     * \sa extrapolate_fbe
      */
     int extrapolate_f(double tau, double& fxtd);
 
@@ -149,6 +152,8 @@ protected:
      * @return status code: returns \link ForBESUtils::STATUS_OK STATUS_OK\endlink 
      * if the method has succeeded, \link ForBESUtils::STATUS_CACHE_NO_DIRECTION 
      * STATUS_CACHE_NO_DIRECTION\endlink if no direction \f$d\f$ is provided.
+     * 
+     * \sa extrapolate_fbe
      */
     int extrapolate_gradf(double tau, Matrix& grad_xtd);
 
@@ -183,7 +188,8 @@ protected:
      * @return status code (see ForBESUtils); returns a 
      * \link ForBESUtils::STATUS_OK STATUS_OK\endlink 
      * if the computation was successful and sets the internal status of the cache to 
-     * \link FBCache::STATUS_EVALF STATUS_EVALF\endlink.
+     * \link FBCache::STATUS_EVALF STATUS_EVALF\endlink. If the result was cached, 
+     * it returns a \link ForBESUtils::STATUS_CACHED_ALREADY STATUS_CACHED_ALREADY\endlink.
      */
     int update_eval_f(bool order_grad_f2);
 
@@ -196,7 +202,8 @@ protected:
      * y = x - \gamma \nabla f(x).
      * \f]
      *
-     * @return Status code, see ForBESUtils.
+     * @return Status code, see ForBESUtils. If the result was cached, 
+     * it returns a \link ForBESUtils::STATUS_CACHED_ALREADY STATUS_CACHED_ALREADY\endlink.
      */
     int update_forward_step(double gamma);
 
@@ -210,7 +217,8 @@ protected:
      * \f]
      * and it also computes and stores its squared norm \f$\|R_\gamma(x)\|^2\f$.
      *
-     * @return Status code, see ForBESUtils.
+     * @return Status code, see ForBESUtils. If the result was cached, 
+     * it returns a \link ForBESUtils::STATUS_CACHED_ALREADY STATUS_CACHED_ALREADY\endlink.
      */
     int update_forward_backward_step(double gamma);
 
@@ -229,15 +237,27 @@ protected:
      * \f]
      * is the fixed-point residual (FPR).
      * 
-     * @return Status code, see ForBESUtils.
+     * @return Status code, see ForBESUtils. If the result was cached, 
+     * it returns a \link ForBESUtils::STATUS_CACHED_ALREADY STATUS_CACHED_ALREADY\endlink.
      */
     int update_eval_FBE(double gamma);
 
     /**
      * Evaluates the gradient of the FBE at x with parameter gamma,
-     * and updates the internal status.
+     * and updates the internal status. 
+     * 
+     * The gradient of the FBE is given by
+     * 
+     * \f[
+     *  \nabla \varphi_\gamma(x) = (I-\gamma \nabla_x^2 f(x))R_\gamma(x),
+     * \f]
      *
-     * @return Status code, see ForBESUtils.
+     * where \f$R_\gamma(x)=x-z(x)\f$ is the <em>fixed-point residual</em> with 
+     * \f$z(x) = \mathrm{prox}_{\gamma g}(x-\gamma \nabla f(x))\f$ .
+     * 
+     * 
+     * @return Status code, see ForBESUtils. If the result was cached, 
+     * it returns a \link ForBESUtils::STATUS_CACHED_ALREADY STATUS_CACHED_ALREADY\endlink.
      */
     int update_grad_FBE(double gamma);
 
@@ -332,6 +352,8 @@ public:
      * \link FBCache::STATUS_NONE STATUS_NONE\endlink.
      *
      * @param x new point at which to evaluate the steps
+     * 
+     * \sa get_point
      */
     void set_point(Matrix& x);
 
@@ -344,12 +366,16 @@ public:
      * for the direction.
      * 
      * @param d direction
+     * 
+     * \sa set_point
      */
     void set_direction(Matrix& d);
 
     /**
      * Returns a pointer to the currently stored direction
      * @return internally stored direction
+     * 
+     * \sa set_direction
      */
     Matrix * get_direction();
 
@@ -357,16 +383,26 @@ public:
      * Gets (a pointer to) the point \f$x\f$ to which the FBCache object refer
      *
      * @return a pointer to Matrix containing the handled point
+     * 
+     * \sa set_point
      */
     Matrix * get_point();
 
     /**
-     * Gets the result of the forward (gradient) step, with step-size \f$\gamma\f$, at \f$x\f$
+     * Gets the result of the forward (gradient) step given by 
+     * \f$x-\gamma \nabla f(x)\f$, with step-size \f$\gamma\f$, at the stored point 
+     * \f$x\f$.
+     * 
+     * If the forward step for the current values of \f$x\f$ and \f$\gamma\f$ has not
+     * been computed previously, it is computed and cached the first time that 
+     * this method is called.
+     * 
      *
      * @param gamma stepsize parameter
      * @return a pointer to Matrix containing the forward step
      * 
      * \sa update_forward_step
+     * \sa set_point
      */
     Matrix * get_forward_step(double gamma);
 
@@ -497,6 +533,10 @@ public:
      * @return status code: \link ForBESUtils::STATUS_OK STATUS_OK\endlink on success, 
      * \link ForBESUtils::STATUS_CACHE_NO_DIRECTION STATUS_CACHE_NO_DIRECTION\endlink 
      * if no direction is available.
+     * 
+     * \sa extrapolate_f
+     * \sa extrapolate_f1
+     * \sa extrapolate_gradf
      */
     int extrapolate_fbe(double tau, double gamma, double& fbe);
 
