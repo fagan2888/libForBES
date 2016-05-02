@@ -9,8 +9,7 @@ before_install:
   - sudo apt-get -y install libcppunit-dev checkinstall
   - sudo apt-get -y install g++-4.8 checkinstall
   - export CXX=g++-4.8
-  - sudo ln -s /usr/lib/openblas-base/libopenblas.so /usr/lib/libopenblas.so
-  - sudo ln -s /usr/lib/openblas-base/libopenblas.so.0 /usr/lib/libopenblas.so.0
+  - sudo ln -s /usr/lib/openblas-base/libopenblas.a /usr/lib/libopenblas.a
   - sudo ldconfig 
   - mkdir -p libs
   - wget http://faculty.cse.tamu.edu/davis/SuiteSparse/SuiteSparse-4.4.6.tar.gz -O ./libs/SuiteSparse.tar.gz
