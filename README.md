@@ -1,5 +1,7 @@
 # libFORBES
 
+[![Build Status](https://travis-ci.org/kul-forbes/libForBES.svg?branch=master)](https://travis-ci.org/kul-forbes/libForBES)
+
 LibForBES is a C++ library which allows users to formulate generic convex optimisation problems and solve them using forward-backward envelope methods.
 
 Get started by reading our <a href="http://kul-forbes.github.io/libForBES/" target="_blank">online documentation and tutorials</a>.
