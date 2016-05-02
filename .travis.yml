@@ -6,6 +6,7 @@ before_install:
   - sudo apt-get -y install liblapack-dev checkinstall
   - sudo apt-get -y install libcppunit-dev checkinstall
 before_script:
+  - mkdir -p libs
   - wget http://faculty.cse.tamu.edu/davis/SuiteSparse/SuiteSparse-4.4.6.tar.gz -O ./libs/SuiteSparse.tar.gz
   - tar xvf ./libs/SuiteSparse.tar.gz -C ./libs
   - rm -rf ./libs/SuiteSparse.tar.gz
