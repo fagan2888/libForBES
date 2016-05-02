@@ -15,6 +15,19 @@ before_install:
   - cd ./libs/SuiteSparse
   - make
   - cd ../../
+  - wget http://www.netlib.org/lapack/lapack-3.6.0.tgz -O ./libs/lapack-3.6.0.tgz
+  - tar zxf ./libs/lapack-3.6.0.tgz -C ./libs
+  - rm ./libs/lapack-3.6.0.tgz
+  - cd ./libs/lapack-3.6.0/
+  - cp make.inc.example make.inc
+  - cd LAPACKE
+  - make
+  - sudo cp ./include/lapacke.h /usr/include/
+  - sudo cp ./include/lapacke_mangling.h /usr/include/
+  - sudo cp ./include/lapacke_utils.h /usr/include/
+  - cd ..
+  - sudo cp ./liblapacke.a /usr/lib
+  - cd ../../
 before_script:
   - export CONFIG_FILE=config.mk
   - echo "# Auto-generated config file." > $CONFIG_FILE
