@@ -179,7 +179,7 @@ int Quadratic::callProx(Matrix& v, double gamma, Matrix& prox) {
         MatrixOperator P_op(P);
         CGSolver solver(Q_tilde_op, P_op, 1e-6, 1500);
         status = solver.solve(v_gamma_b, prox);
-        if (!ForBESUtils::is_status_ok(status)) return status;
+        if (ForBESUtils::is_status_error(status)) return status;
     } else {
         // Q = I
         // (v-gamma q)/(1+gamma)

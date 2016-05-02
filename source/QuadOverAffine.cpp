@@ -23,16 +23,6 @@
 
 void checkConstructorArguments(const Matrix& Q, const Matrix& q, const Matrix& A, const Matrix& b);
 
-QuadOverAffine::QuadOverAffine() : Function() {
-    m_A = NULL;
-    m_F = NULL;
-    m_Fsolver = NULL;
-    m_Q = NULL;
-    m_q = NULL;
-    m_b = NULL;
-    m_sigma = NULL;
-}
-
 QuadOverAffine::~QuadOverAffine() {
     if (m_Fsolver != NULL) {
         delete m_Fsolver;
@@ -46,6 +36,7 @@ QuadOverAffine::~QuadOverAffine() {
 }
 
 void checkConstructorArguments(const Matrix& Q, const Matrix& q, const Matrix& A, const Matrix& b) {
+    //LCOV_EXCL_START
     if (Q.getNrows() != Q.getNcols()) {
         throw std::invalid_argument("Matrix Q is not square");
     }
@@ -64,9 +55,10 @@ void checkConstructorArguments(const Matrix& Q, const Matrix& q, const Matrix& A
     if (A.getNrows() != b.getNrows()) { // A and b must have the same number of rows
         throw std::invalid_argument("A and b have incompatible dimensions");
     }
+    //LCOV_EXCL_STOP
 }
 
-QuadOverAffine::QuadOverAffine(Matrix& Q, Matrix& q, Matrix& A, Matrix& b) {
+QuadOverAffine::QuadOverAffine(Matrix& Q, Matrix& q, Matrix& A, Matrix& b) : Function() {
     checkConstructorArguments(Q, q, A, b);
 
     m_F = NULL;
@@ -122,7 +114,7 @@ int QuadOverAffine::callConj(Matrix& y, double& f_star, Matrix& grad) {
     /* Update sigma(x) */
     for (size_t i = 0; i < m_Q->getNrows(); i++) {
         m_sigma->getData()[i] = y[i] - m_q->get(i);
-    }    
+    }
     /* Solve F*grad = sigma */
     int status = m_Fsolver->solve(*m_sigma, grad);
     /* Take the first n elements of grad */

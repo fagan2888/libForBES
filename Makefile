@@ -24,7 +24,7 @@
 include config.mk
 
 DO_PROFILE := 0
-DO_PARALLEL := 1
+DO_PARALLEL := 0
 	
 # Enable parallel make on N-1 processors	
 ifeq (1, $(DO_PARALLEL))
@@ -36,9 +36,8 @@ ifeq (1, $(DO_PARALLEL))
 	ifeq ($(OS),Darwin) # Assume Mac OS X
 	    NPROCS:=$(shell sysctl -n hw.ncpu)
 	endif
-	NPROCS:=$$(($(NPROCS)-2))
+	NPROCS:=$$(($(NPROCS)-1))	
 	MAKEFLAGS += -j $(NPROCS)
-	#MAKEFLAGS += -j 2
 	MAKEFLAGS += --no-print-directory
 endif
 

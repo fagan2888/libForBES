@@ -123,8 +123,7 @@ public:
 
 
 private:
-
-    QuadOverAffine();
+    
 
     Matrix *m_Q; /**< Matrix Q (Hessian) */
     Matrix *m_q; /**< Vector q (Linear term) */
