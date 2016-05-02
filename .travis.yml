@@ -5,10 +5,8 @@ before_install:
   - sudo apt-get install -y libblas-dev checkinstall
   - sudo apt-get -y install liblapack-dev checkinstall
   - sudo apt-get -y install libcppunit-dev checkinstall
-  - sudo updatedb
-  - locate libopenblas.a
-  - locate libopenblas
-  - export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/
+  - export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/openblas-base
+  - ldconfig -v
   - ls /usr/lib
   - mkdir -p libs
   - wget http://faculty.cse.tamu.edu/davis/SuiteSparse/SuiteSparse-4.4.6.tar.gz -O ./libs/SuiteSparse.tar.gz
