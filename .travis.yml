@@ -5,13 +5,9 @@ before_install:
   - sudo apt-get install -y libblas-dev checkinstall
   - sudo apt-get -y install liblapack-dev checkinstall
   - sudo apt-get -y install libcppunit-dev checkinstall
-  - export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/openblas-base
   - sudo ln -s /usr/lib/openblas-base/libopenblas.so /usr/lib/libopenblas.so
   - sudo ln -s /usr/lib/openblas-base/libopenblas.so.0 /usr/lib/libopenblas.so.0
   - sudo ldconfig 
-  - ldconfig -p
-  - ls /usr/lib
-  - ls /usr/lib/openblas-base
   - mkdir -p libs
   - wget http://faculty.cse.tamu.edu/davis/SuiteSparse/SuiteSparse-4.4.6.tar.gz -O ./libs/SuiteSparse.tar.gz
   - tar xvf ./libs/SuiteSparse.tar.gz -C ./libs
@@ -19,3 +15,14 @@ before_install:
   - cd ./libs/SuiteSparse
   - make
   - cd ../../
+before_script:
+  - export CONFIG_FILE=config.mk
+  - echo "# Auto-generated config file." > $CONFIG_FILE
+  - echo -e "# Path to your SuiteSparse directory" >> $CONFIG_FILE
+  - echo -e "SS_DIR = libs/SuiteSparse" >> $CONFIG_FILE
+  - echo -e "# Extra headers and libraries paths" >> $CONFIG_FILE
+  - echo -e "IEXTRA = /usr/include" >> $CONFIG_FILE
+  - echo -e "LEXTRA = /usr/lib" >> $CONFIG_FILE
+script:
+  - make
+  - make test
