@@ -557,6 +557,7 @@
       <itemPath>.travis.yml</itemPath>
       <itemPath>Makefile</itemPath>
       <itemPath>config.mk</itemPath>
+      <itemPath>scripts</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>

@@ -14,19 +14,14 @@ before_install:
   - export CXX=g++-4.8
   - sudo ldconfig 
   - mkdir -p libs
-  - wget http://faculty.cse.tamu.edu/davis/SuiteSparse/SuiteSparse-4.4.6.tar.gz -O ./libs/SuiteSparse.tar.gz
-  - tar xvf ./libs/SuiteSparse.tar.gz -C ./libs
-  - rm -rf ./libs/SuiteSparse.tar.gz
-  - cd ./libs/SuiteSparse
-  - make
-  - cd ../../
+  - ./scripts/install-suitesparse.sh > /dev/null
   - wget http://www.netlib.org/lapack/lapack-3.6.0.tgz -O ./libs/lapack-3.6.0.tgz
   - tar zxf ./libs/lapack-3.6.0.tgz -C ./libs
   - rm ./libs/lapack-3.6.0.tgz
   - cd ./libs/lapack-3.6.0/
   - cp make.inc.example make.inc
   - cd LAPACKE
-  - make
+  - make > /dev/null
   - sudo cp ./include/lapacke.h /usr/include/
   - sudo cp ./include/lapacke_mangling.h /usr/include/
   - sudo cp ./include/lapacke_utils.h /usr/include/
@@ -46,3 +41,4 @@ script:
   - make test
 notifications:
   slack: libforbes:C178Pwjz1D016i1TXl977Bu0
+  email: false
