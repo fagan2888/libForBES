@@ -47,7 +47,7 @@ QuadraticLossOverAffine::QuadraticLossOverAffine(Matrix& A, Matrix& b, Matrix& w
     *m_F = A * W_inv_sqrt;
     m_solver = new S_LDLFactorization(*m_F, __QUADLOSS_AFFINE_EPSILON);
     int status = m_solver -> factorize();
-    if (ForBESUtils::STATUS_OK != status) {
+    if (ForBESUtils::is_status_error(status)) {
         throw std::invalid_argument("Matrix FF'+eI cannot be LDL-factorized");
     }
 }
@@ -72,7 +72,7 @@ int QuadraticLossOverAffine::callConj(Matrix& y, double& f_star, Matrix& grad) {
     Matrix h = (*m_A) * sigma - (*m_b);
     Matrix q;
     int status = m_solver -> solve(h, q);
-    if (ForBESUtils::STATUS_OK != status) {
+    if (ForBESUtils::is_status_error(status)) {
         return status;
     }
     m_A->transpose();

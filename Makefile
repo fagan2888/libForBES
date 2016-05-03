@@ -45,7 +45,7 @@ endif
 ifeq (1, $(DO_PROFILE))
     CXX = g++-4.9
 else
-    CXX = g++
+    CXX = g++-4.8
 endif
 
 # Enable CCACHE

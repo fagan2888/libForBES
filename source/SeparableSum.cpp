@@ -87,7 +87,7 @@ int SeparableSum::call(Matrix& x, double& f) {
 
         /* invoke sub-function on c_x, return f_temp */
         status = c_fun -> call(*c_x, f_temp);
-        if (ForBESUtils::STATUS_OK != status) {
+        if (ForBESUtils::is_status_error(status)) {
             delete c_x;
             c_x = NULL;
             return status;
@@ -121,7 +121,7 @@ int SeparableSum::call(Matrix& x, double& f, Matrix& grad) {
         c_grad = new Matrix(c_idx->size(), 1);
         status = c_fun -> call(*c_x, f_temp, *c_grad);
 
-        if (!ForBESUtils::is_status_ok(status)) {
+        if (ForBESUtils::is_status_error(status)) {
             delete c_x;
             c_x = NULL;
             delete c_grad;
@@ -170,7 +170,7 @@ int SeparableSum::callProx(Matrix& x, double gamma, Matrix& prox) {
 
         c_prox = new Matrix(c_idx->size(), 1);
         int status = c_fun -> callProx(*c_x, gamma, *c_prox);
-        if (!ForBESUtils::is_status_ok(status)) {
+        if (ForBESUtils::is_status_error(status)) {
             delete c_x;
             delete c_prox;
             return status;
@@ -252,7 +252,7 @@ int SeparableSum::callConj(Matrix& x, double& f_star) {
 
         double f_star_temp;
         int status = c_fun -> callConj(*c_x, f_star_temp);
-        if (!ForBESUtils::is_status_ok(status)) {
+        if (ForBESUtils::is_status_error(status)) {
             delete c_x;
             c_x = NULL;
             return status;

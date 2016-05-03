@@ -796,6 +796,7 @@ void TestFBCache::testFExtrapolate() {
 
     double fxtd;
     int status = cache->extrapolate_f(tau, fxtd);
+    _ASSERT_NUM_EQ(tau, cache->m_tau, 1e-12);
     _ASSERT(ForBESUtils::is_status_ok(status));
     _ASSERT_NUM_EQ(18.8574969048016, fxtd, 1e-10);
     _ASSERT_EQ(FBCache::STATUS_EVALF, cache->cache_status());
@@ -890,6 +891,7 @@ void TestFBCache::testFExtrapolate2() {
     int status = cache->extrapolate_f(tau, fxtd);
     _ASSERT(ForBESUtils::is_status_ok(status));
     _ASSERT_NUM_EQ(-1.37225660471873, fxtd, 1e-10);
+    _ASSERT_NUM_EQ(tau, cache->m_tau, 1e-12);
 
     status = cache->extrapolate_f(tau, fxtd);
     _ASSERT(ForBESUtils::is_status_ok(status));
@@ -1006,6 +1008,7 @@ void TestFBCache::testGradfExtrapolate() {
     tau = 0.965972864348100;
     status = cache->extrapolate_gradf(tau, gradfxtd);
     _ASSERT(ForBESUtils::is_status_ok(status));
+    _ASSERT_NUM_EQ(tau, cache->m_tau, 1e-12);
 
     double grad_exp2_data[] = {
         0.2826073571195490,

@@ -121,7 +121,7 @@ void TestConjugateFunction::testCallConj() {
 
     Function * F_conj = new ConjugateFunction(*F);
     _ASSERT(F_conj->category().defines_conjugate());
-    _ASSERT_EQ(ForBESUtils::STATUS_OK, F_conj->callConj(x, fval2));
+    _ASSERT(ForBESUtils::is_status_ok(F_conj->callConj(x, fval2)));
     _ASSERT(fval2 > 0);
     _ASSERT_NUM_EQ(fval, fval2, tol);
 

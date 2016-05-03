@@ -16,7 +16,7 @@ Norm::~Norm() {
 int Norm::callConj(Matrix& x, double& f_star) {
     double dNorm;
     int status = dualNorm(x, dNorm);
-    if (ForBESUtils::STATUS_OK != status) {
+    if (ForBESUtils::is_status_error(status)) {
         return status;
     }
     if (dNorm <= 1) {
