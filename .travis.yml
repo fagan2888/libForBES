@@ -15,7 +15,7 @@ before_install:
   - sudo ldconfig 
   - mkdir -p libs
   - chmod a+x ./scripts/install-suitesparse.sh
-  - ./scripts/install-suitesparse.sh > /dev/null
+  - ./scripts/install-suitesparse.sh 
   - wget http://www.netlib.org/lapack/lapack-3.6.0.tgz -O ./libs/lapack-3.6.0.tgz
   - tar zxf ./libs/lapack-3.6.0.tgz -C ./libs
   - rm ./libs/lapack-3.6.0.tgz
