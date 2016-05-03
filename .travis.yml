@@ -43,3 +43,7 @@ script:
 notifications:
   slack: libforbes:C178Pwjz1D016i1TXl977Bu0
   email: false
+cache:
+    directories:
+        - libs
+    apt: true

@@ -6,6 +6,7 @@
 #include "TestFBCache.h"
 
 #define DOUBLES_EQUAL_DELTA 1e-8
+#define RUNS 1e4
 
 CPPUNIT_TEST_SUITE_REGISTRATION(TestFBCache);
 
@@ -794,24 +795,26 @@ void TestFBCache::testFExtrapolate() {
 
     cache->set_direction(d);
 
-    double fxtd;
-    int status = cache->extrapolate_f(tau, fxtd);
-    _ASSERT_NUM_EQ(tau, cache->m_tau, 1e-12);
-    _ASSERT(ForBESUtils::is_status_ok(status));
-    _ASSERT_NUM_EQ(18.8574969048016, fxtd, 1e-10);
-    _ASSERT_EQ(FBCache::STATUS_EVALF, cache->cache_status());
-    _ASSERT(cache->m_betas_fresh);
-    _ASSERT(cache->m_lind_fresh);
-    _ASSERT(cache->m_L2d_fresh);
-    _ASSERT_EQ(cache->m_L2d, cache->m_dir);
+    for (size_t run = 0; run < RUNS; ++run) {
+        double fxtd;
+        int status = cache->extrapolate_f(tau, fxtd);
+        _ASSERT_NUM_EQ(tau, cache->m_tau, 1e-12);
+        _ASSERT(ForBESUtils::is_status_ok(status));
+        _ASSERT_NUM_EQ(18.8574969048016, fxtd, 1e-10);
+        _ASSERT_EQ(FBCache::STATUS_EVALF, cache->cache_status());
+        _ASSERT(cache->m_betas_fresh);
+        _ASSERT(cache->m_lind_fresh);
+        _ASSERT(cache->m_L2d_fresh);
+        _ASSERT_EQ(cache->m_L2d, cache->m_dir);
 
-    status = cache->extrapolate_f(tau, fxtd);
-    _ASSERT_NUM_EQ(18.8574969048016, fxtd, 1e-10);
-    _ASSERT_EQ(ForBESUtils::STATUS_CACHED_ALREADY, status);
+        status = cache->extrapolate_f(tau, fxtd);
+        _ASSERT_NUM_EQ(18.8574969048016, fxtd, 1e-10);
+        _ASSERT_EQ(ForBESUtils::STATUS_CACHED_ALREADY, status);
 
-    status = cache->extrapolate_f(5 * tau, fxtd);
-    _ASSERT_NEQ(ForBESUtils::STATUS_CACHED_ALREADY, status);
-
+        status = cache->extrapolate_f(5 * tau, fxtd);
+        _ASSERT_NEQ(ForBESUtils::STATUS_CACHED_ALREADY, status);
+    }
+    
     delete f1, f2, prob, cache;
 }
 
@@ -887,17 +890,19 @@ void TestFBCache::testFExtrapolate2() {
 
     cache->set_direction(d);
 
-    double fxtd;
-    int status = cache->extrapolate_f(tau, fxtd);
-    _ASSERT(ForBESUtils::is_status_ok(status));
-    _ASSERT_NUM_EQ(-1.37225660471873, fxtd, 1e-10);
-    _ASSERT_NUM_EQ(tau, cache->m_tau, 1e-12);
+    for (size_t run = 0; run < RUNS; ++run) {
+        double fxtd;
+        int status = cache->extrapolate_f(tau, fxtd);
+        _ASSERT(ForBESUtils::is_status_ok(status));
+        _ASSERT_NUM_EQ(-1.37225660471873, fxtd, 1e-10);
+        _ASSERT_NUM_EQ(tau, cache->m_tau, 1e-12);
 
-    status = cache->extrapolate_f(tau, fxtd);
-    _ASSERT(ForBESUtils::is_status_ok(status));
-    _ASSERT_EQ(ForBESUtils::STATUS_CACHED_ALREADY, status);
+        status = cache->extrapolate_f(tau, fxtd);
+        _ASSERT(ForBESUtils::is_status_ok(status));
+        _ASSERT_EQ(ForBESUtils::STATUS_CACHED_ALREADY, status);
 
-    _ASSERT_NEQ(NULL, cache->m_Qu);
+        _ASSERT_NEQ(NULL, cache->m_Qu);
+    }
 
     delete f1, f2, prob, cache;
 
@@ -977,13 +982,17 @@ void TestFBCache::testGradfExtrapolate() {
     Matrix gradfxtd;
     int status;
 
-    status = cache->extrapolate_gradf(tau, gradfxtd);
-    _ASSERT_EQ(ForBESUtils::STATUS_CACHE_NO_DIRECTION, status);
+    for (size_t run = 0; run < RUNS; ++run) {
+        status = cache->extrapolate_gradf(tau, gradfxtd);
+        _ASSERT_EQ(ForBESUtils::STATUS_CACHE_NO_DIRECTION, status);
+    }
 
     cache->set_direction(d);
 
-    status = cache->extrapolate_gradf(tau, gradfxtd);
-    _ASSERT(ForBESUtils::is_status_ok(status));
+    for (size_t run = 0; run < RUNS; ++run) {
+        status = cache->extrapolate_gradf(tau, gradfxtd);
+        _ASSERT(ForBESUtils::is_status_ok(status));
+    }
 
     _ASSERT(cache->m_betas_fresh);
     _ASSERT(cache->m_fxtd_fresh);
@@ -1001,9 +1010,11 @@ void TestFBCache::testGradfExtrapolate() {
 
     cache->reset();
 
-    status = cache->extrapolate_gradf(tau, gradfxtd);
-    _ASSERT(ForBESUtils::is_status_ok(status));
-    _ASSERT_EQ(gradfxtd, grad_exp);
+    for (size_t run = 0; run < RUNS; ++run) {
+        status = cache->extrapolate_gradf(tau, gradfxtd);
+        _ASSERT(ForBESUtils::is_status_ok(status));
+        _ASSERT_EQ(gradfxtd, grad_exp);
+    }
 
     tau = 0.965972864348100;
     status = cache->extrapolate_gradf(tau, gradfxtd);
@@ -1118,11 +1129,19 @@ void TestFBCache::testFBEExtrapolate() {
 
     tau = 2.3456789;
     status = cache->extrapolate_fbe(tau, gamma, fbe_xtd);
+    _ASSERT(ForBESUtils::is_status_ok(status));
     _ASSERT_NUM_EQ(-2.00556913734927, fbe_xtd, 1e-10);
 
     tau = 0.01223451;
     status = cache->extrapolate_fbe(tau, gamma, fbe_xtd);
+    _ASSERT(ForBESUtils::is_status_ok(status));
     _ASSERT_NUM_EQ(-4.23660375940972, fbe_xtd, 1e-10);
+
+    for (size_t run = 0; run < RUNS; ++run) {
+        tau += 0.0001;
+        status = cache->extrapolate_fbe(tau, gamma, fbe_xtd);
+        _ASSERT(ForBESUtils::is_status_ok(status));
+    }
 
     _ASSERT(cache->m_Qu != NULL);
     _ASSERT(cache->m_L2d != NULL);
@@ -1181,10 +1200,10 @@ void TestFBCache::testLeanCache() {
         0.1452600000000000,
         0.1614000000000000
     };
-    Matrix forward_expected(n,1,forward_expected_data);
+    Matrix forward_expected(n, 1, forward_expected_data);
     _ASSERT_EQ(forward_expected, *forward_new);
     _ASSERT_NUM_EQ(gamma, cache->m_gamma, 1e-10);
-    
+
     delete f;
     delete g;
     delete prob;
