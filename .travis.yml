@@ -14,6 +14,7 @@ before_install:
   - export CXX=g++-4.8
   - sudo ldconfig 
   - mkdir -p libs
+  - chmod a+x ./scripts/install-suitesparse.sh
   - ./scripts/install-suitesparse.sh > /dev/null
   - wget http://www.netlib.org/lapack/lapack-3.6.0.tgz -O ./libs/lapack-3.6.0.tgz
   - tar zxf ./libs/lapack-3.6.0.tgz -C ./libs
