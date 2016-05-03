@@ -81,6 +81,7 @@ m_gamma(gamma) {
     m_cached_grad_f2 = false;
 
     /* set pointers to NULL */
+    m_res1x = NULL;
     m_res2x = NULL;
     m_gradf2x = NULL;
     m_gradf1x = NULL;
