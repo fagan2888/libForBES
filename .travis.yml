@@ -1,13 +1,15 @@
 language: cpp
 sudo: required
 dist: trusty
+addons:
+  apt:
+    packages:
+      - libopenblas-base
+      - libblas-dev
+      - liblapack-dev
+      - libcppunit-dev
+      - g++-4.8
 before_install:
-  - sudo apt-get -qq update
-  - sudo apt-get install -y libopenblas-*
-  - sudo apt-get install -y libblas-dev checkinstall
-  - sudo apt-get -y install liblapack-dev checkinstall
-  - sudo apt-get -y install libcppunit-dev checkinstall
-  - sudo apt-get -y install g++-4.8 checkinstall
   - export CXX=g++-4.8
   - sudo ldconfig 
   - mkdir -p libs
