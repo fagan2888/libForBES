@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=libforbes
+PROJECTNAME=libForBES
 
 # Active Configuration
 DEFAULTCONF=Debug

@@ -1,5 +1,7 @@
 build/
 dist/
+LOG_INSTALL.log
+main_run
 nbproject/build-impl.xml
 nbproject/private
 nbbuild/

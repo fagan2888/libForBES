@@ -45,7 +45,7 @@ public:
 
 
     const static int DOUBLE_TYPE; /**< <code>double</code> type */
-    const static int INT_TYPE; /**< <code>size_t</code> type  */
+    const static int INT_TYPE;    /**< <code>size_t</code> type  */
     const static int SIZE_T_TYPE; /**< <code>size_t</code> type  */
     const static int STRING_TYPE; /**< <code>std::string</code> type  */
     const static int VECTOR_TYPE; /**< type <code>std::vector</code> type  */

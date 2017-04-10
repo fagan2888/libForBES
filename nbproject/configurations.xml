@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="97">
+<configurationDescriptor version="100">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
@@ -185,6 +185,8 @@
         <itemPath>source/ForBES.h</itemPath>
         <itemPath>source/ForBESUtils.cpp</itemPath>
         <itemPath>source/ForBESUtils.h</itemPath>
+        <itemPath>source/SVDHelper.cpp</itemPath>
+        <itemPath>source/SVDHelper.h</itemPath>
       </logicalFolder>
       <itemPath>source/main.cpp</itemPath>
     </logicalFolder>
@@ -549,6 +551,14 @@
         <itemPath>source/tests/TestSumOfNorm2.h</itemPath>
         <itemPath>source/tests/TestSumOfNorm2Runner.cpp</itemPath>
       </logicalFolder>
+      <logicalFolder name="f46"
+                     displayName="TestSVDHelper"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>source/tests/TestSVDHelper.cpp</itemPath>
+        <itemPath>source/tests/TestSVDHelper.h</itemPath>
+        <itemPath>source/tests/TestSVDHelperRunner.cpp</itemPath>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -599,7 +609,7 @@
             <pElem>libs/SuiteSparse/LDL/Lib</pElem>
             <pElem>libs/SuiteSparse/SuiteSparse_config</pElem>
           </linkerAddLib>
-          <commandLine>-lldl -lcholmod -lamd -lcolamd -lsuitesparseconfig -lccolamd -lcamd -llapacke -llapack -lopenblas -lm -lcppunit</commandLine>
+          <commandLine>-lcasadi -lldl -lcholmod -lamd -lcolamd -lsuitesparseconfig -lccolamd -lcamd -llapacke -llapack -lopenblas -lm -lcppunit</commandLine>
         </linkerTool>
       </compileType>
       <item path="dox/Alg1.png" ex="false" tool="3" flavor2="0">
@@ -1220,6 +1230,20 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
+      <folder path="TestFiles/f46">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f46</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
       <folder path="TestFiles/f5">
         <cTool>
           <commandLine>`cppunit-config --cflags`</commandLine>
@@ -1517,6 +1541,10 @@
       <item path="source/QuadraticOperator.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="source/QuadraticOperator.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/SVDHelper.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/SVDHelper.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="source/S_LDLFactorization.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1934,6 +1962,15 @@
       <item path="source/tests/TestSLDL.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="source/tests/TestSLDLRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestSVDHelper.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestSVDHelper.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestSVDHelperRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
       <item path="source/tests/TestSeparableSum.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -2592,6 +2629,20 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
+      <folder path="TestFiles/f46">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f46</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
       <folder path="TestFiles/f5">
         <cTool>
           <commandLine>`cppunit-config --cflags`</commandLine>
@@ -2889,6 +2940,10 @@
       <item path="source/QuadraticOperator.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="source/QuadraticOperator.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/SVDHelper.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/SVDHelper.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="source/S_LDLFactorization.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -3306,6 +3361,15 @@
       <item path="source/tests/TestSLDL.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="source/tests/TestSLDLRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestSVDHelper.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/tests/TestSVDHelper.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/tests/TestSVDHelperRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
       <item path="source/tests/TestSeparableSum.cpp" ex="false" tool="1" flavor2="0">
       </item>
