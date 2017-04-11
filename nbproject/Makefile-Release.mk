@@ -94,6 +94,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/source/QuadraticLoss.o \
 	${OBJECTDIR}/source/QuadraticLossOverAffine.o \
 	${OBJECTDIR}/source/QuadraticOperator.o \
+	${OBJECTDIR}/source/SVDHelper.o \
 	${OBJECTDIR}/source/S_LDLFactorization.o \
 	${OBJECTDIR}/source/SeparableSum.o \
 	${OBJECTDIR}/source/SeparableSumOrdered.o \
@@ -149,7 +150,8 @@ TESTFILES= \
 	${TESTDIR}/TestFiles/f43 \
 	${TESTDIR}/TestFiles/f44 \
 	${TESTDIR}/TestFiles/f26 \
-	${TESTDIR}/TestFiles/f45
+	${TESTDIR}/TestFiles/f45 \
+	${TESTDIR}/TestFiles/f46
 
 # Test Object Files
 TESTOBJECTFILES= \
@@ -239,6 +241,8 @@ TESTOBJECTFILES= \
 	${TESTDIR}/source/tests/TestQuadraticRunner.o \
 	${TESTDIR}/source/tests/TestSLDL.o \
 	${TESTDIR}/source/tests/TestSLDLRunner.o \
+	${TESTDIR}/source/tests/TestSVDHelper.o \
+	${TESTDIR}/source/tests/TestSVDHelperRunner.o \
 	${TESTDIR}/source/tests/TestSeparableSum.o \
 	${TESTDIR}/source/tests/TestSeparableSumRunner.o \
 	${TESTDIR}/source/tests/TestSumOfNorm2.o \
@@ -268,322 +272,327 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libforbes: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libforbes ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/examples/matop_example.o: examples/matop_example.cpp 
+${OBJECTDIR}/examples/matop_example.o: examples/matop_example.cpp
 	${MKDIR} -p ${OBJECTDIR}/examples
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/examples/matop_example.o examples/matop_example.cpp
 
-${OBJECTDIR}/examples/matrix_example.o: examples/matrix_example.cpp 
+${OBJECTDIR}/examples/matrix_example.o: examples/matrix_example.cpp
 	${MKDIR} -p ${OBJECTDIR}/examples
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/examples/matrix_example.o examples/matrix_example.cpp
 
-${OBJECTDIR}/examples/qp_box.o: examples/qp_box.cpp 
+${OBJECTDIR}/examples/qp_box.o: examples/qp_box.cpp
 	${MKDIR} -p ${OBJECTDIR}/examples
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/examples/qp_box.o examples/qp_box.cpp
 
-${OBJECTDIR}/examples/shallow_example.o: examples/shallow_example.cpp 
+${OBJECTDIR}/examples/shallow_example.o: examples/shallow_example.cpp
 	${MKDIR} -p ${OBJECTDIR}/examples
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/examples/shallow_example.o examples/shallow_example.cpp
 
-${OBJECTDIR}/source/CGSolver.o: source/CGSolver.cpp 
+${OBJECTDIR}/source/CGSolver.o: source/CGSolver.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/CGSolver.o source/CGSolver.cpp
 
-${OBJECTDIR}/source/CholeskyFactorization.o: source/CholeskyFactorization.cpp 
+${OBJECTDIR}/source/CholeskyFactorization.o: source/CholeskyFactorization.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/CholeskyFactorization.o source/CholeskyFactorization.cpp
 
-${OBJECTDIR}/source/ConjugateFunction.o: source/ConjugateFunction.cpp 
+${OBJECTDIR}/source/ConjugateFunction.o: source/ConjugateFunction.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/ConjugateFunction.o source/ConjugateFunction.cpp
 
-${OBJECTDIR}/source/DistanceToBall2.o: source/DistanceToBall2.cpp 
+${OBJECTDIR}/source/DistanceToBall2.o: source/DistanceToBall2.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/DistanceToBall2.o source/DistanceToBall2.cpp
 
-${OBJECTDIR}/source/DistanceToBox.o: source/DistanceToBox.cpp 
+${OBJECTDIR}/source/DistanceToBox.o: source/DistanceToBox.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/DistanceToBox.o source/DistanceToBox.cpp
 
-${OBJECTDIR}/source/ElasticNet.o: source/ElasticNet.cpp 
+${OBJECTDIR}/source/ElasticNet.o: source/ElasticNet.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/ElasticNet.o source/ElasticNet.cpp
 
-${OBJECTDIR}/source/FBCache.o: source/FBCache.cpp 
+${OBJECTDIR}/source/FBCache.o: source/FBCache.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/FBCache.o source/FBCache.cpp
 
-${OBJECTDIR}/source/FBProblem.o: source/FBProblem.cpp 
+${OBJECTDIR}/source/FBProblem.o: source/FBProblem.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/FBProblem.o source/FBProblem.cpp
 
-${OBJECTDIR}/source/FBSplitting.o: source/FBSplitting.cpp 
+${OBJECTDIR}/source/FBSplitting.o: source/FBSplitting.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/FBSplitting.o source/FBSplitting.cpp
 
-${OBJECTDIR}/source/FBSplittingFast.o: source/FBSplittingFast.cpp 
+${OBJECTDIR}/source/FBSplittingFast.o: source/FBSplittingFast.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/FBSplittingFast.o source/FBSplittingFast.cpp
 
-${OBJECTDIR}/source/FBStopping.o: source/FBStopping.cpp 
+${OBJECTDIR}/source/FBStopping.o: source/FBStopping.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/FBStopping.o source/FBStopping.cpp
 
-${OBJECTDIR}/source/FBStoppingRelative.o: source/FBStoppingRelative.cpp 
+${OBJECTDIR}/source/FBStoppingRelative.o: source/FBStoppingRelative.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/FBStoppingRelative.o source/FBStoppingRelative.cpp
 
-${OBJECTDIR}/source/FactoredSolver.o: source/FactoredSolver.cpp 
+${OBJECTDIR}/source/FactoredSolver.o: source/FactoredSolver.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/FactoredSolver.o source/FactoredSolver.cpp
 
-${OBJECTDIR}/source/ForBESUtils.o: source/ForBESUtils.cpp 
+${OBJECTDIR}/source/ForBESUtils.o: source/ForBESUtils.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/ForBESUtils.o source/ForBESUtils.cpp
 
-${OBJECTDIR}/source/Function.o: source/Function.cpp 
+${OBJECTDIR}/source/Function.o: source/Function.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/Function.o source/Function.cpp
 
-${OBJECTDIR}/source/FunctionOntologicalClass.o: source/FunctionOntologicalClass.cpp 
+${OBJECTDIR}/source/FunctionOntologicalClass.o: source/FunctionOntologicalClass.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/FunctionOntologicalClass.o source/FunctionOntologicalClass.cpp
 
-${OBJECTDIR}/source/FunctionOntologyRegistry.o: source/FunctionOntologyRegistry.cpp 
+${OBJECTDIR}/source/FunctionOntologyRegistry.o: source/FunctionOntologyRegistry.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/FunctionOntologyRegistry.o source/FunctionOntologyRegistry.cpp
 
-${OBJECTDIR}/source/HingeLoss.o: source/HingeLoss.cpp 
+${OBJECTDIR}/source/HingeLoss.o: source/HingeLoss.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/HingeLoss.o source/HingeLoss.cpp
 
-${OBJECTDIR}/source/HuberLoss.o: source/HuberLoss.cpp 
+${OBJECTDIR}/source/HuberLoss.o: source/HuberLoss.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/HuberLoss.o source/HuberLoss.cpp
 
-${OBJECTDIR}/source/IndBall2.o: source/IndBall2.cpp 
+${OBJECTDIR}/source/IndBall2.o: source/IndBall2.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/IndBall2.o source/IndBall2.cpp
 
-${OBJECTDIR}/source/IndBox.o: source/IndBox.cpp 
+${OBJECTDIR}/source/IndBox.o: source/IndBox.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/IndBox.o source/IndBox.cpp
 
-${OBJECTDIR}/source/IndPos.o: source/IndPos.cpp 
+${OBJECTDIR}/source/IndPos.o: source/IndPos.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/IndPos.o source/IndPos.cpp
 
-${OBJECTDIR}/source/IndProbSimplex.o: source/IndProbSimplex.cpp 
+${OBJECTDIR}/source/IndProbSimplex.o: source/IndProbSimplex.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/IndProbSimplex.o source/IndProbSimplex.cpp
 
-${OBJECTDIR}/source/IndSOC.o: source/IndSOC.cpp 
+${OBJECTDIR}/source/IndSOC.o: source/IndSOC.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/IndSOC.o source/IndSOC.cpp
 
-${OBJECTDIR}/source/LBFGSBuffer.o: source/LBFGSBuffer.cpp 
+${OBJECTDIR}/source/LBFGSBuffer.o: source/LBFGSBuffer.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/LBFGSBuffer.o source/LBFGSBuffer.cpp
 
-${OBJECTDIR}/source/LDLFactorization.o: source/LDLFactorization.cpp 
+${OBJECTDIR}/source/LDLFactorization.o: source/LDLFactorization.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/LDLFactorization.o source/LDLFactorization.cpp
 
-${OBJECTDIR}/source/LQCost.o: source/LQCost.cpp 
+${OBJECTDIR}/source/LQCost.o: source/LQCost.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/LQCost.o source/LQCost.cpp
 
-${OBJECTDIR}/source/LinOpSolver.o: source/LinOpSolver.cpp 
+${OBJECTDIR}/source/LinOpSolver.o: source/LinOpSolver.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/LinOpSolver.o source/LinOpSolver.cpp
 
-${OBJECTDIR}/source/LinSysSolver.o: source/LinSysSolver.cpp 
+${OBJECTDIR}/source/LinSysSolver.o: source/LinSysSolver.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/LinSysSolver.o source/LinSysSolver.cpp
 
-${OBJECTDIR}/source/LinearOperator.o: source/LinearOperator.cpp 
+${OBJECTDIR}/source/LinearOperator.o: source/LinearOperator.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/LinearOperator.o source/LinearOperator.cpp
 
-${OBJECTDIR}/source/LogLogisticLoss.o: source/LogLogisticLoss.cpp 
+${OBJECTDIR}/source/LogLogisticLoss.o: source/LogLogisticLoss.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/LogLogisticLoss.o source/LogLogisticLoss.cpp
 
-${OBJECTDIR}/source/Matrix.o: source/Matrix.cpp 
+${OBJECTDIR}/source/Matrix.o: source/Matrix.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/Matrix.o source/Matrix.cpp
 
-${OBJECTDIR}/source/MatrixFactory.o: source/MatrixFactory.cpp 
+${OBJECTDIR}/source/MatrixFactory.o: source/MatrixFactory.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/MatrixFactory.o source/MatrixFactory.cpp
 
-${OBJECTDIR}/source/MatrixOperator.o: source/MatrixOperator.cpp 
+${OBJECTDIR}/source/MatrixOperator.o: source/MatrixOperator.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/MatrixOperator.o source/MatrixOperator.cpp
 
-${OBJECTDIR}/source/MatrixSolver.o: source/MatrixSolver.cpp 
+${OBJECTDIR}/source/MatrixSolver.o: source/MatrixSolver.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/MatrixSolver.o source/MatrixSolver.cpp
 
-${OBJECTDIR}/source/MatrixWriter.o: source/MatrixWriter.cpp 
+${OBJECTDIR}/source/MatrixWriter.o: source/MatrixWriter.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/MatrixWriter.o source/MatrixWriter.cpp
 
-${OBJECTDIR}/source/Norm.o: source/Norm.cpp 
+${OBJECTDIR}/source/Norm.o: source/Norm.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/Norm.o source/Norm.cpp
 
-${OBJECTDIR}/source/Norm1.o: source/Norm1.cpp 
+${OBJECTDIR}/source/Norm1.o: source/Norm1.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/Norm1.o source/Norm1.cpp
 
-${OBJECTDIR}/source/Norm2.o: source/Norm2.cpp 
+${OBJECTDIR}/source/Norm2.o: source/Norm2.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/Norm2.o source/Norm2.cpp
 
-${OBJECTDIR}/source/OpAdjoint.o: source/OpAdjoint.cpp 
+${OBJECTDIR}/source/OpAdjoint.o: source/OpAdjoint.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/OpAdjoint.o source/OpAdjoint.cpp
 
-${OBJECTDIR}/source/OpComposition.o: source/OpComposition.cpp 
+${OBJECTDIR}/source/OpComposition.o: source/OpComposition.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/OpComposition.o source/OpComposition.cpp
 
-${OBJECTDIR}/source/OpDCT2.o: source/OpDCT2.cpp 
+${OBJECTDIR}/source/OpDCT2.o: source/OpDCT2.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/OpDCT2.o source/OpDCT2.cpp
 
-${OBJECTDIR}/source/OpDCT3.o: source/OpDCT3.cpp 
+${OBJECTDIR}/source/OpDCT3.o: source/OpDCT3.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/OpDCT3.o source/OpDCT3.cpp
 
-${OBJECTDIR}/source/OpGradient.o: source/OpGradient.cpp 
+${OBJECTDIR}/source/OpGradient.o: source/OpGradient.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/OpGradient.o source/OpGradient.cpp
 
-${OBJECTDIR}/source/OpGradient2D.o: source/OpGradient2D.cpp 
+${OBJECTDIR}/source/OpGradient2D.o: source/OpGradient2D.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/OpGradient2D.o source/OpGradient2D.cpp
 
-${OBJECTDIR}/source/OpLTI.o: source/OpLTI.cpp 
+${OBJECTDIR}/source/OpLTI.o: source/OpLTI.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/OpLTI.o source/OpLTI.cpp
 
-${OBJECTDIR}/source/OpLinearCombination.o: source/OpLinearCombination.cpp 
+${OBJECTDIR}/source/OpLinearCombination.o: source/OpLinearCombination.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/OpLinearCombination.o source/OpLinearCombination.cpp
 
-${OBJECTDIR}/source/OpReverseVector.o: source/OpReverseVector.cpp 
+${OBJECTDIR}/source/OpReverseVector.o: source/OpReverseVector.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/OpReverseVector.o source/OpReverseVector.cpp
 
-${OBJECTDIR}/source/OpSum.o: source/OpSum.cpp 
+${OBJECTDIR}/source/OpSum.o: source/OpSum.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/OpSum.o source/OpSum.cpp
 
-${OBJECTDIR}/source/Properties.o: source/Properties.cpp 
+${OBJECTDIR}/source/Properties.o: source/Properties.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/Properties.o source/Properties.cpp
 
-${OBJECTDIR}/source/QuadOverAffine.o: source/QuadOverAffine.cpp 
+${OBJECTDIR}/source/QuadOverAffine.o: source/QuadOverAffine.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/QuadOverAffine.o source/QuadOverAffine.cpp
 
-${OBJECTDIR}/source/Quadratic.o: source/Quadratic.cpp 
+${OBJECTDIR}/source/Quadratic.o: source/Quadratic.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/Quadratic.o source/Quadratic.cpp
 
-${OBJECTDIR}/source/QuadraticLoss.o: source/QuadraticLoss.cpp 
+${OBJECTDIR}/source/QuadraticLoss.o: source/QuadraticLoss.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/QuadraticLoss.o source/QuadraticLoss.cpp
 
-${OBJECTDIR}/source/QuadraticLossOverAffine.o: source/QuadraticLossOverAffine.cpp 
+${OBJECTDIR}/source/QuadraticLossOverAffine.o: source/QuadraticLossOverAffine.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/QuadraticLossOverAffine.o source/QuadraticLossOverAffine.cpp
 
-${OBJECTDIR}/source/QuadraticOperator.o: source/QuadraticOperator.cpp 
+${OBJECTDIR}/source/QuadraticOperator.o: source/QuadraticOperator.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/QuadraticOperator.o source/QuadraticOperator.cpp
 
-${OBJECTDIR}/source/S_LDLFactorization.o: source/S_LDLFactorization.cpp 
+${OBJECTDIR}/source/SVDHelper.o: source/SVDHelper.cpp
+	${MKDIR} -p ${OBJECTDIR}/source
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/SVDHelper.o source/SVDHelper.cpp
+
+${OBJECTDIR}/source/S_LDLFactorization.o: source/S_LDLFactorization.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/S_LDLFactorization.o source/S_LDLFactorization.cpp
 
-${OBJECTDIR}/source/SeparableSum.o: source/SeparableSum.cpp 
+${OBJECTDIR}/source/SeparableSum.o: source/SeparableSum.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/SeparableSum.o source/SeparableSum.cpp
 
-${OBJECTDIR}/source/SeparableSumOrdered.o: source/SeparableSumOrdered.cpp 
+${OBJECTDIR}/source/SeparableSumOrdered.o: source/SeparableSumOrdered.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/SeparableSumOrdered.o source/SeparableSumOrdered.cpp
 
-${OBJECTDIR}/source/SumOfNorm2.o: source/SumOfNorm2.cpp 
+${OBJECTDIR}/source/SumOfNorm2.o: source/SumOfNorm2.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/SumOfNorm2.o source/SumOfNorm2.cpp
 
-${OBJECTDIR}/source/main.o: source/main.cpp 
+${OBJECTDIR}/source/main.o: source/main.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/main.o source/main.cpp
@@ -597,183 +606,187 @@ ${OBJECTDIR}/source/main.o: source/main.cpp
 
 ${TESTDIR}/TestFiles/f1: ${TESTDIR}/source/tests/TestCGSolver.o ${TESTDIR}/source/tests/TestCGSolverRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f1 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f1 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f2: ${TESTDIR}/source/tests/TestCholesky.o ${TESTDIR}/source/tests/TestCholeskyRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f2 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f2 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f3: ${TESTDIR}/source/tests/TestConjugateFunction.o ${TESTDIR}/source/tests/TestConjugateFunctionRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f3 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f3 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f4: ${TESTDIR}/source/tests/TestDistanceToBall2.o ${TESTDIR}/source/tests/TestDistanceToBall2Runner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f4 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f4 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f5: ${TESTDIR}/source/tests/TestDistanceToBox.o ${TESTDIR}/source/tests/TestDistanceToBoxRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f5 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f5 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f6: ${TESTDIR}/source/tests/TestElasticNet.o ${TESTDIR}/source/tests/TestElasticNetRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f6 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f6 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f7: ${TESTDIR}/source/tests/TestFBCache.o ${TESTDIR}/source/tests/TestFBCacheRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f7 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f7 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f22: ${TESTDIR}/source/tests/TestFBProblem.o ${TESTDIR}/source/tests/TestFBProblemRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f22 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f22 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f8: ${TESTDIR}/source/tests/TestFBSplitting.o ${TESTDIR}/source/tests/TestFBSplittingRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f8 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f8 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f9: ${TESTDIR}/source/tests/TestFBSplittingFast.o ${TESTDIR}/source/tests/TestFBSplittingFastRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f9 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f9 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f10: ${TESTDIR}/source/tests/TestFunctionOntologicalClass.o ${TESTDIR}/source/tests/TestFunctionOntologicalClassRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f10 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f10 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f11: ${TESTDIR}/source/tests/TestFunctionOntologyRegistry.o ${TESTDIR}/source/tests/TestFunctionOntologyRegistryRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f11 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f11 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f12: ${TESTDIR}/source/tests/TestHingeLoss.o ${TESTDIR}/source/tests/TestHingeLossRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f12 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f12 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f13: ${TESTDIR}/source/tests/TestHuber.o ${TESTDIR}/source/tests/TestHuberRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f13 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f13 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f14: ${TESTDIR}/source/tests/TestIndBall2.o ${TESTDIR}/source/tests/TestIndBall2Runner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f14 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f14 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f15: ${TESTDIR}/source/tests/TestIndBox.o ${TESTDIR}/source/tests/TestIndBoxRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f15 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f15 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f16: ${TESTDIR}/source/tests/TestIndPos.o ${TESTDIR}/source/tests/TestIndPosRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f16 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f16 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f17: ${TESTDIR}/source/tests/TestIndProbSimplex.o ${TESTDIR}/source/tests/TestIndProbSimplexRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f17 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f17 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f18: ${TESTDIR}/source/tests/TestIndSOC.o ${TESTDIR}/source/tests/TestIndSOCRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f18 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f18 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f19: ${TESTDIR}/source/tests/TestLasso.o ${TESTDIR}/source/tests/TestLassoRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f19 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f19 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f20: ${TESTDIR}/source/tests/TestLBFGSBuffer.o ${TESTDIR}/source/tests/TestLBFGSBufferRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f20 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f20 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f21: ${TESTDIR}/source/tests/TestLDL.o ${TESTDIR}/source/tests/TestLDLRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f21 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f21 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f23: ${TESTDIR}/source/tests/TestLogLogisticLoss.o ${TESTDIR}/source/tests/TestLogLogisticLossRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f23 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f23 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f24: ${TESTDIR}/source/tests/TestMatrix.o ${TESTDIR}/source/tests/TestMatrixRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f24 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f24 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f25: ${TESTDIR}/source/tests/TestMatrixExtras.o ${TESTDIR}/source/tests/TestMatrixExtrasRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f25 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f25 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f27: ${TESTDIR}/source/tests/TestMatrixFactory.o ${TESTDIR}/source/tests/TestMatrixFactoryRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f27 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f27 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f28: ${TESTDIR}/source/tests/TestMatrixOperator.o ${TESTDIR}/source/tests/TestMatrixOperatorRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f28 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f28 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f29: ${TESTDIR}/source/tests/TestNorm1.o ${TESTDIR}/source/tests/TestNorm1Runner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f29 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f29 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f30: ${TESTDIR}/source/tests/TestNorm2.o ${TESTDIR}/source/tests/TestNorm2Runner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f30 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f30 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f31: ${TESTDIR}/source/tests/TestOntRegistry.o ${TESTDIR}/source/tests/TestOntRegistryRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f31 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f31 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f32: ${TESTDIR}/source/tests/TestOpAdjoint.o ${TESTDIR}/source/tests/TestOpAdjointRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f32 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f32 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f33: ${TESTDIR}/source/tests/TestOpComposition.o ${TESTDIR}/source/tests/TestOpCompositionRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f33 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f33 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f34: ${TESTDIR}/source/tests/TestOpDCT2.o ${TESTDIR}/source/tests/TestOpDCT2Runner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f34 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f34 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f35: ${TESTDIR}/source/tests/TestOpDCT3.o ${TESTDIR}/source/tests/TestOpDCT3Runner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f35 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f35 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f36: ${TESTDIR}/source/tests/TestOpGradient.o ${TESTDIR}/source/tests/TestOpGradientRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f36 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f36 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f37: ${TESTDIR}/source/tests/TestOpReverseVector.o ${TESTDIR}/source/tests/TestOpReverseVectorRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f37 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f37 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f38: ${TESTDIR}/source/tests/TestProperties.o ${TESTDIR}/source/tests/TestPropertiesRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f38 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f38 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f39: ${TESTDIR}/source/tests/TestQuadOverAffine.o ${TESTDIR}/source/tests/TestQuadOverAffineRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f39 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f39 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f40: ${TESTDIR}/source/tests/TestQuadratic.o ${TESTDIR}/source/tests/TestQuadraticRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f40 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f40 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f41: ${TESTDIR}/source/tests/TestQuadraticLoss.o ${TESTDIR}/source/tests/TestQuadraticLossRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f41 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f41 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f42: ${TESTDIR}/source/tests/TestQuadraticLossOverAffine.o ${TESTDIR}/source/tests/TestQuadraticLossOverAffineRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f42 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f42 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f43: ${TESTDIR}/source/tests/TestQuadraticOperator.o ${TESTDIR}/source/tests/TestQuadraticOperatorRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f43 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f43 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f44: ${TESTDIR}/source/tests/TestSeparableSum.o ${TESTDIR}/source/tests/TestSeparableSumRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f44 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f44 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f26: ${TESTDIR}/source/tests/TestSLDL.o ${TESTDIR}/source/tests/TestSLDLRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f26 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f26 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f45: ${TESTDIR}/source/tests/TestSumOfNorm2.o ${TESTDIR}/source/tests/TestSumOfNorm2Runner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f45 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f45 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
+
+${TESTDIR}/TestFiles/f46: ${TESTDIR}/source/tests/TestSVDHelper.o ${TESTDIR}/source/tests/TestSVDHelperRunner.o ${OBJECTFILES:%.o=%_nomain.o}
+	${MKDIR} -p ${TESTDIR}/TestFiles
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f46 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
 
 ${TESTDIR}/source/tests/TestCGSolver.o: source/tests/TestCGSolver.cpp 
@@ -1314,6 +1327,18 @@ ${TESTDIR}/source/tests/TestSumOfNorm2Runner.o: source/tests/TestSumOfNorm2Runne
 	${MKDIR} -p ${TESTDIR}/source/tests
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/source/tests/TestSumOfNorm2Runner.o source/tests/TestSumOfNorm2Runner.cpp
+
+
+${TESTDIR}/source/tests/TestSVDHelper.o: source/tests/TestSVDHelper.cpp 
+	${MKDIR} -p ${TESTDIR}/source/tests
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/source/tests/TestSVDHelper.o source/tests/TestSVDHelper.cpp
+
+
+${TESTDIR}/source/tests/TestSVDHelperRunner.o: source/tests/TestSVDHelperRunner.cpp 
+	${MKDIR} -p ${TESTDIR}/source/tests
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/source/tests/TestSVDHelperRunner.o source/tests/TestSVDHelperRunner.cpp
 
 
 ${OBJECTDIR}/examples/matop_example_nomain.o: ${OBJECTDIR}/examples/matop_example.o examples/matop_example.cpp 
@@ -2083,6 +2108,19 @@ ${OBJECTDIR}/source/QuadraticOperator_nomain.o: ${OBJECTDIR}/source/QuadraticOpe
 	    ${CP} ${OBJECTDIR}/source/QuadraticOperator.o ${OBJECTDIR}/source/QuadraticOperator_nomain.o;\
 	fi
 
+${OBJECTDIR}/source/SVDHelper_nomain.o: ${OBJECTDIR}/source/SVDHelper.o source/SVDHelper.cpp 
+	${MKDIR} -p ${OBJECTDIR}/source
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/source/SVDHelper.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/SVDHelper_nomain.o source/SVDHelper.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/source/SVDHelper.o ${OBJECTDIR}/source/SVDHelper_nomain.o;\
+	fi
+
 ${OBJECTDIR}/source/S_LDLFactorization_nomain.o: ${OBJECTDIR}/source/S_LDLFactorization.o source/S_LDLFactorization.cpp 
 	${MKDIR} -p ${OBJECTDIR}/source
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/source/S_LDLFactorization.o`; \
@@ -2197,6 +2235,7 @@ ${OBJECTDIR}/source/main_nomain.o: ${OBJECTDIR}/source/main.o source/main.cpp
 	    ${TESTDIR}/TestFiles/f44 || true; \
 	    ${TESTDIR}/TestFiles/f26 || true; \
 	    ${TESTDIR}/TestFiles/f45 || true; \
+	    ${TESTDIR}/TestFiles/f46 || true; \
 	else  \
 	    ./${TEST} || true; \
 	fi
@@ -2204,7 +2243,6 @@ ${OBJECTDIR}/source/main_nomain.o: ${OBJECTDIR}/source/main.o source/main.cpp
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libforbes
 
 # Subprojects
 .clean-subprojects:

@@ -41,8 +41,13 @@ void TestQuadOverAffine::testQuadOverAffine() {
     double fstar = 0.0;
     Matrix grad;
     int status = qoa->callConj(y, fstar, grad);
-    _ASSERT_EQ(ForBESUtils::STATUS_OK, status);
+    _ASSERT(ForBESUtils::is_status_ok(status));
     _ASSERT_NOT(std::abs(fstar) < 1e-7);
+    
+    double fstar2;
+    status = qoa->callConj(y, fstar2);
+    _ASSERT(ForBESUtils::is_status_ok(status));
+    _ASSERT_NUM_EQ(fstar, fstar2, 1e-10);
 
     _ASSERT_OK(delete qoa);
 

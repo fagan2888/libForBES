@@ -70,7 +70,7 @@ std::ostream& operator<<(std::ostream& os, const FunctionOntologicalClass& obj) 
     std::list<FunctionOntologicalClass> li = obj.superClasses;
     size_t i = 1;
     for (std::list<FunctionOntologicalClass>::iterator it = li.begin(); it != li.end(); ++it) {
-        std::cout << " " << i << ". " << it->getName() << "\n";
+        os << " " << i << ". " << it->getName() << "\n";
         i++;
     }
     return os;

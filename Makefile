@@ -23,9 +23,10 @@
 
 include config.mk
 
+# Set this to 1 in order to generate a coverage report
 DO_PROFILE := 0
 DO_PARALLEL := 1
-	
+NPROCS := 1
 # Enable parallel make on N-1 processors	
 ifeq (1, $(DO_PARALLEL))
 	NPROCS := 1
@@ -36,9 +37,8 @@ ifeq (1, $(DO_PARALLEL))
 	ifeq ($(OS),Darwin) # Assume Mac OS X
 	    NPROCS:=$(shell sysctl -n hw.ncpu)
 	endif
-	NPROCS:=$$(($(NPROCS)-2))
+	NPROCS:=$$(($(NPROCS)-1))	
 	MAKEFLAGS += -j $(NPROCS)
-	#MAKEFLAGS += -j 2
 	MAKEFLAGS += --no-print-directory
 endif
 
@@ -46,7 +46,7 @@ endif
 ifeq (1, $(DO_PROFILE))
     CXX = g++-4.9
 else
-    CXX = g++
+    CXX = g++-4.8
 endif
 
 # Enable CCACHE
@@ -119,10 +119,13 @@ IFLAGS = \
 	-I/usr/local/include \
 	-I$(IEXTRA)
 
-
-ifeq ($(OS),Linux)
-	# Use the real time POSIX library on Linux
-	LFLAGS_ADDITIONAL += -lrt
+UNAME = $(shell uname -s)
+ifeq ($(UNAME),Linux)
+	# From https://github.com/xianyi/OpenBLAS/wiki/faq
+	# On Linux, if OpenBLAS was compiled with threading support 
+	# (USE_THREAD=1 by default), custom programs statically linked against 
+	# libopenblas.a should also link to the pthread library
+	LFLAGS_ADDITIONAL += -lrt -lpthread
 endif
 
 lFLAGS = \
@@ -140,7 +143,7 @@ lFLAGS = \
 	-lcppunit \
 	$(LFLAGS_ADDITIONAL)
 
-ifeq (0, $(DO_PROFILE))
+ifeq ($(DO_PROFILE),0)
     #lFLAGS += -lgfortran
 endif
 
@@ -180,6 +183,7 @@ SOURCES += CGSolver.cpp \
 
 # FORBES UTILITIES	
 SOURCES += ForBESUtils.cpp \
+	SVDHelper.cpp \
 	FunctionOntologicalClass.cpp \
 	FunctionOntologyRegistry.cpp
 
@@ -227,6 +231,7 @@ SOURCES += FBProblem.cpp \
 OBJECTS = $(SOURCES:%.cpp=$(OBJ_DIR)/%.o)
 
 TESTS = \
+	TestSVDHelper.test \
 	TestSLDL.test \
 	TestCholesky.test \
 	TestIndBox.test \
@@ -274,12 +279,31 @@ TESTS = \
 
 TEST_BINS = $(TESTS:%.test=$(BIN_TEST_DIR)/%)
 
-$(ARCHIVE): dirs $(OBJECTS)
+$(ARCHIVE): prop dirs $(OBJECTS)
 	@echo "\nArchiving..."
 	ar rcs $(ARCHIVE) $(OBJECTS)
 
 all: $(ARCHIVE)
 
+prop-short:
+	@echo "--- General ---"
+	@echo "OS           :"  $(OS)
+	@echo "UNAME        :"  $(UNAME)
+	@echo "Processors   :"  $(NPROCS)
+	@echo "Profiling    :"  $(DO_PROFILE)
+	@echo "Do parallel  :"  $(DO_PARALLEL)
+	@echo "C++ compiler :"  $(CXX)
+	@echo "\n--- Directories ---"
+	@echo "Obj.         :"  ${OBJ_DIR}
+	@echo "Bin.         :"  ${BIN_DIR}
+	@echo "Test Obj.    :"  ${OBJ_TEST_DIR}
+	@echo "Test Bin .   :"  ${BIN_TEST_DIR}
+prop: prop-short	
+	@echo "\n--- C flags  ---\n" $(CFLAGS)
+	@echo "\n--- Includes ---\n" $(IFLAGS)
+	@echo "\n--- l flags  ---\n" $(lFLAGS)
+	@echo "\n--- L flags  ---\n" $(LFLAGS)
+	@echo "\n"
 build-tests: $(ARCHIVE) $(TEST_BINS)
 
 test: build-tests
@@ -317,6 +341,7 @@ test: build-tests
 	${BIN_TEST_DIR}/TestFunctionOntologicalClass
 	${BIN_TEST_DIR}/TestFunctionOntologyRegistry
 	${BIN_TEST_DIR}/TestProperties
+	${BIN_TEST_DIR}/TestSVDHelper
 	@echo "\n*** LINEAR OPERATORS ***"
 	${BIN_TEST_DIR}/TestMatrixOperator
 	${BIN_TEST_DIR}/TestOpAdjoint
@@ -376,6 +401,7 @@ clean:
 	rm -rf $(OBJ_TEST_DIR)/*.o;
 	rm -rf $(BIN_DIR)/*;	
 
+
 help:
 	@echo "Makefile targets for libforbes:\n"
 	@echo "make                        - Compiles, links and archives [creates libforbes.a]"
@@ -385,6 +411,7 @@ help:
 	@echo "make test                   - Compiles [if necessary] and runs all tests"
 	@echo "make docs                   - Used doxygen to build documentation"
 	@echo "make main                   - Compiles and links source/main.cpp (for testing only)"
+	@echo "make prop                   - Prints properties of the makefile"
 	@echo "make help                   - This help message\n"
 
 docs:

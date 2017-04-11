@@ -1,0 +1,49 @@
+language: cpp
+sudo: required
+dist: trusty
+addons:
+  apt:
+    packages:
+      - libopenblas-base
+      - libopenblas-dev
+      - libblas-dev
+      - liblapack-dev
+      - libcppunit-dev
+      - g++-4.8
+before_install:
+  - export CXX=g++-4.8
+  - sudo ldconfig 
+  - mkdir -p libs
+  - chmod a+x ./scripts/install-suitesparse.sh
+  - ./scripts/install-suitesparse.sh 
+  - wget http://www.netlib.org/lapack/lapack-3.6.0.tgz -O ./libs/lapack-3.6.0.tgz
+  - tar zxf ./libs/lapack-3.6.0.tgz -C ./libs
+  - rm ./libs/lapack-3.6.0.tgz
+  - cd ./libs/lapack-3.6.0/
+  - cp make.inc.example make.inc
+  - cd LAPACKE
+  - make > /dev/null
+  - sudo cp ./include/lapacke.h /usr/include/
+  - sudo cp ./include/lapacke_mangling.h /usr/include/
+  - sudo cp ./include/lapacke_utils.h /usr/include/
+  - cd ..
+  - sudo cp ./liblapacke.a /usr/lib
+  - cd ../../
+before_script:
+  - export CONFIG_FILE=config.mk
+  - echo "# Auto-generated config file." > $CONFIG_FILE
+  - echo -e "# Path to your SuiteSparse directory" >> $CONFIG_FILE
+  - echo -e "SS_DIR = libs/SuiteSparse" >> $CONFIG_FILE
+  - echo -e "# Extra headers and libraries paths" >> $CONFIG_FILE
+  - echo -e "IEXTRA = /usr/include" >> $CONFIG_FILE
+  - echo -e "LEXTRA = /usr/lib" >> $CONFIG_FILE
+script:
+  - make
+  - make test
+notifications:
+  slack: libforbes:C178Pwjz1D016i1TXl977Bu0
+  email: false
+cache:
+    directories:
+        - libs
+    apt: true
