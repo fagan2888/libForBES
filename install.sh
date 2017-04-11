@@ -27,107 +27,36 @@ LOG_FILE=./LOG_INSTALL.log
 # Function: install_libforbes
 function install_libforbes {
 
-  echo "Checking for dependencies:"
-  if hash wget 2>/dev/null; then
-       echo "wget .............. OK"
-  else
-       echo "wget .............. NOT FOUND"
-  fi
-  if hash g++ 2>/dev/null; then
-       echo "g++  .............. OK"
-  else
-       echo "g++  .............. NOT FOUND"
-  fi
-  if hash make 2>/dev/null; then
-       echo "make .............. OK"
-  else
-       echo "make .............. NOT FOUND"
-  fi
-  if  [ -e /usr/lib/libopenblas.a ]; then
-       echo "openblas .......... OK";
-  else
-       echo "openblas .......... NOT FOUND";
-  fi
-  if [ -d libs/SuiteSparse ]; then
-        echo "SuiteSparse ....... OK";
-  else
-       echo "SuiteSparse ....... NOT FOUND"
-  fi
-  if [ -e /usr/lib/liblapack.a ]; then
-       echo "lapack ............ OK";
-  else
-       echo "lapack ............ NOT FOUND";
-  fi
-  if [ -e /usr/lib/liblapacke.a ]; then
-       echo "Lapacke ........... OK";
-  else
-       echo "Lapacke ........... NOT FOUND";
-  fi
-
-
-  mkdir -p libs
-
-  # Check if the SuiteSparse directory exists; if not, download SuiteSparse,
-  # untar it and delete the tar file
-  echo "Downloading openblas..."
-  sudo apt-get install libopenblas-base
-  if [ ! -d "./libs/SuiteSparse" ]; then
-    echo "SuiteSparse not currently installed - downloading..."
-    wget http://faculty.cse.tamu.edu/davis/SuiteSparse/SuiteSparse-4.4.6.tar.gz -O ./libs/SuiteSparse.tar.gz
-    tar xvf ./libs/SuiteSparse.tar.gz -C ./libs
-    rm -rf ./libs/SuiteSparse.tar.gz
-  fi
-
-  # Check if libopenblas.a exists in /usr/lib, if not check if it is
-  # in /usr/lib/openblas-base and create a link.
-  if [ ! -e "/usr/lib/libopenblas.a" ]; then
-    if [ -r "/usr/lib/openblas-base/libopenblas.a" ]; then
-      sudo ln -s /usr/lib/openblas-base/libopenblas.a /usr/lib/;
-    fi
-  fi
-
-  # Make SuiteSparse
-  if [ ! -e "libs/SuiteSparse/CHOLMOD/Lib/libcholmod.a" ]; then
-    echo "Making SuiteSparse..."
-    cd ./libs/SuiteSparse
-    make
-    cd ../../
-  fi
-
-  # Install lapack
-  sudo apt-get -y install libblas-dev checkinstall
-  sudo apt-get -y install liblapack-dev checkinstall
-  sudo apt-get -y install libcppunit-dev checkinstall
-
-  # Check whether liblapacke exists
-  if [ ! -e /usr/lib/liblapacke.a ]; then
-    echo "LAPACKE not found - donwloading..."
-    wget http://www.netlib.org/lapack/lapack-3.6.0.tgz -O ./libs/lapack-3.6.0.tgz
-
-    echo "LAPACKE downloaded to ./libs - now unpacking..."
-    tar zxf ./libs/lapack-3.6.0.tgz -C ./libs
-
-    echo "LAPACKE unpacked in ./libs - now removing the tgz file..."
-    rm ./libs/lapack-3.6.0.tgz
-
-    echo "Entering libs/lapack..."
-    cd ./libs/lapack-3.6.0/
-    cp make.inc.example make.inc
-    cd LAPACKE
-
-    echo "Making LAPACKE..."
-    make
-
-    echo "Copying LAPACKE files into /usr/lib and /usr/include..."
-    sudo cp ./include/lapacke.h /usr/include/
-    sudo cp ./include/lapacke_mangling.h /usr/include/
-    sudo cp ./include/lapacke_utils.h /usr/include/
-    cd ..
-    sudo cp ./liblapacke.a /usr/lib
-    cd ../../
-  fi
-
-  make
+	# install packages
+	sudo apt-get update
+	sudo apt-get -y install libopenblas-base 
+	sudo apt-get -y install libopenblas-dev 
+	sudo apt-get -y install libblas-dev 
+	sudo apt-get -y install liblapack-dev
+	sudo apt-get -y install libcppunit-dev 
+	sudo apt-get -y install g++-4.8
+	
+	# before install
+	export CXX=g++-4.8
+	sudo ln -s /usr/lib/openblas-base/libopenblas.a /usr/lib/;
+	sudo ldconfig 
+  	mkdir -p libs
+	chmod a+x ./scripts/install-suitesparse.sh
+	./scripts/install-suitesparse.sh 
+	wget http://www.netlib.org/lapack/lapack-3.6.0.tgz \
+	  -O ./libs/lapack-3.6.0.tgz
+	tar zxf ./libs/lapack-3.6.0.tgz -C ./libs
+	rm ./libs/lapack-3.6.0.tgz 
+	cd ./libs/lapack-3.6.0/
+  	cp make.inc.example make.inc
+  	cd LAPACKE
+  	make > /dev/null
+  	sudo cp ./include/lapacke.h /usr/include/
+  	sudo cp ./include/lapacke_mangling.h /usr/include/
+  	sudo cp ./include/lapacke_utils.h /usr/include/
+  	cd ..
+  	sudo cp ./liblapacke.a /usr/lib
+	cd ../../
 }
 
 exec 3>&1 1>>${LOG_FILE} 2>&1
@@ -141,3 +70,5 @@ echo -e "# Extra headers and libraries paths" >> $CONFIG_FILE
 echo -e "IEXTRA = /usr/include" >> $CONFIG_FILE
 echo -e "LEXTRA = /usr/lib" >> $CONFIG_FILE
 
+make
+make test
