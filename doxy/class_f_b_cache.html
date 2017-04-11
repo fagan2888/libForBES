@@ -333,7 +333,11 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>TestFBCache</b></td>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>status code: returns <a class="el" href="class_for_b_e_s_utils.html#a3778b88ef7ec8a5024eec49a0d7a656d">STATUS_OK</a> if the method has succeeded, <a class="el" href="class_for_b_e_s_utils.html#a0af987ab54a1718c518085bcc8972b80">STATUS_CACHE_NO_DIRECTION</a> if no direction \(d\) is provided.</dd></dl>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_f_b_cache.html#a45daef367b114f70f158ed3ed1830d58">extrapolate_f1</a> </dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_f_b_cache.html#a45daef367b114f70f158ed3ed1830d58">extrapolate_f1</a> </dd>
+<dd>
+<a class="el" href="class_f_b_cache.html#a46cb71000e838d458ee1f8185190b50d">extrapolate_gradf</a> </dd>
+<dd>
+<a class="el" href="class_f_b_cache.html#af9bcaa174487da95399fc522abbae89e">extrapolate_fbe</a> </dd></dl>
 
 </div>
 </div>
@@ -385,7 +389,9 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>TestFBCache</b></td>
 <dl class="section return"><dt>Returns</dt><dd>status code: returns <a class="el" href="class_for_b_e_s_utils.html#a3778b88ef7ec8a5024eec49a0d7a656d">STATUS_OK</a> if the method has succeeded, <a class="el" href="class_for_b_e_s_utils.html#a0af987ab54a1718c518085bcc8972b80">STATUS_CACHE_NO_DIRECTION</a> if no direction \(d\) is provided, and <a class="el" href="class_for_b_e_s_utils.html#a7f764569f67297a5b45b249fbfd6dd57">STATUS_CACHE_NO_QUADRATIC</a> if there is no quadratic function \(f_1\) defined in which case, it sets <code>fxtd</code> to <code>0.0</code>.</dd></dl>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_f_b_cache.html#ab4e88cd653fb4c4c200f6d74e2e2a152">extrapolate_f</a> </dd>
 <dd>
-<a class="el" href="class_f_b_cache.html#a474203848b40a41a01487f11325db617">cache_status</a> </dd></dl>
+<a class="el" href="class_f_b_cache.html#a474203848b40a41a01487f11325db617">cache_status</a> </dd>
+<dd>
+<a class="el" href="class_f_b_cache.html#af9bcaa174487da95399fc522abbae89e">extrapolate_fbe</a> </dd></dl>
 
 </div>
 </div>
@@ -434,7 +440,12 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>TestFBCache</b></td>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>status code: <a class="el" href="class_for_b_e_s_utils.html#a3778b88ef7ec8a5024eec49a0d7a656d">STATUS_OK</a> on success, <a class="el" href="class_for_b_e_s_utils.html#a0af987ab54a1718c518085bcc8972b80">STATUS_CACHE_NO_DIRECTION</a> if no direction is available. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>status code: <a class="el" href="class_for_b_e_s_utils.html#a3778b88ef7ec8a5024eec49a0d7a656d">STATUS_OK</a> on success, <a class="el" href="class_for_b_e_s_utils.html#a0af987ab54a1718c518085bcc8972b80">STATUS_CACHE_NO_DIRECTION</a> if no direction is available.</dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_f_b_cache.html#ab4e88cd653fb4c4c200f6d74e2e2a152">extrapolate_f</a> </dd>
+<dd>
+<a class="el" href="class_f_b_cache.html#a45daef367b114f70f158ed3ed1830d58">extrapolate_f1</a> </dd>
+<dd>
+<a class="el" href="class_f_b_cache.html#a46cb71000e838d458ee1f8185190b50d">extrapolate_gradf</a> </dd></dl>
 
 </div>
 </div>
@@ -477,7 +488,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>TestFBCache</b></td>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>status code: returns <a class="el" href="class_for_b_e_s_utils.html#a3778b88ef7ec8a5024eec49a0d7a656d">STATUS_OK</a> if the method has succeeded, <a class="el" href="class_for_b_e_s_utils.html#a0af987ab54a1718c518085bcc8972b80">STATUS_CACHE_NO_DIRECTION</a> if no direction \(d\) is provided. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>status code: returns <a class="el" href="class_for_b_e_s_utils.html#a3778b88ef7ec8a5024eec49a0d7a656d">STATUS_OK</a> if the method has succeeded, <a class="el" href="class_for_b_e_s_utils.html#a0af987ab54a1718c518085bcc8972b80">STATUS_CACHE_NO_DIRECTION</a> if no direction \(d\) is provided.</dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_f_b_cache.html#af9bcaa174487da95399fc522abbae89e">extrapolate_fbe</a> </dd></dl>
 
 </div>
 </div>
@@ -494,7 +506,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>TestFBCache</b></td>
       </table>
 </div><div class="memdoc">
 <p>Returns a pointer to the currently stored direction </p>
-<dl class="section return"><dt>Returns</dt><dd>internally stored direction </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>internally stored direction</dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_f_b_cache.html#ab8e2d32b25ee38717a5290afbf4c71ce">set_direction</a> </dd></dl>
 
 </div>
 </div>
@@ -579,7 +592,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>TestFBCache</b></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Gets the result of the forward (gradient) step, with step-size \(\gamma\), at \(x\)</p>
+<p>Gets the result of the forward (gradient) step given by \(x-\gamma \nabla f(x)\), with step-size \(\gamma\), at the stored point \(x\).</p>
+<p>If the forward step for the current values of \(x\) and \(\gamma\) has not been computed previously, it is computed and cached the first time that this method is called.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">gamma</td><td>stepsize parameter </td></tr>
@@ -587,7 +601,9 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>TestFBCache</b></td>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a pointer to <a class="el" href="class_matrix.html" title="A generic matrix API. ">Matrix</a> containing the forward step</dd></dl>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_f_b_cache.html#a619455e76309c135ad7d22cd1606f1d7">update_forward_step</a> </dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_f_b_cache.html#a619455e76309c135ad7d22cd1606f1d7">update_forward_step</a> </dd>
+<dd>
+<a class="el" href="class_f_b_cache.html#a2df713cad0efbefb9bc5a45762ef9520">set_point</a> </dd></dl>
 
 </div>
 </div>
@@ -689,7 +705,8 @@ To compute the gradient of f call <a class="el" href="class_f_b_cache.html#a3a17
       </table>
 </div><div class="memdoc">
 <p>Gets (a pointer to) the point \(x\) to which the <a class="el" href="class_f_b_cache.html" title="Low-level forward-backward operations management class. ">FBCache</a> object refer</p>
-<dl class="section return"><dt>Returns</dt><dd>a pointer to <a class="el" href="class_matrix.html" title="A generic matrix API. ">Matrix</a> containing the handled point </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>a pointer to <a class="el" href="class_matrix.html" title="A generic matrix API. ">Matrix</a> containing the handled point</dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_f_b_cache.html#a2df713cad0efbefb9bc5a45762ef9520">set_point</a> </dd></dl>
 
 </div>
 </div>
@@ -757,10 +774,11 @@ To compute the gradient of f call <a class="el" href="class_f_b_cache.html#a3a17
 <dl class="section note"><dt>Note</dt><dd>Before this method is invoked for the first time, no memory is allocated for the direction.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">d</td><td>direction </td></tr>
+    <tr><td class="paramname">d</td><td>direction</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_f_b_cache.html#a2df713cad0efbefb9bc5a45762ef9520">set_point</a> </dd></dl>
 
 </div>
 </div>
@@ -781,10 +799,11 @@ To compute the gradient of f call <a class="el" href="class_f_b_cache.html#a3a17
 <p>Once a new point is provided to the cache, its internal status is set to <a class="el" href="class_f_b_cache.html#a0d67e145ba6b0222ea15a315ba3371b3">STATUS_NONE</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td>new point at which to evaluate the steps </td></tr>
+    <tr><td class="paramname">x</td><td>new point at which to evaluate the steps</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_f_b_cache.html#a687b045cff0feca570a62ede44365c27">get_point</a> </dd></dl>
 
 </div>
 </div>
@@ -821,7 +840,7 @@ To compute the gradient of f call <a class="el" href="class_f_b_cache.html#a3a17
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>status code (see <a class="el" href="class_for_b_e_s_utils.html" title="ForBES utilities such as status codes. ">ForBESUtils</a>); returns a <a class="el" href="class_for_b_e_s_utils.html#a3778b88ef7ec8a5024eec49a0d7a656d">STATUS_OK</a> if the computation was successful and sets the internal status of the cache to <a class="el" href="class_f_b_cache.html#a648787c2da4c8cf9645417bb9423def5">STATUS_EVALF</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>status code (see <a class="el" href="class_for_b_e_s_utils.html" title="ForBES utilities such as status codes. ">ForBESUtils</a>); returns a <a class="el" href="class_for_b_e_s_utils.html#a3778b88ef7ec8a5024eec49a0d7a656d">STATUS_OK</a> if the computation was successful and sets the internal status of the cache to <a class="el" href="class_f_b_cache.html#a648787c2da4c8cf9645417bb9423def5">STATUS_EVALF</a>. If the result was cached, it returns a <a class="el" href="class_for_b_e_s_utils.html#aabff97140865c81347d21a400da099c4">STATUS_CACHED_ALREADY</a>. </dd></dl>
 
 </div>
 </div>
@@ -856,7 +875,7 @@ To compute the gradient of f call <a class="el" href="class_f_b_cache.html#a3a17
 \[ R_\gamma(x) = x - \mathrm{prox}_{\gamma g}(x-\gamma \nabla f(x)), \]
 </p>
 <p> is the fixed-point residual (FPR).</p>
-<dl class="section return"><dt>Returns</dt><dd>Status code, see <a class="el" href="class_for_b_e_s_utils.html" title="ForBES utilities such as status codes. ">ForBESUtils</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Status code, see <a class="el" href="class_for_b_e_s_utils.html" title="ForBES utilities such as status codes. ">ForBESUtils</a>. If the result was cached, it returns a <a class="el" href="class_for_b_e_s_utils.html#aabff97140865c81347d21a400da099c4">STATUS_CACHED_ALREADY</a>. </dd></dl>
 
 </div>
 </div>
@@ -887,7 +906,7 @@ To compute the gradient of f call <a class="el" href="class_f_b_cache.html#a3a17
 \[ R_\gamma(x) = x - \mathrm{prox}_{\gamma g}(x-\gamma \nabla f(x)), \]
 </p>
 <p> and it also computes and stores its squared norm \(\|R_\gamma(x)\|^2\).</p>
-<dl class="section return"><dt>Returns</dt><dd>Status code, see <a class="el" href="class_for_b_e_s_utils.html" title="ForBES utilities such as status codes. ">ForBESUtils</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Status code, see <a class="el" href="class_for_b_e_s_utils.html" title="ForBES utilities such as status codes. ">ForBESUtils</a>. If the result was cached, it returns a <a class="el" href="class_for_b_e_s_utils.html#aabff97140865c81347d21a400da099c4">STATUS_CACHED_ALREADY</a>. </dd></dl>
 
 </div>
 </div>
@@ -917,7 +936,7 @@ To compute the gradient of f call <a class="el" href="class_f_b_cache.html#a3a17
 <p class="formulaDsp">
 \[ y = x - \gamma \nabla f(x). \]
 </p>
-<dl class="section return"><dt>Returns</dt><dd>Status code, see <a class="el" href="class_for_b_e_s_utils.html" title="ForBES utilities such as status codes. ">ForBESUtils</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Status code, see <a class="el" href="class_for_b_e_s_utils.html" title="ForBES utilities such as status codes. ">ForBESUtils</a>. If the result was cached, it returns a <a class="el" href="class_for_b_e_s_utils.html#aabff97140865c81347d21a400da099c4">STATUS_CACHED_ALREADY</a>. </dd></dl>
 
 </div>
 </div>
@@ -943,7 +962,12 @@ To compute the gradient of f call <a class="el" href="class_f_b_cache.html#a3a17
 </table>
 </div><div class="memdoc">
 <p>Evaluates the gradient of the FBE at x with parameter gamma, and updates the internal status.</p>
-<dl class="section return"><dt>Returns</dt><dd>Status code, see <a class="el" href="class_for_b_e_s_utils.html" title="ForBES utilities such as status codes. ">ForBESUtils</a>. </dd></dl>
+<p>The gradient of the FBE is given by</p>
+<p class="formulaDsp">
+\[ \nabla \varphi_\gamma(x) = (I-\gamma \nabla_x^2 f(x))R_\gamma(x), \]
+</p>
+<p>where \(R_\gamma(x)=x-z(x)\) is the <em>fixed-point residual</em> with \(z(x) = \mathrm{prox}_{\gamma g}(x-\gamma \nabla f(x))\) .</p>
+<dl class="section return"><dt>Returns</dt><dd>Status code, see <a class="el" href="class_for_b_e_s_utils.html" title="ForBES utilities such as status codes. ">ForBESUtils</a>. If the result was cached, it returns a <a class="el" href="class_for_b_e_s_utils.html#aabff97140865c81347d21a400da099c4">STATUS_CACHED_ALREADY</a>. </dd></dl>
 
 </div>
 </div>
@@ -1141,7 +1165,7 @@ To compute the gradient of f call <a class="el" href="class_f_b_cache.html#a3a17
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 11 2017 11:26:13 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Apr 11 2017 11:28:23 for LibForBES by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
